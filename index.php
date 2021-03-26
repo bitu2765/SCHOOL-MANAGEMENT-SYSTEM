@@ -157,7 +157,8 @@
 <?php
 if (isset($_POST['login_admin'])) {
     //including database connection file
-    include('./payroll/connectdb.php');
+    include('./connection_to_db.php');
+    $con = mysqli_connect($servername,$username,$password,$dbname);
     $username = mysqli_real_escape_string($con, $_POST['username']);
     $pass = mysqli_real_escape_string($con, $_POST['admin_pass']);
     $password = md5($pass);

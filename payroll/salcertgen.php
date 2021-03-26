@@ -13,9 +13,7 @@ for ($x = 1; $x <= 12; $x++) {
     }
 }
 // $cpdf = "<link rel='stylesheet' href='css/app.css'><link href='css/gapi.css' rel='stylesheet'>";
-$cpdf = "<table class='table' border='1'>";
-$cpdf .= '<tbody>';
-$cpdf .= '<tr>';
+$cpdf = '<tr>';
 $cpdf .=  "<td width='150' height='30'>Employee Name</td>";
 $cpdf .=  "<td width='250' height='30'>" . $_GET["Emna"] . "</td>";
 $cpdf .= '</tr>';
@@ -24,6 +22,8 @@ $cpdf .=  "<td width='150' height='30'>Employee Designation</td>";
 $cpdf .=  "<td width='250' height='30'>" . $_GET["Emde"] . "</td>";
 $cpdf .= '</tr>';
 $cpdf .= "<br>";
+$cpdf .= "<table class='table' border='1'>";
+$cpdf .= '<tbody>';
 $cpdf .= '<tr>';
 $cpdf .=  "<td width='57' height='30'>Month</td>";
 $cpdf .=  "<td width='62' height='30'>Basic</td>";
