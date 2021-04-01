@@ -5,7 +5,7 @@ $val1 = $_GET['value'];
 $val = rtrim($val1, ", ");
 $post = array();
 $sql = "select $val from studentmaster";
-$result1 = mysqli_query($connect, $sql);
+$result1 = mysqli_query($conn, $sql);
 ?>
 <div class="table-responsive" id="poll">
     <table class="table table-striped" id="myTable">
