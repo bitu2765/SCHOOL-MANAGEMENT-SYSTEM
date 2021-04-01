@@ -135,6 +135,31 @@
         return true;
     }
 </script>
+<<<<<<< HEAD
 <script src="log.js"></script>
+=======
+<?php
+if (isset($_POST['login_admin'])) {
+    //including database connection file
+    include('./connection_to_db.php');
+    $con = mysqli_connect($servername,$username,$password,$dbname);
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $pass = mysqli_real_escape_string($con, $_POST['admin_pass']);
+    $password = md5($pass);
+
+    $sql = "SELECT * FROM admin_credentials WHERE username = '$username'";
+    $res = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($res);
+
+    if ($username == $row['username'] && $password == $row['password']) {
+        echo "<script>alert('Admin login successfull');
+                          window.location.href = 'Dashboard.php';
+                </script>";
+    } else {
+        echo "<script>alert('Username or password is invalid');</script>";
+    }
+}
+?>
+>>>>>>> ac07645353b22cd5489a0302ef34898524e6a73d
 
 </html>
