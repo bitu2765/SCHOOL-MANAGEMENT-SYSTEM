@@ -6,7 +6,7 @@ if (isset($_POST['submit_atd'])) {
     $stuStandard = mysqli_real_escape_string($con, trim($_POST['atd_standard']));
     $stuDiv = mysqli_real_escape_string($con, trim($_POST['cls_section']));
     $sql = "SELECT * FROM studentmaster WHERE StuStandard ='$stuStandard' AND StuDiv='$stuDiv'
-           ORDER BY StuStudentRollno";
+           ORDER BY StuRollNo";
     $res = mysqli_query($con, $sql);
 } else {
     header('location:index.php');
@@ -220,9 +220,9 @@ if (isset($_POST['submit_atd'])) {
                                     ?>
                                         <tr style="text-align:center">
                                             <td style="width: 50px;">
-                                                <input type="checkbox" id="ckbx" name="attend[]" value="<?php echo $row['StuStudentRollno']; ?>" onchange="viewPresent()">
+                                                <input type="checkbox" id="ckbx" name="attend[]" value="<?php echo $row['StuRollNo']; ?>" onchange="viewPresent()">
                                             </td>
-                                            <td><?php echo $row["StuStudentRollno"]; ?></td>
+                                            <td><?php echo $row["StuRollNo"]; ?></td>
                                             <td><?php echo $row["StuStudentName"]; ?></td>
                                         </tr>
                                     <?php

@@ -78,7 +78,7 @@
                 $sql="SELECT * FROM `studentmaster` Where StuDiv='$ResDivision' AND StuStandard='$ResStandard'";
                 $result11 = mysqli_query($conn,$sql);
                     while($row11 = mysqli_fetch_assoc($result11)){
-                        $rollno = $row11['StuStudentRollNo'];
+                        $rollno = $row11['StuRollNo'];
                         $grno= $row11['StuGRNo'];
                         $name= $row11['StuStudentName'];
 

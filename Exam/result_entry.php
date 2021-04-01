@@ -144,11 +144,11 @@ include 'connection.php';
                             <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
                         </a>
                         <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result Entry</a>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/result_entry.php">Result Entry</a>
                             </li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
                             </li>
-                            <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/result_serch.php">Check For Result</a>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Check For Result</a>
                             </li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
                             </li>

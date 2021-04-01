@@ -220,12 +220,12 @@ include 'connection.php';
                                 <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">Delete Exam</a></li>
                             </ul>
                         </li>
-                        <li class="sidebar-item ">
+                        <li class="sidebar-item active">
                             <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
                                 <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
                             </a>
                             <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                                <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result Entry</a>
+                                <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/result_entry.php">Result Entry</a>
                                 </li>
                                 <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
                                 </li>
@@ -293,7 +293,7 @@ include 'connection.php';
                                     </div>
                                 </div>
                                 <div class="row mt-3 mb-3 fw-bold">
-                                    <?php $a1 = "SELECT StuGRNO FROM studentmaster WHERE StuStudentRollNo='$roll'";
+                                    <?php $a1 = "SELECT StuGRNO FROM studentmaster WHERE StuRollNo='$roll'";
                                     $res1 = mysqli_query($conn, $a1);
                                     if (mysqli_num_rows($res1) > 0) {
                                         $row = mysqli_fetch_assoc($res1); ?>
