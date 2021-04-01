@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2021 at 03:21 PM
+-- Generation Time: Apr 01, 2021 at 03:25 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -109,7 +109,10 @@ CREATE TABLE `exammaster` (
 
 INSERT INTO `exammaster` (`ExamId`, `ExamAcademicYear`, `ExamStandard`, `ExamSubjectName`, `ExamName`, `ExamTotalMarks`, `ExamPassingMarks`, `IsResultEntered`, `IsResultVisible`) VALUES
 (1, '2020-21', 8, 'physics', 'Test', 30, 12, 0, 0),
-(2, '2020-21', 8, 'maths', 'First Exam', 30, 12, 0, 0);
+(2, '2020-21', 8, 'maths', 'First Exam', 30, 12, 0, 0),
+(3, '2020-21', 8, 'maths', 'Test', 30, 12, 1, 0),
+(4, '2020-21', 9, 'maths', 'Test', 30, 12, 1, 0),
+(5, '2020-21', 9, 'maths', 'First Exam', 100, 35, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -118,13 +121,13 @@ INSERT INTO `exammaster` (`ExamId`, `ExamAcademicYear`, `ExamStandard`, `ExamSub
 --
 
 CREATE TABLE `listmaster` (
-  `Sysid` int(5) NOT NULL,
-  `CreateDate` date NOT NULL DEFAULT current_timestamp(),
-  `SyStatus` varchar(5) NOT NULL,
+  `Sysid` int(9) NOT NULL,
+  `CreateDate` datetime NOT NULL DEFAULT current_timestamp(),
+  `SyStatus` varchar(5) DEFAULT NULL,
   `Parameter` varchar(100) NOT NULL,
   `Value` varchar(100) NOT NULL,
-  `infomation` varchar(150) NOT NULL,
-  `Description` varchar(150) NOT NULL
+  `infomation` varchar(150) DEFAULT NULL,
+  `Description` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -132,35 +135,34 @@ CREATE TABLE `listmaster` (
 --
 
 INSERT INTO `listmaster` (`Sysid`, `CreateDate`, `SyStatus`, `Parameter`, `Value`, `infomation`, `Description`) VALUES
-(1, '2021-02-26', 'A', 'EmpStatus', 'Active', '', ''),
-(2, '2021-02-26', 'D', 'EmpStatus', 'Resingned', '', ''),
-(3, '2021-02-26', 'D', 'EmpStatus', 'Retired', '', ''),
-(4, '2021-02-26', '', 'Category', 'Open', '', ''),
-(5, '2021-02-26', '', 'Category', 'OBC', '', ''),
-(6, '2021-02-26', '', 'Category', 'SC', '', ''),
-(7, '2021-02-26', '', 'Category', 'SC', '', ''),
-(8, '2021-02-26', '', 'Category', 'ST', '', ''),
-(9, '2021-02-26', '', 'Gender', 'Male', '', ''),
-(10, '2021-02-26', '', 'Gender', 'Female', '', ''),
-(11, '2021-02-26', '', 'Gender', 'Other', '', ''),
-(12, '2021-02-26', '', 'AcadmicYear', '2020-21', '', ''),
-(13, '2021-02-26', '', 'AcadmicYear', '2021-22', '', ''),
-(14, '2021-02-26', '', 'AcadmicYear', '2022-23', '', ''),
-(15, '2021-02-26', '', 'Division', 'A', '', ''),
-(16, '2021-02-26', '', 'Division', 'B', '', ''),
-(17, '2021-02-26', '', 'Division', 'C', '', ''),
-(18, '2021-02-26', '', 'Division', 'D', '', ''),
-(19, '2021-02-26', '', 'Division', 'E', '', ''),
-(20, '2021-02-26', '', 'Standard', '8', '', ''),
-(21, '2021-02-26', '', 'Standard', '9', '', ''),
-(22, '2021-02-26', '', 'Standard', '10', '', ''),
-(27, '2021-02-26', '', 'SubjectName', 'Maths', '', ''),
-(28, '2021-02-26', '', 'SubjectName', 'English', '', ''),
-(29, '2021-02-26', '', 'SubjectName', 'Gujrati', '', ''),
-(31, '0000-00-00', '', 'SubjectName', 'Science', '', ''),
-(33, '0000-00-00', '', 'SubjectName', 'Social Science', '', ''),
-(34, '0000-00-00', '', 'AcdemicYear', '2021-22,2022-23', '', ''),
-(36, '0000-00-00', '', 'ShowResult', '0', '', '');
+(1, '2021-02-26 00:00:00', 'A', 'EmpStatus', 'Active', '', ''),
+(2, '2021-02-26 00:00:00', 'D', 'EmpStatus', 'Resingned', '', ''),
+(3, '2021-02-26 00:00:00', 'D', 'EmpStatus', 'Retired', '', ''),
+(4, '2021-02-26 00:00:00', '', 'Category', 'Open', '', ''),
+(5, '2021-02-26 00:00:00', '', 'Category', 'OBC', '', ''),
+(6, '2021-02-26 00:00:00', '', 'Category', 'SC', '', ''),
+(7, '2021-02-26 00:00:00', '', 'Category', 'SC', '', ''),
+(8, '2021-02-26 00:00:00', '', 'Category', 'ST', '', ''),
+(9, '2021-02-26 00:00:00', '', 'Gender', 'Male', '', ''),
+(10, '2021-02-26 00:00:00', '', 'Gender', 'Female', '', ''),
+(11, '2021-02-26 00:00:00', '', 'Gender', 'Other', '', ''),
+(12, '2021-02-26 00:00:00', '', 'AcadmicYear', '2020-21', '', ''),
+(13, '2021-02-26 00:00:00', '', 'AcadmicYear', '2021-22', '', ''),
+(14, '2021-02-26 00:00:00', '', 'AcadmicYear', '2022-23', '', ''),
+(15, '2021-02-26 00:00:00', '', 'Division', 'A', '', ''),
+(16, '2021-02-26 00:00:00', '', 'Division', 'B', '', ''),
+(17, '2021-02-26 00:00:00', '', 'Division', 'C', '', ''),
+(18, '2021-02-26 00:00:00', '', 'Division', 'D', '', ''),
+(19, '2021-02-26 00:00:00', '', 'Division', 'E', '', ''),
+(20, '2021-02-26 00:00:00', '', 'Standard', '8', '', ''),
+(21, '2021-02-26 00:00:00', '', 'Standard', '9', '', ''),
+(22, '2021-02-26 00:00:00', '', 'Standard', '10', '', ''),
+(27, '2021-02-26 00:00:00', '', 'SubjectName', 'Maths', '', ''),
+(28, '2021-02-26 00:00:00', '', 'SubjectName', 'English', '', ''),
+(29, '2021-02-26 00:00:00', '', 'SubjectName', 'Gujrati', '', ''),
+(31, '0000-00-00 00:00:00', '', 'SubjectName', 'Science', '', ''),
+(33, '0000-00-00 00:00:00', '', 'SubjectName', 'Social Science', '', ''),
+(45, '2021-03-30 21:41:38', NULL, 'AcadmicYear', '2019-20', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -173,6 +175,7 @@ CREATE TABLE `resultmaster` (
   `ResStandard` bigint(10) NOT NULL,
   `ResDivision` varchar(1) NOT NULL,
   `ResRollNo` varchar(10) NOT NULL,
+  `ResGRNO` varchar(30) NOT NULL,
   `ResSubName` varchar(30) NOT NULL,
   `ResStudentName` varchar(30) NOT NULL,
   `ResExamName` varchar(25) NOT NULL,
@@ -201,44 +204,50 @@ CREATE TABLE `standardmaster` (
 --
 
 CREATE TABLE `studentmaster` (
-  `StuStudentName` varchar(150) NOT NULL,
-  `StuAdmissionYear` date NOT NULL,
+  `date` datetime NOT NULL,
   `StuUIDNo` varchar(13) NOT NULL,
-  `StuGRNO` varchar(30) NOT NULL,
-  `StuStudentRollNo` varchar(30) NOT NULL,
+  `StuGRNo` varchar(30) NOT NULL,
+  `StuRollNo` int(20) NOT NULL,
+  `StuStudentName` varchar(150) NOT NULL,
+  `StuAcdemicyear` varchar(10) NOT NULL,
   `StuStandard` bigint(10) NOT NULL,
   `StuDiv` varchar(10) NOT NULL,
-  `StuDateOfAdmission` date NOT NULL,
-  `StuDOB` date NOT NULL,
   `StuGender` varchar(10) NOT NULL,
+  `StuDOB` date NOT NULL,
+  `StuDateOfAdmission` date NOT NULL,
+  `StuParentMobileNumber1` decimal(10,0) NOT NULL,
+  `StuParentMobileNumber2` decimal(10,0) NOT NULL,
+  `StuHouseNo` varchar(20) NOT NULL,
+  `StuStreetName` varchar(20) NOT NULL,
+  `StuLocation` varchar(50) NOT NULL,
+  `StuCity` varchar(20) NOT NULL,
+  `StuDist` varchar(20) NOT NULL,
   `StuBirthPlace` varchar(150) NOT NULL,
-  `StuAddrerss` varchar(20) NOT NULL,
-  `HouseNO` varchar(20) NOT NULL,
-  `StreetName` varchar(20) NOT NULL,
-  `Landmark` varchar(20) NOT NULL,
-  `City` varchar(20) NOT NULL,
-  `Dist` varchar(20) NOT NULL,
-  `StuParentMobileNumber1` bigint(10) NOT NULL,
-  `StuParentMobileNumber2` bigint(10) NOT NULL,
-  `StuAadharNo` bigint(12) NOT NULL,
-  `StuCaste` varchar(50) NOT NULL,
-  `StuStatus` varchar(15) NOT NULL,
-  `StuStatusChangedDate` date NOT NULL,
+  `StuAadharNo` decimal(12,0) NOT NULL,
   `StuCategory` varchar(50) NOT NULL,
+  `StuCaste` varchar(50) NOT NULL,
   `StuLastschoolname` varchar(50) NOT NULL,
-  `StuBankdetails` varchar(20) NOT NULL,
   `StuBankname` varchar(20) NOT NULL,
   `StuBankACno` varchar(20) NOT NULL,
   `StuBankIFSCcode` varchar(20) NOT NULL,
-  `StuUploadDocument` int(11) NOT NULL
+  `StuStatus` varchar(15) NOT NULL,
+  `StuStatusChangedDate` date NOT NULL,
+  `file` varchar(255) NOT NULL,
+  `filename` varchar(255) NOT NULL,
+  `uploadfile` varchar(255) NOT NULL,
+  `uploadfilename` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `studentmaster`
 --
 
-INSERT INTO `studentmaster` (`StuStudentName`, `StuAdmissionYear`, `StuUIDNo`, `StuGRNO`, `StuStudentRollNo`, `StuStandard`, `StuDiv`, `StuDateOfAdmission`, `StuDOB`, `StuGender`, `StuBirthPlace`, `StuAddrerss`, `HouseNO`, `StreetName`, `Landmark`, `City`, `Dist`, `StuParentMobileNumber1`, `StuParentMobileNumber2`, `StuAadharNo`, `StuCaste`, `StuStatus`, `StuStatusChangedDate`, `StuCategory`, `StuLastschoolname`, `StuBankdetails`, `StuBankname`, `StuBankACno`, `StuBankIFSCcode`, `StuUploadDocument`) VALUES
-('', '0000-00-00', '12345', '1456', '1', 8, 'A', '2021-03-02', '1999-01-21', 'male', 'surat', 'surat', '1', 'jk row house', 'jk', 'surat', 'surat', 8764433256, 9874567865, 123456789098, 'OPEN', 'ACTIVE', '2021-03-17', 'OPEN', 'jk pithawalla', 'sbi', 'sbi', '123456789', 'bah8276', 198728948);
+INSERT INTO `studentmaster` (`date`, `StuUIDNo`, `StuGRNo`, `StuRollNo`, `StuStudentName`, `StuAcdemicyear`, `StuStandard`, `StuDiv`, `StuGender`, `StuDOB`, `StuDateOfAdmission`, `StuParentMobileNumber1`, `StuParentMobileNumber2`, `StuHouseNo`, `StuStreetName`, `StuLocation`, `StuCity`, `StuDist`, `StuBirthPlace`, `StuAadharNo`, `StuCategory`, `StuCaste`, `StuLastschoolname`, `StuBankname`, `StuBankACno`, `StuBankIFSCcode`, `StuStatus`, `StuStatusChangedDate`, `file`, `filename`, `uploadfile`, `uploadfilename`) VALUES
+('2021-03-10 19:51:40', '1000', '10002', 1, 'BHAUTIK', '2020-21', 9, 'A', 'male', '2021-03-16', '2021-03-16', '1234567890', '987654321', '44', '25425dgsg', 'gdrggrg', 'dgdtgtd', 'gergreg', 'fdfdge', '123456789098', 'OPEN', 'OPEN', 'nmsbn', 'sbi', ',.n,kwn', 'bah8276', 'ACTIVE', '2021-03-16', 'gdffgdgdfgggggggggggggggggggggggggggggggfgddgf', 'gdffbdfgd', 'dfgfgfdgfdfgd', 'dfgfgdgfgg'),
+('2021-03-10 19:51:40', '1000', '10003', 2, 'UDDHAV', '2020-21', 9, 'A', 'male', '2021-03-16', '2021-03-16', '1234567890', '987654321', '44', '25425dgsg', 'gdrggrg', 'dgdtgtd', 'gergreg', 'fdfdge', '123456789098', 'OPEN', 'OPEN', 'nmsbn', 'sbi', ',.n,kwn', 'bah8276', 'ACTIVE', '2021-03-16', 'gdffgdgdfgggggggggggggggggggggggggggggggfgddgf', 'gdffbdfgd', 'dfgfgfdgfdfgd', 'dfgfgdgfgg'),
+('2021-03-10 19:51:40', '1000', '10004', 1, 'KEYUR', '2021-22', 10, 'A', 'male', '2021-03-16', '2021-03-16', '1234567890', '987654321', '44', '25425dgsg', 'gdrggrg', 'dgdtgtd', 'gergreg', 'fdfdge', '123456789098', 'OPEN', 'OPEN', 'nmsbn', 'sbi', ',.n,kwn', 'bah8276', 'ACTIVE', '2021-03-16', 'gdffgdgdfgggggggggggggggggggggggggggggggfgddgf', 'gdffbdfgd', 'dfgfgfdgfdfgd', 'dfgfgdgfgg'),
+('2021-03-10 19:51:40', '1000', '10005', 1, 'MAYUR', '2021-22', 12, 'A', 'male', '2021-03-16', '2021-03-16', '1234567890', '987654321', '44', '25425dgsg', 'gdrggrg', 'dgdtgtd', 'gergreg', 'fdfdge', '123456789098', 'OPEN', 'OPEN', 'nmsbn', 'sbi', ',.n,kwn', 'bah8276', 'ACTIVE', '2021-03-16', 'gdffgdgdfgggggggggggggggggggggggggggggggfgddgf', 'gdffbdfgd', 'dfgfgfdgfdfgd', 'dfgfgdgfgg'),
+('2021-04-01 06:52:16', '8908', '80007', 1, 'SUDANI BHAUTIK DHANJIBHAI', '2019-20', 9, 'A', 'MALE', '2021-04-01', '2021-04-01', '9873476546', '9872778784', '102', '703 - YOGINATH ROW H', 'SURAT', 'ANAND', '', 'SASAN', '7890654321', 'GENERAL', 'HINDU', 'AKS', 'SBI', '97889698', 'bnvy7657', 'ACTIVE', '2021-04-01', 'bg-sky.jpg', 'bg-sky.jpg', 'bg-sky.jpg', 'logo.png');
 
 -- --------------------------------------------------------
 
@@ -262,7 +271,8 @@ CREATE TABLE `submaster` (
 INSERT INTO `submaster` (`SubId`, `SubStandard`, `SubName`, `SubTotalMarks`, `SubType`, `SubAcademicYear`) VALUES
 (1, 8, 'chemisrty', 100, 'Compulsory', '2020-21'),
 (3, 8, 'physics', 100, 'Compulsory', '2020-21'),
-(4, 8, 'maths', 100, 'Compulsory', '2020-21');
+(4, 8, 'maths', 100, 'Compulsory', '2020-21'),
+(5, 9, 'maths', 100, 'Compulsory', '2020-21');
 
 -- --------------------------------------------------------
 
@@ -272,7 +282,7 @@ INSERT INTO `submaster` (`SubId`, `SubStandard`, `SubName`, `SubTotalMarks`, `Su
 
 CREATE TABLE `tbfeesmaster` (
   `cdate` datetime NOT NULL DEFAULT current_timestamp(),
-  `Systatus` varchar(1) NOT NULL,
+  `Systatus` varchar(10) NOT NULL DEFAULT 'ACTIVE',
   `FeesStudentName` varchar(150) NOT NULL,
   `FeesStudentRollNo` varchar(30) NOT NULL,
   `FeesStudentGRNo` bigint(10) NOT NULL,
@@ -303,8 +313,11 @@ CREATE TABLE `tbfeesmaster` (
 --
 
 INSERT INTO `tbfeesmaster` (`cdate`, `Systatus`, `FeesStudentName`, `FeesStudentRollNo`, `FeesStudentGRNo`, `FeesStuDateOfAdmission`, `FeesStuParentMoNo`, `FeesAcademicYear`, `FeesStandard`, `FeesDivison`, `FeesJanuary`, `FeesFebruary`, `FeesMarch`, `FeesApril`, `FeesMay`, `FeesJune`, `FeesJuly`, `FeesAugust`, `FeesSeptember`, `FeesOctomber`, `FeesNovember`, `FeesDecember`, `FeesAnnual`, `FeesPaid`, `FeesDue`) VALUES
-('2021-03-19 15:33:24', 'A', 'bhautik', '1', 1, '2021-03-02 15:31:54', 879867, '2020-21', '8', 'A', 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 12000, 5000, 7000),
-('2021-03-19 15:33:24', 'A', 'uddhav', '2', 2, '2021-03-02 15:31:54', 879867, '2020-21', '8', 'A', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12000, 2000, 10000);
+('2021-03-19 15:33:24', 'ACTIVE', 'bhautik', '1', 1, '2021-03-02 15:31:54', 879867, '2020-21', '8', 'A', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12000, 12000, 0),
+('2021-04-01 06:52:17', 'ACTIVE', 'SUDANI BHAUTIK DHANJIBHAI', '1', 80007, '2021-04-01 00:00:00', 9873476546, '2019-20', '9', 'A', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12000, 12000, 0),
+('2021-03-19 15:33:24', 'ACTIVE', 'uddhav', '2', 2, '2021-03-02 15:31:54', 879867, '2020-21', '8', 'A', 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 12000, 8000, 4000),
+('2021-04-01 05:57:10', 'ACTIVE', 'UDDHAV', '2', 10003, '2021-03-16 00:00:00', 1234567890, '2021-22', '10', 'A', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20000, 20000, 0),
+('2021-03-19 15:33:24', 'ACTIVE', 'Mayur', '3', 3, '2021-03-02 15:31:54', 879867, '2020-21', '8', 'A', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12000, 2000, 10000);
 
 -- --------------------------------------------------------
 
@@ -374,6 +387,7 @@ CREATE TABLE `ttbsalarymaster` (
 --
 
 INSERT INTO `ttbsalarymaster` (`year`, `SalEmpNo`, `SalFullName`, `SalDesignation`, `SalPAN`, `SalPFNo`, `SalEmpBankAccount`, `SalMonthname`, `SalMonthdays`, `SalPresentdays`, `Salleavedays`, `SalLWP`, `SalBasic`, `SalDA`, `SalCLA`, `SalHRA`, `SalTA`, `SalSPPay`, `SalDGPay`, `SalMA`, `SalArreas1`, `SalArreas2`, `SalPTax`, `SalPF`, `SalIncomTax`, `Salother`, `SalTotalEarning`, `SalTotalDeduction`, `SalNetPayable`, `CreateDate`, `SalEmpName`) VALUES
+(2021, '1', 'MR. MAVANI MOHITBHAI HIMMATBHAI', 'ASSISTANT TEACHER', 'KNG89099', '9872778784', 17987998787, 'December', 2, 2, 0, 0, 1000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 1000, '2021-03-26 14:27:41', 'MAVANI MOHITBHAI'),
 (2021, '1', 'MR. MAVANI MOHITBHAI HIMMATBHAI', 'ASSISTANT TEACHER', 'KNG89099', '9872778784', 17987998787, 'January', 31, 31, 0, 0, 10000, 1000, 0, 0, 0, 0, 0, 0, 0, 0, 200, 1000, 200, 0, 12000, 400, 11600, '2021-03-21 19:49:59', 'MAVANI MOHITBHAI');
 
 --
@@ -402,7 +416,7 @@ ALTER TABLE `listmaster`
 -- Indexes for table `resultmaster`
 --
 ALTER TABLE `resultmaster`
-  ADD PRIMARY KEY (`ResAcademicYear`,`ResRollNo`,`ResSubName`);
+  ADD PRIMARY KEY (`ResAcademicYear`,`ResStandard`,`ResDivision`,`ResRollNo`,`ResGRNO`,`ResSubName`);
 
 --
 -- Indexes for table `standardmaster`
@@ -414,7 +428,7 @@ ALTER TABLE `standardmaster`
 -- Indexes for table `studentmaster`
 --
 ALTER TABLE `studentmaster`
-  ADD PRIMARY KEY (`StuStudentRollNo`,`StuStandard`,`StuDiv`);
+  ADD PRIMARY KEY (`StuGRNo`);
 
 --
 -- Indexes for table `submaster`
@@ -426,7 +440,7 @@ ALTER TABLE `submaster`
 -- Indexes for table `tbfeesmaster`
 --
 ALTER TABLE `tbfeesmaster`
-  ADD PRIMARY KEY (`FeesAcademicYear`,`FeesStudentGRNo`);
+  ADD PRIMARY KEY (`FeesStudentRollNo`,`FeesStudentGRNo`,`FeesAcademicYear`,`FeesStandard`,`FeesDivison`);
 
 --
 -- Indexes for table `timetable`
@@ -448,13 +462,13 @@ ALTER TABLE `ttbsalarymaster`
 -- AUTO_INCREMENT for table `exammaster`
 --
 ALTER TABLE `exammaster`
-  MODIFY `ExamId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ExamId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `listmaster`
 --
 ALTER TABLE `listmaster`
-  MODIFY `Sysid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `Sysid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `standardmaster`
@@ -466,7 +480,7 @@ ALTER TABLE `standardmaster`
 -- AUTO_INCREMENT for table `submaster`
 --
 ALTER TABLE `submaster`
-  MODIFY `SubId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `SubId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `timetable`

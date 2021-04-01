@@ -72,7 +72,7 @@ if(isset($_POST{'test_save'}))
 	
 	
 	
-	$sql="INSERT INTO `studentmaster` values(NOW(),'$StuUIDNo','$StuGRNo','$StuRollNo','$StuStudentName','	StuAcdemicyear',
+	$sql="INSERT INTO `studentmaster` values(NOW(),'$StuUIDNo','$StuGRNo','$StuRollNo','$StuStudentName','$StuAcdemicyear',
 	'$StuStandard','$StuDiv','$StuGender','$StuDOB','$StuDateOfAdmission','$StuParentMobileNumber1',
 	'$StuParentMobileNumber2','$StuHouseNo','$StuStreetName','$StuLocation','$StuCity','$StuDist','$StuBirthPlace','$StuAadharNo','$StuCategory','$StuCaste',
     '$StuLastschoolname','$StuBankname','$StuBankACno','$StuBankIFSCcode','$StuStatus','$StuStatusChangedDate','$file','$filename','$uploadfile','$uploadfilename')";
@@ -81,7 +81,12 @@ if(isset($_POST{'test_save'}))
      if($res)
      {
             echo "<script>alert('Data Inserted successfully...!!');</script>";
-           
+			$query2 = "INSERT INTO `tbfeesmaster`(`FeesStudentName`, `FeesStudentRollNo`, `FeesStudentGRNo`, `FeesStuDateOfAdmission`, `FeesStuParentMoNo`, `FeesAcademicYear`, `FeesStandard`, `FeesDivison`, `FeesJanuary`, `FeesFebruary`, `FeesMarch`, `FeesApril`, `FeesMay`, `FeesJune`, `FeesJuly`, `FeesAugust`, `FeesSeptember`, `FeesOctomber`, `FeesNovember`, `FeesDecember`, `FeesAnnual`, `FeesPaid`, `FeesDue`)";
+			$query2 .= " SELECT x.StuStudentName,x.StuRollNo,x.StuGRNo,x.StuDateOfAdmission,x.StuParentMobileNumber1,x.StuAcdemicyear,x.StuStandard,x.StuDiv,'0','0','0','0','0','0','0','0','0','0','0','0',y.AnnualFees,y.AnnualFees,'0'  FROM studentmaster x INNER JOIN tbfeessetmaster y ON X.StuGRNo = '".$StuGRNo."' AND y.AcademicYear ='" .$StuAcdemicyear. "' AND y.standard = '".$StuStandard."'";// AND x.StuAcdemicYear = '" . $_POST["cay"] . "' AND x.StuStandard = '" . $_POST["cstd"] . "' AND x.StuStatus = 'ACTIVE'; ";
+			if($conn->query($query2))
+			{
+
+			}
      }
      else
      {
@@ -435,7 +440,8 @@ if(isset($_POST{'test_save'}))
 											<div class="col-sm-4">
 												<select class="form-control" name="StuCategory">
 												<option class="form-check">GENERAL</option>	
-												<option class="form-check">OTP</option>	
+												<option class="form-check">OBC</option>	
+												<option class="form-check">SC</option>	
 												<option class="form-check">ST</option>	
 												</select> 
 												
