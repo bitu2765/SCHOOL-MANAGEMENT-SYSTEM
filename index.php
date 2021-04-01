@@ -126,6 +126,7 @@
         </div>
     </center>
 </body>
+<script src="log.js"></script>
 <script>
     function checkData() {
         if (document.getElementById('admin_pass').value == "" || document.getElementById('username').value == "") {
