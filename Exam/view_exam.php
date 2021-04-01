@@ -1,34 +1,36 @@
 <?php
-     include 'connection.php';
- 
+include 'connection.php';
+
 ?>
 <!doctype html>
 <html lang="en">
 
 <head>
-<script>
-function my_fun(str) {
+    <script>
+        function my_fun(str) {
 
-    if (window.XMLHttpRequest) {
-        xmlhttp = new XMLHttpRequest();
-    } else {
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
 
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById('poll').innerHTML = this.responseText;
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById('poll').innerHTML = this.responseText;
+                }
+            }
+            xmlhttp.open("GET", "helper.php?value=" + str, true);
+            xmlhttp.send();
         }
-    }
-    xmlhttp.open("GET", "helper.php?value=" + str, true);
-    xmlhttp.send();
-}
-  </script>
-   <!-- Required meta tags -->
+    </script>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/_custom.css">
+    <script src="../logg.js"></script>
+
     <!-- <link href="css/gapi.css" rel="stylesheet">
     <link rel="stylesheet" href="css/log.css">
     <link rel="stylesheet" href="css/stylefees.css">
@@ -52,10 +54,9 @@ function my_fun(str) {
 <body>
     <div class="wrapper">
         <nav id="sidebar" class="sidebar">
-        <div class="sidebar-content js-simplebar">
-                <a class="sidebar-brand">
-                    <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+            <div class="sidebar-content js-simplebar">
+                <a class="sidebar-brand" style="text-align: center;">
+                    <img src="../logo.png" alt="logo" s srcset="" height="100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -83,6 +84,56 @@ function my_fun(str) {
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary Certificate</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
+                    </li>
+
+                    <li class="sidebar-header">
+                    
+                    </li>
+                    <li class="sidebar-header">
+                        Student
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#addstu" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Student</span>
+                        </a>
+                        <ul id="addstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../student/Student.php">Add</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#attend" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Attendance</span>
+                        </a>
+                        <ul id="attend" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/index.php">Add</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/showAtd.php">View</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#fee" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Fees</span>
+                        </a>
+                        <ul id="fee" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/feesset.php">Fees Setup</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/payment.php">Fees Pay</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#pstu" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Promote Student </span>
+                        </a>
+                        <ul id="pstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add Academic</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-header">
+                        Student
                     </li>
                     <li class="sidebar-header">
                         Academic
@@ -145,7 +196,7 @@ function my_fun(str) {
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
                     </ul>
                 </div>
             </nav>
@@ -158,72 +209,73 @@ function my_fun(str) {
                         </div>
                         <div id="view_Exam" class="container mt-5 ">
                             <div class="cont">
-                                  <form  action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+                                <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 
-                                      <div class="row">
-                                          <div class="col-lg-4 col-md-4 col-sm-4 form-group">
-                                              <b>Select Year</b>
-                                              <select name="eview_year" id="Selstd" required="" class="form-control">
-                                                  <option value="">--Select Year --</option>
-                                                  <?php  $s2="SELECT DISTINCT ExamAcademicYear FROM `exammaster`ORDER BY ExamAcademicYear ASC";
-                                                    $results2 = $conn->query($s2);
-                                                    if ($results2->num_rows > 0) {
-                                                        while($row = $results2->fetch_assoc()){ ?>
-                                                  <option value="<?php echo $row['ExamAcademicYear'];?>">
-                                                      <?php echo $row['ExamAcademicYear'];?></option>
-                                                  <?php }}?>
-                                              </select>
-                                          </div>
-                                          <div class="col-lg-4 col-md-4 col-sm-4 form-group">
-                                              <b>Select Standard</b>
-                                              <select name="eview_std" id="Selstd" required="" class="form-control"
-                                                  onchange="my_fun(this.value)">
-                                                  <option value="">--Select Standard--</option>
-                                                  <?php  $s1="SELECT DISTINCT ExamStandard FROM `exammaster` ORDER BY ExamStandard ASC";
-                                                    $results1 = $conn->query($s1);
-                                                    if ($results1->num_rows > 0) {
-                                                        while($row = $results1->fetch_assoc()){ ?>
-                                                  <option value="<?php echo $row['ExamStandard'];?>">
-                                                      <?php echo $row['ExamStandard'];?></option>
-                                                  <?php }}?>
-                                              </select>
-                                          </div>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 form-group">
+                                            <b>Select Year</b>
+                                            <select name="eview_year" id="Selstd" required="" class="form-control">
+                                                <option value="">--Select Year --</option>
+                                                <?php $s2 = "SELECT DISTINCT ExamAcademicYear FROM `exammaster`ORDER BY ExamAcademicYear ASC";
+                                                $results2 = $conn->query($s2);
+                                                if ($results2->num_rows > 0) {
+                                                    while ($row = $results2->fetch_assoc()) { ?>
+                                                        <option value="<?php echo $row['ExamAcademicYear']; ?>">
+                                                            <?php echo $row['ExamAcademicYear']; ?></option>
+                                                <?php }
+                                                } ?>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 form-group">
+                                            <b>Select Standard</b>
+                                            <select name="eview_std" id="Selstd" required="" class="form-control" onchange="my_fun(this.value)">
+                                                <option value="">--Select Standard--</option>
+                                                <?php $s1 = "SELECT DISTINCT ExamStandard FROM `exammaster` ORDER BY ExamStandard ASC";
+                                                $results1 = $conn->query($s1);
+                                                if ($results1->num_rows > 0) {
+                                                    while ($row = $results1->fetch_assoc()) { ?>
+                                                        <option value="<?php echo $row['ExamStandard']; ?>">
+                                                            <?php echo $row['ExamStandard']; ?></option>
+                                                <?php }
+                                                } ?>
+                                            </select>
+                                        </div>
 
 
-                                          <!-- <div class="col-lg-4 col-md-4 col-sm-4 form-group" id="poll">
+                                        <!-- <div class="col-lg-4 col-md-4 col-sm-4 form-group" id="poll">
                                               <b>Select Subject</b>
                                               <select name="eview_sub" class="form-control" required>
                                                   <option value="">Select Subject</option>
                                               </select>
 
                                           </div> -->
-                                          <div class="col-lg-4 col-md-4 col-sm-4 form-group">
-                                              <b>Exam Type</b>
-                                              <select name="eview_type" id="Examtype" required="" class="form-control">
-                                              <option value="">--Select Exam Type--</option>
-                                                <?php  $c5="SELECT  DISTINCT ExamName FROM exammaster ORDER BY ExamName ASC";
-                                                 $result5 = $conn->query($c5);
-                                                    if ($result5->num_rows > 0) {
-                                                        while($row = $result5->fetch_assoc())
-                                                { ?>
-                                                <option value="<?php echo $row['ExamName'];?>">
-                                                    <?php echo $row['ExamName'];?></option>
-                                                <?php } } ?>
-                                              </select>
-                                          </div>
-                                          
-                                         
-                                      </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 form-group">
+                                            <b>Exam Type</b>
+                                            <select name="eview_type" id="Examtype" required="" class="form-control">
+                                                <option value="">--Select Exam Type--</option>
+                                                <?php $c5 = "SELECT  DISTINCT ExamName FROM exammaster ORDER BY ExamName ASC";
+                                                $result5 = $conn->query($c5);
+                                                if ($result5->num_rows > 0) {
+                                                    while ($row = $result5->fetch_assoc()) { ?>
+                                                        <option value="<?php echo $row['ExamName']; ?>">
+                                                            <?php echo $row['ExamName']; ?></option>
+                                                <?php }
+                                                } ?>
+                                            </select>
+                                        </div>
 
-                                      <div class="row mt-3">
-                                          <div class="col-lg-6 col-md-6 col-sm-6 form-group">
-                                              <input type="submit" name="Serch" class="btn btn-success" value="SERCH">
-                                          </div>
-                                          <div class="col-lg-6 col-md-6 col-sm-6 form-group">
-                                              <input type="reset" class="btn btn-outline-dark" value="CLEAR">
-                                          </div>
-                                      </div>
-                                  </form>
+
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                                            <input type="submit" name="Serch" class="btn btn-success" value="SERCH">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                                            <input type="reset" class="btn btn-outline-dark" value="CLEAR">
+                                        </div>
+                                    </div>
+                                </form>
                                 <table class="table caption-top table-hover">
                                     <caption>List of Exam</caption>
                                     <thead>
@@ -239,43 +291,42 @@ function my_fun(str) {
                                         </tr>
                                     </thead>
                                     <?php
-                                      if(isset($_POST{'Serch'}))
-                                      {
-                                              $ExamAcademicYear = $_POST['eview_year'];
-                                              $ExamStandard = $_POST['eview_std'];
-                                            //   $ExamSubjectName = $_POST['sub'];
-                                              $ExamName = $_POST['eview_type'];  
+                                    if (isset($_POST{
+                                    'Serch'})) {
+                                        $ExamAcademicYear = $_POST['eview_year'];
+                                        $ExamStandard = $_POST['eview_std'];
+                                        //   $ExamSubjectName = $_POST['sub'];
+                                        $ExamName = $_POST['eview_type'];
 
-            $sql = "SELECT `ExamId`, `ExamAcademicYear`, `ExamStandard`, `ExamSubjectName`, `ExamName`, `ExamTotalMarks`, `ExamPassingMarks` FROM `exammaster`
+                                        $sql = "SELECT `ExamId`, `ExamAcademicYear`, `ExamStandard`, `ExamSubjectName`, `ExamName`, `ExamTotalMarks`, `ExamPassingMarks` FROM `exammaster`
                      Where  `ExamAcademicYear`='$ExamAcademicYear' AND ExamStandard='$ExamStandard ' AND ExamName='$ExamName'";
-            $result = $conn->query($sql); 
-             if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()){ ?>
-                                    <tbody>
-                                        <tr>
+                                        $result = $conn->query($sql);
+                                        if ($result->num_rows > 0) {
+                                            while ($row = $result->fetch_assoc()) { ?>
+                                                <tbody>
+                                                    <tr>
 
-                                            <td><?php echo $row['ExamAcademicYear']?></td>
-                                            <td><?php echo $row['ExamStandard']?></td>
-                                            <td><?php echo $row['ExamSubjectName']?></td>
-                                            <td><?php echo $row['ExamName']?></td>
-                                            <td><?php echo $row['ExamTotalMarks']?></td>
-                                            <td><?php echo $row['ExamPassingMarks']?></td>
-                                            <td> <a class="btn btn-outline-danger" onclick='return checkdelete()'
-                                                    href="delete_exam.php?id=<?php echo $row['ExamId']; ?>"
-                                                    role="button">Delete</a></td>
-                                        </tr>
-                                        <?php }}
-                                    else{
-                                        echo '<br><div class="alert alert-danger" role="alert">
+                                                        <td><?php echo $row['ExamAcademicYear'] ?></td>
+                                                        <td><?php echo $row['ExamStandard'] ?></td>
+                                                        <td><?php echo $row['ExamSubjectName'] ?></td>
+                                                        <td><?php echo $row['ExamName'] ?></td>
+                                                        <td><?php echo $row['ExamTotalMarks'] ?></td>
+                                                        <td><?php echo $row['ExamPassingMarks'] ?></td>
+                                                        <td> <a class="btn btn-outline-danger" onclick='return checkdelete()' href="delete_exam.php?id=<?php echo $row['ExamId']; ?>" role="button">Delete</a></td>
+                                                    </tr>
+                                        <?php }
+                                        } else {
+                                            echo '<br><div class="alert alert-danger" role="alert">
                                         Exam Does Not Exist.
                                         </div>';
-                                    }} ?>
-                                        <script>
-                                        function checkdelete() {
-                                            return confirm('Are you sure you want to delete this record!');
                                         }
+                                    } ?>
+                                        <script>
+                                            function checkdelete() {
+                                                return confirm('Are you sure you want to delete this record!');
+                                            }
                                         </script>
-                                    </tbody>
+                                                </tbody>
                                 </table>
                             </div>
                         </div>
@@ -298,18 +349,12 @@ function my_fun(str) {
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
     <script src="js/app.js"></script>
     <script src="js/indapp.js"></script>
     <script src="addpay.js"></script>
-    <script>
-            document.getElementById("logout").onclick = function(){
-                var l =window.history.length-2;
-                window.history.go(l-2*l);
-            }
-        </script>
+
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

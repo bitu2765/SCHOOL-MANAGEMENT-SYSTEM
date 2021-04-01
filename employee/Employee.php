@@ -1,10 +1,10 @@
 <?php
 //error_reporting(0);
-include("../connection_to_db.php");
-$conn = mysqli_connect($servername, $username, $password,$dbname);;
+include("./connectdb.php");
+
 $error = "";
 if (isset($_POST{
-'test_save'})) {
+	'test_save'})) {
 	$EmpNo = $_POST['EmpNo'];
 	$EmpNamePrefix = strtoupper($_POST['EmpNamePrefix']);
 	$EmpFirstName = strtoupper($_POST['EmpFirstName']);
@@ -62,8 +62,9 @@ if (isset($_POST{
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
 	<title>Form Layouts | AdminKit Demo</title>
+	<script src="../logg.js"></script>
 
-	<link href="css/app.css" rel="stylesheet">
+	<link href="../css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 </head>
@@ -72,23 +73,22 @@ if (isset($_POST{
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar">
 			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand">
-					<span width="30px">&nbsp;</span>
-					<img src="../logo.png" alt="logo" srcset="" height="90px">
-				</a>
+			<a class="sidebar-brand" style="text-align: center;" >
+                    <img src="../logo.png" alt="logo" s srcset="" height="100px">
+                </a>
 
 				<ul class="sidebar-nav">
 					<li class="sidebar-header">
 						Employee
 					</li>
 
-					<li class="sidebar-item active active">
+					<li class="sidebar-item active">
 						<a href="#emp" data-toggle="collapse" class="sidebar-link collapsed">
 							<i class="align-middle"></i> <span class="align-middle">Employee</span>
 						</a>
 						<ul id="emp" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-							<li class="sidebar-item active"><a class="sidebar-link" href="Employee.php">Add</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="employee-view.php">View</a></li>
+							<li class="sidebar-item active"><a class="sidebar-link" href="../employee/Employee.php">Add</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../employee/employee-view.php">View</a></li>
 						</ul>
 					</li>
 
@@ -104,6 +104,55 @@ if (isset($_POST{
 						</ul>
 					</li>
 					<li class="sidebar-header">
+                        
+						</li>
+					<li class="sidebar-header">
+						Student
+					</li>
+
+					<li class="sidebar-item ">
+						<a href="#addstu" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Student</span>
+						</a>
+						<ul id="addstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../student/Student.php">Add</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item ">
+						<a href="#attend" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Attendance</span>
+						</a>
+						<ul id="attend" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../attendance/index.php">Add</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../attendance/showAtd.php">View</a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item ">
+						<a href="#fee" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Fees</span>
+						</a>
+						<ul id="fee" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../fee/feesset.php">Fees Setup</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../fee/payment.php">Fees Pay</a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item ">
+						<a href="#pstu" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Promote Student </span>
+						</a>
+						<ul id="pstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add Academic</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-header">
+                        
+						</li>
+					<li class="sidebar-header">
 						Academic
 					</li>
 
@@ -112,7 +161,7 @@ if (isset($_POST{
 							<i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
 						</a>
 						<ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-							<li class="sidebar-item"><a class="sidebar-link" href="./Exam/add_sub.php">Add Subject</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
 						</ul>
 					</li>
 					<li class="sidebar-item ">
@@ -120,8 +169,8 @@ if (isset($_POST{
 							<i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
 						</a>
 						<ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-							<li class="sidebar-item"><a class="sidebar-link" href="./Exam/exam_create.php">Create Exam</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="./Exam/view_exam.php">Delete Exam</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">Delete Exam</a></li>
 						</ul>
 					</li>
 					<li class="sidebar-item ">
@@ -129,13 +178,13 @@ if (isset($_POST{
 							<i class="align-middle"></i> <span class="align-middle">Result Managment</span>
 						</a>
 						<ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-							<li class="sidebar-item"><a class="sidebar-link" href="./Exam/result_entry.php">Result Entry</a>
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result Entry</a>
 							</li>
-							<li class="sidebar-item"><a class="sidebar-link" href="./Exam/genrate.php">Result Data</a>
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
 							</li>
-							<li class="sidebar-item"><a class="sidebar-link" href="./Exam/result_serch.php">Check For Result</a>
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Check For Result</a>
 							</li>
-							<li class="sidebar-item"><a class="sidebar-link" href="./Exam/result_declare.php">Declare Result</a>
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
 							</li>
 						</ul>
 					</li>
@@ -144,11 +193,11 @@ if (isset($_POST{
 							<i class="align-middle"></i> <span class="align-middle">Time Table</span>
 						</a>
 						<ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-							<li class="sidebar-item"><a class="sidebar-link" href="./Exam/add_time_table.php"> Add Time
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
 									Table</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="./Exam/view_time_table.php">View Time
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
 									Table</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="./Exam/delete_time_table.php">Delete Time Table</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
 
 						</ul>
 					</li>
@@ -165,7 +214,7 @@ if (isset($_POST{
 
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav navbar-align">
-					<button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+						<button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
 					</ul>
 				</div>
 			</nav>
@@ -396,14 +445,8 @@ if (isset($_POST{
 		</div>
 	</div>
 
-	<script src="../payroll/js/app.js"></script>
-	<script src="../payroll/js/indapp.js"></script>
-	<script>
-		document.getElementById("logout").onclick = function() {
-			var l = window.history.length - 2;
-			window.history.go(l - 2 * l);
-		}
-	</script>
+	<script src="../js/app.js"></script>
+	<script src="../js/indapp.js"></script>
 </body>
 
 </html>

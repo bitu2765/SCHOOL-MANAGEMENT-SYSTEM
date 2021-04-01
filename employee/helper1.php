@@ -1,7 +1,7 @@
 <?php
 //load_data.php  
-include("../connection_to_db.php");
-$connect = mysqli_connect($servername, $username, $password,$dbname);
+include("./connectdb.php");
+
 $val1 = $_GET['value'];
 $val = rtrim($val1, ", ");
 $post = array();

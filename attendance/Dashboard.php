@@ -4,18 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./payroll/css/app.css">
-    <link href="./payroll/css/gapi.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./payroll/css/app.css"> -->
+    <!-- <link href="./payroll/css/gapi.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="app.css">
+    <link href="gapi.css" rel="stylesheet">
     <title>Dashboard</title>
+    <style>
+        .container{
+            background-color: white;
+            padding: 50px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="wrapper">
-        <nav id="sidebar" class="sidebar">
+    <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="logo.png" alt="logo" srcset="" height="90px">
+                    <img src="../logo.png" alt="logo" srcset="" height="90px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -28,22 +36,47 @@
                             <i class="align-middle"></i> <span class="align-middle">Employee</span>
                         </a>
                         <ul id="emp" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="./employee/Employee.php">Add</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="./employee/employee-view.php">View</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../employee/Employee.php">Add</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../employee/employee-view.php">View</a></li>
                         </ul>
                     </li>
 
-                    <li class="sidebar-item">
+                    <li class="sidebar-item active">
                         <a href="#payr" data-toggle="collapse" class="sidebar-link collapsed">
                             <i class="align-middle"></i> <span class="align-middle">Payroll</span>
                         </a>
                         <ul id="payr" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="./payroll/addpayroll.php">Add Pay</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="./payroll/viewpayroll.php">View Pay</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="./payroll/Salarycert.php">Salary Certificate</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="./payroll/payrepo.php">Month Report</a></li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="../payroll/addpayroll.php">Add Pay</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/viewpayroll.php">View Pay</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/salcertgen.php">Salary Certificate</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
                     </li>
+
+                    <li class="sidebar-header">
+						Student
+					</li>
+
+					<li class="sidebar-item ">
+						<a href="#addstu" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Student</span>
+						</a>
+						<ul id="addstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../student/Student.php">Add</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a></li>
+						</ul>
+					</li>
+                    
+                    <li class="sidebar-item ">
+                        <a href="#attend" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Attendance</span>
+                        </a>
+                        <ul id="attend" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/index.php">Add</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/showAtd.php">View</a></li>
+                        </ul>
+                    </li>
+
                     <li class="sidebar-header">
                         Academic
                     </li>
@@ -53,7 +86,7 @@
                             <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
                         </a>
                         <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="./Exam/add_sub.php">Add Subject</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
                         </ul>
                     </li>
                     <li class="sidebar-item ">
@@ -61,8 +94,8 @@
                             <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
                         </a>
                         <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="./Exam/exam_create.php">Create Exam</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="./Exam/view_exam.php">Delete Exam</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">Delete Exam</a></li>
                         </ul>
                     </li>
                     <li class="sidebar-item ">
@@ -70,13 +103,13 @@
                             <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
                         </a>
                         <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="./Exam/result_entry.php">Result Entry</a>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result Entry</a>
                             </li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="./Exam/genrate.php">Result Data</a>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
                             </li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="./Exam/result_serch.php">Check For Result</a>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Check For Result</a>
                             </li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="./Exam/result_declare.php">Declare Result</a>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
                             </li>
                         </ul>
                     </li>
@@ -85,11 +118,11 @@
                             <i class="align-middle"></i> <span class="align-middle">Time Table</span>
                         </a>
                         <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="./Exam/add_time_table.php"> Add Time
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
                                     Table</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="./Exam/view_time_table.php">View Time
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
                                     Table</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="./Exam/delete_time_table.php">Delete Time Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
 
                         </ul>
                     </li>
@@ -106,14 +139,21 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
                     </ul>
                 </div>
             </nav>
 
             <main class="content">
                 <div class="container-fluid p-0">
-                    <div class="row mb-2 mb-xl-3">
+                    <div class="container">
+
+                        <p>header_register_callback</p>
+                        <p>header_register_callback</p>
+                        <p>header_register_callback</p>
+                        <p>header_register_callback</p>
+                        <p>header_register_callback</p>
+                        <p>header_register_callback</p>
                     </div>
                 </div>
             </main>
@@ -133,18 +173,14 @@
         </div>
 
         <script>
-            document.getElementById("logout").onclick = function(){
-                var l =window.history.length-2;
-                window.history.go(l-2*l);
+            document.getElementById("logout").onclick = function() {
+                var l = window.history.length - 2;
+                window.history.go(l - 2 * l);
             }
         </script>
 
 
     </div>
-
-
-
-
     <script src="./payroll/js/app.js"></script>
     <script src="./payroll/js/indapp.js"></script>
 </body>

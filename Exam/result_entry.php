@@ -1,6 +1,6 @@
 <?php
-     include 'connection.php';
- 
+include 'connection.php';
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,23 +14,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/_custom.css">
-    <!-- <link href="css/gapi.css" rel="stylesheet">
+    <link href="css/gapi.css" rel="stylesheet">
     <link rel="stylesheet" href="css/log.css">
     <link rel="stylesheet" href="css/stylefees.css">
     <link rel="stylesheet" href="css/ui_d.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous">
     </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous">
     </script>
 
-    Bootstrap CSS
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="../logg.js"></script>
 
     <title>RESULT entry</title>
 
@@ -39,10 +36,9 @@
 <body>
     <div class="wrapper">
         <nav id="sidebar" class="sidebar">
-        <div class="sidebar-content js-simplebar">
-                <a class="sidebar-brand">
-                    <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+            <div class="sidebar-content js-simplebar">
+                <a class="sidebar-brand" style="text-align: left;">
+                    <img src="../logo.png" alt="logo" s srcset="" height="100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -72,6 +68,57 @@
                         </ul>
                     </li>
                     <li class="sidebar-header">
+                    <li class="sidebar-header">
+                        
+                        </li>
+                    </li>
+                    <li class="sidebar-header">
+                        Student
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#addstu" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Student</span>
+                        </a>
+                        <ul id="addstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../student/Student.php">Add</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#attend" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Attendance</span>
+                        </a>
+                        <ul id="attend" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/index.php">Add</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/showAtd.php">View</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#fee" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Fees</span>
+                        </a>
+                        <ul id="fee" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/feesset.php">Fees Setup</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/payment.php">Fees Pay</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#pstu" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Promote Student </span>
+                        </a>
+                        <ul id="pstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add Academic</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-header">
+
+                    </li>
+                    <li class="sidebar-header">
                         Academic
                     </li>
 
@@ -97,11 +144,11 @@
                             <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
                         </a>
                         <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/result_entry.php">Result Entry</a>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result Entry</a>
                             </li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
                             </li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Check For Result</a>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/result_serch.php">Check For Result</a>
                             </li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
                             </li>
@@ -133,7 +180,6 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
                     </ul>
                 </div>
             </nav>
@@ -148,79 +194,75 @@
 
                             <div class="cont">
                                 <?php
-                                            if(isset($_POST{'Res_submit'}))
-                                {
-                                        $ResAcademicYear= $_POST['Res_Year'];
-                                        $ResStandard= $_POST['Res_std'];
-                                        $ResExamName= $_POST['Res_type'];
-                                        $ResDivision= $_POST['Res_div'];
-                                        $ResSubName = $_POST['Res_sub'];
-                                        $ResTotalMarks= $_POST['Res_totalmarks'];
-                                        $ResPassingMarks = $_POST['Res_passingmarks'];
+                                if (isset($_POST{
+                                    'Res_submit'})) {
+                                    $ResAcademicYear = $_POST['Res_Year'];
+                                    $ResStandard = $_POST['Res_std'];
+                                    $ResExamName = $_POST['Res_type'];
+                                    $ResDivision = $_POST['Res_div'];
+                                    $ResSubName = $_POST['Res_sub'];
+                                    $ResTotalMarks = $_POST['Res_totalmarks'];
+                                    $ResPassingMarks = $_POST['Res_passingmarks'];
 
 
-                                        $marks = $_POST['marks'];
-                                        $rollno = $_POST['rn'];
-                                        $name = $_POST['name'];
+                                    $marks = $_POST['marks'];
+                                    $rollno = $_POST['rn'];
+                                    $grn = $_POST['gn'];
+                                    $name = $_POST['name'];
 
 
-                                        $query12 = 'INSERT INTO `resultmaster`( `ResAcademicYear`,
-                                        `ResStandard`, `ResDivision`, `ResRollNo`,
-                                            `ResStudentName`, `ResSubName`, `ResExamName`, `ResTotalMarks`, `ResPassingMarks`, `ResMarksObtained`, 
-                                            `ResStatus`)  VALUES ';
-                            
-                                        $query_parts = array();
-                            
-                                        for ($x = 0; $x < count($rollno); $x++) {
+                                    $query12 = 'INSERT INTO `resultmaster`(`ResAcademicYear`, `ResStandard`,
+                                        `ResDivision`, `ResRollNo`, `ResGRNO`,
+                                         `ResSubName`, `ResStudentName`, `ResExamName`,
+                                          `ResTotalMarks`, `ResPassingMarks`, `ResMarksObtained`, `ResStatus`) VALUES ';
 
-                                            if($marks[$x]>=$ResPassingMarks)
-                                            {
-                                                $ResStatus = "PASS";
-                                            }
-                                            else{
-                                                $ResStatus = "FAIL";
-                                            }
-                                            $query_parts[] = "('$ResAcademicYear','$ResStandard','$ResDivision','" . $rollno[$x] . "','" . $name[$x] . "','$ResSubName',
+                                    $query_parts = array();
+
+                                    for ($x = 0; $x < count($rollno); $x++) {
+
+                                        if ($marks[$x] >= $ResPassingMarks) {
+                                            $ResStatus = "PASS";
+                                        } else {
+                                            $ResStatus = "FAIL";
+                                        }
+                                        $query_parts[] = "('$ResAcademicYear','$ResStandard','$ResDivision','" . $rollno[$x] . "','" . $grn[$x] . "','" . $name[$x] . "','$ResSubName',
                                             '$ResExamName', '$ResTotalMarks','$ResPassingMarks','" . $marks[$x] . "','$ResStatus')";
-                                        }
-                                        $query12 .= implode(',', $query_parts);
-                                        if (mysqli_query($conn, $query12)) {
-                                        
-                                        }
-                                            $exe = mysqli_query($conn, $query12); 
-                                            if($query12)
-                                            {
-                                                $sub = trim($ResSubName," ");
-                                                $var = 1;
-                                                $str123 =  "UPDATE `exammaster` SET IsResultEntered='$var' WHERE ExamAcademicYear='$ResAcademicYear'AND ExamStandard='$ResStandard' AND ExamSubjectName='$sub' AND ExamName='$ResExamName'";
-                                                $query123 = mysqli_query($conn,$str123);
-                                                
-                                                if($query123){
-                                                    echo '<div class="alert alert-success" role="alert">
+                                    }
+                                    $query12 .= implode(',', $query_parts);
+                                    if (mysqli_query($conn, $query12)) {
+                                    }
+                                    $exe = mysqli_query($conn, $query12);
+                                    if ($query12) {
+                                        $sub = trim($ResSubName, " ");
+                                        $var = 1;
+                                        $str123 =  "UPDATE `exammaster` SET IsResultEntered='$var' WHERE ExamAcademicYear='$ResAcademicYear'AND ExamStandard='$ResStandard' AND ExamSubjectName='$sub' AND ExamName='$ResExamName'";
+                                        $query123 = mysqli_query($conn, $str123);
+
+                                        if ($query123) {
+                                            echo '<div class="alert alert-success" role="alert">
                                                     Entry Added Sucessfully.
                                                     </div>';
-                                                }
-                                                
-                                            }
-                                }
-            ?>
-                                <script>
-                                function my_fun(str) {
-
-                                    if (window.XMLHttpRequest) {
-                                        xmlhttp = new XMLHttpRequest();
-                                    } else {
-                                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                                    }
-
-                                    xmlhttp.onreadystatechange = function() {
-                                        if (this.readyState == 4 && this.status == 200) {
-                                            document.getElementById('poll').innerHTML = this.responseText;
                                         }
                                     }
-                                    xmlhttp.open("GET", "helper.php?value=" + str, true);
-                                    xmlhttp.send();
                                 }
+                                ?>
+                                <script>
+                                    function my_fun(str) {
+
+                                        if (window.XMLHttpRequest) {
+                                            xmlhttp = new XMLHttpRequest();
+                                        } else {
+                                            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                                        }
+
+                                        xmlhttp.onreadystatechange = function() {
+                                            if (this.readyState == 4 && this.status == 200) {
+                                                document.getElementById('poll').innerHTML = this.responseText;
+                                            }
+                                        }
+                                        xmlhttp.open("GET", "helper.php?value=" + str, true);
+                                        xmlhttp.send();
+                                    }
                                 </script>
                                 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
                                     <div class="row">
@@ -228,28 +270,29 @@
                                             <b>Academic Year</b>
                                             <select name="Res_Year" required="" id="SELECTYEAR" class="form-control">
                                                 <option value="">--Select Academic Year--</option>
-                                                <?php  $c1="SELECT DISTINCT ExamAcademicYear FROM `exammaster`ORDER BY ExamAcademicYear ASC";
-                                                    $result = $conn->query($c1);
-                                                    if ($result->num_rows > 0) {
-                                                        while($row = $result->fetch_assoc()){ ?>
-                                                <option value="<?php echo $row['ExamAcademicYear'];?>"><?php echo $row['ExamAcademicYear'];?>
-                                                </option>
-                                                <?php }}?>
+                                                <?php $c1 = "SELECT DISTINCT ExamAcademicYear FROM `exammaster`ORDER BY ExamAcademicYear ASC";
+                                                $result = $conn->query($c1);
+                                                if ($result->num_rows > 0) {
+                                                    while ($row = $result->fetch_assoc()) { ?>
+                                                        <option value="<?php echo $row['ExamAcademicYear']; ?>"><?php echo $row['ExamAcademicYear']; ?>
+                                                        </option>
+                                                <?php }
+                                                } ?>
                                             </select>
                                         </div>
 
                                         <div class="col-lg-6 col-md-6 col-sm-6 form-group">
                                             <b> Standard</b>
-                                            <select name="Res_std" required="" id="selStd" class="form-control"
-                                                onchange="my_fun(this.value)">
+                                            <select name="Res_std" required="" id="selStd" class="form-control" onchange="my_fun(this.value)">
                                                 <option value="">--Select Standard--</option>
-                                                <?php  $c2="SELECT DISTINCT ExamStandard FROM `exammaster` ORDER BY ExamStandard ASC";
-                                                    $results1 = $conn->query($c2);
-                                                    if ($results1->num_rows > 0) {
-                                                    while($row = $results1->fetch_assoc()){ ?>
-                                                <option value="<?php echo $row['ExamStandard'];?>"><?php echo $row['ExamStandard'];?>
-                                                </option>
-                                                <?php }}?>
+                                                <?php $c2 = "SELECT DISTINCT ExamStandard FROM `exammaster` ORDER BY ExamStandard ASC";
+                                                $results1 = $conn->query($c2);
+                                                if ($results1->num_rows > 0) {
+                                                    while ($row = $results1->fetch_assoc()) { ?>
+                                                        <option value="<?php echo $row['ExamStandard']; ?>"><?php echo $row['ExamStandard']; ?>
+                                                        </option>
+                                                <?php }
+                                                } ?>
                                             </select>
                                         </div>
                                     </div>
@@ -259,27 +302,28 @@
                                             <b>Exam Name</b>&nbsp:&nbsp&nbsp
                                             <select name="Res_type" required="" id="selType" class="form-control">
                                                 <option value="">--Select Exam Type--</option>
-                                                <?php  $c5="SELECT  DISTINCT ExamName FROM exammaster ORDER BY ExamName ASC";
-                                            $result5 = $conn->query($c5);
-                                            if ($result5->num_rows > 0) {
-                                                while($row = $result5->fetch_assoc())
-                                                { ?>
-                                                <option value="<?php echo $row['ExamName'];?>">
-                                                    <?php echo $row['ExamName'];?></option>
-                                                <?php } } ?>
+                                                <?php $c5 = "SELECT  DISTINCT ExamName FROM exammaster ORDER BY ExamName ASC";
+                                                $result5 = $conn->query($c5);
+                                                if ($result5->num_rows > 0) {
+                                                    while ($row = $result5->fetch_assoc()) { ?>
+                                                        <option value="<?php echo $row['ExamName']; ?>">
+                                                            <?php echo $row['ExamName']; ?></option>
+                                                <?php }
+                                                } ?>
                                             </select>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 form-group">
                                             <b>Division</b>
                                             <select name="Res_div" required="" id="selDiv" class="form-control">
                                                 <option value="">--Select Division--</option>
-                                                <?php  $m4="SELECT `Value` FROM listmaster WHERE Parameter IN  ('Division')";
+                                                <?php $m4 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('Division')";
                                                 $result3 = $conn->query($m4);
                                                 if ($result3->num_rows > 0) {
-                                                    while($row = $result3->fetch_assoc()){ ?>
-                                                <option value="<?php echo $row['Value'];?>"><?php echo $row['Value'];?>
-                                                </option>
-                                                <?php }}?>
+                                                    while ($row = $result3->fetch_assoc()) { ?>
+                                                        <option value="<?php echo $row['Value']; ?>"><?php echo $row['Value']; ?>
+                                                        </option>
+                                                <?php }
+                                                } ?>
                                             </select>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 form-group">
@@ -292,39 +336,38 @@
 
                                     <div class="row mt-3">
                                         <div class="col-lg-3 col-md-3 col-sm-3 form-group">
-                                            <button type="button" class="btn btn-outline-success" id="searchbtn"
-                                                name="Res_Search" onclick="get_stu()">Search</button>
+                                            <button type="button" class="btn btn-outline-success" id="searchbtn" name="Res_Search" onclick="get_stu()">Search</button>
                                         </div>
                                     </div>
 
                                     <script>
-                                    function get_stu() {
+                                        function get_stu() {
 
-                                        document.getElementById("sbt").style.display = "block";
-                                        document.getElementById("searchbtn").style.display = "none";
+                                            document.getElementById("sbt").style.display = "block";
+                                            document.getElementById("searchbtn").style.display = "none";
 
 
-                                        var year = document.getElementById("SELECTYEAR").value;
-                                        var std = document.getElementById('selStd').value;
-                                        var type = document.getElementById('selType').value;
-                                        var div = document.getElementById('selDiv').value;
-                                        var sub = document.getElementById('poll').value;
+                                            var year = document.getElementById("SELECTYEAR").value;
+                                            var std = document.getElementById('selStd').value;
+                                            var type = document.getElementById('selType').value;
+                                            var div = document.getElementById('selDiv').value;
+                                            var sub = document.getElementById('poll').value;
 
-                                        if (window.XMLHttpRequest) {
-                                            xmlhttp = new XMLHttpRequest();
-                                        } else {
-                                            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                                        }
-
-                                        xmlhttp.onreadystatechange = function() {
-                                            if (this.readyState == 4 && this.status == 200) {
-                                                document.getElementById('poll1').innerHTML = this.responseText;
+                                            if (window.XMLHttpRequest) {
+                                                xmlhttp = new XMLHttpRequest();
+                                            } else {
+                                                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                                             }
+
+                                            xmlhttp.onreadystatechange = function() {
+                                                if (this.readyState == 4 && this.status == 200) {
+                                                    document.getElementById('poll1').innerHTML = this.responseText;
+                                                }
+                                            }
+                                            xmlhttp.open("GET", "helper1.php?Res_Year=" + year + "&Res_std=" + std +
+                                                "&Res_type=" + type + "&Res_div=" + div + "&Res_sub=" + sub, true);
+                                            xmlhttp.send();
                                         }
-                                        xmlhttp.open("GET", "helper1.php?Res_Year=" + year + "&Res_std=" + std +
-                                            "&Res_type=" + type + "&Res_div=" + div + "&Res_sub=" + sub, true);
-                                        xmlhttp.send();
-                                    }
                                     </script>
 
                                     <div id="poll1">
@@ -332,12 +375,11 @@
 
                                     <div class="row mt-3">
                                         <div class="col-lg-6 col-md-6 col-sm-6 form-group">
-                                            <input type="submit" name="Res_submit" id="sbt" class="btn btn-success"
-                                                value="ADD" onclick='return checkdelete()'>
+                                            <input type="submit" name="Res_submit" id="sbt" class="btn btn-success" value="ADD" onclick='return checkdelete()'>
                                             <script>
-                                            function checkdelete() {
-                                                return confirm('PLEASE COMFIRM  MARKS!');
-                                            }
+                                                function checkdelete() {
+                                                    return confirm('PLEASE COMFIRM  MARKS!');
+                                                }
                                             </script>
                                         </div>
                                     </div>
@@ -351,9 +393,11 @@
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row text-muted">
+
                         <div class="col-6 text-left">
                             <p class="mb-0">
-                                <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High School</strong></a> &copy;
+                                <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High
+                                        School</strong></a> &copy;
                             </p>
                         </div>
                     </div>
@@ -361,24 +405,12 @@
             </footer>
         </div>
     </div>
-    <script>
-    window.onload = function() {
-        document.getElementById("sbt").style.display = "none";
-        document.getElementById("searchbtn").style.display = "block";
-    };
-    </script>
-    <script>
-            document.getElementById("logout").onclick = function(){
-                var l =window.history.length-2;
-                window.history.go(l-2*l);
-            }
-        </script>
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
     <script src="js/app.js"></script>
     <script src="js/indapp.js"></script>

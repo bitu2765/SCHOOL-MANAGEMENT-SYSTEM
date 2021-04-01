@@ -71,14 +71,13 @@
 </head>
 
 <body>
-    <header class="top-navbar">
-    <nav class="navbar navbar-expand-lg bg-light">
+    <header class="top-navbar ">
+        <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-                <!-- <a class="navbar-brand" href="index.php">
-                    <img src="images/logo.png" alt="SZ WAGHELA HIGH SCHOOL" />
-                </a> -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host"
-                    aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="index.php">
+                    <img src="logo.png" alt="SZ WAGHELA HIGH SCHOOL" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -100,23 +99,24 @@
             </div>
         </nav>
     </header>
+    <span id="pstd" ></span>
     <center>
         <div class="login">
             <h1>LOGIN</h1>
-            <form method="POST" onsubmit="return checkData()" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                <div class="input-container">
-                    <i class="fa fa-user icon"></i>
-                    <input class="input-field form-control" type="text" placeholder="Username / Email" name="username" id="username" autofocus autocomplete="off" value="<?php if (isset($_POST['login_admin'])) {
-                                                                                                                                                                                $_POST['username'];
-                                                                                                                                                                            } ?>">
-                </div>
+            <!-- <form method="POST" onsubmit="return checkData()" action=""> -->
+            <div class="input-container">
+                <i class="fa fa-user icon"></i>
+                <input type="text" class="form-control" name="uas" id="username" placeholder="Username">
+            </div>
 
-                <div class="input-container form-group">
-                    <i class="fa fa-key icon"></i>
-                    <input class="input-field form-control" autocomplete="off" type="password" placeholder="Password" name="admin_pass" id="admin_pass">
-                </div>
-                <input type="submit" class="btns" value="LOGIN" name="login_admin">
-            </form>
+            <div class="input-container form-group">
+                <i class="fa fa-key icon"></i>
+                <input class="input-field form-control" autocomplete="off" type="password" placeholder="Password" name="admin_pass" id="userpass">
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-success" id="login_admin">Login</button>
+            </div>
+            <!-- </form> -->
         </div>
         <div class="login" style="margin: 10px; padding: 10px;">
             <p>Can't Access Account? <a href="#" style="font-weight:bold;color: #4c5a7d;">Reset Password</a></p>
@@ -125,25 +125,6 @@
             <p>Don't have Account? <a href="#" style="font-weight:bold;color: #4c5a7d;">Create Now</a></p>
         </div>
     </center>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row text-muted">
-                <div class="col-6 text-left">
-                    <p class="mb-0">
-                        <a href="#" class="text-muted"><strong>Shree SZ Vaghela High School</strong></a> &copy;
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
 </body>
 <script>
     function checkData() {
@@ -154,27 +135,6 @@
         return true;
     }
 </script>
-<?php
-if (isset($_POST['login_admin'])) {
-    //including database connection file
-    include('./connection_to_db.php');
-    $con = mysqli_connect($servername,$username,$password,$dbname);
-    $username = mysqli_real_escape_string($con, $_POST['username']);
-    $pass = mysqli_real_escape_string($con, $_POST['admin_pass']);
-    $password = md5($pass);
-
-    $sql = "SELECT * FROM admin_credentials WHERE username = '$username'";
-    $res = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($res);
-
-    if ($username == $row['username'] && $password == $row['password']) {
-        echo "<script>alert('Admin login successfull');
-                          window.location.href = 'Dashboard.php';
-                </script>";
-    } else {
-        echo "<script>alert('Username or password is invalid');</script>";
-    }
-}
-?>
+<script src="log.js"></script>
 
 </html>

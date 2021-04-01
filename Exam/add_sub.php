@@ -29,6 +29,7 @@ include("../Exam/connection.php");
     Bootstrap CSS
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
+        <script src="../logg.js"></script>
 
 
 </head>
@@ -37,9 +38,8 @@ include("../Exam/connection.php");
     <div class="wrapper">
         <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
-                <a class="sidebar-brand">
-                    <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+                <a class="sidebar-brand" style="text-align: center;">
+                    <img src="../logo.png" alt="logo" s srcset="" height="100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -68,6 +68,55 @@ include("../Exam/connection.php");
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
                     </li>
+                    <li class="sidebar-header">
+                        
+                        </li>
+                    <li class="sidebar-header">
+                        Student
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#addstu" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Student</span>
+                        </a>
+                        <ul id="addstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../student/Student.php">Add</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#attend" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Attendance</span>
+                        </a>
+                        <ul id="attend" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/index.php">Add</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/showAtd.php">View</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#fee" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Fees</span>
+                        </a>
+                        <ul id="fee" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/feesset.php">Fees Setup</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/payment.php">Fees Pay</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#pstu" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Promote Student </span>
+                        </a>
+                        <ul id="pstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add Academic</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-header">
+                        
+                        </li>
+
                     <li class="sidebar-header">
                         Academic
                     </li>
@@ -130,7 +179,7 @@ include("../Exam/connection.php");
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
                     </ul>
                 </div>
             </nav>
@@ -146,7 +195,7 @@ include("../Exam/connection.php");
                                 <?php
 
                                 if (isset($_POST{
-                                'ADD'})) {
+                                    'ADD'})) {
                                     $SubStandard = $_POST['add_std'];
                                     $SubName = $_POST['add_name'];
                                     $SubTotalMarks = $_POST['add_totalmarks'];
@@ -250,12 +299,7 @@ include("../Exam/connection.php");
     <script src="js/indapp.js"></script>
     <script src="addpay.js"></script>
     <script src="js/modules/sidebar.js"></script>
-    <script>
-        document.getElementById("logout").onclick = function() {
-            var l = window.history.length - 2;
-            window.history.go(l - 2 * l);
-        }
-    </script>
+
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

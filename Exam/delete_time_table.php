@@ -12,6 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/_custom.css">
+    <script src="../logg.js"></script>
+
     <!-- <link href="css/gapi.css" rel="stylesheet">
     <link rel="stylesheet" href="css/log.css">
     <link rel="stylesheet" href="css/stylefees.css">
@@ -38,7 +40,7 @@
         <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+                    <img src="../logo.png" alt="logo" srcset="" height="100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -67,6 +69,55 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
                     </li>
+                    <li class="sidebar-header">
+                        
+                        </li>
+                    <li class="sidebar-header">
+						Student
+					</li>
+
+					<li class="sidebar-item ">
+						<a href="#addstu" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Student</span>
+						</a>
+						<ul id="addstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../student/Student.php">Add</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a></li>
+						</ul>
+					</li>
+
+                    <li class="sidebar-item ">
+                        <a href="#attend" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Attendance</span>
+                        </a>
+                        <ul id="attend" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/index.php">Add</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/showAtd.php">View</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#fee" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Fees</span>
+                        </a>
+                        <ul id="fee" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/feesset.php">Fees Setup</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/payment.php">Fees Pay</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#pstu" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Promote Student </span>
+                        </a>
+                        <ul id="pstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add Academic</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-header">
+                        
+                        </li>
                     <li class="sidebar-header">
                         Academic
                     </li>
@@ -252,13 +303,6 @@
     <script src="js/indapp.js"></script>
     <script src="addpay.js"></script>
     <script src="js/modules/sidebar.js"></script>
-    <script>
-            document.getElementById("logout").onclick = function(){
-                var l =window.history.length-2;
-                window.history.go(l-2*l);
-            }
-        </script>
-
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>

@@ -1,6 +1,6 @@
-<?php  
-     include 'connection.php';
- 
+<?php
+include 'connection.php';
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,6 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/_custom.css">
+    <script src="../logg.js"></script>
+
     <!-- <link href="css/gapi.css" rel="stylesheet">
     <link rel="stylesheet" href="css/log.css">
     <link rel="stylesheet" href="css/stylefees.css">
@@ -36,10 +38,9 @@
 <body>
     <div class="wrapper">
         <nav id="sidebar" class="sidebar">
-        <div class="sidebar-content js-simplebar">
-                <a class="sidebar-brand">
-                    <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+            <div class="sidebar-content js-simplebar">
+                <a class="sidebar-brand" style="text-align: center;">
+                    <img src="../logo.png" alt="logo" s srcset="" height="100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -68,6 +69,55 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
                     </li>
+                    <li class="sidebar-header">
+                        
+                        </li>
+                    <li class="sidebar-header">
+                        Student
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#addstu" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Student</span>
+                        </a>
+                        <ul id="addstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../student/Student.php">Add</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#attend" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Attendance</span>
+                        </a>
+                        <ul id="attend" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/index.php">Add</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/showAtd.php">View</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#fee" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Fees</span>
+                        </a>
+                        <ul id="fee" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/feesset.php">Fees Setup</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/payment.php">Fees Pay</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#pstu" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Promote Student </span>
+                        </a>
+                        <ul id="pstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add Academic</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-header">
+                        
+                        </li>
                     <li class="sidebar-header">
                         Academic
                     </li>
@@ -129,7 +179,7 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
                     </ul>
                 </div>
             </nav>
@@ -142,78 +192,79 @@
                         </div>
                         <div class="container mt-5 ">
                             <div class="cont">
-                                <?php 
-                                      if(isset($_POST{'declare'}))
-                                      {
-                                             $DeclareAcademicYear=$_POST['declare_Year'];
-                                              $DeclareStandard = $_POST['declare_Std'];
-                                              $DeclareExamName = $_POST['declare_Exam'];
-                                               
-                                             
-                                              
-                                      $query = "UPDATE `exammaster` SET IsResultVisible= 1
+                                <?php
+                                if (isset($_POST{
+                                'declare'})) {
+                                    $DeclareAcademicYear = $_POST['declare_Year'];
+                                    $DeclareStandard = $_POST['declare_Std'];
+                                    $DeclareExamName = $_POST['declare_Exam'];
+
+
+
+                                    $query = "UPDATE `exammaster` SET IsResultVisible= 1
                                       WHERE ExamAcademicYear='$DeclareAcademicYear' AND ExamStandard='$DeclareStandard' AND ExamName='$DeclareExamName'";
-                                      
-                                      $result=mysqli_query($conn,$query);
-                                      
-                                          if($result)
-                                          {
-                                              echo '<div class="alert alert-success" role="alert">
+
+                                    $result = mysqli_query($conn, $query);
+
+                                    if ($result) {
+                                        echo '<div class="alert alert-success" role="alert">
                                                  Result Has Been Declare.!! Sucessfully.
                                           </div>';
-                                          }
-                                          
-                                      }
-                             
-                            ?>
+                                    }
+                                }
+
+                                ?>
 
                                 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
                                     <div class="mb-3">
                                         <b>Academic Year</b>
                                         <select name="declare_Year" class="form-control" required="">
                                             <option value="">--Select AcademicYear--</option>
-                                            <?php  $m1="SELECT DISTINCT`ResAcademicYear` FROM `resultmaster`ORDER BY ResAcademicYear ASC";
-                                                $results2 = $conn->query($m1);
-                                                if ($results2->num_rows > 0) {   
-                                                    while($row = $results2->fetch_assoc()){ ?>
-                                            <option value="<?php echo $row['ResAcademicYear'];?>">
-                                                <?php echo $row['ResAcademicYear'];?>
-                                            </option>
-                                            <?php }}?>
+                                            <?php $m1 = "SELECT DISTINCT`ResAcademicYear` FROM `resultmaster`ORDER BY ResAcademicYear ASC";
+                                            $results2 = $conn->query($m1);
+                                            if ($results2->num_rows > 0) {
+                                                while ($row = $results2->fetch_assoc()) { ?>
+                                                    <option value="<?php echo $row['ResAcademicYear']; ?>">
+                                                        <?php echo $row['ResAcademicYear']; ?>
+                                                    </option>
+                                            <?php }
+                                            } ?>
                                         </select>
                                     </div>
                                     <div class="mb-3">
                                         <b>Standard</b>
                                         <select name="declare_Std" id="Estd" required="" class="form-control">
                                             <option value="">--Select Standard--</option>
-                                            <?php  $m3="SELECT DISTINCT `ResStandard` FROM `resultmaster`ORDER BY ResStandard ASC";
-                                                $results1 = $conn->query($m3);
-                                                if ($results1->num_rows > 0) {
-                                                    while($row = $results1->fetch_assoc()){ ?>
-                                            <option value="<?php echo $row['ResStandard'];?>">
-                                                <?php echo $row['ResStandard'];?></option>
-                                            <?php }}?>
+                                            <?php $m3 = "SELECT DISTINCT `ResStandard` FROM `resultmaster`ORDER BY ResStandard ASC";
+                                            $results1 = $conn->query($m3);
+                                            if ($results1->num_rows > 0) {
+                                                while ($row = $results1->fetch_assoc()) { ?>
+                                                    <option value="<?php echo $row['ResStandard']; ?>">
+                                                        <?php echo $row['ResStandard']; ?></option>
+                                            <?php }
+                                            } ?>
                                         </select>
                                     </div>
                                     <div class="mb-3">
                                         <b>Exam Name</b>
                                         <select name="declare_Exam" id="Estd" required="" class="form-control">
                                             <option value="">--Select Exam--</option>
-                                            <?php  $m2="SELECT DISTINCT `ResExamName` FROM `resultmaster`ORDER BY ResExamName ASC";
-                                                $results1 = $conn->query($m2);
-                                                if ($results1->num_rows > 0) {
-                                                    while($row = $results1->fetch_assoc()){ ?>
-                                            <option value="<?php echo $row['ResExamName'];?>">
-                                                <?php echo $row['ResExamName'];?></option>
-                                            <?php }}?>
+                                            <?php $m2 = "SELECT DISTINCT `ResExamName` FROM `resultmaster`ORDER BY ResExamName ASC";
+                                            $results1 = $conn->query($m2);
+                                            if ($results1->num_rows > 0) {
+                                                while ($row = $results1->fetch_assoc()) { ?>
+                                                    <option value="<?php echo $row['ResExamName']; ?>">
+                                                        <?php echo $row['ResExamName']; ?></option>
+                                            <?php }
+                                            } ?>
                                         </select>
                                     </div>
-                                    <button type="submit" name="declare" class="btn btn-success"onclick='return checkdelete()'>DECLARE</button>
+                                    <button type="submit" name="declare" class="btn btn-success" onclick='return checkdelete()'>DECLARE</button>
                                     <script>
-                                            function checkdelete() {
-                                                return confirm('Make Sure That All Subject Entry Are Made Sucefully !!!');
-                                            }
-                                            </script>
+                                        function checkdelete() {
+                                            return confirm('Make Sure That All Subject Entry Are Made Sucefully !!!');
+                                        }
+                                    </script>
                                 </form>
                             </div>
                         </div>
@@ -235,18 +286,12 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
     <script src="js/app.js"></script>
     <script src="js/indapp.js"></script>
     <script src="addpay.js"></script>
-    <script>
-            document.getElementById("logout").onclick = function(){
-                var l =window.history.length-2;
-                window.history.go(l-2*l);
-            }
-        </script>
+
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>

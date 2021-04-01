@@ -12,6 +12,8 @@ include("connectdb.php");
     <link rel="stylesheet" href="css/log.css">
     <link rel="stylesheet" href="css/stylefees.css">
     <link rel="stylesheet" href="css/ui_d.css">
+    <script src="../logg.js"></script>
+
     <!-- Latest compiled and minified CSS
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -32,7 +34,7 @@ include("connectdb.php");
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+                    <img src="../logo.png" alt="logo" srcset="" height="100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -55,12 +57,61 @@ include("connectdb.php");
                             <i class="align-middle"></i> <span class="align-middle">Payroll</span>
                         </a>
                         <ul id="payr" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item active"><a class="sidebar-link" href="addpayroll.php">Add Pay</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="viewpayroll.php">View Pay</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="Salarycert.php">Salary Certificate</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="payrepo.php">Month Report</a></li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="../payroll/addpayroll.php">Add Pay</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/viewpayroll.php">View Pay</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary Certificate</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
                     </li>
+                    <li class="sidebar-header">
+                        
+                        </li>
+                    <li class="sidebar-header">
+						Student
+					</li>
+
+					<li class="sidebar-item ">
+						<a href="#addstu" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Student</span>
+						</a>
+						<ul id="addstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../student/Student.php">Add</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a></li>
+						</ul>
+					</li>
+                    
+                    <li class="sidebar-item ">
+                        <a href="#attend" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Attendance</span>
+                        </a>
+                        <ul id="attend" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/index.php">Add</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/showAtd.php">View</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#fee" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Fees</span>
+                        </a>
+                        <ul id="fee" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/feesset.php">Fees Setup</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/payment.php">Fees Pay</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#pstu" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Promote Student </span>
+                        </a>
+                        <ul id="pstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add Academic</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-header">
+                        
+                        </li>
                     <li class="sidebar-header">
                         Academic
                     </li>
@@ -385,7 +436,7 @@ include("connectdb.php");
                                         <div class="col-md-4 text-center">
                                         </div>
                                         <div class="col-md-4 text-center">
-                                            <button type="button" class="btn btn-lg btn-pill btn-success" id="subd">Save</button>
+                                            <button type="button" class="btn btn-lg  btn-success" id="subd">Save</button>
                                         </div>
                                     </div>
                                 </div>
@@ -416,12 +467,6 @@ include("connectdb.php");
     <script src="js/app.js"></script>
     <script src="js/indapp.js"></script>
     <script src="addpay.js"></script>
-    <script>
-            document.getElementById("logout").onclick = function(){
-                var l =window.history.length-2;
-                window.history.go(l-2*l);
-            }
-        </script>
 </body>
 
 </html>

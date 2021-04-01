@@ -40,11 +40,11 @@
             $sql="";
             if(isset($_POST["id"]))
             {
-                $sql = "SELECT * FROM ttbsalarymaster WHERE year = '" . $_POST["ye"] . "' AND SalMonthname = '" . $_POST["mo"] . "';";
+                $sql = "SELECT * FROM ttbsalarymaster WHERE year = '" . $_POST["ye"] . "' AND SalMonthname = '" . $_POST["mo"] . "'AND SalEmpNo = '" . $_POST["id"] . "';";
             }
             else
             {
-                $sql = "SELECT * FROM ttbsalarymaster WHERE year = '" . $_POST["ye"] . "' AND SalMonthname = '" . $_POST["mo"] . "'AND SalEmpNo = '" . $_POST["id"] . "';";
+                $sql = "SELECT * FROM ttbsalarymaster WHERE year = '" . $_POST["ye"] . "' AND SalMonthname = '" . $_POST["mo"] . "';";
             }
             $data = mysqli_query($conn, $sql);
             $total = mysqli_num_rows($data);

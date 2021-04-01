@@ -69,6 +69,7 @@
         <table class="table table-hover">
             <tr>
                 <th>Rollno</th>
+                <th>GR NO</th>
                 <th>Student Name</th>
                 <th>Enter Marks</th>
             </tr>
@@ -78,12 +79,16 @@
                 $result11 = mysqli_query($conn,$sql);
                     while($row11 = mysqli_fetch_assoc($result11)){
                         $rollno = $row11['StuStudentRollNo'];
+                        $grno= $row11['StuGRNo'];
                         $name= $row11['StuStudentName'];
 
               ?>
             <tr>
                 <td> <input type="hidden" name="rn[]" value="<?php echo $rollno ?>">
                     <?php echo $rollno ?>
+                </td>
+                <td> <input type="hidden" name="gn[]" value="<?php echo $grno ?>">
+                    <?php echo $grno ?>
                 </td>
                 <td><input type="hidden" name="name[]" value="<?php echo $name ?>">
                     <?php echo $name ?>

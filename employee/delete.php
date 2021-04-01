@@ -1,6 +1,5 @@
 <?php
-include("../connection_to_db.php");
-$conn = mysqli_connect($servername, $username, $password,$dbname);
+include("./connectdb.php");
 //error_reporting(0);
 $EmpNo=$_GET['EmpNo'];
 $query="DELETE FROM employeemaster where EmpNo=$EmpNo";

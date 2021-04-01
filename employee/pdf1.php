@@ -1,8 +1,8 @@
 <?php
 
 require_once '../fpdf/fpdf.php';
- include("../connection_to_db.php");
-$conn =mysqli_connect($servername, $username, $password,$dbname); 
+ include("./connectdb.php");
+ 
 $sql="SELECT * FROM employeemaster";
 $data=mysqli_query($conn,$sql);
 

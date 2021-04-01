@@ -1,6 +1,6 @@
-<?php  
- include './connection.php';       
- ?>
+<?php
+include './connection.php';
+?>
 
 <!doctype html>
 <html lang="en">
@@ -12,6 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/_custom.css">
+    <script src="../logg.js"></script>
+
     <!-- <link href="css/gapi.css" rel="stylesheet">
     <link rel="stylesheet" href="css/log.css">
     <link rel="stylesheet" href="css/stylefees.css">
@@ -35,10 +37,9 @@
 <body>
     <div class="wrapper">
         <nav id="sidebar" class="sidebar">
-        <div class="sidebar-content js-simplebar">
-                <a class="sidebar-brand">
-                    <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+            <div class="sidebar-content js-simplebar">
+                <a class="sidebar-brand" style="text-align: center;">
+                    <img src="../logo.png" alt="logo" s srcset="" height="100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -67,6 +68,55 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
                     </li>
+                    <li class="sidebar-header">
+                        
+                        </li>
+                    <li class="sidebar-header">
+                        Student
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#addstu" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Student</span>
+                        </a>
+                        <ul id="addstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../student/Student.php">Add</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#attend" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Attendance</span>
+                        </a>
+                        <ul id="attend" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/index.php">Add</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/showAtd.php">View</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#fee" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Fees</span>
+                        </a>
+                        <ul id="fee" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/feesset.php">Fees Setup</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/payment.php">Fees Pay</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#pstu" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Promote Student </span>
+                        </a>
+                        <ul id="pstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add Academic</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-header">
+                        
+                        </li>
                     <li class="sidebar-header">
                         Academic
                     </li>
@@ -129,7 +179,7 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
                     </ul>
                 </div>
             </nav>
@@ -143,95 +193,94 @@
                         <div id="add" class="container mt-5 ">
                             <div class="cont">
                                 <?php
-                             if(isset($_POST{'tt_submit'}))
-                                {
-                                        $TtAcademicYear=$_POST['Tt_year'];
-                                        $TtStandard = $_POST['Tt_std'];
-                                        $TtDiv=$_POST['Tt_div'];     
-                                        $statusMsg = '';
+                                if (isset($_POST{
+                                'tt_submit'})) {
+                                    $TtAcademicYear = $_POST['Tt_year'];
+                                    $TtStandard = $_POST['Tt_std'];
+                                    $TtDiv = $_POST['Tt_div'];
+                                    $statusMsg = '';
 
                                     // File upload path
                                     $fileName = basename($_FILES["file"]["name"]);
-                                    $fileType = pathinfo($fileName,PATHINFO_EXTENSION);
+                                    $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
 
 
-                                        // Allow certain file formats
-                                        $allowTypes = array('jpg','png','PDF');
-                                        if(in_array($fileType, $allowTypes)){
-                                            
-                                            $image = $_FILES['file']['tmp_name']; 
-                                            $imgContent = addslashes(file_get_contents($image));
+                                    // Allow certain file formats
+                                    $allowTypes = array('jpg', 'png', 'PDF');
+                                    if (in_array($fileType, $allowTypes)) {
 
-                                        
-                                            // Upload file to server
-                                        
-                                                // Insert image file name into database
-                                                $insert="INSERT INTO timetable(`TtAcademicYear`, `TtStandard`, `TtDiv`, `TtUpload`)
+                                        $image = $_FILES['file']['tmp_name'];
+                                        $imgContent = addslashes(file_get_contents($image));
+
+
+                                        // Upload file to server
+
+                                        // Insert image file name into database
+                                        $insert = "INSERT INTO timetable(`TtAcademicYear`, `TtStandard`, `TtDiv`, `TtUpload`)
                                                 VALUES ( '$TtAcademicYear', '$TtStandard ', '$TtDiv','$imgContent')";
-                                                $result=mysqli_query($conn,$insert);
+                                        $result = mysqli_query($conn, $insert);
 
-                                                if($result){
-                                                    $statusMsg =  '<div class="alert alert-success" role="alert">  The file '.$fileName.' has been uploaded successfully.</div>';
-                                                }else{
-                                                    $statusMsg =  ' <div class=" col alert alert-danger" role="alert">File upload failed, please  Use Image Less Than 1 MB. </div>   ';  
-                                                } 
-                                            }else{
-                                                $statusMsg = '<div class=" col alert alert-danger" role="alert">  Sorry, only JPG, PNG files are allowed to upload.  </div>  ';  
-                                            }
-                                            
+                                        if ($result) {
+                                            $statusMsg =  '<div class="alert alert-success" role="alert">  The file ' . $fileName . ' has been uploaded successfully.</div>';
+                                        } else {
+                                            $statusMsg =  ' <div class=" col alert alert-danger" role="alert">File upload failed, please  Use Image Less Than 1 MB. </div>   ';
+                                        }
+                                    } else {
+                                        $statusMsg = '<div class=" col alert alert-danger" role="alert">  Sorry, only JPG, PNG files are allowed to upload.  </div>  ';
                                     }
-                                    else{
-                                        $statusMsg = '';  
-                                    }
-                                                
-                                    // Display status message
-                                    echo $statusMsg;
-?>
-                                <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post"
-                                    enctype="multipart/form-data">
+                                } else {
+                                    $statusMsg = '';
+                                }
+
+                                // Display status message
+                                echo $statusMsg;
+                                ?>
+                                <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
 
                                     <div class="col ">
                                         <div class="col-lg-6 col-md-6 col-sm-6 form-group">
                                             <b>Select Year</b>
-                                            <select name="Tt_year" required="" id="Selstd" required=""
-                                                class="form-control">
+                                            <select name="Tt_year" required="" id="Selstd" required="" class="form-control">
                                                 <option value="">--Select Year--</option>
-                                                <?php  $a1="SELECT `Value` FROM listmaster WHERE Parameter IN  ('AcadmicYear');";
-                                                                            $res1 = $conn->query($a1);
-                                                                        if ($res1->num_rows > 0) {
-                                                                            while($row = $res1->fetch_assoc()){ ?>
-                                                <option value="<?php echo $row['Value'];?>">
-                                                    <?php echo $row['Value'];?>
-                                                </option>
-                                                <?php }}?>
+                                                <?php $a1 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('AcadmicYear');";
+                                                $res1 = $conn->query($a1);
+                                                if ($res1->num_rows > 0) {
+                                                    while ($row = $res1->fetch_assoc()) { ?>
+                                                        <option value="<?php echo $row['Value']; ?>">
+                                                            <?php echo $row['Value']; ?>
+                                                        </option>
+                                                <?php }
+                                                } ?>
                                             </select>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 form-group">
                                             <b> Standard</b>
                                             <select name="Tt_std" required="" id="selStd" class="form-control">
                                                 <option value="">--Select Standard--</option>
-                                                <?php  $c2="SELECT `Value` FROM listmaster WHERE Parameter IN  ('Standard');";
-                                                    $results1 = $conn->query($c2);
-                                                    if ($results1->num_rows > 0) {
-                                                    while($row = $results1->fetch_assoc()){ ?>
-                                                <option value="<?php echo $row['Value'];?>">
-                                                    <?php echo $row['Value'];?>
-                                                </option>
-                                                <?php }}?>
+                                                <?php $c2 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('Standard');";
+                                                $results1 = $conn->query($c2);
+                                                if ($results1->num_rows > 0) {
+                                                    while ($row = $results1->fetch_assoc()) { ?>
+                                                        <option value="<?php echo $row['Value']; ?>">
+                                                            <?php echo $row['Value']; ?>
+                                                        </option>
+                                                <?php }
+                                                } ?>
                                             </select>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 form-group">
                                             <b>Division</b>
                                             <select name="Tt_div" required="" id="selDiv" class="form-control">
                                                 <option value="">--Select Division--</option>
-                                                <?php  $m4="SELECT `Value` FROM listmaster WHERE Parameter IN  ('Division')";
+                                                <?php $m4 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('Division')";
                                                 $result3 = $conn->query($m4);
                                                 if ($result3->num_rows > 0) {
-                                                    while($row = $result3->fetch_assoc()){ ?>
-                                                <option value="<?php echo $row['Value'];?>">
-                                                    <?php echo $row['Value'];?>
-                                                </option>
-                                                <?php }}?>
+                                                    while ($row = $result3->fetch_assoc()) { ?>
+                                                        <option value="<?php echo $row['Value']; ?>">
+                                                            <?php echo $row['Value']; ?>
+                                                        </option>
+                                                <?php }
+                                                } ?>
                                             </select>
 
                                         </div>
@@ -239,15 +288,13 @@
 
                                             <div class="mb-3">
                                                 <label for="formFile" class="form-label"></label>
-                                                <input class="form-control" required="" type="file" id="formFile"
-                                                    name="file">
+                                                <input class="form-control" required="" type="file" id="formFile" name="file">
                                             </div>
 
                                         </div>
                                         <div class="row mt-3">
                                             <div class="col-lg-6 col-md-6 col-sm-6 form-group">
-                                                <input type="submit" name="tt_submit" id="sbt" class="btn btn-success"
-                                                    value="SUBMIT">
+                                                <input type="submit" name="tt_submit" id="sbt" class="btn btn-success" value="SUBMIT">
                                             </div>
 
                                         </div>
@@ -273,19 +320,12 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
     <script src="js/app.js"></script>
     <script src="js/indapp.js"></script>
     <script src="addpay.js"></script>
     <script src="js/modules/sidebar.js"></script>
-    <script>
-            document.getElementById("logout").onclick = function(){
-                var l =window.history.length-2;
-                window.history.go(l-2*l);
-            }
-        </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
