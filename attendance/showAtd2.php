@@ -5,7 +5,7 @@ if (isset($_POST['submit_atd'])) {
     $dateStr = date("d-m-Y", strtotime($date));
     $class = mysqli_real_escape_string($con, trim($_POST['atd_standard']));
     $section = mysqli_real_escape_string($con, trim($_POST['cls_section']));
-    $sql = "SELECT AttStudentName,AttStudentRollNo,AttStandard,AttDiv,AttDate,AttPresentAbsent FROM attendancetrans
+    $sql = "SELECT AttStudentName,StuRollNo,AttStandard,AttDiv,AttDate,AttPresentAbsent FROM attendancetrans
             WHERE AttStandard = '$class' AND AttDiv = '$section' AND AttDate = '$date';";
     $res = mysqli_query($con, $sql);
 } else {
@@ -26,7 +26,7 @@ if (isset($_POST['submit_atd'])) {
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.23/af-2.3.5/b-1.6.5/b-colvis-1.6.5/b-flash-1.6.5/b-html5-1.6.5/b-print-1.6.5/cr-1.5.3/fc-3.3.2/fh-3.1.8/kt-2.6.1/r-2.2.7/rg-1.1.2/rr-1.2.7/sc-2.0.3/sb-1.0.1/sp-1.2.2/sl-1.3.1/datatables.js">
     </script>
-        <script src="../logg.js"></script>
+    <script src="../logg.js"></script>
 
     <link rel="stylesheet" href="../css/app.css">
     <link href="../css/gapi.css" rel="stylesheet">
@@ -74,8 +74,8 @@ if (isset($_POST['submit_atd'])) {
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Student
                     </li>
@@ -120,8 +120,8 @@ if (isset($_POST['submit_atd'])) {
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Academic
                     </li>
@@ -174,8 +174,6 @@ if (isset($_POST['submit_atd'])) {
                 </ul>
             </div>
         </nav>
-
-
         <div class="main">
             <nav class="navbar navbar-expand navbar-light navbar-bg">
                 <a class="sidebar-toggle d-flex">
@@ -220,7 +218,7 @@ if (isset($_POST['submit_atd'])) {
                                 ?>
                                     <tr style="text-align:center">
                                         <td><?php echo date("d-m-Y", strtotime($row["AttDate"])); ?></td>
-                                        <td><?php echo $row["AttStudentRollNo"]; ?></td>
+                                        <td><?php echo $row["StuRollNo"]; ?></td>
                                         <td><?php echo $row["AttStudentName"]; ?></td>
                                         <td><?php echo $row["AttStandard"]; ?></td>
                                         <td><?php echo $row["AttDiv"]; ?></td>
@@ -234,7 +232,6 @@ if (isset($_POST['submit_atd'])) {
                     </div>
                 </div>
             </main>
-
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row text-muted">
@@ -258,7 +255,7 @@ if (isset($_POST['submit_atd'])) {
                     data: 'AttDate'
                 }, // index - 0
                 {
-                    data: 'AttStudentRollNo'
+                    data: 'StuRollNo'
                 },
                 {
                     data: 'AttStudentName'
@@ -288,6 +285,5 @@ if (isset($_POST['submit_atd'])) {
 </script>
 <script src="../js/app.js"></script>
 <script src="../js/indapp.js"></script>
-
 
 </html>

@@ -13,15 +13,15 @@ if (isset($_POST['UploadAttendance']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['absentArrays']) && is_array($_POST['absentArrays'])) {
         foreach ($absentArray as $num) {
             if ($sendSms == "Y") {
-                $sql = "INSERT INTO attendancetrans(AttStudentName,AttStudentRollNo,AttStandard,AttDiv,
+                $sql = "INSERT INTO attendancetrans(AttStudentName,StuRollNo,AttStandard,AttDiv,
                     AttDate,AttSendSMS,AttPresentAbsent) 
-                    VALUES((SELECT StuStudentName FROM studentmaster WHERE StuStudentRollNo = '$num' AND StuStandard = '$class' AND StuDiv = '$section'),
+                    VALUES((SELECT StuStudentName FROM studentmaster WHERE StuRollNo = '$num' AND StuStandard = '$class' AND StuDiv = '$section'),
                             '$num','$class','$section','$date',true,'Absent')";
                 if (!mysqli_query($con, $sql)) {
                     die("unable to upload absent student!!,M=Y");
                 }
                 //sendig message to parents
-                // $sql = "SELECT StuParentMobileNumber1 FROM StudentMaster WHERE StuStudentRollNo = '$num'";
+                // $sql = "SELECT StuParentMobileNumber1 FROM StudentMaster WHERE StuRollNo = '$num'";
                 // $result = mysqli_query($con,$sql);
                 // $row = mysqli_fetch_assoc($result);
 
@@ -29,11 +29,11 @@ if (isset($_POST['UploadAttendance']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
                 // $messgeToParents = "Your Ward is Absent on $date";      
             } 
             if ($sendSms == "N") {
-                $sql = "INSERT INTO attendancetrans(AttStudentName,AttStudentRollNo,AttStandard,AttDiv,
-                AttDate,AttPresentAbsent) VALUES((SELECT StuStudentName FROM studentmaster WHERE StuStudentRollNo = '$num' AND StuStandard = '$class' AND StuDiv = '$section'),
+                $sql = "INSERT INTO attendancetrans(AttStudentName,StuRollNo,AttStandard,AttDiv,
+                AttDate,AttPresentAbsent) VALUES((SELECT StuStudentName FROM studentmaster WHERE StuRollNo = '$num' AND StuStandard = '$class' AND StuDiv = '$section'),
                 '$num','$class','$section','$date','Absent')";
                 if (!mysqli_query($con, $sql)) {
-                    die("unable to upload absent student ,M=No!!");
+                    die("unable to upload absent student,M=No!!");
                 }
             }
         }
@@ -42,9 +42,10 @@ if (isset($_POST['UploadAttendance']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     // present students
     if (isset($_POST['attend']) && is_array($_POST['attend'])) {
         foreach ($_POST['attend'] as $att) {
-            $sql = "INSERT INTO attendancetrans(AttStudentName,AttStudentRollNo,AttStandard,AttDiv,AttDate) 
-            VALUES((SELECT StuStudentName FROM StudentMaster WHERE StuStudentRollNo = '$att' AND StuStandard = '$class' AND StuDiv = '$section'),
+            $sql = "INSERT INTO attendancetrans(AttStudentName,StuRollNo,AttStandard,AttDiv,AttDate) 
+            VALUES((SELECT StuStudentName FROM StudentMaster WHERE StuRollNo = '$att' AND StuStandard = '$class' AND StuDiv = '$section'),
             '$att','$class','$section','$date')";
+
             if (!mysqli_query($con, $sql)) {
                 die("unable to upload present student!!");
             }
