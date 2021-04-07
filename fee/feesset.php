@@ -218,17 +218,6 @@ include("./connectdb.php");
                                                 </div>
                                             </div>
                                             <div class="row" style="margin-bottom: 10px;">
-                                                <div class="col-3 font-weight-bold">Divison</div>
-                                                <div class="col-5">
-                                                    <select class="form-control" name="fsetdiv" id="fsdi">
-                                                        <option value="0" selected>Select Fees Divison</option>
-                                                        <?php
-                                                        include("getdivfeeset.php");
-                                                        ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="row" style="margin-bottom: 10px;">
                                                 <div class="col-3 font-weight-bold">Annual Fees</div>
                                                 <div class="col-4">
                                                     <input type="number" class="form-control" name="feede" id="fsde">

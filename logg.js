@@ -5,7 +5,7 @@ document.getElementById("logout").onclick = function() {
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             if (this.responseText == "success") {
-                window.location.href = "../lndex.php";
+                window.location.href = "../index.php";
             }
         }
     };

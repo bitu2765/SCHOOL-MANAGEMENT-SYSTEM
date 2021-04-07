@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2021 at 03:25 AM
+-- Generation Time: Apr 07, 2021 at 10:25 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -112,7 +112,8 @@ INSERT INTO `exammaster` (`ExamId`, `ExamAcademicYear`, `ExamStandard`, `ExamSub
 (2, '2020-21', 8, 'maths', 'First Exam', 30, 12, 0, 0),
 (3, '2020-21', 8, 'maths', 'Test', 30, 12, 1, 0),
 (4, '2020-21', 9, 'maths', 'Test', 30, 12, 1, 0),
-(5, '2020-21', 9, 'maths', 'First Exam', 100, 35, 0, 0);
+(5, '2020-21', 9, 'maths', 'First Exam', 100, 35, 0, 0),
+(6, '2020-21', 9, 'maths', 'Test', 100, 33, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -243,11 +244,11 @@ CREATE TABLE `studentmaster` (
 --
 
 INSERT INTO `studentmaster` (`date`, `StuUIDNo`, `StuGRNo`, `StuRollNo`, `StuStudentName`, `StuAcdemicyear`, `StuStandard`, `StuDiv`, `StuGender`, `StuDOB`, `StuDateOfAdmission`, `StuParentMobileNumber1`, `StuParentMobileNumber2`, `StuHouseNo`, `StuStreetName`, `StuLocation`, `StuCity`, `StuDist`, `StuBirthPlace`, `StuAadharNo`, `StuCategory`, `StuCaste`, `StuLastschoolname`, `StuBankname`, `StuBankACno`, `StuBankIFSCcode`, `StuStatus`, `StuStatusChangedDate`, `file`, `filename`, `uploadfile`, `uploadfilename`) VALUES
+('2021-04-01 12:05:00', '10000', '1000001', 12, 'SUDANI BHAUTIK DHANJIBHAI', '2019-20', 9, 'A', 'MALE', '2021-04-15', '2021-04-08', '9873476546', '9872778784', '102', '703 - YOGINATH ROW H', 'SURAT', 'ANAND', '', 'SASAN', '123456789012', 'GENERAL', 'HINDU', 'AKS', 'SBI', '1223333', 'xs221111', 'ACTIVE', '2021-04-29', 'apple-touch-icon.png', 'logo.png', 'bg-sky.jpg', 'bg-sky.jpg'),
 ('2021-03-10 19:51:40', '1000', '10002', 1, 'BHAUTIK', '2020-21', 9, 'A', 'male', '2021-03-16', '2021-03-16', '1234567890', '987654321', '44', '25425dgsg', 'gdrggrg', 'dgdtgtd', 'gergreg', 'fdfdge', '123456789098', 'OPEN', 'OPEN', 'nmsbn', 'sbi', ',.n,kwn', 'bah8276', 'ACTIVE', '2021-03-16', 'gdffgdgdfgggggggggggggggggggggggggggggggfgddgf', 'gdffbdfgd', 'dfgfgfdgfdfgd', 'dfgfgdgfgg'),
 ('2021-03-10 19:51:40', '1000', '10003', 2, 'UDDHAV', '2020-21', 9, 'A', 'male', '2021-03-16', '2021-03-16', '1234567890', '987654321', '44', '25425dgsg', 'gdrggrg', 'dgdtgtd', 'gergreg', 'fdfdge', '123456789098', 'OPEN', 'OPEN', 'nmsbn', 'sbi', ',.n,kwn', 'bah8276', 'ACTIVE', '2021-03-16', 'gdffgdgdfgggggggggggggggggggggggggggggggfgddgf', 'gdffbdfgd', 'dfgfgfdgfdfgd', 'dfgfgdgfgg'),
 ('2021-03-10 19:51:40', '1000', '10004', 1, 'KEYUR', '2021-22', 10, 'A', 'male', '2021-03-16', '2021-03-16', '1234567890', '987654321', '44', '25425dgsg', 'gdrggrg', 'dgdtgtd', 'gergreg', 'fdfdge', '123456789098', 'OPEN', 'OPEN', 'nmsbn', 'sbi', ',.n,kwn', 'bah8276', 'ACTIVE', '2021-03-16', 'gdffgdgdfgggggggggggggggggggggggggggggggfgddgf', 'gdffbdfgd', 'dfgfgfdgfdfgd', 'dfgfgdgfgg'),
-('2021-03-10 19:51:40', '1000', '10005', 1, 'MAYUR', '2021-22', 12, 'A', 'male', '2021-03-16', '2021-03-16', '1234567890', '987654321', '44', '25425dgsg', 'gdrggrg', 'dgdtgtd', 'gergreg', 'fdfdge', '123456789098', 'OPEN', 'OPEN', 'nmsbn', 'sbi', ',.n,kwn', 'bah8276', 'ACTIVE', '2021-03-16', 'gdffgdgdfgggggggggggggggggggggggggggggggfgddgf', 'gdffbdfgd', 'dfgfgfdgfdfgd', 'dfgfgdgfgg'),
-('2021-04-01 06:52:16', '8908', '80007', 1, 'SUDANI BHAUTIK DHANJIBHAI', '2019-20', 9, 'A', 'MALE', '2021-04-01', '2021-04-01', '9873476546', '9872778784', '102', '703 - YOGINATH ROW H', 'SURAT', 'ANAND', '', 'SASAN', '7890654321', 'GENERAL', 'HINDU', 'AKS', 'SBI', '97889698', 'bnvy7657', 'ACTIVE', '2021-04-01', 'bg-sky.jpg', 'bg-sky.jpg', 'bg-sky.jpg', 'logo.png');
+('2021-03-10 19:51:40', '1000', '10005', 1, 'MAYUR', '2021-22', 12, 'A', 'male', '2021-03-16', '2021-03-16', '1234567890', '987654321', '44', '25425dgsg', 'gdrggrg', 'dgdtgtd', 'gergreg', 'fdfdge', '123456789098', 'OPEN', 'OPEN', 'nmsbn', 'sbi', ',.n,kwn', 'bah8276', 'ACTIVE', '2021-03-16', 'gdffgdgdfgggggggggggggggggggggggggggggggfgddgf', 'gdffbdfgd', 'dfgfgfdgfdfgd', 'dfgfgdgfgg');
 
 -- --------------------------------------------------------
 
@@ -314,7 +315,8 @@ CREATE TABLE `tbfeesmaster` (
 
 INSERT INTO `tbfeesmaster` (`cdate`, `Systatus`, `FeesStudentName`, `FeesStudentRollNo`, `FeesStudentGRNo`, `FeesStuDateOfAdmission`, `FeesStuParentMoNo`, `FeesAcademicYear`, `FeesStandard`, `FeesDivison`, `FeesJanuary`, `FeesFebruary`, `FeesMarch`, `FeesApril`, `FeesMay`, `FeesJune`, `FeesJuly`, `FeesAugust`, `FeesSeptember`, `FeesOctomber`, `FeesNovember`, `FeesDecember`, `FeesAnnual`, `FeesPaid`, `FeesDue`) VALUES
 ('2021-03-19 15:33:24', 'ACTIVE', 'bhautik', '1', 1, '2021-03-02 15:31:54', 879867, '2020-21', '8', 'A', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12000, 12000, 0),
-('2021-04-01 06:52:17', 'ACTIVE', 'SUDANI BHAUTIK DHANJIBHAI', '1', 80007, '2021-04-01 00:00:00', 9873476546, '2019-20', '9', 'A', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12000, 12000, 0),
+('2021-04-01 06:52:17', 'ACTIVE', 'SUDANI BHAUTIK DHANJIBHAI', '1', 80007, '2021-04-01 00:00:00', 9873476546, '2019-20', '9', 'A', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12000, 2000, 10000),
+('2021-04-01 12:05:01', 'ACTIVE', 'SUDANI BHAUTIK DHANJIBHAI', '12', 1000001, '2021-04-08 00:00:00', 9873476546, '2019-20', '9', 'A', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12000, 0, 12000),
 ('2021-03-19 15:33:24', 'ACTIVE', 'uddhav', '2', 2, '2021-03-02 15:31:54', 879867, '2020-21', '8', 'A', 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 12000, 8000, 4000),
 ('2021-04-01 05:57:10', 'ACTIVE', 'UDDHAV', '2', 10003, '2021-03-16 00:00:00', 1234567890, '2021-22', '10', 'A', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20000, 20000, 0),
 ('2021-03-19 15:33:24', 'ACTIVE', 'Mayur', '3', 3, '2021-03-02 15:31:54', 879867, '2020-21', '8', 'A', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12000, 2000, 10000);
@@ -462,7 +464,7 @@ ALTER TABLE `ttbsalarymaster`
 -- AUTO_INCREMENT for table `exammaster`
 --
 ALTER TABLE `exammaster`
-  MODIFY `ExamId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ExamId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `listmaster`

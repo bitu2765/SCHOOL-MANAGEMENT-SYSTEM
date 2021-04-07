@@ -13,7 +13,7 @@ if($con->multi_query($query)){
         $empname .= " ".$trow["EmpMidName"];
         $empname .= " ".$trow["EmpLastName"];
         $en =$trow["EmpFirstName"];
-        $en .= " ".$trow["EmpMidName"];
+        $en .= " ".$trow["EmpLastName"];
     }
 }
 $query1 ="INSERT INTO ttbsalarymaster(SalEmpName,year, SalEmpNo, SalFullName, SalDesignation, SalPAN, SalPFNo, SalEmpBankAccount, SalMonthname, SalMonthdays, SalPresentdays, Salleavedays, SalLWP, SalBasic, SalDA, SalCLA, SalHRA, SalTA, SalSPPay, SalDGPay, SalMA, SalArreas1, SalArreas2, SalPTax, SalPF, SalIncomTax, Salother, SalTotalEarning, SalTotalDeduction, SalNetPayable) VALUES ";

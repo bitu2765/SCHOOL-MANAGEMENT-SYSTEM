@@ -19,7 +19,7 @@ for ($i = 0; $i < count($stuar); $i++) {
     }
 }
 if (count($stuar) == $tt) {
-    echo "<div class='alert alert-success alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'>".$fepmo."Fees Updated Successfully!</div></div>";
+    echo "<div class='alert alert-success alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'>Fees Details Updated Successfully!</div></div>";
 } else {
-    echo "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'>Fees Not Updated Successfully!</div></div>";
+    echo "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'>Fees Details Not Updated Successfully!</div></div>";
 }

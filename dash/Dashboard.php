@@ -160,8 +160,11 @@ include("../connection_to_db.php");
             </nav>
 
             <main class="content">
-                <div class="container-fluid p-0">
-                    <div class="row mb-2 mb-xl-3">
+                <div class="row">
+                    <div class="w-100">
+                        <div style="text-align: center;">
+                            <img src="./dashpic.jpeg" alt="School Pic">
+                        </div>
                     </div>
                 </div>
             </main>
@@ -172,7 +175,7 @@ include("../connection_to_db.php");
                     <div class="row text-muted">
                         <div class="col-6 text-left">
                             <p class="mb-0">
-                                <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High School</strong></a> &copy;
+                                <a class="text-muted"><strong>Shree SZ Vaghela High School</strong></a> &copy;
                             </p>
                         </div>
                     </div>
@@ -186,7 +189,7 @@ include("../connection_to_db.php");
 
 
 
-    <span id="pstd" ></span>
+    <span id="pstd"></span>
     <script src="../js/app.js"></script>
     <script src="../js/indapp.js"></script>
 </body>

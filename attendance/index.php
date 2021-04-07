@@ -18,7 +18,7 @@ include("db_con_inc.php");
     <link rel="stylesheet" href="../css/app.css">
     <link href="../css/gapi.css" rel="stylesheet">
 
-    <script src="../logg.js"></script>
+
 
     <style>
         .container {
@@ -250,6 +250,6 @@ include("db_con_inc.php");
 </script>
 <script src="../js/app.js"></script>
 <script src="../js/indapp.js"></script>
-
+<script src="../logg.js"></script>
 
 </html>

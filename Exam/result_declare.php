@@ -1,6 +1,6 @@
-<?php
-include 'connection.php';
-
+<?php  
+     include 'connection.php';
+ 
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,35 +12,17 @@ include 'connection.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/_custom.css">
-    <script src="../logg.js"></script>
-
-    <!-- <link href="css/gapi.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/log.css">
-    <link rel="stylesheet" href="css/stylefees.css">
-    <link rel="stylesheet" href="css/ui_d.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous">
-    </script>
-
-    Bootstrap CSS
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
 
     <title></title>
 </head>
 
 <body>
     <div class="wrapper">
-        <nav id="sidebar" class="sidebar">
+    <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
-                <a class="sidebar-brand" style="text-align: center;">
-                    <img src="../logo.png" alt="logo" s srcset="" height="100px">
+                <a class="sidebar-brand">
+                    <span width="30px">&nbsp;</span>
+                    <img src="../logo.png" alt="logo" srcset="" height="90px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -69,9 +51,7 @@ include 'connection.php';
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
                     </li>
-                    <li class="sidebar-header">
-                        
-                        </li>
+
                     <li class="sidebar-header">
                         Student
                     </li>
@@ -115,14 +95,12 @@ include 'connection.php';
                             <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
                         </ul>
                     </li>
-                    <li class="sidebar-header">
-                        
-                        </li>
+
                     <li class="sidebar-header">
                         Academic
                     </li>
 
-                    <li class="sidebar-item">
+                    <li class="sidebar-item ">
                         <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
                             <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
                         </a>
@@ -136,10 +114,10 @@ include 'connection.php';
                         </a>
                         <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">Delete Exam</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
                         </ul>
                     </li>
-                    <li class="sidebar-item active">
+                    <li class="sidebar-item ">
                         <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
                             <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
                         </a>
@@ -148,9 +126,9 @@ include 'connection.php';
                             </li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
                             </li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Check For Result</a>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate MarkSheet</a>
                             </li>
-                            <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
                             </li>
                         </ul>
                     </li>
@@ -163,8 +141,6 @@ include 'connection.php';
                                     Table</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
                                     Table</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
-
                         </ul>
                     </li>
                 </ul>
@@ -179,7 +155,8 @@ include 'connection.php';
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+
                     </ul>
                 </div>
             </nav>
@@ -190,92 +167,136 @@ include 'connection.php';
                         <div class="col-auto d-none d-sm-block">
                             <h3><strong>DECLARE</strong>&nbspRESULT</h3>
                         </div>
-                        <div class="container mt-5 ">
-                            <div class="cont">
-                                <?php
-                                if (isset($_POST{
-                                'declare'})) {
-                                    $DeclareAcademicYear = $_POST['declare_Year'];
-                                    $DeclareStandard = $_POST['declare_Std'];
-                                    $DeclareExamName = $_POST['declare_Exam'];
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="w-100">
+                    <div class="row d-flex justify-content-center mt-5">
+                            <div class="col-sm-5 text-center">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <?php 
+                                      if(isset($_POST{'declare'}))
+                                      {
+                                          $status = false;
+                                             $DeclareAcademicYear=$_POST['declare_Year'];
+                                              $DeclareStandard = $_POST['declare_Std'];
+                                              $DeclareExamName = $_POST['declare_Exam'];
 
+                                              $str = "SELECT isResultEntered FROM exammaster WHERE ExamAcademicYear='$DeclareAcademicYear' AND ExamStandard='$DeclareStandard' AND ExamName='$DeclareExamName'";
+                                               $sql = mysqli_query($conn,$str);
+                                               while($row = mysqli_fetch_assoc($sql)){
+                                                   if($row["isResultEntered"]==0){
+                                                       $status = true;
+                                                       echo '<div class="alert alert-danger" role="alert">
+                                                                 Marks Not Enter Yet.
+                                                            </div>';    
+                                                break;
+                                                   }
+                                               }
+                                             
+                                                if($status==false){
+                                                    $query = "UPDATE `exammaster` SET IsResultVisible= 1
+                                                    WHERE ExamAcademicYear='$DeclareAcademicYear' AND ExamStandard='$DeclareStandard' AND ExamName='$DeclareExamName'";
+                                                    
+                                                    $result=mysqli_query($conn,$query);
+                                            
+                                                if($result)
+                                                {
+                                                    echo '<div class="alert alert-success" role="alert">
+                                                       Result Has Been Declare.!! Sucessfully.
+                                                </div>';
+                                                }
+                                                else {
+                                                  echo '<div class="alert alert-Danger" role="alert">
+                                                  Result Has Been Alredy Declare.! 
+                                           </div>';
+                                                }
+                                        }      
+                                      
+                                          
+                                      }
+                             
+                            ?>
+                                        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+                                            <div class="container text-left" style="margin-left: 30px;">
+                                                <div class="row" style="margin-bottom: 10px;">
+                                                    <div class="col-4 font-weight-bold mt-1">Academic Year</div>
+                                                    <div class="col-7">
+                                                        <select name="declare_Year" class="form-control" required="">
+                                                            <option value="">--Select Academic Year--</option>
+                                                            <?php  $m1="SELECT DISTINCT`ResAcademicYear` FROM `resultmaster`ORDER BY ResAcademicYear ASC";
+                                                            $results2 = $conn->query($m1);
+                                                            if ($results2->num_rows > 0) {   
+                                                                while($row = $results2->fetch_assoc()){ ?>
+                                                                    <option value="<?php echo $row['ResAcademicYear'];?>">
+                                                                        <?php echo $row['ResAcademicYear'];?>
+                                                                    </option>
+                                                            <?php }}?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-bottom: 10px;">
+                                                    <div class="col-4 font-weight-bold mt-1">Exam Name</div>
+                                                    <div class="col-7">
+                                                        <select name="declare_Exam" id="Estd" required=""
+                                                            class="form-control">
+                                                            <option value="">--Select Exam--</option>
+                                                            <?php  $m2="SELECT DISTINCT `ResExamName` FROM `resultmaster`ORDER BY ResExamName ASC";
+                                                            $results1 = $conn->query($m2);
+                                                            if ($results1->num_rows > 0) {
+                                                                while($row = $results1->fetch_assoc()){ ?>
+                                                            <option value="<?php echo $row['ResExamName'];?>">
+                                                                <?php echo $row['ResExamName'];?></option>
+                                                            <?php }}?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-bottom: 10px;">
+                                                    <div class="col-4 font-weight-bold mt-1">Standard</div>
+                                                    <div class="col-7">
+                                                        <select name="declare_Std" id="Estd" required=""
+                                                            class="form-control">
+                                                            <option value="">--Select Standard--</option>
+                                                            <?php  $m3="SELECT DISTINCT `ResStandard` FROM `resultmaster`ORDER BY ResStandard ASC";
+                                                            $results1 = $conn->query($m3);
+                                                            if ($results1->num_rows > 0) {
+                                                            while($row = $results1->fetch_assoc()){ ?>
+                                                                    <option value="<?php echo $row['ResStandard'];?>">
+                                                                        <?php echo $row['ResStandard'];?></option>
+                                                            <?php }}?>
+                                                        </select>
+                                                    </div>
+                                                </div>
 
-
-                                    $query = "UPDATE `exammaster` SET IsResultVisible= 1
-                                      WHERE ExamAcademicYear='$DeclareAcademicYear' AND ExamStandard='$DeclareStandard' AND ExamName='$DeclareExamName'";
-
-                                    $result = mysqli_query($conn, $query);
-
-                                    if ($result) {
-                                        echo '<div class="alert alert-success" role="alert">
-                                                 Result Has Been Declare.!! Sucessfully.
-                                          </div>';
-                                    }
-                                }
-
-                                ?>
-
-                                <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
-                                    <div class="mb-3">
-                                        <b>Academic Year</b>
-                                        <select name="declare_Year" class="form-control" required="">
-                                            <option value="">--Select AcademicYear--</option>
-                                            <?php $m1 = "SELECT DISTINCT`ResAcademicYear` FROM `resultmaster`ORDER BY ResAcademicYear ASC";
-                                            $results2 = $conn->query($m1);
-                                            if ($results2->num_rows > 0) {
-                                                while ($row = $results2->fetch_assoc()) { ?>
-                                                    <option value="<?php echo $row['ResAcademicYear']; ?>">
-                                                        <?php echo $row['ResAcademicYear']; ?>
-                                                    </option>
-                                            <?php }
-                                            } ?>
-                                        </select>
+                                                <br>
+                                                <div class="row" style="margin-bottom: 10px;">
+                                                    <div class="col-2"></div>
+                                                    <div class="col-4">
+                                                        <button type="submit" name="declare" class="btn btn-success"
+                                                           >DECLARE</button>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <input type="reset" class="btn btn-outline-dark" value="CLEAR">
+                                                    </div>
+                                                </div>
+                                            </div>
                                     </div>
-                                    <div class="mb-3">
-                                        <b>Standard</b>
-                                        <select name="declare_Std" id="Estd" required="" class="form-control">
-                                            <option value="">--Select Standard--</option>
-                                            <?php $m3 = "SELECT DISTINCT `ResStandard` FROM `resultmaster`ORDER BY ResStandard ASC";
-                                            $results1 = $conn->query($m3);
-                                            if ($results1->num_rows > 0) {
-                                                while ($row = $results1->fetch_assoc()) { ?>
-                                                    <option value="<?php echo $row['ResStandard']; ?>">
-                                                        <?php echo $row['ResStandard']; ?></option>
-                                            <?php }
-                                            } ?>
-                                        </select>
-                                    </div>
-                                    <div class="mb-3">
-                                        <b>Exam Name</b>
-                                        <select name="declare_Exam" id="Estd" required="" class="form-control">
-                                            <option value="">--Select Exam--</option>
-                                            <?php $m2 = "SELECT DISTINCT `ResExamName` FROM `resultmaster`ORDER BY ResExamName ASC";
-                                            $results1 = $conn->query($m2);
-                                            if ($results1->num_rows > 0) {
-                                                while ($row = $results1->fetch_assoc()) { ?>
-                                                    <option value="<?php echo $row['ResExamName']; ?>">
-                                                        <?php echo $row['ResExamName']; ?></option>
-                                            <?php }
-                                            } ?>
-                                        </select>
-                                    </div>
-                                    <button type="submit" name="declare" class="btn btn-success" onclick='return checkdelete()'>DECLARE</button>
-                                    <script>
-                                        function checkdelete() {
-                                            return confirm('Make Sure That All Subject Entry Are Made Sucefully !!!');
-                                        }
-                                    </script>
-                                </form>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
             </main>
 
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row text-muted">
+
                         <div class="col-6 text-left">
                             <p class="mb-0">
-                                <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High School</strong></a> &copy;
+                                <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High
+                                        School</strong></a> &copy;
                             </p>
                         </div>
                     </div>
@@ -286,12 +307,10 @@ include 'connection.php';
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+
     <script src="js/app.js"></script>
     <script src="js/indapp.js"></script>
-    <script src="addpay.js"></script>
-
+    <script src="../logg.js"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>

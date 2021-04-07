@@ -2,7 +2,7 @@
 include("connectdb.php");
 ?>
 
-<table class="table table-striped" id="paytab">
+<table class="table table-striped" id="paytab" >
     <thead class="table-dark">
         <tr>
             <th scope="col">Sr No.</th>

@@ -67,7 +67,6 @@ if ($_GET["eid"] == 0) {
 }
 if ($results = mysqli_query($con, $querys)) {
     while ($erow = mysqli_fetch_array($results)) {
-        for($ii=0;$ii<50;$ii++){
         if (($count % $cn) == 0) {
             $pg++;
             $cpdf .= '<tr>';
@@ -137,11 +136,35 @@ if ($results = mysqli_query($con, $querys)) {
         $s16 += $erow["SalIncomTax"];
         $s17 += $erow["Salother"];
         $count++;
-    }}
+    }
+    if ($count == 0) {
+        $cpdf .= '<tr>';
+        $cpdf .=  "<td width='1' height='30'>&nbsp;</td>";
+        $cpdf .=  "<td width='50' height='30'>Emp No.</td>";
+        $cpdf .=  "<td width='180' height='30'>Emp Name</td>";
+        $cpdf .=  "<td width='62' height='30'>Basic</td>";
+        $cpdf .=  "<td width='44' height='30'>DA</td>";
+        $cpdf .=  "<td width='39' height='30'>CLA</td>";
+        $cpdf .=  "<td width='57' height='30'>HRA </td>";
+        $cpdf .=  "<td width='42' height='30'>TA </td>";
+        $cpdf .=  "<td width='54' height='30'>SP Pay </td>";
+        $cpdf .=  "<td width='54' height='30'>DG Pay </td>";
+        $cpdf .=  "<td width='57' height='30'>MA </td>";
+        $cpdf .=  "<td width='57' height='30'>PT </td>";
+        $cpdf .=  "<td width='52' height='30'>Arreas1 </td>";
+        $cpdf .=  "<td width='52' height='30'>Arreas2 </td>";
+        $cpdf .=  "<td width='52' height='30'>PF</td>";
+        $cpdf .=  "<td width='44' height='30'>IT</td>";
+        $cpdf .=  "<td width='39' height='30'>Other</td>";
+        $cpdf .=  "<td width='70' height='30'>Total earn </td>";
+        $cpdf .=  "<td width='70' height='30'>Total deduct </td>";
+        $cpdf .=  "<td width='70' height='30'>Net Payable </td>";
+        $cpdf .= '</tr>';
+    }
     $cpdf .=  "<tr>";
     $cpdf .=  "<td width='1' height='30'>&nbsp;</td>";
     $cpdf .=  "<td width='50'>&nbsp;</td>";
-    $cpdf .= "<td width='180' height='20'>SCHOOL TOTAL</t>";
+    $cpdf .= "<td width='180' height='30'>SCHOOL TOTAL</t>";
     $cpdf .=  "<td width='62' height='30'>" . $s1 . "</td>";
     $cpdf .=  "<td width='44' height='30'>" . $s2 . "</td>";
     $cpdf .=  "<td width='39' height='30'>" . $s3 . "</td>";

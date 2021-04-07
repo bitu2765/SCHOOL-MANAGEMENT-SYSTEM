@@ -5,8 +5,23 @@ if (isset($_POST['submit_atd'])) {
     $date = date("d-m-Y", strtotime($dString));
     $stuStandard = mysqli_real_escape_string($con, trim($_POST['atd_standard']));
     $stuDiv = mysqli_real_escape_string($con, trim($_POST['cls_section']));
-    $sql = "SELECT * FROM studentmaster WHERE StuStandard ='$stuStandard' AND StuDiv='$stuDiv'
-           ORDER BY StuRollNo";
+
+    //checking attendance already taken or not for this date, standard and div
+    $sql = "SELECT * FROM attendancetrans WHERE AttStandard = '$stuStandard' AND AttDiv = '$stuDiv' AND AttDate = '$dString'";
+    $res = mysqli_query($con, $sql);
+    $records = mysqli_num_rows($res);
+
+    if ($records > 1) {
+        echo "<script>
+        document.write('Attendance Already taken');
+        setInterval(() => {
+            window.location.href = 'index.php';
+        }, 1800);
+        </script>";
+        die();
+    }
+
+    $sql = "SELECT * FROM studentmaster WHERE StuStandard ='$stuStandard' AND StuDiv='$stuDiv'";
     $res = mysqli_query($con, $sql);
 } else {
     header('location:index.php');
@@ -175,7 +190,6 @@ if (isset($_POST['submit_atd'])) {
             </div>
         </nav>
 
-
         <div class="main">
             <nav class="navbar navbar-expand navbar-light navbar-bg">
                 <a class="sidebar-toggle d-flex">
@@ -326,13 +340,9 @@ if (isset($_POST['submit_atd'])) {
         viewPresent();
     }
 </script>
-<script>
-    document.getElementById("logout").onclick = function() {
-        var l = window.history.length - 2;
-        window.history.go(l - 2 * l);
-    }
-</script>
+<script src="../logg.js" ></script>
 <script src="../js/app.js"></script>
 <script src="../js/indapp.js"></script>
+
 
 </html>

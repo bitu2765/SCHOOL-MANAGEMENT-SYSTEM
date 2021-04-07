@@ -10,12 +10,11 @@ include("connectdb.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/app.css">
     <link href="../css/gapi.css" rel="stylesheet">
-    <script src="../logg.js"></script>
 
     <title>Dashboard</title>
     <style>
         .scr-mod {
-            height: 100px;
+            height: 75px;
             overflow: hidden;
         }
 
@@ -29,7 +28,7 @@ include("connectdb.php");
 
 <body>
     <div class="wrapper">
-    <nav id="sidebar" class="sidebar">
+        <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
@@ -63,8 +62,8 @@ include("connectdb.php");
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Student
                     </li>
@@ -109,8 +108,8 @@ include("connectdb.php");
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Academic
                     </li>
@@ -173,7 +172,7 @@ include("connectdb.php");
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
                     </ul>
                 </div>
             </nav>
@@ -229,23 +228,25 @@ include("connectdb.php");
                                                     <!-- <button type="button" class=" btn btn-success" id="getstde"><i class="align-middle" data-feather="refresh-cw"></i></button> -->
                                                 </div>
                                                 <div class="col-2">
-                                                    <button type="button" id="getstde" class="btn btn-success">Submit</button>
                                                 </div>
                                                 <div class="col-7"></div>
                                                 <div class="col-2">
-                                                    <button type="submit" id="etoex" class="btn btn-success">Export to excel</button>
+
                                                 </div>
                                             </div>
-                                    </div>
-                                    </form>
-                                    <br>
-                                    <span id="sttable"></span>
-                                    <br>
-                                    <div class="row" style="margin-bottom: 10px;">
-                                        <div class="col-10"></div>
-                                        <div class="col-2">
-                                            <button type="button" id="udfe" class="btn btn-success">Update</button>
-                                        </div>
+                                            <br>
+                                            <span id="sttable"></span>
+                                            <br>
+                                            <div class="row" style="margin-bottom: 10px;">
+                                                <div class="col-4"></div>
+                                                <div class="col-2">
+                                                    <button type="submit" id="etoex" class="btn btn-success">Export to excel</button>
+                                                </div>
+                                                <div class="col-2">
+                                                    <button type="button" id="udfe" class="btn btn-success">Submit</button>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -294,6 +295,7 @@ include("connectdb.php");
     <script src="../js/app.js"></script>
     <script src="../js/indapp.js"></script>
     <script src="feespayment.js"></script>
+    <script src="../logg.js"></script>
 </body>
 
 </html>

@@ -42,8 +42,6 @@ $EmpBankIFSC = $_GET['EmpBankIFSC'];
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
-	<title>Form Layouts | AdminKit Demo</title>
-	<script src="../logg.js"></script>
 
 	<link href="../css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -504,6 +502,8 @@ $EmpBankIFSC = $_GET['EmpBankIFSC'];
 
 	<script src="../js/app.js"></script>
 	<script src="../js/indapp.js"></script>
+	<script src="../logg.js" ></script>
+
 </body>
 
 </html>

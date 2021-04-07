@@ -55,33 +55,17 @@ document.getElementById("fediv").onchange = function() {
         xmlhttp.open("GET", "getfeesde.php" + querystr, true);
         xmlhttp.send();
         // alert(ay);
-    }
-};
-
-document.getElementById("getstde").onclick = function() {
-    // alert("clicked");
-    var ay = document.getElementById("feay").value;
-    // alert(ay);
-    var st = document.getElementById("fest").value;
-    // alert(st);
-    var di = document.getElementById("fediv").value;
-    // alert(di);
-
-    var querystr = "?ay=" + ay + "&std=" + st + "&div=" + di;
-    if ((ay == 0) || (st == 0) || (di == 0)) {
-        document.getElementById("sttable").innerHTML = "";
-    } else {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
+        var xmlhttp1 = new XMLHttpRequest();
+        xmlhttp1.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("sttable").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "stutab.php" + querystr, true);
-        xmlhttp.send();
-        // alert(ay);
+        xmlhttp1.open("GET", "stutab.php" + querystr, true);
+        xmlhttp1.send();
     }
 };
+
 
 document.getElementById("udfe").onclick = function() {
     // alert("Function started!");

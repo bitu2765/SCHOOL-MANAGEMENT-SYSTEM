@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2021 at 04:33 PM
+-- Generation Time: Apr 05, 2021 at 05:54 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -34,7 +34,7 @@ CREATE TABLE `attendancetrans` (
   `AttStandard` bigint(10) NOT NULL,
   `AttDiv` varchar(10) NOT NULL,
   `AttDate` date NOT NULL,
-  `AttSendSMS` tinyint(1) NOT NULL DEFAULT 0,
+  `AttSendSMS` varchar(5) NOT NULL DEFAULT 'No',
   `AttPresentAbsent` varchar(15) NOT NULL DEFAULT 'Present'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -42,6 +42,7 @@ CREATE TABLE `attendancetrans` (
 -- Dumping data for table `attendancetrans`
 --
 
+--
 -- Indexes for dumped tables
 --
 
@@ -59,7 +60,7 @@ ALTER TABLE `attendancetrans`
 -- AUTO_INCREMENT for table `attendancetrans`
 --
 ALTER TABLE `attendancetrans`
-  MODIFY `Sysid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `Sysid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

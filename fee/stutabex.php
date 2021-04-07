@@ -1,7 +1,7 @@
 
 <?php
 include("connectdb.php");
-$op = '<table class="table table-striped">
+$op = '<table class="table table-striped" border ="1" style="text-align:center:">
     <thead class="table-dark" style="text-align:center;">
         <tr>
             <th scope="col">Sr No.</th>
@@ -14,15 +14,17 @@ $op = '<table class="table table-striped">
 $empidquery = "SELECT * FROM tbfeesmaster WHERE FeesAcademicYear='" . $_GET["feay"] . "' AND FeesStandard='" . $_GET["fest"] . "' AND FeesDivison='" . $_GET["fediv"] . "' ORDER BY FeesStudentRollNo;";
 $empidresult = mysqli_query($con, $empidquery);
 $cnt = 1;
+$annualf = 0;
 // echo "<select class='form-control' name='fea' id='fediv'>";
 // echo "<option value='0' selected>Select Standard</option>";
 while ($eid = mysqli_fetch_array($empidresult)) {
+    $annualf = $eid["FeesAnnual"];
     $op .= "<tr>";
     $op .= "<td>" . $cnt++ . "</td>";
     $op .= "<td>" . $eid["FeesStudentRollNo"] . "</td>";
     $op .= "<td>" . $eid["FeesStudentName"] . "</td>";
     $op .= "<td>" . $eid["FeesDue"] . "</td>";
-    $op .= "<td><div class='scr-mod'><table><tbody><tr>";
+    $op .= "<td><table border='1'><tbody><tr>";
     if (!($eid["FeesJanuary"])) {
         $op .= "<tr><td class='text-success'>January</td></tr>";
     }
@@ -60,12 +62,17 @@ while ($eid = mysqli_fetch_array($empidresult)) {
         $op .= "<tr><td class='text-success'>December</td></tr>";
     }
 
-    $op .= "</tr></tbody></table></div></td>
+    $op .= "</tr></tbody></table></td>
                   <td>" . $eid["FeesPaid"] . "</td>
                   </tr>";
 }
 $op .= '</tbody></table>';
 header("Content-Type:applicatoin/vnd.ms-excel");
-header("Content-Disposition:atachment; filename=feespayment.xls");
+header("Content-Disposition:atachment; filename=feespayment : ".date("d-m-y").".xls");
+echo  "Academic Year     : ".$_GET["feay"];
+echo  "<br>Standard      : ".$_GET["fest"];
+echo  "<br>Division      : ".$_GET["fediv"];
+echo  "<br>Annual Fee    : ".$annualf."<br>";
+
 echo $op;
 ?>

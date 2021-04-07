@@ -262,25 +262,25 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">Total Day:</label>
                                         </div>
                                         <div class="col-md-1 text-center">
-                                            <input class="form-control" type="number" value="0" name="pano" id="estd">
+                                            <input class="form-control" type="number" name="pano" id="estd" placeholder="0" >
                                         </div>
                                         <div class="col-md-1 text-left">
                                             <label for="mon" class="font-weight-bold">Present :</label>
                                         </div>
                                         <div class="col-md-1 text-center">
-                                            <input class="form-control" type="number" value="0" name="pano" id="espd">
+                                            <input class="form-control" type="number" name="pano" id="espd" placeholder="0" >
                                         </div>
                                         <div class="col-md-1 text-left">
                                             <label for="mon" class="font-weight-bold">Leave :</label>
                                         </div>
                                         <div class="col-md-1 text-center">
-                                            <input class="form-control" type="number" value="0" name="pano" id="esld">
+                                            <input class="form-control" type="number"  name="pano" id="esld" placeholder="0" >
                                         </div>
                                         <div class="col-md-1 text-left">
                                             <label for="mon" class="font-weight-bold">LWP:</label>
                                         </div>
                                         <div class="col-md-1 text-center">
-                                            <input class="form-control" type="number" value="0" name="pano" id="eslwp">
+                                            <input class="form-control" type="number" name="pano" id="eslwp" placeholder="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -291,13 +291,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">Basic :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value="0" name="Emba" id="esba">
+                                            <input class="form-control" type="number" name="Emba" id="esba" placeholder="0" >
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">P.F :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value="0" name="Empf" id="espf">
+                                            <input class="form-control" type="number"  name="Empf" id="espf" placeholder="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -308,13 +308,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">SPPay :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value="0" name="Emsp" id="essp">
+                                            <input class="form-control" type="number" name="Emsp" id="essp" placeholder="0" >
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">DGPay :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value="0" name="Emdg" id="esdg">
+                                            <input class="form-control" type="number" name="Emdg" id="esdg" placeholder="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -325,13 +325,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">Sal Arreas1 :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value="0" name="Emsa1" id="essa1">
+                                            <input class="form-control" type="number" name="Emsa1" id="essa1" placeholder="0" >
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">Sal Arreas2 :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value="0" name="Emsa2" id="essa2">
+                                            <input class="form-control" type="number" name="Emsa2" id="essa2" placeholder="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -343,13 +343,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">D.A :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value="0" name="Emda" id="esda">
+                                            <input class="form-control" type="number" name="Emda" id="esda" placeholder="0" >
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">P.T :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value="0" name="Empt" id="espt">
+                                            <input class="form-control" type="number" name="Empt" id="espt" placeholder="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -360,13 +360,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">T.A :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value="0" name="Emta" id="esta">
+                                            <input class="form-control" type="number" name="Emta" id="esta" placeholder="0" >
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">I.T :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value="0" name="Emit" id="esit">
+                                            <input class="form-control" type="number" name="Emit" id="esit" placeholder="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -377,13 +377,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">H.A :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value="0" name="Emha" id="esha">
+                                            <input class="form-control" type="number" name="Emha" id="esha" placeholder="0" >
                                         </div>
                                         <div class='col-md-2 text-left'>
                                             <label for='mon' class="font-weight-bold">CLA :</label>
                                         </div>
                                         <div class='col-md-2 text-center'>
-                                            <input class='form-control' type='number' value='0' name='Emcla' id='escla'>
+                                            <input class='form-control' type='number' name='Emcla' id='escla' placeholder="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -394,13 +394,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">M.A :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value="0" name="Emma" id="esma">
+                                            <input class="form-control" type="number" name="Emma" id="esma" placeholder="0" >
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">Other :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value="0" name="Emot" id="esot">
+                                            <input class="form-control" type="number" name="Emot" id="esot" placeholder="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -411,13 +411,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">Total Earning :</label>
                                         </div>
                                         <div class="col-md-2 text-left">
-                                            <input class="form-control" type="number" value="0" name="Emte" id="este">
+                                            <input class="form-control" type="number" name="Emte" id="este" placeholder="0"  readonly>
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">Total Deduction :</label>
                                         </div>
                                         <div class="col-md-2 text-left">
-                                            <input class="form-control" type="number" value="0" name="Emtde" id="estde">
+                                            <input class="form-control" type="number" name="Emtde" id="estde" placeholder="0"  readonly>
                                         </div>
                                     </div>
                                     <br>
@@ -428,7 +428,7 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">Net Payable :</label>
                                         </div>
                                         <div class="col-md-2 text-left">
-                                            <input class="form-control" type="number" value="0" name="Emnp" id="esnp">
+                                            <input class="form-control" type="number" name="Emnp" id="esnp" placeholder="0"  readonly>
                                         </div>
                                     </div>
                                     <br>

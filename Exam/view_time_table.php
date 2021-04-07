@@ -1,4 +1,4 @@
-<?php include 'connection.php'; ?>
+<?php  include 'connection.php';?>
 <!doctype html>
 <html lang="en">
 
@@ -9,19 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/_custom.css">
-    <link href="css/gapi.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/log.css">
-    <link rel="stylesheet" href="css/stylefees.css">
-    <link rel="stylesheet" href="css/ui_d.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous">
-    </script>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <script src="../logg.js"></script>
+
 
 
 </head>
@@ -32,8 +20,9 @@
     <div class="wrapper">
         <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
-                <a class="sidebar-brand" style="text-align: center;">
-                    <img src="../logo.png" alt="logo" s srcset="" height="100px">
+                <a class="sidebar-brand">
+                    <span width="30px">&nbsp;</span>
+                    <img src="../logo.png" alt="logo" srcset="" height="90px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -62,9 +51,7 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
                     </li>
-                    <li class="sidebar-header">
-                        
-                        </li>
+
                     <li class="sidebar-header">
                         Student
                     </li>
@@ -108,58 +95,58 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
                         </ul>
                     </li>
-                    <li class="sidebar-header">
-                        
+
+                <li class="sidebar-header">
+                    Academic
+                </li>
+
+                <li class="sidebar-item ">
+                    <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
+                        <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
+                    </a>
+                    <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item ">
+                    <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
+                        <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
+                    </a>
+                    <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a>
                         </li>
-                    <li class="sidebar-header">
-                        Academic
-                    </li>
-
-                    <li class="sidebar-item ">
-                        <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
-                        </a>
-                        <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item "><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
-                        </a>
-                        <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a></li>
-                            <li class="sidebar-item "><a class="sidebar-link" href="../Exam/view_exam.php">Delete Exam</a></li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item ">
-                        <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
-                        </a>
-                        <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result Entry</a>
-                            </li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
-                            </li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Check For Result</a>
-                            </li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item  active">
-                        <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle"></i> <span class="align-middle">Time Table</span>
-                        </a>
-                        <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
-                                    Table</a></li>
-                            <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
-                                    Table</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
-
-                        </ul>
-                    </li>
+                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item ">
+                    <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
+                        <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
+                    </a>
+                    <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result
+                                Entry</a>
+                        </li>
+                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
+                        </li>
+                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate
+                                MarkSheet</a>
+                        </li>
+                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
+                                Result</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item ">
+                    <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
+                        <i class="align-middle"></i> <span class="align-middle">Time Table</span>
+                    </a>
+                    <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
+                                Table</a></li>
+                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
+                                Table</a></li>
+                    </ul>
+                </li>
                 </ul>
             </div>
         </nav>
@@ -173,7 +160,8 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+
                     </ul>
                 </div>
             </nav>
@@ -184,121 +172,175 @@
                         <div class="col-auto d-none d-sm-block">
                             <h3><strong>VIEW</strong>&nbspTIME&nbspTABLE</h3>
                         </div>
-                        <div id="add" class="container mt-5 ">
-                            <div class="cont">
-                                <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
-                                    <div class="col">
-                                        <div class="col-lg-6 col-md-6 col-sm-6 form-group">
-                                            <b>Select Year</b>
-                                            <select name="Tt_year" required="" id="Selstd" required="" class="form-control">
-                                                <option value="">--Select Year--</option>
-                                                <?php $a1 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('AcadmicYear');";
-                                                $res1 = $conn->query($a1);
-                                                if ($res1->num_rows > 0) {
-                                                    while ($row = $res1->fetch_assoc()) { ?>
-                                                        <option value="<?php echo $row['Value']; ?>">
-                                                            <?php echo $row['Value']; ?>
-                                                        </option>
-                                                <?php }
-                                                } ?>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 form-group">
-                                            <b> Standard</b>
-                                            <select name="Tt_std" required="" id="selStd" class="form-control">
-                                                <option value="">--Select Standard--</option>
-                                                <?php $c2 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('Standard');";
-                                                $results1 = $conn->query($c2);
-                                                if ($results1->num_rows > 0) {
-                                                    while ($row = $results1->fetch_assoc()) { ?>
-                                                        <option value="<?php echo $row['Value']; ?>">
-                                                            <?php echo $row['Value']; ?>
-                                                        </option>
-                                                <?php }
-                                                } ?>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 form-group">
-                                            <b>Division</b>
-                                            <select name="Tt_div" required="" id="selDiv" class="form-control">
-                                                <option value="">--Select Division--</option>
-                                                <?php $m4 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('Division')";
-                                                $result3 = $conn->query($m4);
-                                                if ($result3->num_rows > 0) {
-                                                    while ($row = $result3->fetch_assoc()) { ?>
-                                                        <option value="<?php echo $row['Value']; ?>">
-                                                            <?php echo $row['Value']; ?>
-                                                        </option>
-                                                <?php }
-                                                } ?>
-                                            </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="w-100">
+                        <div class="row d-flex justify-content-center mt-5">
+                            <div class="col-sm-5 text-center">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <?php
+                             if(isset($_POST{'tt_Delete'}))
+                                {
+                                        $deAcademicYear=$_POST['Tt_year'];
+                                        $deStandard = $_POST['Tt_std'];
+                                        $deDiv=$_POST['Tt_div'];     
 
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 form-group">
-                                                <input type="submit" name="tt_VIEW" id="sbt" class="btn btn-success" value="VIEW">
-                                            </div>
-
-                                        </div>
-                                </form>
-                                <?php
-                                if (isset($_POST{
-                                    'tt_VIEW'})) {
-                                    $TtAcademicYear = $_POST['Tt_year'];
-                                    $TtStandard = $_POST['Tt_std'];
-                                    $TtDiv = $_POST['Tt_div'];
-
-                                    $query = "SELECT TtUpload FROM timetable 
-                                            WHERE TtAcademicYear= '$TtAcademicYear' AND TtStandard='$TtStandard' AND TtDiv='$TtDiv'";
-
-                                    $result = mysqli_query($conn, $query);
-                                    $row = mysqli_fetch_assoc($result);
-                                    if ($row) {
-                                    } else {
-                                        echo ' <div class=" col alert alert-danger" role="alert">File Does Not Exist , Please Enter Valid Data. </div>   ';
-                                    }
-
-
-                                ?>
-
-
-                                    <div class="card mt-3">
-                                        <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['TtUpload']); ?>" />
-                                    </div>
-                                    <!-- <embed src="<?php echo ($row['TtUpload']); ?>" width="800px" height="2100px" /> -->
-                                <?php
-
-
+                                            $sql="DELETE FROM `timetable` WHERE TtAcademicYear ='$deAcademicYear' AND TtStandard='$deStandard' AND TtDiv='$deDiv'";
+                                            $result=mysqli_query($conn,$sql);
+                                    
+                                            if($result)
+                                            {
+                                                echo '<div class="alert alert-danger" role="alert">
+                                                    Time Table Deleted Sucessfully.
+                                            </div>';
+                                            }
+                                      
                                 }
+                                  
+?>
+                                        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post"
+                                            enctype="multipart/form-data">
+                                            <div class="container text-left" style="margin-left: 30px;">
+                                                <div class="row" style="margin-bottom: 10px;">
+                                                    <div class="col-4 font-weight-bold mt-1">Academic Year</div>
+                                                    <div class="col-7">
+                                                        <select name="Tt_year" required="" id="Selstd" required=""
+                                                            class="form-control">
+                                                            <option value="">--Select Academic Year--</option>
+                                                            <?php  $a1="SELECT `Value` FROM listmaster WHERE Parameter IN  ('AcadmicYear');";
+                                                            $res1 = $conn->query($a1);
+                                                          if ($res1->num_rows > 0) {
+                                                            while($row = $res1->fetch_assoc()){ ?>
+                                                            <option value="<?php echo $row['Value'];?>">
+                                                                <?php echo $row['Value'];?>
+                                                            </option>
+                                                            <?php }}?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-bottom: 10px;">
+                                                    <div class="col-4 font-weight-bold mt-1">Standard</div>
+                                                    <div class="col-7">
+                                                        <select name="Tt_std" required="" id="selStd"
+                                                            class="form-control">
+                                                            <option value="">--Select Standard--</option>
+                                                            <?php  $c2="SELECT `Value` FROM listmaster WHERE Parameter IN  ('Standard');";
+                                                            $results1 = $conn->query($c2);
+                                                            if ($results1->num_rows > 0) {
+                                                            while($row = $results1->fetch_assoc()){ ?>
+                                                            <option value="<?php echo $row['Value'];?>">
+                                                                <?php echo $row['Value'];?>
+                                                            </option>
+                                                            <?php }}?>
+                                                        </select>
+                                                    </div>
+                                                </div>
 
-                                ?>
+                                                <div class="row" style="margin-bottom: 10px;">
+                                                    <div class="col-4 font-weight-bold mt-1">Division</div>
+                                                    <div class="col-7">
+                                                        <select name="Tt_div" required="" id="selDiv"
+                                                            class="form-control">
+                                                            <option value="">--Select Division--</option>
+                                                            <?php  $m4="SELECT `Value` FROM listmaster WHERE Parameter IN  ('Division')";
+                                                            $result3 = $conn->query($m4);
+                                                            if ($result3->num_rows > 0) {
+                                                                while($row = $result3->fetch_assoc()){ ?>
+                                                            <option value="<?php echo $row['Value'];?>">
+                                                                <?php echo $row['Value'];?>
+                                                            </option>
+                                                            <?php }}?>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="row" style="margin-bottom: 10px;">
+                                                        <div class="col-4 mt-3">
+                                                            <input type="submit" name="tt_VIEW" id="sbt"
+                                                                class="btn btn-success" value="VIEW">
+                                                        </div>
+                                                        <div class="col-4 mt-3">
+                                                            <input type="submit" name="tt_Delete" id="sbt"
+                                                                class="btn btn-danger" value="Delete"
+                                                                onclick='return checkdelete()'>
+                                                            <script>
+                                                            function checkdelete() {
+                                                                return confirm(
+                                                                    'Are you sure you want to delete this record!');
+                                                            }
+                                                            </script>
+                                                        </div>
+                                                    </div>
+                                        </form>
+                                        <?php
+                                        if(isset($_POST{'tt_VIEW'}))
+                                        {
+                                            $TtAcademicYear=$_POST['Tt_year'];
+                                            $TtStandard = $_POST['Tt_std']; 
+                                            $TtDiv=$_POST['Tt_div'];  
+
+                                            $query = "SELECT TtUpload FROM timetable 
+                                            WHERE TtAcademicYear= '$TtAcademicYear' AND TtStandard='$TtStandard' AND TtDiv='$TtDiv'";
+                                            
+                                            $result = mysqli_query($conn,$query);
+                                            $row = mysqli_fetch_assoc($result);
+                                            if($row){
+
+                                            }
+                                            else{
+                                                echo ' <div class=" col alert alert-danger" role="alert">File Does Not Exist , Please Enter Valid Data. </div>   ';  
+                                            }
+                                                    
+                                                    
+                                            ?>
+
+
+                                        <div class="card mt-3">
+                                            <img
+                                                src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['TtUpload']); ?>" />
+                                        </div>
+                                        <!-- <embed src="<?php echo ($row['TtUpload']);?>" width="800px" height="2100px" /> -->
+                                        <?php 
+                                         
+                                          
+                                        }
+
+ ?>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-            </main>
-
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row text-muted">
-                        <div class="col-6 text-left">
-                            <p class="mb-0">
-                                <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High School</strong></a> &copy;
-                            </p>
                         </div>
                     </div>
                 </div>
-            </footer>
-
         </div>
+        </main>
+
+        <footer class="footer">
+
+            <div class="container-fluid">
+                <div class="row text-muted">
+
+                    <div class="col-6 text-left">
+                        <p class="mb-0">
+
+                            <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High
+                                    School</strong></a> &copy;
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+
     <script src="js/app.js"></script>
     <script src="js/indapp.js"></script>
-    <script src="addpay.js"></script>
-    <script src="js/modules/sidebar.js"></script>
+    <script src="../logg.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

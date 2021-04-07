@@ -5,7 +5,7 @@ if (isset($_POST['submit_atd'])) {
     $dateStr = date("d-m-Y", strtotime($date));
     $class = mysqli_real_escape_string($con, trim($_POST['atd_standard']));
     $section = mysqli_real_escape_string($con, trim($_POST['cls_section']));
-    $sql = "SELECT AttStudentName,StuRollNo,AttStandard,AttDiv,AttDate,AttPresentAbsent FROM attendancetrans
+    $sql = "SELECT * FROM attendancetrans
             WHERE AttStandard = '$class' AND AttDiv = '$section' AND AttDate = '$date';";
     $res = mysqli_query($con, $sql);
 } else {
@@ -26,14 +26,21 @@ if (isset($_POST['submit_atd'])) {
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.23/af-2.3.5/b-1.6.5/b-colvis-1.6.5/b-flash-1.6.5/b-html5-1.6.5/b-print-1.6.5/cr-1.5.3/fc-3.3.2/fh-3.1.8/kt-2.6.1/r-2.2.7/rg-1.1.2/rr-1.2.7/sc-2.0.3/sb-1.0.1/sp-1.2.2/sl-1.3.1/datatables.js">
     </script>
-    <script src="../logg.js"></script>
+
 
     <link rel="stylesheet" href="../css/app.css">
     <link href="../css/gapi.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="gapi.css"> -->
     <style>
         .container {
             background-color: white;
             padding: 50px;
+        }
+
+        /* Removing next page in datatables */
+        .dataTables_paginate {
+            display: none;
         }
     </style>
 </head>
@@ -201,15 +208,26 @@ if (isset($_POST['submit_atd'])) {
                             </div>
                         </div>
                         <hr><br>
+
+                        <!-- <form>
+                            Select Students
+                            <select name="students">
+                                <option value="ALL" selected> ALL</option>
+                                <option value="PR">Present</option>
+                                <option value="AB">Absent</option>
+                            </select>
+                        </form><br><br> -->
+                        
                         <table id="myTable" class="table table-striped table-bordered">
-                            <thead>
+                            <thead class="thead-dark">
                                 <tr style="text-align:center">
-                                    <th>date</th>
-                                    <th>Number</th>
-                                    <th>name</th>
                                     <th>Standard</th>
                                     <th>Div</th>
+                                    <th>Number</th>
+                                    <th>Name</th>
                                     <th>Attendance</th>
+                                    <th>Sent SMS?</th>
+                                    <th>date</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -217,12 +235,13 @@ if (isset($_POST['submit_atd'])) {
                                 while ($row = mysqli_fetch_assoc($res)) {
                                 ?>
                                     <tr style="text-align:center">
-                                        <td><?php echo date("d-m-Y", strtotime($row["AttDate"])); ?></td>
-                                        <td><?php echo $row["StuRollNo"]; ?></td>
-                                        <td><?php echo $row["AttStudentName"]; ?></td>
                                         <td><?php echo $row["AttStandard"]; ?></td>
                                         <td><?php echo $row["AttDiv"]; ?></td>
+                                        <td><?php echo $row["AttStudentRollNo"]; ?></td>
+                                        <td><?php echo $row["AttStudentName"]; ?></td>
                                         <td><?php echo $row["AttPresentAbsent"]; ?></td>
+                                        <td><?php echo $row["AttSendSMS"]; ?></td>
+                                        <td><?php echo date("d-m-Y", strtotime($row["AttDate"])); ?></td>
                                     </tr>
                                 <?php
                                 }
@@ -250,10 +269,17 @@ if (isset($_POST['submit_atd'])) {
     $(document).ready(function() {
 
         var table = $('#myTable').DataTable({
-            // "pageLength": 50,
+            "bInfo": false, //hiding Showing 1 to N of N entries
+            // "display": none,
+            order: [
+                [2, 'asc']
+            ],
             'columns': [{
-                    data: 'AttDate'
-                }, // index - 0
+                    data: 'AttStandard'
+                }, //index - 0
+                {
+                    data: 'AttDiv'
+                },
                 {
                     data: 'StuRollNo'
                 },
@@ -261,21 +287,22 @@ if (isset($_POST['submit_atd'])) {
                     data: 'AttStudentName'
                 },
                 {
-                    data: 'AttStandard'
-                },
-                {
-                    data: 'AttDiv'
-                },
-                {
                     data: 'AttPresentAbsent'
-                } // index - 5
+                },
+                {
+                    data: 'AttSendSMS'
+                },
+                {
+                    data: 'AttDate'
+                },
             ],
             'columnDefs': [{
-                'targets': [0, 2, 3, 4],
+                'targets': [0, 1, 3, 6],
                 /* column index */
                 'orderable': false,
                 /* true or false */
             }],
+
             dom: 'Bfrtip',
             buttons: [
                 'copy', 'excel', 'pdf',
@@ -284,6 +311,7 @@ if (isset($_POST['submit_atd'])) {
     });
 </script>
 <script src="../js/app.js"></script>
-<script src="../js/indapp.js"></script>
+<script src="../js/indapp.js"></script> 
+<script src="../logg.js" ></script>
 
 </html>
