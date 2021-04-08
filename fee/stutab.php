@@ -15,7 +15,7 @@ include("connectdb.php");
     </thead>
     <tbody>
         <?php
-        $empidquery = "SELECT * FROM tbfeesmaster WHERE FeesAcademicYear='" . $_GET["ay"] . "' AND FeesStandard='" . $_GET["std"] . "' AND FeesDivison='" . $_GET["div"] . "' ORDER BY FeesStudentRollNo;";
+        $empidquery = "SELECT * FROM tbfeesmaster f INNER JOIN studentmaster s ON f.FeesStudentGRNo = s.StuGRNo AND s.StuStatus='ACTIVE' AND f.FeesAcademicYear='" . $_GET["ay"] . "' AND f.FeesStandard='" . $_GET["std"] . "' AND f.FeesDivison='" . $_GET["div"] . "' ORDER BY FeesStudentRollNo;";
         $empidresult = mysqli_query($con, $empidquery);
         $cnt = 1;
         // echo "<select class='form-control' name='fea' id='fediv'>";

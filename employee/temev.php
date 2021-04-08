@@ -83,6 +83,9 @@ class myPDF extends FPDF
         if (isset($_GET["EmpContactNo"])) {
             $this->Cell(22, 10, "Contact no", "T");
         }
+if (isset($_GET["EmpDateofjoining"])) {
+            $this->Cell(20, 10, "joining", "T");
+        }
         if (isset($_GET["EmpDateofLeaving"])) {
             $this->Cell(20, 10, "Leaving", "T");
         }
@@ -172,6 +175,11 @@ class myPDF extends FPDF
         if (isset($_GET["EmpContactNo"])) {
             $this->Line($ax, $sty, $ax, $eny);
             // $this->Cell(22, 10, "Contact no", 1);
+            $ax += 22;
+        }
+           if (isset($_GET["EmpDateofjoining"])) {
+            $this->Line($ax, $sty, $ax, $eny);
+            // $this->Cell(22, 10, "joining", 1);
             $ax += 22;
         }
         if (isset($_GET["EmpDateofLeaving"])) {
@@ -337,6 +345,9 @@ class myPDF extends FPDF
             }
             if (isset($_GET["EmpContactNo"])) {
                 $this->Cell(22, 10, $ansr["EmpContactNo"], "T");
+            }
+            if (isset($_GET["EmpDateofjoining"])) {
+                $this->Cell(22, 10, $ansr["EmpDateofjoining"], "T");
             }
             if (isset($_GET["EmpDateofLeaving"])) {
                 $this->Cell(20, 10, $ansr["EmpDateofLeaving"], "T");

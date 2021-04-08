@@ -1,50 +1,6 @@
 <?php
 //error_reporting(0);
 include("../connection_to_db.php");
-$conn = mysqli_connect($servername, $username, $password, $dbname);;
-$error = "";
-if (isset($_POST{
-    'test_save'})) {
-    $EmpNo = $_POST['EmpNo'];
-    $EmpNamePrefix = strtoupper($_POST['EmpNamePrefix']);
-    $EmpFirstName = strtoupper($_POST['EmpFirstName']);
-    $EmpMidName = strtoupper($_POST['EmpMidName']);
-    $EmpLastName = strtoupper($_POST['EmpLastName']);
-    $EmpDesignation = strtoupper($_POST['EmpDesignation']);
-    $EmpGender = strtoupper($_POST['EmpGender']);
-    $EmpDOB = $_POST['EmpDOB'];
-    $EmpAddress1 = strtoupper($_POST['EmpAddress1']);
-    $EmpAddress2 = strtoupper($_POST['EmpAddress2']);
-    $EmpState = strtoupper($_POST['EmpState']);
-    $EmpCity = strtoupper($_POST['EmpCity']);
-    $EmpPinCode = $_POST['EmpPinCode'];
-    if (empty($EmpContactNo = $_POST['EmpContactNo'])) {
-        $error = "please enter mobile number";
-    } elseif (strlen($_POST['EmpContactNo']) < 10) {
-        $error = "moblile number should be of 10 digit";
-    }
-    $EmpEmailID = $_POST['EmpEmailID'];
-    $EmpDateofLeaving = $_POST['EmpDateofLeaving'];
-    $EmpCategory = strtoupper($_POST['EmpCategory']);
-    $EmpAadharNo = $_POST['EmpAadharNo'];
-    $EmpPan = $_POST['EmpPan'];
-    $EmpPFno = $_POST['EmpPFno'];
-    $EmpStatus = strtoupper($_POST['EmpStatus']);
-    $EmpLastStatusChangeDate = $_POST['EmpLastStatusChangeDate'];
-    $EmpBankName = strtoupper($_POST['EmpBankName']);
-    $EmpBankAccount = $_POST['EmpBankAccount'];
-    $EmpBankIFSC = $_POST['EmpBankIFSC'];
-
-    $sql = " INSERT INTO `employeemaster` values('$EmpNo','$EmpNamePrefix','$EmpFirstName','$EmpMidName','$EmpLastName', '$EmpDesignation','$EmpGender','$EmpDOB','$EmpAddress1', 
-          '$EmpAddress2', '$EmpState', '$EmpCity',$EmpPinCode,$EmpContactNo, '$EmpEmailID', '$EmpDateofLeaving', '$EmpCategory','$EmpAadharNo', '$EmpPan', '$EmpPFno', '$EmpStatus', '$EmpLastStatusChangeDate', '$EmpBankName', '$EmpBankAccount', '$EmpBankIFSC')";
-
-    $res = mysqli_query($conn, $sql);
-    if ($res) {
-        echo "<script>alert('Data Inserted successfully...!!');</script>";
-    } else {
-        echo "<script>alert('something went wrong!!...!!');</script>";
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +18,6 @@ if (isset($_POST{
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
     <title>Form Layouts | AdminKit Demo</title>
-    <script src="../logg.js"></script>
 
     <link href="../css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -275,6 +230,7 @@ if (isset($_POST{
     <script src="../js/app.js"></script>
     <script src="../js/indapp.js"></script>
     <script src="./adday.js"></script>
+	<script src="../logg.js"></script>
 
 </body>
 

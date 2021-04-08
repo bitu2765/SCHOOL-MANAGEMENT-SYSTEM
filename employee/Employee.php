@@ -62,6 +62,7 @@ if (isset($_POST{
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
 	<title>Form Layouts | AdminKit Demo</title>
+	<script src="../logg.js"></script>
 
 	<link href="../css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -231,199 +232,222 @@ if (isset($_POST{
 							<!-- now try  -->
 						</div>
 						<div class="card-body">
-							<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+								<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return validation()">
+										<div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Employee No</label>
+											<div class="col-sm-5">
+												<input type="number" class="form-control input-sm" name="EmpNo" placeholder="" required>
+											</div>
+										</div>
+										<div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Name</label>
+											<div class="col-sm-1">
+												<select class="form-control" name="EmpNamePrefix">
+													<option>Mrs.</option>
+													<option>Mr.</option>
+													<option>Miss.</option>
+													<option>Ms.</option>
+												</select>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" class="form-control"
+												name="EmpFirstName" placeholder="FirstName"  required>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" class="form-control"
+												name="EmpMidName" placeholder="MiddelName" required>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" class="form-control"
+												name="EmpLastName" placeholder="LastName" required>
+											</div>
+										</div>
+										
+										<div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Designation</label>
+											<div class="col-sm-2">
+												<select name="EmpDesignation" class="form-control">
+													<option></option>
+													<option>PRINCIPAL</option>
+													<option>CLERK</option>
+													<option>ASSISTANT TEACHER</option>
+													<option>TEACHER</option>
+													<option>ASSISTANT TEACHER ON PROBATION</option>
+													<option>LIBRARIAN</option>
+													<option>PEON</option>
+													<option>OTHER</option>
+													
+												</select>
+											</div>
+										</div>
+							
 								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Employee No</label>
-									<div class="col-sm-5">
-										<input type="number" class="form-control input-sm" name="EmpNo" placeholder="" required>
-									</div>
+								<label class="col-form-label col-sm-2 text-sm-right pt-sm-0" style="font-weight: bold;">Gender</label>
+								<div class="col-sm-10">
+													
+                                     <input type="radio" value ="Male" name="EmpGender"><label class="form-check-label" style="margin-left:5px; ">Male</label>
+                                      <input type="radio" value="Female" name="EmpGender"><label class="form-check-label" style="margin-left:5px; ">Female</label>
+                                      <input type="radio" value="Other" name="EmpGender"><label class="form-check-label" style="margin-left:5px; ">Other</label>
+                                 </div>
+                   
 								</div>
+							
+							
 								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Name</label>
-									<div class="col-sm-1">
-										<select class="form-control" name="EmpNamePrefix">
-											<option>Mrs.</option>
-											<option>Mr.</option>
-											<option>Miss.</option>
-											<option>Ms.</option>
-										</select>
-									</div>
-									<div class="col-sm-2">
-										<input type="text" class="form-control" name="EmpFirstName" placeholder="FirstName" required>
-									</div>
-									<div class="col-sm-2">
-										<input type="text" class="form-control" name="EmpMidName" placeholder="MiddelName" required>
-									</div>
-									<div class="col-sm-2">
-										<input type="text" class="form-control" name="EmpLastName" placeholder="LastName" required>
-									</div>
-								</div>
-
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Designation</label>
-									<div class="col-sm-2">
-										<select name="EmpDesignation" class="form-control">
-											<option></option>
-											<option>PRINCIPAL</option>
-											<option>CLERK</option>
-											<option>ASSISTANT TEACHER</option>
-											<option>TEACHER</option>
-											<option>ASS. TEACHER ON PROBATION</option>
-											<option>LIBRARIAN</option>
-											<option>PEON</option>
-											<option>OTHER</option>
-
-										</select>
-									</div>
-								</div>
-
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right pt-sm-0" style="font-weight: bold;">Gender</label>
-									<div class="col-sm-10">
-
-										<input type="radio" value="Male" name="EmpGender"><label class="form-check-label" style="margin-left:5px; ">Male</label>
-										<input type="radio" value="Female" name="EmpGender"><label class="form-check-label" style="margin-left:5px; ">Female</label>
-										<input type="radio" value="Other" name="EmpGender"><label class="form-check-label" style="margin-left:5px; ">Other</label>
-									</div>
-
-								</div>
-
-
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Date Of Birth</label>
-									<div class="col-sm-4">
-										<input type="date" name="EmpDOB" class="form-control" style="font-weight:bold;" required>
-										<!-- <form action="https://example.com">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Date Of Birth</label>
+											<div class="col-sm-4">
+												<input type="date" name="EmpDOB" class="form-control" style="font-weight:bold;" required>
+                                         <!-- <form action="https://example.com">
                                                     <input type="date" class="form-control" name="EmpDOB">
                                          </form> -->
-									</div>
-								</div>
+											</div>
+										</div>
+										
+										 
+										<div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Address1</label>
+											<div class="col-sm-6">
+												<input type="text" class="form-control"
+												name="EmpAddress1" placeholder="" required>
+											</div>
+										</div>
+										<div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Address2</label>
+											<div class="col-sm-6">
+												<input type="text" class="form-control"
+												name="EmpAddress2" placeholder="">
+											</div>
+										</div>
+										
+                                          <div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">City</label>
+											<div class="col-sm-5">
+												<input type="text" name="EmpCity" class="form-control" placeholder="" required>
+											</div>
+										</div>
+										<div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">State</label>
+											<div class="col-sm-5">
+												<input type="text" name="EmpState" class="form-control" required>
+											</div>
+										</div>
+										 <div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Pin Code</label>
+											<div class="col-sm-5">
+												<input type="number" class="form-control"
+												name="EmpPinCode" placeholder="" id="pin" autocomplete="off" required>
+												<span id="pincode" class="text-danger font-weight-bold"></span>
+											</div>
+										</div>
+										 <div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Contact No</label>
+											<div class="col-sm-5">
+												<input type="number" class="form-control"
+												name="EmpContactNo" id="mobile1" placeholder="" 
+												autocomplete="off" required>
+												
+												<span id="mobile" class="text-danger font-weight-bold"></span>
+											</div>
+										</div>
+										 <div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Email</label>
+											<div class="col-sm-5">
+												<input type="email" class="form-control" name="EmpEmailID" id="emailID" placeholder="" autocomplete="off" required>
+												<span id="EmailID1" class="text-danger font-weight-bold"></span>
+											</div>
+										</div>
+										<div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Date of joining</label>
+											<div class="col-sm-4">
+                                         <!-- <form action="https://example.com"> -->
+                                                    <input type="date" class="form-control " name="EmpDateofjoining" style="font-weight:bold;">
+                                         <!-- </form> -->
+											</div>
+										</div>
+										<div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Date of Leaving</label>
+											<div class="col-sm-4">
+                                         <!-- <form action="https://example.com"> -->
+                                                    <input type="date" class="form-control " name="EmpDateofLeaving" style="font-weight:bold;">
+                                         <!-- </form> -->
+											</div>
+										</div>
+										 <div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Category</label>
+											<div class="col-sm-5">
+												<select name="EmpCategory" class="form-control" >
+													<option></option>
+													<option>OPEN</option>
+													<option>OBC</option>
+													<option>SC</option>
+													<option>ST</option>
+                                                 </select>
+											</div>
+										</div>
+									
+											 <div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Aadhar Card No</label>
+											<div class="col-sm-5">
+												<input type="text" name="EmpAadharNo" class="form-control" id="aadhar" autocomplete="off" placeholder="">
+												<span id="AadharNo" class="text-danger font-weight-bold"></span>
+											</div>
+										</div>
+											 <div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Pan Card No</label>
+											<div class="col-sm-5">
+												<input type="number" name="EmpPan" class="form-control" placeholder="" id="pan" autocomplete="off" required>
+												<span id="panno" class="text-danger font-weight-bold"></span>
+											</div>
+										</div>
+											 <div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Phone No</label>
+											<div class="col-sm-5">
+												<input type="text" name="EmpPFno" class="form-control" placeholder="" required>
+											</div>
+										</div>
+											 <div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Status</label>
+											<div class="col-sm-5">
+												<select name="EmpStatus" class="form-control" required>
+													<option></option>
+													<option>ACTIVE</option>
+													<option>RESIGNED</option>
+													<option>RETIRED</option>
+												</select>
+											</div>
+										</div>
+											 <div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Last Status Change Date</label>
+											<div class="col-sm-4">
+												<input type="date" name="EmpLastStatusChangeDate" class="form-control" style="font-weight:bold;" placeholder="">
+											</div>
+										</div>
+											<div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Bank Details</label>
+											<div class="col-sm-3">
+												<input type="text" name="EmpBankName" class="form-control" placeholder="Bank Name" required>
+											</div>
+											<div class="col-sm-3">
+												<input type="number" name="EmpBankAccount" class="form-control" placeholder="A/c No">
+											</div>
+											<div class="col-sm-3">
+												<input type="text" name="EmpBankIFSC" class="form-control  " placeholder="IFSC Code" required>
+											</div>
+										</div>
+										
+										
+										<div class="mb-3 row">
+											<div class="col-sm-10 ml-sm-auto">
+                                          
+                        <input type="submit" class="btn btn-success" name="test_save" id="submitbtn" value="Save">
 
-
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Address1</label>
-									<div class="col-sm-6">
-										<input type="text" class="form-control" name="EmpAddress1" placeholder="" required>
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Address2</label>
-									<div class="col-sm-6">
-										<input type="text" class="form-control" name="EmpAddress2" placeholder="">
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">State</label>
-									<div class="col-sm-5">
-										<input type="text" name="EmpState" class="form-control" required>
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">City</label>
-									<div class="col-sm-5">
-										<input type="text" name="EmpCity" class="form-control" placeholder="" required>
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Pin Code</label>
-									<div class="col-sm-5">
-										<input type="number" class="form-control" name="EmpPinCode" placeholder="" required>
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Contact No</label>
-									<div class="col-sm-5">
-										<input type="number" class="form-control" name="EmpContactNo" placeholder="" required>
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Email</label>
-									<div class="col-sm-5">
-										<input type="email" class="form-control" name="EmpEmailID" placeholder="" required>
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Date of Leaving</label>
-									<div class="col-sm-4">
-										<!-- <form action="https://example.com"> -->
-										<input type="date" class="form-control " name="EmpDateofLeaving" style="font-weight:bold;">
-										<!-- </form> -->
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Category</label>
-									<div class="col-sm-5">
-										<select name="EmpCategory" class="form-control">
-											<option></option>
-											<option>OPEN</option>
-											<option>OBC</option>
-											<option>SC</option>
-											<option>ST</option>
-										</select>
-									</div>
-								</div>
-
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Aadhar Card No</label>
-									<div class="col-sm-5">
-										<input type="text" name="EmpAadharNo" class="form-control" placeholder="">
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Pan Card No</label>
-									<div class="col-sm-5">
-										<input type="text" name="EmpPan" class="form-control" placeholder="" required>
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Phone No</label>
-									<div class="col-sm-5">
-										<input type="text" name="EmpPFno" class="form-control" placeholder="" required>
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Status</label>
-									<div class="col-sm-5">
-										<select name="EmpStatus" class="form-control" required>
-											<option></option>
-											<option>ACTIVE</option>
-											<option>RESIGNED</option>
-											<option>RETIRED</option>
-										</select>
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Last Status Change Date</label>
-									<div class="col-sm-4">
-										<input type="date" name="EmpLastStatusChangeDate" class="form-control" style="font-weight:bold;" placeholder="">
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Bank Details</label>
-									<div class="col-sm-3">
-										<input type="text" name="EmpBankName" class="form-control" placeholder="Bank Name" required>
-									</div>
-									<div class="col-sm-3">
-										<input type="number" name="EmpBankAccount" class="form-control" placeholder="A/c No">
-									</div>
-									<div class="col-sm-3">
-										<input type="text" name="EmpBankIFSC" class="form-control  " placeholder="IFSC Code" required>
-									</div>
-								</div>
-
-
-								<div class="mb-3 row">
-									<div class="col-sm-10 ml-sm-auto">
-
-										<input type="submit" class="btn btn-success" name="test_save" id="submitbtn" value="Save">
-
-
-
-										<!-- <input type="submit"  value="submit" class="btn btn-primary"> -->
-
-									</div>
-
-							</form>
+                       
+                   
+												<!-- <input type="submit"  value="submit" class="btn btn-primary"> -->
+												
+											</div>
+                                            
+									</form>
 						</div>
 					</div>
 				</div>
@@ -446,8 +470,116 @@ if (isset($_POST{
 
 	<script src="../js/app.js"></script>
 	<script src="../js/indapp.js"></script>
-	<script src="../logg.js" ></script>
+	<script src="../logg.js"></script>
 
+<script type="text/javascript">
+		function validation()
+		{
+		
+			var pin = document.getElementById('pin').value;
+			var mobile1 = document.getElementById('mobile1').value;
+			var EmailID=document.getElementById('EmailID').value;
+			var aadhar = document.getElementById('aadhar').value;
+			var pan =document.getElementById('pan').value;
+
+			
+
+			
+
+			
+			 if (pin == "") 
+			{
+                    document.getElementById('pincode').innerHTML="**please fill the pincode";
+                    return false;
+			}
+			if (pin.length<6)
+			 {
+			 	document.getElementById('pincode').innerHTML="**number must be 6 digit";
+                    return false;
+			 }
+			 if (pin.length>6)
+			 {
+			 	document.getElementById('pincode').innerHTML="**number must be 6 digit";
+                    return false;
+			 }
+
+
+			if (mobile1 == "") 
+			{
+                    document.getElementById('mobile').innerHTML="**please fill the mobile no";
+                    return false;
+			}
+			if (mobile1.length<10)
+			 {
+			 	document.getElementById('mobile').innerHTML="**number must be 10 digit";
+                    return false;
+			 }
+			 if (mobile1.length>10)
+			 {
+			 	document.getElementById('mobile').innerHTML="**number must be 10 digit";
+                    return false;
+			 }
+			 if((mobile1.charAt()!=9) && (mobile1.charAt()!=8) && (mobile1.charAt()!=6) )
+			 {
+                  document.getElementById('mobile').innerHTML="**number start must be 9,8 and 6";
+                    return false;
+			 }
+			 if (emailID == "")
+			  {
+			  	document.getElementById('EmailID1').innerHTML="**please fill the EmailID";
+			  	return false;
+			  }
+			  if (emailID.indexof('@') <= 0) {
+			  	document.getElementById('EmailID1').innerHTML="**please fill the email id proper format @";
+			  	return false;
+			  }
+			  if ((emailID.charAt(emailID.length-4)!='.') && (emailID.charAt(emailID.length-3)!='.'))  {
+			  	document.getElementById('EmailID1').innerHTML="please fill the email id proper format .";
+			  	return false;
+			  }
+            if (aadhar == "") 
+			{
+                    document.getElementById('AadharNo').innerHTML="**please fill the Aadhar no";
+                    return false;
+			}
+			if (aadhar.length<12)
+			 {
+			 	document.getElementById('AadharNo').innerHTML="**number must be 12 digit";
+                    return false;
+			 }
+			 if (aadhar.length>12)
+			 {
+			 	document.getElementById('AadharNo').innerHTML="**number must be 12 digit";
+                    return false;
+			 }
+			 if(pan == "")
+			 {
+			 	document.getElementById('panno').innerHTML="**please file the filed";
+			 	return false;
+			 }
+			  if(pan.length>10)
+			 {
+			 	document.getElementById('panno').innerHTML="**number must be 10 digit";
+			 	return false;
+			 }
+			 if(pan.length<10)
+			 {
+			 	document.getElementById('panno').innerHTML="****number must be 10 digit";
+			 	return false;
+			 }
+
+
+            
+
+			 
+		}
+		
+			
+			
+			
+			
+
+	</script>
 </body>
 
 </html>

@@ -241,6 +241,7 @@ include("./connectdb.php");
 										<!-- <li><input type="checkbox" class="hide" id="Pincode_col" name="EmpPinCode, ">Pincode</li> -->
 										<li><input type="checkbox" class="hide" id="Contanctno_col" name="EmpContactNo" style="margin-left: 5px;"> Contanct No</li>
 										<li><input type="checkbox" class="hide" id="Emailid_col" name="EmpEmail" style="margin-left: 5px;"> Email Id</li>
+<li><input type="checkbox" class="hide" id="Datofjoining_col" name="EmpDateofjoining" style="margin-left: 5px;"> Datofjoining</li>
 										<li><input type="checkbox" class="hide" id="Datofleaving_col" name="EmpDateofLeaving" style="margin-left: 5px;"> Date Of Leaving</li>
 										<li><input type="checkbox" class="hide" id="Category_col" name="EmpCategory" style="margin-left: 5px;"> Category</li>
 										<li><input type="checkbox" class="hide" id="AadharNo_col" name="EmpAadharNo" style="margin-left: 5px;"> Aadhar No</li>
@@ -280,6 +281,7 @@ include("./connectdb.php");
 										<th>Pincode</th>
 										<th>Contactno</th>
 										<th>Emailid</th>
+                                                                                <th>DateofJoining</th>
 										<th>Dateofleaving</th>
 										<th>Category</th>
 										<th>AadharNo</th>
@@ -316,6 +318,7 @@ include("./connectdb.php");
                                 <td> " . $result["EmpPinCode"] . "</td>
                                 <td> " . $result["EmpContactNo"] . "</td>             
                                 <td> " . $result["EmpEmailID"] . "</td>
+                                 <td> " . $result["EmpDateofjoining"] . "</td>
                                 <td> " . $result["EmpDateofLeaving"] . "</td>
                                 <td> " . $result["EmpCategory"] . "</td>
                                 <td> " . $result["EmpAadharNo"] . "</td>
@@ -328,8 +331,7 @@ include("./connectdb.php");
                                 <td> " . $result["EmpBankIFSC"] . "</td>
                                 
                            		
-                           		<th><a href='update.php?EmpNo=$result[EmpNo]&EmpNamePrefix=$result[EmpNamePrefix]&EmpFirstName=$result[EmpFirstName]&EmpMidName=$result[EmpMidName]&EmpLastName=$result[EmpLastName]&EmpDesignation=$result[EmpDesignation]&EmpDOB=$result[EmpDOB]&EmpAddress1=$result[EmpAddress1]&EmpAddress2=$result[EmpAddress2]&EmpState=$result[EmpState]&EmpCity=$result[EmpCity]&EmpPinCode=$result[EmpPinCode]&EmpContactNo=$result[EmpContactNo]&EmpEmailID=$result[EmpEmailID]&EmpDateofLeaving=$result[EmpDateofLeaving]&EmpCategory=$result[EmpCategory]&EmpAadharNo=$result[EmpAadharNo]&EmpPan=$result[EmpPan]&EmpPFno=$result[EmpPFno]&EmpStatus=$result[EmpStatus]&EmpLastStatusChangeDate=$result[EmpLastStatusChangeDate]&EmpBankName=$result[EmpBankName]&EmpBankAccount=$result[EmpBankAccount]&EmpBankIFSC=$result[EmpBankIFSC]'><input type='submit' value='Edit' id='updatebtn' class='btn btn-success btn-lg'></a></th>
-                           		<th><a href='delete.php?EmpNo=$result[EmpNo]' onclick='return checkdelete()'><input type='submit' value='delete' id='deletebtn' class=' btn btn-danger btn-lg'></a></th>
+                           		<th><a href='update.php?EmpNo=$result[EmpNo]&EmpNamePrefix=$result[EmpNamePrefix]&EmpFirstName=$result[EmpFirstName]&EmpMidName=$result[EmpMidName]&EmpLastName=$result[EmpLastName]&EmpDesignation=$result[EmpDesignation]&EmpDOB=$result[EmpDOB]&EmpAddress1=$result[EmpAddress1]&EmpAddress2=$result[EmpAddress2]&EmpState=$result[EmpState]&EmpCity=$result[EmpCity]&EmpPinCode=$result[EmpPinCode]&EmpContactNo=$result[EmpContactNo]&EmpEmailID=$result[EmpEmailID]&EmpDateofjoining=$result[EmpDateofjoining]&EmpDateofLeaving=$result[EmpDateofLeaving]&EmpCategory=$result[EmpCategory]&EmpAadharNo=$result[EmpAadharNo]&EmpPan=$result[EmpPan]&EmpPFno=$result[EmpPFno]&EmpStatus=$result[EmpStatus]&EmpLastStatusChangeDate=$result[EmpLastStatusChangeDate]&EmpBankName=$result[EmpBankName]&EmpBankAccount=$result[EmpBankAccount]&EmpBankIFSC=$result[EmpBankIFSC]'><input type='submit' onclick='return checkupdate()' value='Edit' id='updatebtn' class='btn btn-success btn-lg'></a></th>
                            		</tr>";
 										}
 									} else {
@@ -343,6 +345,11 @@ include("./connectdb.php");
 						<script>
 							function checkdelete() {
 								return confirm('Are you sure you want to delete this record');
+							}
+						</script>
+<script>
+							function checkupdate() {
+								return confirm('Are you sure you want to update this record');
 							}
 						</script>
 					</div>
@@ -383,8 +390,7 @@ include("./connectdb.php");
 			}
 		}
 	</script>
-	<script src="../logg.js" ></script>
-
+	<script src="../logg.js"></script>
 </body>
 
 

@@ -19,7 +19,6 @@ include "./connectdb.php";
 	<title></title>
 
 	<link href="../css/app.css" rel="stylesheet">
-	<script src="../logg.js"></script>
 
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -332,7 +331,7 @@ include "./connectdb.php";
                                
                                <td><a href='view.php?StuUIDNo=$result[StuUIDNo]&StuGRNo=$result[StuGRNo]&StuStudentName=$result[StuStudentName]&StuStandard=$result[StuStandard]&StuDiv=$result[StuDiv]&StuGender=$result[StuGender]&StuDOB=$result[StuDOB]&StuDateOfAdmission=$result[StuDateOfAdmission]&StuParentMobileNumber1=$result[StuParentMobileNumber1]&StuParentMobileNumber2=$result[StuParentMobileNumber2]&StuHouseNo=$result[StuHouseNo]&StuStreetName=$result[StuStreetName]&StuLocation=$result[StuLocation]&StuCity=$result[StuCity]&StuDist=$result[StuDist]&StuBirthPlace=$result[StuBirthPlace]&StuAadharNo=$result[StuAadharNo]&StuCategory=$result[StuCategory]&StuCaste=$result[StuCaste]&StuLastschoolname=$result[StuLastschoolname]&StuBankname=$result[StuBankname]&StuBankACno=$result[StuBankACno]&StuBankIFSCcode=$result[StuBankIFSCcode]&StuStatus=$result[StuStatus]&StuStatusChangedDate=$result[StuStatusChangedDate]'><input type='submit' value='View' id='viewebtn' class='btn btn-custom-sm btn-info'></a></td>
                                
-                                <td><a href='update1.php?StuUIDNo=$result[StuUIDNo]&StuGRNo=$result[StuGRNo]&StuStudentName=$result[StuStudentName]&StuStandard=$result[StuStandard]&StuDiv=$result[StuDiv]&StuGender=$result[StuGender]&StuDOB=$result[StuDOB]&StuDateOfAdmission=$result[StuDateOfAdmission]&StuParentMobileNumber1=$result[StuParentMobileNumber1]&StuParentMobileNumber2=$result[StuParentMobileNumber2]&StuHouseNo=$result[StuHouseNo]&StuStreetName=$result[StuStreetName]&StuLocation=$result[StuLocation]&StuCity=$result[StuCity]&StuDist=$result[StuDist]&StuBirthPlace=$result[StuBirthPlace]&StuAadharNo=$result[StuAadharNo]&StuCategory=$result[StuCategory]&StuCaste=$result[StuCaste]&StuLastschoolname=$result[StuLastschoolname]&StuBankname=$result[StuBankname]&StuBankACno=$result[StuBankACno]&StuBankIFSCcode=$result[StuBankIFSCcode]&StuStatus=$result[StuStatus]&StuStatusChangedDate=$result[StuStatusChangedDate]'><input type='submit' value='Update' id='updatebtn' class='btn btn-custom-sm btn-success'></a></td>
+                                 <td><a href='update1.php?StuGRNo=$result[StuGRNo]'><input type='submit' value='Update' id='updatebtn' class='btn btn-custom-sm btn-success' onclick='return checkupdate()'></a></td>
 
                            	  <td><a href='delete1.php?StuUIDNo=$result[StuUIDNo]' onclick='return checkdelete()'><input type='submit' value='Delete' id='deletebtn' class='btn btn-custom-sm btn-danger'></a></td>
                                 
@@ -351,6 +350,10 @@ include "./connectdb.php";
 							function checkdelete() {
 								return confirm('Are you sure you want to delete this record');
 							}
+                                                        function checkupdate()
+                                                           {
+									return confirm('Are you sure you want to Update this record');
+								}
 						</script>
 					</div>
 				</div>
@@ -406,6 +409,7 @@ include "./connectdb.php";
 			}
 		}
 	</script>
+	<script src="../logg.js"></script>
 
 </body>
 

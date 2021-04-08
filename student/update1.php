@@ -4,33 +4,40 @@ include("connectdb.php");
 
 
 
-$StuUIDNo = $_GET['StuUIDNo'];
-$StuGRNo = $_GET['StuGRNo'];
-//$StuStudentRollNo=$_GET['StuStudentRollNo'];
-$StuStudentName = strtoupper($_GET['StuStudentName']);
-$StuStandard = $_GET['StuStandard'];
-$StuDiv = $_GET['StuDiv'];
-
-
-$StuDOB = $_GET['StuDOB'];
-$StuDateOfAdmission = $_GET['StuDateOfAdmission'];
-$StuParentMobileNumber1 = $_GET['StuParentMobileNumber1'];
-$StuParentMobileNumber2 = $_GET['StuParentMobileNumber2'];
-$StuHouseNo = $_GET['StuHouseNo'];
-$StuStreetName = strtoupper($_GET['StuStreetName']);
-$StuLocation = strtoupper($_GET['StuLocation']);
-$StuCity = strtoupper($_GET['StuCity']);
-$StuDist = strtoupper($_GET['StuDist']);
-$StuBirthPlace = strtoupper($_GET['StuBirthPlace']);
-$StuAadharNo = $_GET['StuAadharNo'] ?? "";
-$StuCategory = $_GET['StuCategory'];
-$StuCaste = strtoupper($_GET['StuCaste']);
-$StuLastschoolname = strtoupper($_GET['StuLastschoolname']);
-$StuBankname = strtoupper($_GET['StuBankname']);
-$StuBankACno = $_GET['StuBankACno'] ?? "";
-$StuBankIFSCcode = $_GET['StuBankIFSCcode'];
-$StuStatus = $_GET['StuStatus'];
-$StuStatusChangedDate = $_GET['StuStatusChangedDate'];
+ $StuGRNo=$_GET['StuGRNo'];
+    $result=mysqli_query($conn,"SELECT * FROM studentmaster WHERE StuGRNo=$StuGRNo");
+    while ($res=mysqli_fetch_array($result))
+     {
+    $Stuprefix=$res['Stuprefix'];
+	$StuStudentName=strtoupper($res['StuStudentName']);
+	$Stumiddle=strtoupper($res['Stumiddle']);
+	$StuLastname=strtoupper($res['StuLastname']);
+	$StuAcdemicyear=$res['StuAcdemicyear'];
+	$StuStandard=$res['StuStandard'];
+	$StuDiv=$res['StuDiv'];
+	
+	
+	$StuDOB=$res['StuDOB'];
+	$StuDateOfAdmission=$res['StuDateOfAdmission'];
+	$StuParentMobileNumber1=$res['StuParentMobileNumber1'];
+	$StuParentMobileNumber2=$res['StuParentMobileNumber2'];
+	$StuHouseNo=$res['StuHouseNo'];
+	$StuStreetName=strtoupper($res['StuStreetName']);
+	$StuLocation=strtoupper($res['StuLocation']);
+	$StuCity=strtoupper($res['StuCity']);
+	$StuDist=strtoupper($res['StuDist']);
+	$StuBirthPlace=strtoupper($res['StuBirthPlace']);
+	$StuAadharNo=$res['StuAadharNo']??"";
+	$StuCategory=$res['StuCategory'];
+	$StuCaste=strtoupper($res['StuCaste']);
+	$StuLastschoolname=strtoupper($res['StuLastschoolname']);
+	$StuBankname=strtoupper($res['StuBankname']);
+	$StuBankACno=$res['StuBankACno']??"";
+	$StuBankIFSCcode=$res['StuBankIFSCcode'];
+	$StuStatus=$res['StuStatus'];
+	$StuStatusChangedDate=$res['StuStatusChangedDate'];
+    }
+   
 
 
 ?>
@@ -49,7 +56,6 @@ $StuStatusChangedDate = $_GET['StuStatusChangedDate'];
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
 	<title>Form Layouts | Admin Demo</title>
-	<script src="../logg.js"></script>
 
 	<link href="../payroll/css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -219,15 +225,80 @@ $StuStatusChangedDate = $_GET['StuStatusChangedDate'];
 
 						</div>
 						<div class="card-body">
-							<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET" enctype="multipart/form-data">
+							<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET" enctype="multipart/form-data" onsubmit="return validation()">
 
 
 								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Name</label>
-									<div class="col-sm-7">
-										<input type="text" class="form-control" name="StuStudentName" value="<?php echo "$StuStudentName" ?>" placeholder="Enter Name">
-									</div>
-
+											
+											<div class="col-sm-3">
+												<input type="hidden" class="form-control" name="StuGRNo" placeholder="" value="<?php echo $_GET['StuGRNo'];?>" required>
+											</div>
+										</div>
+										
+										<div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Name</label>
+											<div class="col-sm-1">
+												<select class="form-control" value="<?php echo $Stuprefix?>" name="Stuprefix">
+													<option value="MRS." <?php
+													if($Stuprefix=='MRS.')
+													{
+														echo "selected";
+													}
+													?>>MRS.</option>
+													<option <?php
+													if($Stuprefix=='MR.')
+													{
+														echo "selected";
+													}
+													?>>MR.</option>
+													<option <?php
+													if($Stuprefix=='MISS.')
+													{
+														echo "selected";
+													}
+													?>>MISS.</option>
+													<option <?php
+													if($Stuprefix=='MS.')
+													{
+														echo "selected";
+													}
+													?>>MS.</option>
+												</select>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" class="form-control"
+												name="StuStudentName" value="<?php echo $StuStudentName?>" placeholder="FirstName"  required>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" class="form-control"
+												name="Stumiddle" value="<?php echo $Stumiddle?>"  placeholder="MiddelName" required>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" class="form-control"
+												name="StuLastname" value="<?php echo $StuLastname?>" placeholder="LastName" required>
+											</div>
+											</div>
+<div class="mb-3 row">
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Year</label>
+											
+											<div class="col-sm-2">
+                                            <select name="StuAcdemicyear" class="form-control" value="<?php echo "$StuAcdemicyear"?>">
+                                                <option value="">--Select Academic Year--</option>
+                                                      <option value="2020-21"
+                                                       <?php
+                                                       if ($StuAcdemicyear=='2020-21') {
+                                                       echo "selected";
+                                                       }
+                                                      ?>>2020-21</option>
+                                                       <option 
+                                                       <?php
+                                                       if ($StuAcdemicyear=='2021-22') {
+                                                       	echo "selected";
+                                                       }
+                                                       ?>>2021-22</option>
+                                               
+                                                </option>       </select>
+                                     </div>
 								</div>
 
 								<div class="mb-3 row">
@@ -318,14 +389,17 @@ $StuStatusChangedDate = $_GET['StuStatusChangedDate'];
 								</div>
 
 								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Mobile No</label>
-									<div class="col-sm-4">
-										<input type="number" class="form-control" name="StuParentMobileNumber1" value="<?php echo "$StuParentMobileNumber1" ?>" placeholder="primary No">
-									</div>
-									<div class="col-sm-4">
-										<input type="number" class="form-control" name="StuParentMobileNumber2" value="<?php echo "$StuParentMobileNumber2" ?>" placeholder="Secondary No">
-									</div>
-								</div>
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Mobile No</label>
+											<div class="col-sm-4">
+												<input type="number" class="form-control" name="StuParentMobileNumber1" value="<?php echo"$StuParentMobileNumber1"?>" placeholder="primary No" 
+												id="mobile1" autocomplete="off">
+												<span id="mobile" class="text-danger font-weight-bold"></span>
+											</div>
+											<div class="col-sm-4">
+												<input type="number" class="form-control" name="StuParentMobileNumber2"  value="<?php echo "$StuParentMobileNumber2"?>" id="mobile2" placeholder="Secondary No">
+												<span id="mo" class="text-danger font-weight-bold"></span>
+											</div>
+										</div>
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Address</label>
 									<div class="col-sm-4">
@@ -356,11 +430,12 @@ $StuStatusChangedDate = $_GET['StuStatusChangedDate'];
 									</div>
 								</div>
 								<div class="mb-3 row">
-									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">AadharNo</label>
-									<div class="col-sm-4">
-										<input type="number" class="form-control" name="StuAadharNo" placeholder="" value="<?php echo "$StuAadharNo" ?>">
-									</div>
-								</div>
+											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">AadharNo</label>
+											<div class="col-sm-4">
+												<input type="number" class="form-control" name="StuAadharNo" placeholder="" value="<?php echo "$StuAadharNo"?>" id="aadharNo" >
+												<span id="Aadhar" class="text-danger font-weight-bold"></span>
+											</div>
+										</div>
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Category</label>
 									<div class="col-sm-4">
@@ -492,59 +567,138 @@ $StuStatusChangedDate = $_GET['StuStatusChangedDate'];
 	</div>
 
 	<script src="../payroll/js/app.js"></script>
+	<script src="../logg.js"></script>
+
+        <script type="text/javascript">
+		
+		function validation()
+		{
+			var mobile1 = document.getElementById('mobile1').value;
+			var mobile2 = document.getElementById('mobile2').value;
+			var aadharNo = document.getElementById('aadharNo').value;
+
+			if (mobile1 == "") 
+			{
+                    document.getElementById('mobile').innerHTML="**please fill the mobile no";
+                    return false;
+			}
+			if (mobile1.length<10)
+			 {
+			 	document.getElementById('mobile').innerHTML="**number must be 10 digit";
+                    return false;
+			 }
+			 if (mobile1.length>10)
+			 {
+			 	document.getElementById('mobile').innerHTML="**number must be 10 digit";
+                    return false;
+			 }
+			 if((mobile1.charAt()!=9) && (mobile1.charAt()!=8) && (mobile1.charAt()!=6) )
+			 {
+                  document.getElementById('mobile').innerHTML="**number start must be 9,8 and 6";
+                    return false;
+			 }
+
+             //return true;
+			 if (mobile2 == "") 
+			{
+                    document.getElementById('mo').innerHTML="**please fill the mobile no";
+                    return false;
+			}
+			if (mobile2.length<10)
+			 {
+			 	document.getElementById('mo').innerHTML="**number must be 10 digit";
+                    return false;
+			 }
+			 if (mobile2.length>10)
+			 {
+			 	document.getElementById('mo').innerHTML="**number must be 10 digit";
+                    return false;
+			 }
+			 if((mobile2.charAt()!=9) && (mobile2.charAt()!=8) && (mobile2.charAt()!=6) )
+			 {
+                  document.getElementById('mo').innerHTML="**number start must be 9,8 and 6";
+                    return false;
+			 }
+			
+             //return true;
+			 if (aadharNo == "") 
+			{
+                    document.getElementById('Aadhar').innerHTML="**please fill the Aadhar no";
+                    return false;
+			}
+			if (aadharNo.length<12)
+			 {
+			 	document.getElementById('Aadhar').innerHTML="**number must be 12 digit";
+                    return false;
+			 }
+			 if (aadharNo.length>12)
+			 {
+			 	document.getElementById('Aadhar').innerHTML="**number must be 12 digit";
+                    return false;
+			 }
+
+			 return true;
+			}
+
+		
+	
+
+									
+			
+			
+			
+
+	</script>
 
 </body>
 
 </html>
 <?php
-$conn = mysqli_connect("localhost", "root", "", "test4");
-if ($_GET['test_update']) {
-
-	$StuUIDNo = $_GET['StuUIDNo'];
-	$StuGRNo = $_GET['StuGRNo'];
-	//$StuStudentRollNo=$_GET['StuStudentRollNo'];
-	$StuStudentName = strtoupper($_GET['StuStudentName']);
-	$StuStandard = $_GET['StuStandard'];
-	$StuDiv = $_GET['StuDiv'];
-
-	$StuDOB = $_GET['StuDOB'];
-	$StuDateOfAdmission = $_GET['StuDateOfAdmission'];
-	$StuParentMobileNumber1 = $_GET['StuParentMobileNumber1'];
-	$StuParentMobileNumber2 = $_GET['StuParentMobileNumber2'];
-	$StuHouseNo = $_GET['StuHouseNo'];
-	$StuStreetName = strtoupper($_GET['StuStreetName']);
-	$StuLocation = strtoupper($_GET['StuLocation']);
-	$StuCity = strtoupper($_GET['StuCity']);
-	$StuDist = strtoupper($_GET['StuDist']);
-	$StuBirthPlace = strtoupper($_GET['StuBirthPlace']);
-	$StuAadharNo = $_GET['StuAadharNo'] ?? "";
-	$StuCategory = $_GET['StuCategory'];
-	$StuCaste = strtoupper($_GET['StuCaste']);
-	$StuLastschoolname = strtoupper($_GET['StuLastschoolname']);
-	$StuBankname = strtoupper($_GET['StuBankname']);
-	$StuBankACno = $_GET['StuBankACno'] ?? "";
-	$StuBankIFSCcode = $_GET['StuBankIFSCcode'];
-	$StuStatus = $_GET['StuStatus'];
-	$StuStatusChangedDate = $_GET['StuStatusChangedDate'];
-
-
-
+$conn = mysqli_connect("localhost", "root", "", "schoolmanage");
+ if(isset($_POST['test_update']))
+    {
+    $StuGRNo=$_POST['StuGRNo'];
+    $Stuprefix=$_POST['Stuprefix'];
+	$StuStudentName=strtoupper($_POST['StuStudentName']);
+	$Stumiddle=strtoupper($_POST['Stumiddle']);
+	$StuLastname=strtoupper($_POST['StuLastname']);
+	$StuAcdemicyear=$_POST['StuAcdemicyear'];
+	$StuStandard=$_POST['StuStandard'];
+	$StuDiv=$_POST['StuDiv'];
+	$StuDOB=$_POST['StuDOB'];
+	$StuDateOfAdmission=$_POST['StuDateOfAdmission'];
+	$StuParentMobileNumber1=$_POST['StuParentMobileNumber1'];
+	$StuParentMobileNumber2=$_POST['StuParentMobileNumber2'];
+	$StuHouseNo=$_POST['StuHouseNo'];
+	$StuStreetName=strtoupper($_POST['StuStreetName']);
+	$StuLocation=strtoupper($_POST['StuLocation']);
+	$StuCity=strtoupper($_POST['StuCity']);
+	$StuDist=strtoupper($_POST['StuDist']);
+	$StuBirthPlace=strtoupper($_POST['StuBirthPlace']);
+	$StuAadharNo=$_POST['StuAadharNo']??"";
+	$StuCategory=$_POST['StuCategory'];
+	$StuCaste=strtoupper($_POST['StuCaste']);
+	$StuLastschoolname=strtoupper($_POST['StuLastschoolname']);
+	$StuBankname=strtoupper($_POST['StuBankname']);
+	$StuBankACno=$_POST['StuBankACno']??"";
+	$StuBankIFSCcode=$_POST['StuBankIFSCcode'];
+	$StuStatus=$_POST['StuStatus'];
+	$StuStatusChangedDate=$_POST['StuStatusChangedDate'];
 
 
+	$result=mysqli_query($conn,"UPDATE studentmaster SET Stuprefix='$Stuprefix',StuStudentName='$StuStudentName',Stumiddle='$Stumiddle',StuLastname='$StuLastname',StuAcdemicyear='$StuAcdemicyear',StuStandard='$StuStandard',StuDiv='$StuDiv',StuDOB='$StuDOB',StuDateOfAdmission='$StuDateOfAdmission',StuParentMobileNumber1='$StuParentMobileNumber1',StuParentMobileNumber2='$StuParentMobileNumber2',StuHouseNo='$StuHouseNo',StuStreetName='$StuStreetName',StuLocation='$StuLocation',StuCity='$StuCity',StuDist='$StuDist',StuBirthPlace='$StuBirthPlace',StuAadharNo='$StuAadharNo',StuCategory='$StuCategory',StuCaste='$StuCaste',StuLastschoolname='$StuLastschoolname',StuBankname='$StuBankname',StuBankACno='$StuBankACno',StuBankIFSCcode='$StuBankIFSCcode',StuStatus='$StuStatus',StuStatusChangedDate='$StuStatusChangedDate' WHERE StuGRNo=$StuGRNo");
+	if($result)
+	{
+		echo "Updated";
+		?>
+		<META HTTP-EQUIV="Refresh" CONTENT="0; URL= http://SCHOOL-MANAGEMENT-SYSTEM-main/SCHOOL-MANAGEMENT-SYSTEM-main/student/student-view.php">
+	<?php
 
-	$query = "UPDATE studentmaster SET StuUIDNo='$StuUIDNo',StuGRNo='$StuGRNo',
-      StuStudentName= '$StuStudentName',StuStandard= '$StuStandard',
-      StuDiv ='$StuDiv',StuDOB ='$StuDOB', StuDateOfAdmission ='$StuDateOfAdmission',
-      StuParentMobileNumber1 ='$StuParentMobileNumber1',StuParentMobileNumber2 ='$StuParentMobileNumber2',StuHouseNo ='$StuHouseNo',StuStreetName='$StuStreetName',StuLocation='$StuLocation',StuCity='$StuCity',StuDist='$StuDist',StuBirthPlace ='$StuBirthPlace',StuAadharNo ='$StuAadharNo',StuCategory ='$StuCategory',StuCaste ='$StuCaste',StuLastschoolname ='$StuLastschoolname', StuBankname ='$StuBankname',
-       StuBankACno ='$StuBankACno',StuBankIFSCcode ='$StuBankIFSCcode',StuStatus ='$StuStatus',StuStatusChangedDate='$StuStatusChangedDate' where StuUIDNo='$StuUIDNo'";
-	$data = mysqli_query($conn, $query);
-	if ($data) {
-		echo "<scrpit>alert('Record update from database')</scrpit>";
-?>
-		<META HTTP-EQUIV="Refresh" CONTENT="0; URL= http://localhost/test4/student-view.php">
-<?php
-	} else {
-		echo "failed update";
+	}  
+	else
+	{
+		echo "failed";
 	}
 }
+
 ?>

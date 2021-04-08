@@ -11,7 +11,6 @@ include("./connectdb.php");
     <link rel="stylesheet" href="../css/app.css">
     <link href="../css/gapi.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/ui_d.css">
-    <script src="../logg.js"></script>
 
     <title>Dashboard</title>
 </head>
@@ -185,16 +184,16 @@ include("./connectdb.php");
                         </div> -->
                     </div>
                 </div>
-                <span id="sufe" ></span>
+                
                 <div class="row">
                     <div class="w-100">
                         <div class="row">
-                            <div class="col-sm-5 text-center">
+                            <div class="col-sm-7 text-center">
                                 <div class="card">
                                     <div class="card-body">
                                         <!-- <h5 class="card-title mb-4">Attendance</h5> -->
                                         <!-- <h1 class="mt-1 mb-3">Setup Fees</h1> -->
-                                        <div class="container text-left" style="margin-left: 30px;">
+                                        <div class="container text-left" style="margin: 30px;">
                                             <div class="row" style="margin-bottom: 10px;">
                                                 <div class="col-3 font-weight-bold">Year</div>
                                                 <div class="col-5">
@@ -217,7 +216,8 @@ include("./connectdb.php");
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row" style="margin-bottom: 10px;">
+                                            <span id="sufe" ></span>
+                                            <!-- <div class="row" style="margin-bottom: 10px;">
                                                 <div class="col-3 font-weight-bold">Annual Fees</div>
                                                 <div class="col-4">
                                                     <input type="number" class="form-control" name="feede" id="fsde">
@@ -229,7 +229,7 @@ include("./connectdb.php");
                                                 <div class="col-4">
                                                 <button type="button" class="btn-success btn" id="feeseb" >Set Fee</button>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -279,6 +279,8 @@ include("./connectdb.php");
     <script src="../js/app.js"></script>
     <script src="../js/indapp.js"></script>
     <script src="./setfee.js"></script>
+    <script src="../logg.js"></script>
+
 </body>
 
 </html>

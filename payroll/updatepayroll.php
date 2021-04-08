@@ -71,7 +71,6 @@ while ($eid = mysqli_fetch_array($empidresult)) {
     <link rel="stylesheet" href="css/log.css">
     <link rel="stylesheet" href="css/stylefees.css">
     <link rel="stylesheet" href="css/ui_d.css">
-    <script src="../logg.js"></script>
 
     <!-- Latest compiled and minified CSS
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -553,6 +552,8 @@ while ($eid = mysqli_fetch_array($empidresult)) {
     <script src="js/app.js"></script>
     <script src="js/indapp.js"></script>
     <script src="updatepay.js"></script>
+    <script src="../logg.js"></script>
+
 </body>
 
 </html>

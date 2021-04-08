@@ -44,7 +44,7 @@
                         <td>'.  $row["StuUIDNo"].'</td>
                         <td>'.  $row["StuGRNo"].'</td>
                         <td>'.  $row["StuRollNo"].'</td>
-                        <td>'.  $row["StuStudentName"] .'</td>
+                         <td>'.$row["Stuprefix"]." ".  $row["StuStudentName"] ." ".$row["Stumiddle"]." ".$row["StuLastname"].'</td>
                          <td>'.  $row["StuAcdemicyear"].'</td>
                         <td>'.  $row["StuStandard"].'</td>
                         <td>'.  $row["StuDiv"].'</td>
