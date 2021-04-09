@@ -370,6 +370,7 @@ include("./connectdb.php");
 		</div>
 	</div>
 	<script src="../js/indapp.js"></script>
+	<script src="../logg.js"></script>
 	<script src="../js/app.js">
 		function hide_show_table(col_name) {
 			var checkbox_val = document.getElementsById(col_name).value;
@@ -390,7 +391,6 @@ include("./connectdb.php");
 			}
 		}
 	</script>
-	<script src="../logg.js"></script>
 </body>
 
 

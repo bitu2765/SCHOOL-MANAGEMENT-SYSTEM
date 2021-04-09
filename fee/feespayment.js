@@ -55,17 +55,27 @@ document.getElementById("fediv").onchange = function() {
         xmlhttp.open("GET", "getfeesde.php" + querystr, true);
         xmlhttp.send();
         // alert(ay);
-        var xmlhttp1 = new XMLHttpRequest();
-        xmlhttp1.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("sttable").innerHTML = this.responseText;
-            }
-        };
-        xmlhttp1.open("GET", "stutab.php" + querystr, true);
-        xmlhttp1.send();
+        stutab();
     }
 };
 
+
+function stutab() {
+    var ay = document.getElementById("feay").value;
+    var st = document.getElementById("fest").value;
+    var di = document.getElementById("fediv").value;
+
+    var querystr = "?ay=" + ay + "&std=" + st + "&div=" + di;
+
+    var xmlhttp1 = new XMLHttpRequest();
+    xmlhttp1.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("sttable").innerHTML = this.responseText;
+        }
+    };
+    xmlhttp1.open("GET", "stutab.php" + querystr, true);
+    xmlhttp1.send();
+}
 
 document.getElementById("udfe").onclick = function() {
     // alert("Function started!");

@@ -24,6 +24,7 @@ if (isset($_POST{
 		$error = "moblile number should be of 10 digit";
 	}
 	$EmpEmailID = $_POST['EmpEmailID'];
+        $EmpDateofjoining=$_POST['EmpDateofjoining'];
 	$EmpDateofLeaving = $_POST['EmpDateofLeaving'];
 	$EmpCategory = strtoupper($_POST['EmpCategory']);
 	$EmpAadharNo = $_POST['EmpAadharNo'];
@@ -36,7 +37,7 @@ if (isset($_POST{
 	$EmpBankIFSC = $_POST['EmpBankIFSC'];
 
 	$sql = " INSERT INTO `employeemaster` values('$EmpNo','$EmpNamePrefix','$EmpFirstName','$EmpMidName','$EmpLastName', '$EmpDesignation','$EmpGender','$EmpDOB','$EmpAddress1', 
-          '$EmpAddress2', '$EmpState', '$EmpCity',$EmpPinCode,$EmpContactNo, '$EmpEmailID', '$EmpDateofLeaving', '$EmpCategory','$EmpAadharNo', '$EmpPan', '$EmpPFno', '$EmpStatus', '$EmpLastStatusChangeDate', '$EmpBankName', '$EmpBankAccount', '$EmpBankIFSC')";
+          '$EmpAddress2', '$EmpState', '$EmpCity',$EmpPinCode,$EmpContactNo, '$EmpEmailID','$EmpDateofjoining',  '$EmpDateofLeaving', '$EmpCategory','$EmpAadharNo', '$EmpPan', '$EmpPFno', '$EmpStatus', '$EmpLastStatusChangeDate', '$EmpBankName', '$EmpBankAccount', '$EmpBankIFSC')";
 
 	$res = mysqli_query($conn, $sql);
 	if ($res) {
@@ -62,7 +63,6 @@ if (isset($_POST{
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
 	<title>Form Layouts | AdminKit Demo</title>
-	<script src="../logg.js"></script>
 
 	<link href="../css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -471,7 +471,6 @@ if (isset($_POST{
 	<script src="../js/app.js"></script>
 	<script src="../js/indapp.js"></script>
 	<script src="../logg.js"></script>
-
 <script type="text/javascript">
 		function validation()
 		{

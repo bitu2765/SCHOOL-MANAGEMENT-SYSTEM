@@ -31,7 +31,7 @@ include("connectdb.php");
 
             if ($eid["FeesJanuary"]) {
                 echo "<tr>";
-                echo "<td><input type='checkbox' id='1' checked name='jan' style='margin: 5px;' onclick='return false'></td>";
+                echo "<td><input type='checkbox' id='1' checked name='jan' style='margin: 5px;'></td>";
                 echo "<td><label for='ja' class='text-success'> January</label></td></tr>";
             } else {
                 echo "<tr>";
@@ -42,7 +42,7 @@ include("connectdb.php");
 
             if ($eid["FeesFebruary"]) {
                 echo "<tr>";
-                echo "<td><input type='checkbox' id='2' checked name='feb[]' style='margin: 5px;' onclick='return false'></td>";
+                echo "<td><input type='checkbox' id='2' checked name='feb[]' style='margin: 5px;'></td>";
                 echo "<td><label for='ja' class='text-success'> February</label></td></tr>";
             } else {
                 echo "<tr>";
@@ -53,7 +53,7 @@ include("connectdb.php");
 
             if ($eid["FeesMarch"]) {
                 echo "<tr>";
-                echo "<td><input type='checkbox' id='3' checked name='mar[]' style='margin: 5px;' onclick='return false'></td>";
+                echo "<td><input type='checkbox' id='3' checked name='mar[]' style='margin: 5px;' ></td>";
                 echo "<td><label for='ja' class='text-success'> March</label></td></tr>";
             } else {
                 echo "<tr>";
@@ -64,7 +64,7 @@ include("connectdb.php");
 
             if ($eid["FeesApril"]) {
                 echo "<tr>";
-                echo "<td><input type='checkbox' id='4' checked name='ap[]' style='margin: 5px;' onclick='return false'></td>";
+                echo "<td><input type='checkbox' id='4' checked name='ap[]' style='margin: 5px;'></td>";
                 echo "<td><label for='ja' class='text-success'> April</label></td></tr>";
             } else {
                 echo "<tr>";
@@ -75,7 +75,7 @@ include("connectdb.php");
 
             if ($eid["FeesMay"]) {
                 echo "<tr>";
-                echo "<td><input type='checkbox'  id='5' checked name='me[]' style='margin: 5px;' onclick='return false'></td>";
+                echo "<td><input type='checkbox'  id='5' checked name='me[]' style='margin: 5px;' ></td>";
                 echo "<td><label for='ja' class='text-success'> May</label></td></tr>";
             } else {
                 echo "<tr>";
@@ -86,7 +86,7 @@ include("connectdb.php");
 
             if ($eid["FeesJune"]) {
                 echo "<tr>";
-                echo "<td><input type='checkbox' id='6' checked name='jn[]' style='margin: 5px;' onclick='return false'></td>";
+                echo "<td><input type='checkbox' id='6' checked name='jn[]' style='margin: 5px;'></td>";
                 echo "<td><label for='ja' class='text-success'> June</label></td></tr>";
             } else {
                 echo "<tr>";
@@ -97,7 +97,7 @@ include("connectdb.php");
 
             if ($eid["FeesJuly"]) {
                 echo "<tr>";
-                echo "<td><input type='checkbox'  id='7' checked name='jl[]' style='margin: 5px;' onclick='return false'></td>";
+                echo "<td><input type='checkbox'  id='7' checked name='jl[]' style='margin: 5px;'></td>";
                 echo "<td><label for='ja' class='text-success'> July</label></td></tr>";
             } else {
                 echo "<tr>";
@@ -108,7 +108,7 @@ include("connectdb.php");
 
             if ($eid["FeesAugust"]) {
                 echo "<tr>";
-                echo "<td><input type='checkbox'  id='8' checked name='ag[]' style='margin: 5px;' onclick='return false'></td>";
+                echo "<td><input type='checkbox'  id='8' checked name='ag[]' style='margin: 5px;'></td>";
                 echo "<td><label for='ja' class='text-success'> August</label></td></tr>";
             } else {
                 echo "<tr>";
@@ -119,7 +119,7 @@ include("connectdb.php");
 
             if ($eid["FeesSeptember"]) {
                 echo "<tr>";
-                echo "<td><input type='checkbox'  id='9' checked name='sep[]' style='margin: 5px;' onclick='return false'></td>";
+                echo "<td><input type='checkbox'  id='9' checked name='sep[]' style='margin: 5px;'></td>";
                 echo "<td><label for='ja' class='text-success'> September</label></td></tr>";
             } else {
                 echo "<tr>";
@@ -130,7 +130,7 @@ include("connectdb.php");
 
             if ($eid["FeesOctomber"]) {
                 echo "<tr>";
-                echo "<td><input type='checkbox'  id='10' checked name='oc[]' style='margin: 5px;' onclick='return false'></td>";
+                echo "<td><input type='checkbox'  id='10' checked name='oc[]' style='margin: 5px;'></td>";
                 echo "<td><label for='ja' class='text-success'> Octomber</label></td></tr>";
             } else {
                 echo "<tr>";
@@ -141,7 +141,7 @@ include("connectdb.php");
 
             if ($eid["FeesNovember"]) {
                 echo "<tr>";
-                echo "<td><input type='checkbox' id='11' checked name='no[]' style='margin: 5px;' onclick='return false'></td>";
+                echo "<td><input type='checkbox' id='11' checked name='no[]' style='margin: 5px;'></td>";
                 echo "<td><label for='ja' class='text-success'> November</label></td></tr>";
             } else {
                 echo "<tr>";
@@ -152,7 +152,7 @@ include("connectdb.php");
 
             if ($eid["FeesDecember"]) {
                 echo "<tr>";
-                echo "<td><input type='checkbox' id='12' checked name='de[]' style='margin: 5px;' onclick='return false'></td>";
+                echo "<td><input type='checkbox' id='12' checked name='de[]' style='margin: 5px;'></td>";
                 echo "<td><label for='ja' class='text-success'> December</label></td></tr>";
             } else {
                 echo "<tr>";

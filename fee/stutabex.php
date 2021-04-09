@@ -69,6 +69,8 @@ while ($eid = mysqli_fetch_array($empidresult)) {
 $op .= '</tbody></table>';
 header("Content-Type:applicatoin/vnd.ms-excel");
 header("Content-Disposition:atachment; filename=feespayment : ".date("d-m-y").".xls");
+echo "Shree SZ Vaghela High School<br><br>";
+echo  "Report Date       : ".date("d-m-Y")."<br>";
 echo  "Academic Year     : ".$_GET["feay"];
 echo  "<br>Standard      : ".$_GET["fest"];
 echo  "<br>Division      : ".$_GET["fediv"];
