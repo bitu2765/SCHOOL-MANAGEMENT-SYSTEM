@@ -328,11 +328,14 @@ include("./connectdb.php");
 								<thead class="table table-dark">
 
 									<tr>
+										<th>View</th>
+										<th>Update</th>
+										<th>Delete</th>
 										<th>UIDNo</th>
 										<th>GRNo</th>
 										<th>RollNo</th>
 										<th>StudentName</th>
-										<th>year</th>
+										<th>Academic Year</th>
 										<th>Standard</th>
 										<th>Div</th>
 										<th>Gender</th>
@@ -351,15 +354,14 @@ include("./connectdb.php");
 										<th> BankIFSC</th>
 										<th>Status</th>
 										<th>StatusChangeDate</th>
-										<th>Document</th>
-										<th></th>
-										<th></th>
+
 
 									</tr>
 								</thead>
 								<tbody>
 									<?php
-									if (isset($_POST{'Serch'})) {
+									if (isset($_POST{
+										'Serch'})) {
 										$StAcademicYear = $_POST['st_year'];
 										$StStandard = $_POST['st_std'];
 										$StDivision = $_POST['st_div'];
@@ -375,6 +377,12 @@ include("./connectdb.php");
 												echo "
 						
                            		<tr>
+								   <td><a href='view.php?StuUIDNo=$result[StuUIDNo]&StuGRNo=$result[StuGRNo]&StuStudentName=$result[StuStudentName]&StuStandard=$result[StuStandard]&StuDiv=$result[StuDiv]&StuGender=$result[StuGender]&StuDOB=$result[StuDOB]&StuDateOfAdmission=$result[StuDateOfAdmission]&StuParentMobileNumber1=$result[StuParentMobileNumber1]&StuParentMobileNumber2=$result[StuParentMobileNumber2]&StuHouseNo=$result[StuHouseNo]&StuStreetName=$result[StuStreetName]&StuLocation=$result[StuLocation]&StuCity=$result[StuCity]&StuDist=$result[StuDist]&StuBirthPlace=$result[StuBirthPlace]&StuAadharNo=$result[StuAadharNo]&StuCategory=$result[StuCategory]&StuCaste=$result[StuCaste]&StuLastschoolname=$result[StuLastschoolname]&StuBankname=$result[StuBankname]&StuBankACno=$result[StuBankACno]&StuBankIFSCcode=$result[StuBankIFSCcode]&StuStatus=$result[StuStatus]&StuStatusChangedDate=$result[StuStatusChangedDate]'><input type='submit' value='View' id='viewebtn' class='btn btn-custom-sm btn-info'></a></td>
+                               
+								   <td><a href='update1.php?StuGRNo=$result[StuGRNo]'><input type='submit' value='Update' id='updatebtn' class='btn btn-custom-sm btn-success' onclick='return checkupdate()'></a></td>
+  
+								   <td><a href='delete1.php?StuUIDNo=$result[StuUIDNo]' onclick='return checkdelete()'><input type='submit' value='Delete' id='deletebtn' class='btn btn-custom-sm btn-danger'></a></td>
+								   
                            		<td>" . $result['StuUIDNo'] . "</td>
                            		<td>" . $result['StuGRNo'] . " </td>
                            		<td>" . $result['StuRollNo'] . " </td>
@@ -399,11 +407,7 @@ include("./connectdb.php");
                                 <td>" . $result['StuStatus'] . "</td>
                                 <td>" . $result['StuStatusChangedDate'] . "</td>
                                
-                               <td><a href='view.php?StuUIDNo=$result[StuUIDNo]&StuGRNo=$result[StuGRNo]&StuStudentName=$result[StuStudentName]&StuStandard=$result[StuStandard]&StuDiv=$result[StuDiv]&StuGender=$result[StuGender]&StuDOB=$result[StuDOB]&StuDateOfAdmission=$result[StuDateOfAdmission]&StuParentMobileNumber1=$result[StuParentMobileNumber1]&StuParentMobileNumber2=$result[StuParentMobileNumber2]&StuHouseNo=$result[StuHouseNo]&StuStreetName=$result[StuStreetName]&StuLocation=$result[StuLocation]&StuCity=$result[StuCity]&StuDist=$result[StuDist]&StuBirthPlace=$result[StuBirthPlace]&StuAadharNo=$result[StuAadharNo]&StuCategory=$result[StuCategory]&StuCaste=$result[StuCaste]&StuLastschoolname=$result[StuLastschoolname]&StuBankname=$result[StuBankname]&StuBankACno=$result[StuBankACno]&StuBankIFSCcode=$result[StuBankIFSCcode]&StuStatus=$result[StuStatus]&StuStatusChangedDate=$result[StuStatusChangedDate]'><input type='submit' value='View' id='viewebtn' class='btn btn-custom-sm btn-info'></a></td>
-                               
-                                 <td><a href='update1.php?StuGRNo=$result[StuGRNo]'><input type='submit' value='Update' id='updatebtn' class='btn btn-custom-sm btn-success' onclick='return checkupdate()'></a></td>
 
-                           	  <td><a href='delete1.php?StuUIDNo=$result[StuUIDNo]' onclick='return checkdelete()'><input type='submit' value='Delete' id='deletebtn' class='btn btn-custom-sm btn-danger'></a></td>
                                 
                            		</tr>";
 											}
@@ -431,34 +435,16 @@ include("./connectdb.php");
 					</div>
 				</div>
 			</main>
-
 			<footer class="footer">
 				<div class="container-fluid">
 					<div class="row text-muted">
 						<div class="col-6 text-left">
 							<p class="mb-0">
-								<a href="index.html" class="text-muted"><strong>Demo</strong></a> &copy;
+								<a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High School</strong></a> &copy;
 							</p>
-						</div>
-						<div class="col-6 text-right">
-							<ul class="list-inline">
-								<li class="list-inline-item">
-									<a class="text-muted" href="#">Support</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="#">Help Center</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="#">Privacy</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="#">Terms</a>
-								</li>
-							</ul>
 						</div>
 					</div>
 				</div>
-
 			</footer>
 		</div>
 	</div>

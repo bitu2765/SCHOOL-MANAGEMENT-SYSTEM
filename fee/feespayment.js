@@ -55,6 +55,7 @@ document.getElementById("fediv").onchange = function() {
         xmlhttp.open("GET", "getfeesde.php" + querystr, true);
         xmlhttp.send();
         // alert(ay);
+        stutab();
     }
 };
 
