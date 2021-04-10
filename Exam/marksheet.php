@@ -1,3 +1,6 @@
+<?php
+include 'connection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -205,7 +208,7 @@
                     $exam = $_POST['search_Exam'];
                     $div = $_POST['search_Div'];
 
-                    include 'connection.php';
+                    
 
                     $str1 = "SELECT `IsResultVisible` FROM  exammaster  WHERE ExamAcademicYear='$year' AND ExamStandard='$standard' AND ExamName='$exam'";
 

@@ -1,5 +1,5 @@
 <?php
-include "./connectdb.php";
+include("./connectdb.php");
 ?>
 
 <!DOCTYPE html>
@@ -18,12 +18,12 @@ include "./connectdb.php";
 
 	<title></title>
 
-	<link href="../css/app.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/app.css">
+	<link href="css/app.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script>
 		function get_data() {
 
@@ -188,17 +188,17 @@ include "./connectdb.php";
 		</nav>
 
 		<div class="main">
-            <nav class="navbar navbar-expand navbar-light navbar-bg">
-                <a class="sidebar-toggle d-flex">
-                    <i class="hamburger align-self-center"></i>
-                </a>
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle d-flex">
+					<i class="hamburger align-self-center"></i>
+				</a>
 
-                <div class="navbar-collapse collapse">
-                    <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
-                    </ul>
-                </div>
-            </nav>
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+					</ul>
+				</div>
+			</nav>
 
 			<main class="content">
 				<div class="container-fluid p-0">
@@ -210,7 +210,68 @@ include "./connectdb.php";
 							<a href="xls.php"><button type="sumit" name="test_save" class="btn btn-custom-sm btn-success">Export</button></a>
 						</div>
 					</div>
+					<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+						<div class="row">
+							<div class="col-lg-4 col-md-4 col-sm-4 form-group">
+								<b>Select Year</b>
+								<select name="st_year" required="" id="Selstd" required="" class="form-control">
+									<option value="">--Select Year--</option>
+									<?php $a1 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('AcadmicYear');";
+									$res1 = $conn->query($a1);
+									if ($res1->num_rows > 0) {
+										while ($row = $res1->fetch_assoc()) { ?>
+											<option value="<?php echo $row['Value']; ?>">
+												<?php echo $row['Value']; ?>
+											</option>
+									<?php }
+									} ?>
+								</select>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 form-group">
+								<b> Standard</b>
+								<select name="st_std" required="" id="selStd" class="form-control">
+									<option value="">--Select Standard--</option>
+									<?php $c2 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('Standard');";
+									$results1 = $conn->query($c2);
+									if ($results1->num_rows > 0) {
+										while ($row = $results1->fetch_assoc()) { ?>
+											<option value="<?php echo $row['Value']; ?>">
+												<?php echo $row['Value']; ?>
+											</option>
+									<?php }
+									} ?>
+								</select>
+							</div>
 
+
+							<div class="col-lg-4 col-md-4 col-sm-4 form-group">
+								<b>Division</b>
+								<select name="st_div" required="" id="selDiv" class="form-control">
+									<option value="">--Select Division--</option>
+									<?php $m4 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('Division')";
+									$result3 = $conn->query($m4);
+									if ($result3->num_rows > 0) {
+										while ($row = $result3->fetch_assoc()) { ?>
+											<option value="<?php echo $row['Value']; ?>">
+												<?php echo $row['Value']; ?>
+											</option>
+									<?php }
+									} ?>
+								</select>
+
+							</div>
+
+						</div>
+
+						<div class="row mt-3">
+							<div class="col-lg-6 col-md-6 col-sm-6 form-group">
+								<input type="submit" name="Serch" class="btn btn-success" value="SERCH">
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 form-group">
+								<input type="reset" class="btn btn-outline-dark" value="CLEAR">
+							</div>
+						</div>
+					</form>
 
 
 
@@ -224,14 +285,17 @@ include "./connectdb.php";
 						<div class="col-lg-12">
 
 							<div class="button-group">
-								<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></button>
+								<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span>
+									<label for="dropdown-menu">--Select Fields--</label>
+								</button>
+
 								<ul class="dropdown-menu">
 
 									<li><input type="checkbox" class="hide" id="IDNo_col" name="Stu[]" value="StuUIDNo, "> UIDNo</li>
 									<li><input type="checkbox" class="hide" id="Name_col" name="Stu[]" value="StuGRNo, "> GRNo</li>
 									<li><input type="checkbox" class="hide" id="Name_col" name="Stu[]" value="StuRollNo, "> RollNo</li>
 
-									<li><input type="checkbox" class="hide" id="Designation_col" name="Stu[]" value="StuStudentName, "> Name</li>
+									<li><input type="checkbox" class="hide" id="Designation_col" name="Stu[]" value="Stuprefix,StuStudentName,Stumiddle,StuLastname, "> Name</li>
 									<li><input type="checkbox" class="hide" id="Name_col" name="Stu[]" value="StuAcdemicyear, "> Year</li>
 									<li><input type="checkbox" class="hide" id="DOB_col" name="Stu[]" value="StuStandard, "> Standard</li>
 									<li><input type="checkbox" class="hide" id="Address1_col" name="Stu[]" value="StuDiv, "> Div</li>
@@ -295,15 +359,21 @@ include "./connectdb.php";
 								</thead>
 								<tbody>
 									<?php
+									if (isset($_POST{'Serch'})) {
+										$StAcademicYear = $_POST['st_year'];
+										$StStandard = $_POST['st_std'];
+										$StDivision = $_POST['st_div'];
 
-									$sql = "SELECT*FROM studentmaster";
-									$data = mysqli_query($conn, $sql);
-									$total = mysqli_num_rows($data);
 
-									if ($total != 0) {
-										while ($result = mysqli_fetch_assoc($data)) {
+										$sql = "SELECT * FROM studentmaster where  StuAcdemicyear='$StAcademicYear' AND StuStandard ='$StStandard' AND StuDiv='$StDivision' ";
+										$data = mysqli_query($conn, $sql);
+										$total = mysqli_num_rows($data);
 
-											echo "
+										if ($total != 0) {
+											while ($result = mysqli_fetch_assoc($data)) {
+
+												echo "
+						
                            		<tr>
                            		<td>" . $result['StuUIDNo'] . "</td>
                            		<td>" . $result['StuGRNo'] . " </td>
@@ -336,9 +406,12 @@ include "./connectdb.php";
                            	  <td><a href='delete1.php?StuUIDNo=$result[StuUIDNo]' onclick='return checkdelete()'><input type='submit' value='Delete' id='deletebtn' class='btn btn-custom-sm btn-danger'></a></td>
                                 
                            		</tr>";
+											}
+										} else {
+											echo '<br><div class="alert alert-danger" role="alert">
+											No Record Found !
+                                        </div>';
 										}
-									} else {
-										echo "No records found";
 									}
 
 									?>
@@ -350,10 +423,10 @@ include "./connectdb.php";
 							function checkdelete() {
 								return confirm('Are you sure you want to delete this record');
 							}
-                                                        function checkupdate()
-                                                           {
-									return confirm('Are you sure you want to Update this record');
-								}
+
+							function checkupdate() {
+								return confirm('Are you sure you want to update this record');
+							}
 						</script>
 					</div>
 				</div>

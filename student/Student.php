@@ -353,16 +353,19 @@ if(isset($_POST{'test_save'}))
 										<div class="mb-3 row">
 											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Standard</label>
 											<div class="col-sm-2">
-												<select class="form-control" name="StuStandard" required>
-											
-													
-													<option>9</option>
-													<option>10</option>
-													<option>11</option>
-													<option>12</option>
-                                                
-												</select>
-													
+												
+													<select name="StuStandard" required="" class="form-control" id="standard">
+                                                            <option value="">--Select Standard--</option>
+                                                          
+                                                            <?php $a2 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('Standard');";
+                                                            $res = $conn->query($a2);
+                                                            if ($res->num_rows > 0) {
+                                                                while ($row = $res->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['Value']; ?>">
+                                                                        <?php echo $row['Value']; ?></option>
+                                                            <?php }
+                                                            } ?>
+                                                        </select>
               
               
 											</div>
@@ -371,14 +374,17 @@ if(isset($_POST{'test_save'}))
 										<div class="mb-3 row">
 											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Div</label>
 											<div class="col-sm-2">
-												<select class="form-control" name="StuDiv" required>
-													<option>A</option>
-													<option>B</option>
-													<option>C</option>
-													<option>D</option>
-												
-
-												</select>
+												  <select name="StuDiv" required="" id="selDiv" class="form-control">
+                                                <option value="">--Select Division--</option>
+                                                <?php  $m4="SELECT `Value` FROM listmaster WHERE Parameter IN  ('Division')";
+                                                $result3 = $conn->query($m4);
+                                                if ($result3->num_rows > 0) {
+                                                    while($row = $result3->fetch_assoc()){ ?>
+                                                <option value="<?php echo $row['Value'];?>">
+                                                    <?php echo $row['Value'];?>
+                                                </option>
+                                                <?php }}?>
+                                            </select>
 											</div>
 										</div>
 										

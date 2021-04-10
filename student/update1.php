@@ -691,7 +691,7 @@ $conn = mysqli_connect("localhost", "root", "", "schoolmanage");
 	{
 		echo "Updated";
 		?>
-		<META HTTP-EQUIV="Refresh" CONTENT="0; URL= http://SCHOOL-MANAGEMENT-SYSTEM-main/SCHOOL-MANAGEMENT-SYSTEM-main/student/student-view.php">
+		<META HTTP-EQUIV="Refresh" CONTENT="0; URL= ./student-view.php">
 	<?php
 
 	}  

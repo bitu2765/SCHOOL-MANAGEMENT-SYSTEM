@@ -222,6 +222,10 @@ include("connectdb.php");
                                             <div class="row" style="margin-bottom: 10px;">
                                                 <div class="col-2 font-weight-bold">Annual Fees</div>
                                                 <div class="col-2"><span id="fedee"></span></div>
+                                                <div class="col-7"></div>
+                                                <div class="col-1">
+                                                    <button type="button" class=" btn btn-success" onclick="stutab();" ><i class="align-middle" data-feather="refresh-cw"></i></button>
+                                                </div>
                                             </div>
                                             <div class="row" style="margin-bottom: 10px;">
                                                 <div class="col-1">

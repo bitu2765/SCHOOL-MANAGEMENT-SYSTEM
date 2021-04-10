@@ -52,141 +52,141 @@ include("./connectdb.php");
 
 <body>
 	<div class="wrapper">
-	<nav id="sidebar" class="sidebar">
-            <div class="sidebar-content js-simplebar">
-                <a class="sidebar-brand">
-                    <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="100px">
-                </a>
+		<nav id="sidebar" class="sidebar">
+			<div class="sidebar-content js-simplebar">
+				<a class="sidebar-brand">
+					<span width="30px">&nbsp;</span>
+					<img src="../logo.png" alt="logo" srcset="" height="100px">
+				</a>
 
-                <ul class="sidebar-nav">
-                    <li class="sidebar-header">
-                        Employee
-                    </li>
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">
+						Employee
+					</li>
 
-                    <li class="sidebar-item active">
-                        <a href="#emp" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle"></i> <span class="align-middle">Employee</span>
-                        </a>
-                        <ul id="emp" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../employee/Employee.php">Add</a></li>
-                            <li class="sidebar-item active"><a class="sidebar-link" href="../employee/employee-view.php">View</a></li>
-                        </ul>
-                    </li>
+					<li class="sidebar-item active">
+						<a href="#emp" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Employee</span>
+						</a>
+						<ul id="emp" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../employee/Employee.php">Add</a></li>
+							<li class="sidebar-item active"><a class="sidebar-link" href="../employee/employee-view.php">View</a></li>
+						</ul>
+					</li>
 
-                    <li class="sidebar-item">
-                        <a href="#payr" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle"></i> <span class="align-middle">Payroll</span>
-                        </a>
-                        <ul id="payr" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/addpayroll.php">Add Pay</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/viewpayroll.php">View Pay</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary Certificate</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
-                        </ul>
-                    </li>
+					<li class="sidebar-item">
+						<a href="#payr" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Payroll</span>
+						</a>
+						<ul id="payr" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../payroll/addpayroll.php">Add Pay</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../payroll/viewpayroll.php">View Pay</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary Certificate</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
+						</ul>
+					</li>
 
 					<li class="sidebar-header">
-                        
-						</li>
-                    <li class="sidebar-header">
-                        Student
-                    </li>
 
-                    <li class="sidebar-item ">
-                        <a href="#addstu" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle"></i> <span class="align-middle">Student</span>
-                        </a>
-                        <ul id="addstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../student/Student.php">Add</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="sidebar-item ">
-                        <a href="#attend" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle"></i> <span class="align-middle">Attendance</span>
-                        </a>
-                        <ul id="attend" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/index.php">Add</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/showAtd.php">View</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="sidebar-item ">
-                        <a href="#fee" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle"></i> <span class="align-middle">Fees</span>
-                        </a>
-                        <ul id="fee" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/feesset.php">Fees Setup</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/payment.php">Fees Pay</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="sidebar-item ">
-                        <a href="#pstu" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle"></i> <span class="align-middle">Promote Student </span>
-                        </a>
-                        <ul id="pstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add Academic</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
-                        </ul>
-                    </li>
+					</li>
 					<li class="sidebar-header">
-                        
-						</li>
-                    <li class="sidebar-header">
-                        Academic
-                    </li>
+						Student
+					</li>
 
-                    <li class="sidebar-item ">
-                        <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
-                        </a>
-                        <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item ">
-                        <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
-                        </a>
-                        <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">Delete Exam</a></li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item ">
-                        <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
-                        </a>
-                        <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result Entry</a>
-                            </li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
-                            </li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Check For Result</a>
-                            </li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item ">
-                        <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle"></i> <span class="align-middle">Time Table</span>
-                        </a>
-                        <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
-                                    Table</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
-                                    Table</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
+					<li class="sidebar-item ">
+						<a href="#addstu" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Student</span>
+						</a>
+						<ul id="addstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../student/Student.php">Add</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a></li>
+						</ul>
+					</li>
 
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+					<li class="sidebar-item ">
+						<a href="#attend" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Attendance</span>
+						</a>
+						<ul id="attend" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../attendance/index.php">Add</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../attendance/showAtd.php">View</a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item ">
+						<a href="#fee" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Fees</span>
+						</a>
+						<ul id="fee" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../fee/feesset.php">Fees Setup</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../fee/payment.php">Fees Pay</a></li>
+						</ul>
+					</li>
+
+					<li class="sidebar-item ">
+						<a href="#pstu" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Promote Student </span>
+						</a>
+						<ul id="pstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add Academic</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-header">
+
+					</li>
+					<li class="sidebar-header">
+						Academic
+					</li>
+
+					<li class="sidebar-item ">
+						<a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
+						</a>
+						<ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item ">
+						<a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
+						</a>
+						<ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">Delete Exam</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item ">
+						<a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Result Managment</span>
+						</a>
+						<ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result Entry</a>
+							</li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
+							</li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Check For Result</a>
+							</li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
+							</li>
+						</ul>
+					</li>
+					<li class="sidebar-item ">
+						<a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
+							<i class="align-middle"></i> <span class="align-middle">Time Table</span>
+						</a>
+						<ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
+									Table</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
+									Table</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
+
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
 
 		<div class="main">
@@ -226,7 +226,9 @@ include("./connectdb.php");
 
 						<div class="col-lg-12">
 							<div class="button-group">
-								<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></button>
+								<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span>
+									<label for="dropdown-menu">--Select Fields--</label>
+								</button>
 								<ul class="dropdown-menu">
 									<form action="temev.php" method="get">
 										<li><input type="checkbox" class="hide" id="IDNo_col" checked name="EmpNo" style="margin-left: 5px;" onclick="return false"> ID No</li>
@@ -241,7 +243,7 @@ include("./connectdb.php");
 										<!-- <li><input type="checkbox" class="hide" id="Pincode_col" name="EmpPinCode, ">Pincode</li> -->
 										<li><input type="checkbox" class="hide" id="Contanctno_col" name="EmpContactNo" style="margin-left: 5px;"> Contanct No</li>
 										<li><input type="checkbox" class="hide" id="Emailid_col" name="EmpEmail" style="margin-left: 5px;"> Email Id</li>
-<li><input type="checkbox" class="hide" id="Datofjoining_col" name="EmpDateofjoining" style="margin-left: 5px;"> Datofjoining</li>
+										<li><input type="checkbox" class="hide" id="Datofjoining_col" name="EmpDateofjoining" style="margin-left: 5px;"> Datofjoining</li>
 										<li><input type="checkbox" class="hide" id="Datofleaving_col" name="EmpDateofLeaving" style="margin-left: 5px;"> Date Of Leaving</li>
 										<li><input type="checkbox" class="hide" id="Category_col" name="EmpCategory" style="margin-left: 5px;"> Category</li>
 										<li><input type="checkbox" class="hide" id="AadharNo_col" name="EmpAadharNo" style="margin-left: 5px;"> Aadhar No</li>
@@ -281,7 +283,7 @@ include("./connectdb.php");
 										<th>Pincode</th>
 										<th>Contactno</th>
 										<th>Emailid</th>
-                                                                                <th>DateofJoining</th>
+										<th>DateofJoining</th>
 										<th>Dateofleaving</th>
 										<th>Category</th>
 										<th>AadharNo</th>
@@ -332,6 +334,7 @@ include("./connectdb.php");
                                 
                            		
                            		<th><a href='update.php?EmpNo=$result[EmpNo]&EmpNamePrefix=$result[EmpNamePrefix]&EmpFirstName=$result[EmpFirstName]&EmpMidName=$result[EmpMidName]&EmpLastName=$result[EmpLastName]&EmpDesignation=$result[EmpDesignation]&EmpDOB=$result[EmpDOB]&EmpAddress1=$result[EmpAddress1]&EmpAddress2=$result[EmpAddress2]&EmpState=$result[EmpState]&EmpCity=$result[EmpCity]&EmpPinCode=$result[EmpPinCode]&EmpContactNo=$result[EmpContactNo]&EmpEmailID=$result[EmpEmailID]&EmpDateofjoining=$result[EmpDateofjoining]&EmpDateofLeaving=$result[EmpDateofLeaving]&EmpCategory=$result[EmpCategory]&EmpAadharNo=$result[EmpAadharNo]&EmpPan=$result[EmpPan]&EmpPFno=$result[EmpPFno]&EmpStatus=$result[EmpStatus]&EmpLastStatusChangeDate=$result[EmpLastStatusChangeDate]&EmpBankName=$result[EmpBankName]&EmpBankAccount=$result[EmpBankAccount]&EmpBankIFSC=$result[EmpBankIFSC]'><input type='submit' onclick='return checkupdate()' value='Edit' id='updatebtn' class='btn btn-success btn-lg'></a></th>
+<th><a href='delete.php?EmpNo=$result[EmpNo]' onclick='return checkdelete()'><input type='submit' value='delete' id='deletebtn' class=' btn btn-danger btn-lg'></a></th>
                            		</tr>";
 										}
 									} else {
@@ -347,7 +350,7 @@ include("./connectdb.php");
 								return confirm('Are you sure you want to delete this record');
 							}
 						</script>
-<script>
+						<script>
 							function checkupdate() {
 								return confirm('Are you sure you want to update this record');
 							}
