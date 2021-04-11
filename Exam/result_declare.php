@@ -1,6 +1,6 @@
-<?php  
-     include 'connection.php';
- 
+<?php
+include 'connection.php';
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,11 +18,11 @@
 
 <body>
     <div class="wrapper">
-    <nav id="sidebar" class="sidebar">
+        <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+                    <img src="../logo.png" alt="logo" srcset="" height="100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -50,6 +50,10 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary Certificate</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
+                    </li>
+
+                    <li class="sidebar-header">
+
                     </li>
 
                     <li class="sidebar-header">
@@ -97,6 +101,10 @@
                     </li>
 
                     <li class="sidebar-header">
+
+                    </li>
+
+                    <li class="sidebar-header">
                         Academic
                     </li>
 
@@ -141,6 +149,8 @@
                                     Table</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
                                     Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
+
                         </ul>
                     </li>
                 </ul>
@@ -155,7 +165,7 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
 
                     </ul>
                 </div>
@@ -171,53 +181,49 @@
                 </div>
                 <div class="row">
                     <div class="w-100">
-                    <div class="row d-flex justify-content-center mt-5">
+                        <div class="row d-flex justify-content-center mt-5">
                             <div class="col-sm-5 text-center">
                                 <div class="card">
                                     <div class="card-body">
-                                        <?php 
-                                      if(isset($_POST{'declare'}))
-                                      {
-                                          $status = false;
-                                             $DeclareAcademicYear=$_POST['declare_Year'];
-                                              $DeclareStandard = $_POST['declare_Std'];
-                                              $DeclareExamName = $_POST['declare_Exam'];
+                                        <?php
+                                        if (isset($_POST{
+                                            'declare'})) {
+                                            $status = false;
+                                            $DeclareAcademicYear = $_POST['declare_Year'];
+                                            $DeclareStandard = $_POST['declare_Std'];
+                                            $DeclareExamName = $_POST['declare_Exam'];
 
-                                              $str = "SELECT isResultEntered FROM exammaster WHERE ExamAcademicYear='$DeclareAcademicYear' AND ExamStandard='$DeclareStandard' AND ExamName='$DeclareExamName'";
-                                               $sql = mysqli_query($conn,$str);
-                                               while($row = mysqli_fetch_assoc($sql)){
-                                                   if($row["isResultEntered"]==0){
-                                                       $status = true;
-                                                       echo '<div class="alert alert-danger" role="alert">
+                                            $str = "SELECT isResultEntered FROM exammaster WHERE ExamAcademicYear='$DeclareAcademicYear' AND ExamStandard='$DeclareStandard' AND ExamName='$DeclareExamName'";
+                                            $sql = mysqli_query($conn, $str);
+                                            while ($row = mysqli_fetch_assoc($sql)) {
+                                                if ($row["isResultEntered"] == 0) {
+                                                    $status = true;
+                                                    echo '<div class="alert alert-danger" role="alert">
                                                                  Marks Not Enter Yet.
-                                                            </div>';    
-                                                break;
-                                                   }
-                                               }
-                                             
-                                                if($status==false){
-                                                    $query = "UPDATE `exammaster` SET IsResultVisible= 1
+                                                            </div>';
+                                                    break;
+                                                }
+                                            }
+
+                                            if ($status == false) {
+                                                $query = "UPDATE `exammaster` SET IsResultVisible= 1
                                                     WHERE ExamAcademicYear='$DeclareAcademicYear' AND ExamStandard='$DeclareStandard' AND ExamName='$DeclareExamName'";
-                                                    
-                                                    $result=mysqli_query($conn,$query);
-                                            
-                                                if($result)
-                                                {
+
+                                                $result = mysqli_query($conn, $query);
+
+                                                if ($result) {
                                                     echo '<div class="alert alert-success" role="alert">
                                                        Result Has Been Declare.!! Sucessfully.
                                                 </div>';
-                                                }
-                                                else {
-                                                  echo '<div class="alert alert-Danger" role="alert">
+                                                } else {
+                                                    echo '<div class="alert alert-Danger" role="alert">
                                                   Result Has Been Alredy Declare.! 
                                            </div>';
                                                 }
-                                        }      
-                                      
-                                          
-                                      }
-                             
-                            ?>
+                                            }
+                                        }
+
+                                        ?>
                                         <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
                                             <div class="container text-left" style="margin-left: 30px;">
                                                 <div class="row" style="margin-bottom: 10px;">
@@ -225,46 +231,47 @@
                                                     <div class="col-7">
                                                         <select name="declare_Year" class="form-control" required="">
                                                             <option value="">--Select Academic Year--</option>
-                                                            <?php  $m1="SELECT DISTINCT`ResAcademicYear` FROM `resultmaster`ORDER BY ResAcademicYear ASC";
+                                                            <?php $m1 = "SELECT DISTINCT`ResAcademicYear` FROM `resultmaster`ORDER BY ResAcademicYear ASC";
                                                             $results2 = $conn->query($m1);
-                                                            if ($results2->num_rows > 0) {   
-                                                                while($row = $results2->fetch_assoc()){ ?>
-                                                                    <option value="<?php echo $row['ResAcademicYear'];?>">
-                                                                        <?php echo $row['ResAcademicYear'];?>
+                                                            if ($results2->num_rows > 0) {
+                                                                while ($row = $results2->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ResAcademicYear']; ?>">
+                                                                        <?php echo $row['ResAcademicYear']; ?>
                                                                     </option>
-                                                            <?php }}?>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Exam Name</div>
                                                     <div class="col-7">
-                                                        <select name="declare_Exam" id="Estd" required=""
-                                                            class="form-control">
+                                                        <select name="declare_Exam" id="Estd" required="" class="form-control">
                                                             <option value="">--Select Exam--</option>
-                                                            <?php  $m2="SELECT DISTINCT `ResExamName` FROM `resultmaster`ORDER BY ResExamName ASC";
+                                                            <?php $m2 = "SELECT DISTINCT `ResExamName` FROM `resultmaster`ORDER BY ResExamName ASC";
                                                             $results1 = $conn->query($m2);
                                                             if ($results1->num_rows > 0) {
-                                                                while($row = $results1->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['ResExamName'];?>">
-                                                                <?php echo $row['ResExamName'];?></option>
-                                                            <?php }}?>
+                                                                while ($row = $results1->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ResExamName']; ?>">
+                                                                        <?php echo $row['ResExamName']; ?></option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Standard</div>
                                                     <div class="col-7">
-                                                        <select name="declare_Std" id="Estd" required=""
-                                                            class="form-control">
+                                                        <select name="declare_Std" id="Estd" required="" class="form-control">
                                                             <option value="">--Select Standard--</option>
-                                                            <?php  $m3="SELECT DISTINCT `ResStandard` FROM `resultmaster`ORDER BY ResStandard ASC";
+                                                            <?php $m3 = "SELECT DISTINCT `ResStandard` FROM `resultmaster`ORDER BY ResStandard ASC";
                                                             $results1 = $conn->query($m3);
                                                             if ($results1->num_rows > 0) {
-                                                            while($row = $results1->fetch_assoc()){ ?>
-                                                                    <option value="<?php echo $row['ResStandard'];?>">
-                                                                        <?php echo $row['ResStandard'];?></option>
-                                                            <?php }}?>
+                                                                while ($row = $results1->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ResStandard']; ?>">
+                                                                        <?php echo $row['ResStandard']; ?></option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -273,8 +280,7 @@
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-2"></div>
                                                     <div class="col-4">
-                                                        <button type="submit" name="declare" class="btn btn-success"
-                                                           >DECLARE</button>
+                                                        <button type="submit" name="declare" class="btn btn-success">DECLARE</button>
                                                     </div>
                                                     <div class="col-4">
                                                         <input type="reset" class="btn btn-outline-dark" value="CLEAR">

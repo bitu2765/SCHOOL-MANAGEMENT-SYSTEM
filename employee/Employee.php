@@ -74,6 +74,7 @@ if (isset($_POST{
 		<nav id="sidebar" class="sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" style="text-align: center;">
+					<span width="30px">&nbsp;</span>
 					<img src="../logo.png" alt="logo" s srcset="" height="100px">
 				</a>
 

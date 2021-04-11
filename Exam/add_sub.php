@@ -1,16 +1,17 @@
 <?php
 include 'connection.php';
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/app.css">
+    <link href="../css/gapi.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/ui_d.css">
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/_custom.css">
+    <title>Dashboard</title>
 </head>
 
 <body>
@@ -19,7 +20,7 @@ include 'connection.php';
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+                    <img src="../logo.png" alt="logo" srcset="" height="100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -48,6 +49,10 @@ include 'connection.php';
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
                     </li>
+
+                    <li class="sidebar-header">
+                        
+                        </li>
 
                     <li class="sidebar-header">
                         Student
@@ -94,15 +99,19 @@ include 'connection.php';
                     </li>
 
                     <li class="sidebar-header">
+                        
+                        </li>
+
+                    <li class="sidebar-header">
                         Academic
                     </li>
 
-                    <li class="sidebar-item ">
+                    <li class="sidebar-item active">
                         <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
                             <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
                         </a>
                         <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
                         </ul>
                     </li>
                     <li class="sidebar-item ">
@@ -142,6 +151,8 @@ include 'connection.php';
                                     Table</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
                                     Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
+
                         </ul>
                     </li>
                 </ul>
@@ -179,7 +190,7 @@ include 'connection.php';
                                         <?php
 
                                         if (isset($_POST{
-                                        'ADD'})) {
+                                            'ADD'})) {
                                             $SubStandard = $_POST['add_std'];
                                             $SubName = $_POST['add_name'];
                                             $SubType = $_POST['add_type'];
@@ -275,66 +286,65 @@ include 'connection.php';
                         </div>
                     </div>
                 </div>
-        </div>
-        <table class="table caption-top table-hover">
-            <caption>List of Subject</caption>
-            <thead class="thead-dark">
-                <tr>
+                <table class="table caption-top table-hover">
+                    <caption>List of Subject</caption>
+                    <thead class="thead-dark">
+                        <tr>
 
-                    <th scope="col">Academic Year</th>
-                    <th scope="col">Standard</th>
-                    <th scope="col">Subject</th>
-                    <th scope="col">Subject Type</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody id="poll3">
-            </tbody>
-        </table>
-        </main>
-        <!-- Fetching From Subject master using ajex -->
-        <script>
-            function fetchExam() {
-                var year = document.getElementById('year').value;
-                var std = document.getElementById('standard').value;
+                            <th scope="col">Academic Year</th>
+                            <th scope="col">Standard</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Subject Type</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="poll3">
+                    </tbody>
+                </table>
+            </main>
+            <!-- Fetching From Subject master using ajex -->
+            <script>
+                function fetchExam() {
+                    var year = document.getElementById('year').value;
+                    var std = document.getElementById('standard').value;
 
 
-                if (window.XMLHttpRequest) {
-                    xmlhttp = new XMLHttpRequest();
-                } else {
-                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                }
-
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById('poll3').innerHTML = this
-                            .responseText;
+                    if (window.XMLHttpRequest) {
+                        xmlhttp = new XMLHttpRequest();
+                    } else {
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                     }
+
+                    xmlhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.getElementById('poll3').innerHTML = this
+                                .responseText;
+                        }
+                    }
+                    xmlhttp.open("GET", "helper3.php?Year=" + year + "&Standard=" +
+                        std,
+                        true);
+                    xmlhttp.send();
                 }
-                xmlhttp.open("GET", "helper3.php?Year=" + year + "&Standard=" +
-                    std,
-                    true);
-                xmlhttp.send();
-            }
-        </script>
+            </script>
 
-        <footer class="footer">
+            <footer class="footer">
 
-            <div class="container-fluid">
-                <div class="row text-muted">
+                <div class="container-fluid">
+                    <div class="row text-muted">
 
-                    <div class="col-6 text-left">
-                        <p class="mb-0">
+                        <div class="col-6 text-left">
+                            <p class="mb-0">
 
-                            <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High
-                                    School</strong></a> &copy;
-                        </p>
+                                <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High
+                                        School</strong></a> &copy;
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
 
-    </div>
+        </div>
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
 

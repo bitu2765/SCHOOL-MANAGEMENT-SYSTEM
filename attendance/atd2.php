@@ -59,6 +59,7 @@ if (isset($_POST['submit_atd'])) {
         <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand" style="text-align: center;">
+                    <span width="30px">&nbsp;</span>
                     <img src="../logo.png" alt="logo" s srcset="" height="100px">
                 </a>
 
@@ -89,8 +90,8 @@ if (isset($_POST['submit_atd'])) {
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Student
                     </li>
@@ -135,8 +136,8 @@ if (isset($_POST['submit_atd'])) {
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Academic
                     </li>
@@ -340,7 +341,7 @@ if (isset($_POST['submit_atd'])) {
         viewPresent();
     }
 </script>
-<script src="../logg.js" ></script>
+<script src="../logg.js"></script>
 <script src="../js/app.js"></script>
 <script src="../js/indapp.js"></script>
 

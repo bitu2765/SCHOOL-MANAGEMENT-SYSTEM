@@ -1,6 +1,6 @@
 <?php
-     include 'connection.php';
- 
+include 'connection.php';
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -25,7 +25,7 @@
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+                    <img src="../logo.png" alt="logo" srcset="" height="100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -53,6 +53,10 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary Certificate</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
+                    </li>
+
+                    <li class="sidebar-header">
+
                     </li>
 
                     <li class="sidebar-header">
@@ -99,57 +103,63 @@
                         </ul>
                     </li>
 
-                <li class="sidebar-header">
-                    Academic
-                </li>
+                    <li class="sidebar-header">
 
-                <li class="sidebar-item ">
-                    <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
-                    </a>
-                    <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
-                    </a>
-                    <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
-                    </a>
-                    <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result
-                                Entry</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate
-                                MarkSheet</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
-                                Result</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Time Table</span>
-                    </a>
-                    <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
-                                Table</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
-                                Table</a></li>
-                    </ul>
-                </li>
+                    </li>
+
+                    <li class="sidebar-header">
+                        Academic
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
+                        </a>
+                        <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
+                        </a>
+                        <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
+                        </a>
+                        <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result
+                                    Entry</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate
+                                    MarkSheet</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
+                                    Result</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Time Table</span>
+                        </a>
+                        <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
+                                    Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
+                                    Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -163,7 +173,7 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
 
                     </ul>
                 </div>
@@ -184,103 +194,95 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <?php
-                                            if(isset($_POST{'Res_submit'}))
-                                {
-                                        $ResAcademicYear= $_POST['Res_Year'];
-                                        $ResStandard= $_POST['Res_std'];
-                                        $ResExamName= $_POST['Res_type'];
-                                        $ResDivision= $_POST['Res_div'];
-                                        $ResSubName = $_POST['Res_sub'];
-                                        $ResTotalMarks= $_POST['Res_totalmarks'];
-                                        $ResPassingMarks = $_POST['Res_passingmarks'];
+                                        if (isset($_POST{
+                                            'Res_submit'})) {
+                                            $ResAcademicYear = $_POST['Res_Year'];
+                                            $ResStandard = $_POST['Res_std'];
+                                            $ResExamName = $_POST['Res_type'];
+                                            $ResDivision = $_POST['Res_div'];
+                                            $ResSubName = $_POST['Res_sub'];
+                                            $ResTotalMarks = $_POST['Res_totalmarks'];
+                                            $ResPassingMarks = $_POST['Res_passingmarks'];
 
 
-                                        $marks = $_POST['marks'];
-                                        $rollno = $_POST['rn'];
-                                        $grn = $_POST['gn'];
-                                        $name = $_POST['name'];
+                                            $marks = $_POST['marks'];
+                                            $rollno = $_POST['rn'];
+                                            $grn = $_POST['gn'];
+                                            $name = $_POST['name'];
 
 
-                                        $query12 = 'INSERT INTO `resultmaster`(`ResAcademicYear`, `ResStandard`,
+                                            $query12 = 'INSERT INTO `resultmaster`(`ResAcademicYear`, `ResStandard`,
                                         `ResDivision`, `ResRollNo`, `ResGRNO`,
                                          `ResStudentName`,`ResSubName`,  `ResExamName`,
                                           `ResTotalMarks`, `ResPassingMarks`, `ResMarksObtained`, `ResStatus`) VALUES ';
-                            
-                                        $query_parts = array();
-                            
-                                        for ($x = 0; $x < count($rollno); $x++) {
 
-                                            if($marks[$x]>=$ResPassingMarks)
-                                            {
-                                                $ResStatus = "PASS";
-                                            }
-                                            else{
-                                                $ResStatus = "FAIL";
-                                            }
-                                            $query_parts[] = "('$ResAcademicYear','$ResStandard','$ResDivision','" . $rollno[$x] . "','" . $grn[$x] . "','" . $name[$x] . "','$ResSubName',
+                                            $query_parts = array();
+
+                                            for ($x = 0; $x < count($rollno); $x++) {
+
+                                                if ($marks[$x] >= $ResPassingMarks) {
+                                                    $ResStatus = "PASS";
+                                                } else {
+                                                    $ResStatus = "FAIL";
+                                                }
+                                                $query_parts[] = "('$ResAcademicYear','$ResStandard','$ResDivision','" . $rollno[$x] . "','" . $grn[$x] . "','" . $name[$x] . "','$ResSubName',
                                             '$ResExamName', '$ResTotalMarks','$ResPassingMarks','" . $marks[$x] . "','$ResStatus')";
-                                        }
-                                        $query12 .= implode(',', $query_parts);
-                                        if (mysqli_query($conn, $query12)) {
-                                        
-                                        }
-                                        else{
-                                            echo '<div class="alert alert-danger" role="alert">
+                                            }
+                                            $query12 .= implode(',', $query_parts);
+                                            if (mysqli_query($conn, $query12)) {
+                                            } else {
+                                                echo '<div class="alert alert-danger" role="alert">
                                             Something Went Wrong.!!!!!
                                             </div>';
-
-                                        }
-                                            $exe = mysqli_query($conn, $query12); 
-                                            if($query12)
-                                            {
-                                                $sub = trim($ResSubName," ");
+                                            }
+                                            $exe = mysqli_query($conn, $query12);
+                                            if ($query12) {
+                                                $sub = trim($ResSubName, " ");
                                                 $var = 1;
                                                 $str123 =  "UPDATE `exammaster` SET IsResultEntered='$var' WHERE ExamAcademicYear='$ResAcademicYear'AND ExamStandard='$ResStandard' AND ExamSubjectName='$sub' AND ExamName='$ResExamName'";
-                                                $query123 = mysqli_query($conn,$str123);
-                                                
-                                                if($query123){
+                                                $query123 = mysqli_query($conn, $str123);
+
+                                                if ($query123) {
                                                     echo '<div class="alert alert-success" role="alert">
                                                     Entry Added Sucessfully.
                                                     </div>';
                                                 }
-                                               
-                                                
                                             }
-                                }
-            ?>
+                                        }
+                                        ?>
                                         <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
                                             <div class="container text-left" style="margin-left: 30px;">
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-2 font-weight-bold mt-1">Academic Year</div>
                                                     <div class="col-4">
-                                                        <select name="Res_Year" required="" id="SELECTYEAR"
-                                                            class="form-control">
+                                                        <select name="Res_Year" required="" id="SELECTYEAR" class="form-control">
                                                             <option value="">--Select Academic Year--</option>
-                                                            <?php  $c1="SELECT DISTINCT ExamAcademicYear FROM `exammaster`ORDER BY ExamAcademicYear ASC";
-                                                        $result = $conn->query($c1);
-                                                        if ($result->num_rows > 0) {
-                                                        while($row = $result->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['ExamAcademicYear'];?>">
-                                                                <?php echo $row['ExamAcademicYear'];?>
-                                                            </option>
-                                                            <?php }}?>
+                                                            <?php $c1 = "SELECT DISTINCT ExamAcademicYear FROM `exammaster`ORDER BY ExamAcademicYear ASC";
+                                                            $result = $conn->query($c1);
+                                                            if ($result->num_rows > 0) {
+                                                                while ($row = $result->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ExamAcademicYear']; ?>">
+                                                                        <?php echo $row['ExamAcademicYear']; ?>
+                                                                    </option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-2 font-weight-bold mt-1">Standard</div>
                                                     <div class="col-4">
-                                                        <select name="Res_std" required="" id="selStd"
-                                                            class="form-control" onchange="my_fun(this.value)">
+                                                        <select name="Res_std" required="" id="selStd" class="form-control" onchange="my_fun(this.value)">
                                                             <option value="">--Select Standard--</option>
-                                                            <?php  $c2="SELECT DISTINCT ExamStandard FROM `exammaster` ORDER BY ExamStandard ASC";
-                                                        $results1 = $conn->query($c2);
-                                                        if ($results1->num_rows > 0) {
-                                                        while($row = $results1->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['ExamStandard'];?>">
-                                                                <?php echo $row['ExamStandard'];?>
-                                                            </option>
-                                                            <?php }}?>
+                                                            <?php $c2 = "SELECT DISTINCT ExamStandard FROM `exammaster` ORDER BY ExamStandard ASC";
+                                                            $results1 = $conn->query($c2);
+                                                            if ($results1->num_rows > 0) {
+                                                                while ($row = $results1->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ExamStandard']; ?>">
+                                                                        <?php echo $row['ExamStandard']; ?>
+                                                                    </option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -288,62 +290,61 @@
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-2 font-weight-bold mt-1">Exam Name</div>
                                                     <div class="col-4">
-                                                        <select name="Res_type" required="" id="selType"
-                                                            class="form-control">
+                                                        <select name="Res_type" required="" id="selType" class="form-control">
                                                             <option value="">--Select Exam --</option>
-                                                            <?php  $c5="SELECT  DISTINCT ExamName FROM exammaster ORDER BY ExamName ASC";
-                                                        $result5 = $conn->query($c5);
-                                                        if ($result5->num_rows > 0) {
-                                                            while($row = $result5->fetch_assoc())
-                                                            { ?>
-                                                            <option value="<?php echo $row['ExamName'];?>">
-                                                                <?php echo $row['ExamName'];?></option>
-                                                            <?php } } ?>
+                                                            <?php $c5 = "SELECT  DISTINCT ExamName FROM exammaster ORDER BY ExamName ASC";
+                                                            $result5 = $conn->query($c5);
+                                                            if ($result5->num_rows > 0) {
+                                                                while ($row = $result5->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ExamName']; ?>">
+                                                                        <?php echo $row['ExamName']; ?></option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-2 font-weight-bold mt-1">Division</div>
                                                     <div class="col-4">
-                                                        <select name="Res_div" required="" id="selDiv"
-                                                            class="form-control">
+                                                        <select name="Res_div" required="" id="selDiv" class="form-control">
                                                             <option value="">--Select Division--</option>
-                                                            <?php  $m4="SELECT `Value` FROM listmaster WHERE Parameter IN  ('Division')";
+                                                            <?php $m4 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('Division')";
                                                             $result3 = $conn->query($m4);
                                                             if ($result3->num_rows > 0) {
-                                                                while($row = $result3->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['Value'];?>">
-                                                                <?php echo $row['Value'];?>
-                                                            </option>
-                                                            <?php }}?>
+                                                                while ($row = $result3->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['Value']; ?>">
+                                                                        <?php echo $row['Value']; ?>
+                                                                    </option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-2 font-weight-bold mt-1">Subject Name</div>
                                                     <div class="col-4">
-                                                        <select name="Res_sub" required="" id="poll"class="form-control">
+                                                        <select name="Res_sub" required="" id="poll" class="form-control">
                                                             <option value="">--Select Subject--</option>
                                                             <!-- Fetching  Subject code on helper5.php -->
                                                             <script>
-                                                            function my_fun(str) {
+                                                                function my_fun(str) {
 
-                                                                if (window.XMLHttpRequest) {
-                                                                    xmlhttp = new XMLHttpRequest();
-                                                                } else {
-                                                                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                                                                }
-
-                                                                xmlhttp.onreadystatechange = function() {
-                                                                    if (this.readyState == 4 && this.status ==
-                                                                        200) {
-                                                                        document.getElementById('poll').innerHTML =
-                                                                            this.responseText;
+                                                                    if (window.XMLHttpRequest) {
+                                                                        xmlhttp = new XMLHttpRequest();
+                                                                    } else {
+                                                                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                                                                     }
+
+                                                                    xmlhttp.onreadystatechange = function() {
+                                                                        if (this.readyState == 4 && this.status ==
+                                                                            200) {
+                                                                            document.getElementById('poll').innerHTML =
+                                                                                this.responseText;
+                                                                        }
+                                                                    }
+                                                                    xmlhttp.open("GET", "helper5.php?value=" + str, true);
+                                                                    xmlhttp.send();
                                                                 }
-                                                                xmlhttp.open("GET", "helper5.php?value=" + str, true);
-                                                                xmlhttp.send();
-                                                            }
                                                             </script>
                                                         </select>
                                                     </div>
@@ -353,42 +354,40 @@
                                                 <div class="row" style="margin-bottom: 10px;">
 
                                                     <div class="col-4">
-                                                        <button type="button" class="btn btn-outline-success"
-                                                            id="searchbtn" name="Res_Search"
-                                                            onclick="get_stu()">Search</button>
+                                                        <button type="button" class="btn btn-outline-success" id="searchbtn" name="Res_Search" onclick="get_stu()">Search</button>
                                                     </div>
                                                 </div>
                                                 <!-- Fetching Students code on helper1.php -->
                                                 <script>
-                                                function get_stu() {
+                                                    function get_stu() {
 
-                                                    document.getElementById("sbt").style.display = "block";
-                                                    document.getElementById("re").style.display = "block";
+                                                        document.getElementById("sbt").style.display = "block";
+                                                        document.getElementById("re").style.display = "block";
 
-                                                    var year = document.getElementById("SELECTYEAR").value;
-                                                    var std = document.getElementById('selStd').value;
-                                                    var type = document.getElementById('selType').value;
-                                                    var div = document.getElementById('selDiv').value;
-                                                    var sub = document.getElementById('poll').value;
+                                                        var year = document.getElementById("SELECTYEAR").value;
+                                                        var std = document.getElementById('selStd').value;
+                                                        var type = document.getElementById('selType').value;
+                                                        var div = document.getElementById('selDiv').value;
+                                                        var sub = document.getElementById('poll').value;
 
-                                                    if (window.XMLHttpRequest) {
-                                                        xmlhttp = new XMLHttpRequest();
-                                                    } else {
-                                                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                                                    }
-
-                                                    xmlhttp.onreadystatechange = function() {
-                                                        if (this.readyState == 4 && this.status == 200) {
-                                                            document.getElementById('poll1').innerHTML = this
-                                                                .responseText;
+                                                        if (window.XMLHttpRequest) {
+                                                            xmlhttp = new XMLHttpRequest();
+                                                        } else {
+                                                            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                                                         }
+
+                                                        xmlhttp.onreadystatechange = function() {
+                                                            if (this.readyState == 4 && this.status == 200) {
+                                                                document.getElementById('poll1').innerHTML = this
+                                                                    .responseText;
+                                                            }
+                                                        }
+                                                        xmlhttp.open("GET", "helper1.php?Res_Year=" + year + "&Res_std=" +
+                                                            std +
+                                                            "&Res_type=" + type + "&Res_div=" + div + "&Res_sub=" + sub,
+                                                            true);
+                                                        xmlhttp.send();
                                                     }
-                                                    xmlhttp.open("GET", "helper1.php?Res_Year=" + year + "&Res_std=" +
-                                                        std +
-                                                        "&Res_type=" + type + "&Res_div=" + div + "&Res_sub=" + sub,
-                                                        true);
-                                                    xmlhttp.send();
-                                                }
                                                 </script>
 
                                                 <div id="poll1">
@@ -396,13 +395,10 @@
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-2"></div>
                                                     <div class="col-3">
-                                                        <input type="submit" name="Res_submit" id="sbt"
-                                                            class="btn btn-success" value="SUBMIT"
-                                                            >
+                                                        <input type="submit" name="Res_submit" id="sbt" class="btn btn-success" value="SUBMIT">
                                                     </div>
                                                     <div class="col-4">
-                                                        <input type="reset" class="btn btn-outline-dark" id="re"
-                                                            value="CLEAR">
+                                                        <input type="reset" class="btn btn-outline-dark" id="re" value="CLEAR">
                                                     </div>
                                                 </div>
                                         </form>
@@ -416,19 +412,19 @@
         </main>
         <!-- Changing Color If Student is Fail -->
         <script>
-        function changeColor(val, val1) {
-            console.log(val);
-            console.log(val1);
+            function changeColor(val, val1) {
+                console.log(val);
+                console.log(val1);
 
-            var x = document.getElementById(val).value;
-            console.log(x);
-            if (x < val1) {
-                document.getElementById(val).style.borderColor = "red";
-                console.log("fail");
-            } else {
-                document.getElementById(val).style.borderColor = "black";
+                var x = document.getElementById(val).value;
+                console.log(x);
+                if (x < val1) {
+                    document.getElementById(val).style.borderColor = "red";
+                    console.log("fail");
+                } else {
+                    document.getElementById(val).style.borderColor = "black";
+                }
             }
-        }
         </script>
 
 
@@ -448,12 +444,12 @@
     </div>
     </div>
     <script>
-    window.onload = function() {
-        document.getElementById("sbt").style.display = "none";
-        document.getElementById("re").style.display = "none";
+        window.onload = function() {
+            document.getElementById("sbt").style.display = "none";
+            document.getElementById("re").style.display = "none";
 
 
-    };
+        };
     </script>
 
     <!-- Optional JavaScript; choose one of the two! -->

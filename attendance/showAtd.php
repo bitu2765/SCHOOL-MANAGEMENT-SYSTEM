@@ -34,6 +34,7 @@ include("db_con_inc.php");
         <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand" style="text-align: center;">
+                    <span width="30px">&nbsp;</span>
                     <img src="../logo.png" alt="logo" s srcset="" height="100px">
                 </a>
 
@@ -64,8 +65,8 @@ include("db_con_inc.php");
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Student
                     </li>
@@ -110,8 +111,8 @@ include("db_con_inc.php");
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Academic
                     </li>
@@ -232,7 +233,7 @@ include("db_con_inc.php");
                     <div class="row text-muted">
                         <div class="col-6 text-left">
                             <p class="mb-0">
-                                <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High School</strong></a> &copy;
+                                <a class="text-muted"><strong>Shree SZ Vaghela High School</strong></a> &copy;
                             </p>
                         </div>
                     </div>
@@ -243,12 +244,9 @@ include("db_con_inc.php");
 </body>
 <script>
     document.getElementById('atd_date').valueAsDate = new Date();
-    document.getElementById("logout").onclick = function() {
-        var l = window.history.length - 2;
-        window.history.go(l - 2 * l);
-    }
 </script>
 <script src="../js/app.js"></script>
 <script src="../js/indapp.js"></script>
 <script src="../logg.js"></script>
+
 </html>

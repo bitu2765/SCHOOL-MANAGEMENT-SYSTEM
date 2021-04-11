@@ -51,6 +51,7 @@ if (isset($_POST['submit_atd'])) {
         <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand" style="text-align: center;">
+                    <span width="30px">&nbsp;</span>
                     <img src="../logo.png" alt="logo" s srcset="" height="100px">
                 </a>
 
@@ -217,7 +218,7 @@ if (isset($_POST['submit_atd'])) {
                                 <option value="AB">Absent</option>
                             </select>
                         </form><br><br> -->
-                        
+
                         <table id="myTable" class="table table-striped table-bordered">
                             <thead class="thead-dark">
                                 <tr style="text-align:center">
@@ -311,7 +312,7 @@ if (isset($_POST['submit_atd'])) {
     });
 </script>
 <script src="../js/app.js"></script>
-<script src="../js/indapp.js"></script> 
-<script src="../logg.js" ></script>
+<script src="../js/indapp.js"></script>
+<script src="../logg.js"></script>
 
 </html>

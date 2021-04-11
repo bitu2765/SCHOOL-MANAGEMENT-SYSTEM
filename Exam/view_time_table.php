@@ -1,4 +1,4 @@
-<?php  include 'connection.php';?>
+<?php include 'connection.php'; ?>
 <!doctype html>
 <html lang="en">
 
@@ -22,7 +22,7 @@
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+                    <img src="../logo.png" alt="logo" srcset="" height="100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -50,6 +50,10 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary Certificate</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
+                    </li>
+
+                    <li class="sidebar-header">
+
                     </li>
 
                     <li class="sidebar-header">
@@ -96,57 +100,63 @@
                         </ul>
                     </li>
 
-                <li class="sidebar-header">
-                    Academic
-                </li>
+                    <li class="sidebar-header">
 
-                <li class="sidebar-item ">
-                    <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
-                    </a>
-                    <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
-                    </a>
-                    <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
-                    </a>
-                    <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result
-                                Entry</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate
-                                MarkSheet</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
-                                Result</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Time Table</span>
-                    </a>
-                    <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
-                                Table</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
-                                Table</a></li>
-                    </ul>
-                </li>
+                    </li>
+
+                    <li class="sidebar-header">
+                        Academic
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
+                        </a>
+                        <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
+                        </a>
+                        <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
+                        </a>
+                        <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result
+                                    Entry</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate
+                                    MarkSheet</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
+                                    Result</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Time Table</span>
+                        </a>
+                        <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
+                                    Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
+                                    Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -160,7 +170,7 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
 
                     </ul>
                 </div>
@@ -181,59 +191,56 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <?php
-                             if(isset($_POST{'tt_Delete'}))
-                                {
-                                        $deAcademicYear=$_POST['Tt_year'];
-                                        $deStandard = $_POST['Tt_std'];
-                                        $deDiv=$_POST['Tt_div'];     
+                                        if (isset($_POST{
+                                            'tt_Delete'})) {
+                                            $deAcademicYear = $_POST['Tt_year'];
+                                            $deStandard = $_POST['Tt_std'];
+                                            $deDiv = $_POST['Tt_div'];
 
-                                            $sql="DELETE FROM `timetable` WHERE TtAcademicYear ='$deAcademicYear' AND TtStandard='$deStandard' AND TtDiv='$deDiv'";
-                                            $result=mysqli_query($conn,$sql);
-                                    
-                                            if($result)
-                                            {
+                                            $sql = "DELETE FROM `timetable` WHERE TtAcademicYear ='$deAcademicYear' AND TtStandard='$deStandard' AND TtDiv='$deDiv'";
+                                            $result = mysqli_query($conn, $sql);
+
+                                            if ($result) {
                                                 echo '<div class="alert alert-danger" role="alert">
                                                     Time Table Deleted Sucessfully.
                                             </div>';
                                             }
-                                      
-                                }
-                                  
-?>
-                                        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post"
-                                            enctype="multipart/form-data">
+                                        }
+
+                                        ?>
+                                        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
                                             <div class="container text-left" style="margin-left: 30px;">
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Academic Year</div>
                                                     <div class="col-7">
-                                                        <select name="Tt_year" required="" id="Selstd" required=""
-                                                            class="form-control">
+                                                        <select name="Tt_year" required="" id="Selstd" required="" class="form-control">
                                                             <option value="">--Select Academic Year--</option>
-                                                            <?php  $a1="SELECT `Value` FROM listmaster WHERE Parameter IN  ('AcadmicYear');";
+                                                            <?php $a1 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('AcadmicYear');";
                                                             $res1 = $conn->query($a1);
-                                                          if ($res1->num_rows > 0) {
-                                                            while($row = $res1->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['Value'];?>">
-                                                                <?php echo $row['Value'];?>
-                                                            </option>
-                                                            <?php }}?>
+                                                            if ($res1->num_rows > 0) {
+                                                                while ($row = $res1->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['Value']; ?>">
+                                                                        <?php echo $row['Value']; ?>
+                                                                    </option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Standard</div>
                                                     <div class="col-7">
-                                                        <select name="Tt_std" required="" id="selStd"
-                                                            class="form-control">
+                                                        <select name="Tt_std" required="" id="selStd" class="form-control">
                                                             <option value="">--Select Standard--</option>
-                                                            <?php  $c2="SELECT `Value` FROM listmaster WHERE Parameter IN  ('Standard');";
+                                                            <?php $c2 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('Standard');";
                                                             $results1 = $conn->query($c2);
                                                             if ($results1->num_rows > 0) {
-                                                            while($row = $results1->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['Value'];?>">
-                                                                <?php echo $row['Value'];?>
-                                                            </option>
-                                                            <?php }}?>
+                                                                while ($row = $results1->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['Value']; ?>">
+                                                                        <?php echo $row['Value']; ?>
+                                                                    </option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -241,72 +248,66 @@
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Division</div>
                                                     <div class="col-7">
-                                                        <select name="Tt_div" required="" id="selDiv"
-                                                            class="form-control">
+                                                        <select name="Tt_div" required="" id="selDiv" class="form-control">
                                                             <option value="">--Select Division--</option>
-                                                            <?php  $m4="SELECT `Value` FROM listmaster WHERE Parameter IN  ('Division')";
+                                                            <?php $m4 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('Division')";
                                                             $result3 = $conn->query($m4);
                                                             if ($result3->num_rows > 0) {
-                                                                while($row = $result3->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['Value'];?>">
-                                                                <?php echo $row['Value'];?>
-                                                            </option>
-                                                            <?php }}?>
+                                                                while ($row = $result3->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['Value']; ?>">
+                                                                        <?php echo $row['Value']; ?>
+                                                                    </option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
 
                                                     <div class="row" style="margin-bottom: 10px;">
                                                         <div class="col-4 mt-3">
-                                                            <input type="submit" name="tt_VIEW" id="sbt"
-                                                                class="btn btn-success" value="VIEW">
+                                                            <input type="submit" name="tt_VIEW" id="sbt" class="btn btn-success" value="VIEW">
                                                         </div>
                                                         <div class="col-4 mt-3">
-                                                            <input type="submit" name="tt_Delete" id="sbt"
-                                                                class="btn btn-danger" value="Delete"
-                                                                onclick='return checkdelete()'>
+                                                            <input type="submit" name="tt_Delete" id="sbt" class="btn btn-danger" value="Delete" onclick='return checkdelete()'>
                                                             <script>
-                                                            function checkdelete() {
-                                                                return confirm(
-                                                                    'Are you sure you want to delete this record!');
-                                                            }
+                                                                function checkdelete() {
+                                                                    return confirm(
+                                                                        'Are you sure you want to delete this record!');
+                                                                }
                                                             </script>
                                                         </div>
                                                     </div>
                                         </form>
                                         <?php
-                                        if(isset($_POST{'tt_VIEW'}))
-                                        {
-                                            $TtAcademicYear=$_POST['Tt_year'];
-                                            $TtStandard = $_POST['Tt_std']; 
-                                            $TtDiv=$_POST['Tt_div'];  
+                                        if (isset($_POST{
+                                            'tt_VIEW'})) {
+                                            $TtAcademicYear = $_POST['Tt_year'];
+                                            $TtStandard = $_POST['Tt_std'];
+                                            $TtDiv = $_POST['Tt_div'];
 
                                             $query = "SELECT TtUpload FROM timetable 
                                             WHERE TtAcademicYear= '$TtAcademicYear' AND TtStandard='$TtStandard' AND TtDiv='$TtDiv'";
-                                            
-                                            $result = mysqli_query($conn,$query);
+
+                                            $result = mysqli_query($conn, $query);
                                             $row = mysqli_fetch_assoc($result);
-                                            if($row){
-
+                                            if ($row) {
+                                            } else {
+                                                echo ' <div class=" col alert alert-danger" role="alert">File Does Not Exist , Please Enter Valid Data. </div>   ';
                                             }
-                                            else{
-                                                echo ' <div class=" col alert alert-danger" role="alert">File Does Not Exist , Please Enter Valid Data. </div>   ';  
-                                            }
-                                                    
-                                                    
-                                            ?>
 
 
-                                        <div class="card mt-3">
-                                            <img
-                                                src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['TtUpload']); ?>" />
-                                        </div>
-                                        <!-- <embed src="<?php echo ($row['TtUpload']);?>" width="800px" height="2100px" /> -->
-                                        <?php 
-                                         
-                                          
+                                        ?>
+
+
+                                            <div class="card mt-3">
+                                                <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['TtUpload']); ?>" />
+                                            </div>
+                                            <!-- <embed src="<?php echo ($row['TtUpload']); ?>" width="800px" height="2100px" /> -->
+                                        <?php
+
+
                                         }
 
- ?>
+                                        ?>
                                     </div>
                                 </div>
                             </div>

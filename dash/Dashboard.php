@@ -9,6 +9,7 @@ include("../connection_to_db.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/app.css">
     <link href="../css/gapi.css" rel="stylesheet">
+
     <title>Dashboard</title>
 </head>
 
@@ -46,6 +47,9 @@ include("../connection_to_db.php");
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary Certificate</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
+                    </li>
+                    <li class="sidebar-header">
+
                     </li>
 
                     <li class="sidebar-header">
@@ -90,6 +94,10 @@ include("../connection_to_db.php");
                             <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add Academic</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
                         </ul>
+                    </li>
+
+                    <li class="sidebar-header">
+
                     </li>
 
                     <li class="sidebar-header">
@@ -182,8 +190,6 @@ include("../connection_to_db.php");
                 </div>
             </footer>
         </div>
-        <script src="../logg.js"></script>
-
 
     </div>
 
@@ -192,6 +198,7 @@ include("../connection_to_db.php");
     <span id="pstd"></span>
     <script src="../js/app.js"></script>
     <script src="../js/indapp.js"></script>
+    <script src="../logg.js"></script>
 </body>
 
 </html>

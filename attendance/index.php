@@ -34,6 +34,7 @@ include("db_con_inc.php");
         <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand" style="text-align: center;">
+                    <span width="30px">&nbsp;</span>
                     <img src="../logo.png" alt="logo" s srcset="" height="100px">
                 </a>
 
@@ -64,8 +65,8 @@ include("db_con_inc.php");
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Student
                     </li>
@@ -110,8 +111,8 @@ include("db_con_inc.php");
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Academic
                     </li>

@@ -57,7 +57,7 @@ include 'connection.php';
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+                    <img src="../logo.png" alt="logo" srcset="" height=100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -85,6 +85,10 @@ include 'connection.php';
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary Certificate</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
+                    </li>
+
+                    <li class="sidebar-header">
+
                     </li>
 
                     <li class="sidebar-header">
@@ -129,6 +133,10 @@ include 'connection.php';
                             <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add Academic</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
                         </ul>
+                    </li>
+
+                    <li class="sidebar-header">
+
                     </li>
 
                     <li class="sidebar-header">
@@ -180,6 +188,8 @@ include 'connection.php';
                                     Table</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
                                     Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
+
                         </ul>
                     </li>
                 </ul>
@@ -208,7 +218,7 @@ include 'connection.php';
                     $exam = $_POST['search_Exam'];
                     $div = $_POST['search_Div'];
 
-                    
+
 
                     $str1 = "SELECT `IsResultVisible` FROM  exammaster  WHERE ExamAcademicYear='$year' AND ExamStandard='$standard' AND ExamName='$exam'";
 

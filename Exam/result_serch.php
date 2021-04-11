@@ -1,6 +1,6 @@
-<?php  
-     include 'connection.php';
- 
+<?php
+include 'connection.php';
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -23,7 +23,7 @@
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+                    <img src="../logo.png" alt="logo" srcset="" height="100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -51,6 +51,10 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary Certificate</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
+                    </li>
+
+                    <li class="sidebar-header">
+
                     </li>
 
                     <li class="sidebar-header">
@@ -97,57 +101,63 @@
                         </ul>
                     </li>
 
-                <li class="sidebar-header">
-                    Academic
-                </li>
+                    <li class="sidebar-header">
 
-                <li class="sidebar-item ">
-                    <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
-                    </a>
-                    <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
-                    </a>
-                    <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
-                    </a>
-                    <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result
-                                Entry</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate
-                                MarkSheet</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
-                                Result</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Time Table</span>
-                    </a>
-                    <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
-                                Table</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
-                                Table</a></li>
-                    </ul>
-                </li>
+                    </li>
+
+                    <li class="sidebar-header">
+                        Academic
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
+                        </a>
+                        <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
+                        </a>
+                        <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
+                        </a>
+                        <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result
+                                    Entry</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate
+                                    MarkSheet</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
+                                    Result</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Time Table</span>
+                        </a>
+                        <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
+                                    Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
+                                    Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -160,7 +170,7 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
 
                     </ul>
                 </div>
@@ -182,10 +192,10 @@
                                     <div class="card-body">
                                         <?php
                                         //Message if Result is nopt Declare
-                                        if(isset($_GET['Message'])){
-                                               echo $_GET['Message'];
-                                                                 }
-                                       ?>
+                                        if (isset($_GET['Message'])) {
+                                            echo $_GET['Message'];
+                                        }
+                                        ?>
 
                                         <form action="marksheet.php" method="post">
                                             <div class="container text-left" style="margin-left: 30px;">
@@ -194,67 +204,68 @@
                                                     <div class="col-7">
                                                         <select name="search_Year" class="form-control" required="">
                                                             <option value="">--Select Academic Year--</option>
-                                                            <?php  $m1="SELECT DISTINCT`ResAcademicYear` FROM `resultmaster`ORDER BY ResAcademicYear ASC";
+                                                            <?php $m1 = "SELECT DISTINCT`ResAcademicYear` FROM `resultmaster`ORDER BY ResAcademicYear ASC";
                                                             $results2 = $conn->query($m1);
                                                             if ($results2->num_rows > 0) {
-                                                                while($row = $results2->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['ResAcademicYear'];?>">
-                                                                <?php echo $row['ResAcademicYear'];?>
-                                                            </option>
-                                                            <?php }}?>
+                                                                while ($row = $results2->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ResAcademicYear']; ?>">
+                                                                        <?php echo $row['ResAcademicYear']; ?>
+                                                                    </option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Standard</div>
                                                     <div class="col-7">
-                                                        <select name="search_Std" id="Estd" required=""
-                                                            class="form-control">
+                                                        <select name="search_Std" id="Estd" required="" class="form-control">
                                                             <option value="">--Select Standard--</option>
-                                                            <?php  $m3="SELECT DISTINCT `ResStandard` FROM `resultmaster`ORDER BY ResStandard ASC";
+                                                            <?php $m3 = "SELECT DISTINCT `ResStandard` FROM `resultmaster`ORDER BY ResStandard ASC";
                                                             $results1 = $conn->query($m3);
                                                             if ($results1->num_rows > 0) {
-                                                                while($row = $results1->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['ResStandard'];?>">
-                                                                <?php echo $row['ResStandard'];?></option>
-                                                            <?php }}?>
+                                                                while ($row = $results1->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ResStandard']; ?>">
+                                                                        <?php echo $row['ResStandard']; ?></option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Division</div>
                                                     <div class="col-7">
-                                                        <select name="search_Div" required="" id="Selstd"
-                                                            class="form-control">
+                                                        <select name="search_Div" required="" id="Selstd" class="form-control">
                                                             <option value="">--Select Division--</option>
-                                                            <?php  $m4="SELECT DISTINCT`ResDivision` FROM `resultmaster`ORDER BY ResDivision ASC";
+                                                            <?php $m4 = "SELECT DISTINCT`ResDivision` FROM `resultmaster`ORDER BY ResDivision ASC";
                                                             $result3 = $conn->query($m4);
                                                             if ($result3->num_rows > 0) {
-                                                                while($row = $result3->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['ResDivision'];?>">
-                                                                <?php echo $row['ResDivision'];?></option>
-                                                            <?php }}?>
+                                                                while ($row = $result3->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ResDivision']; ?>">
+                                                                        <?php echo $row['ResDivision']; ?></option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Exam Type</div>
                                                     <div class="col-7">
-                                                         <select name="search_Exam" id="Estd" required=""
-                                                            class="form-control">
-                                                               <option value="">--Select Exam--</option>
-                                                            <?php  $m2="SELECT DISTINCT `ResExamName` FROM `resultmaster`ORDER BY ResExamName ASC";
+                                                        <select name="search_Exam" id="Estd" required="" class="form-control">
+                                                            <option value="">--Select Exam--</option>
+                                                            <?php $m2 = "SELECT DISTINCT `ResExamName` FROM `resultmaster`ORDER BY ResExamName ASC";
                                                             $results1 = $conn->query($m2);
                                                             if ($results1->num_rows > 0) {
-                                                                while($row = $results1->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['ResExamName'];?>">
-                                                                <?php echo $row['ResExamName'];?></option>
-                                                                <!-- <?php
-                                                                 $test=$row['ResExamName'];
-                                                                ?>
-                                                                <input type="checkbox"name="search_Exam[]" value="<?php echo $test;?>">
-                                                                <?php echo $test;?> -->
-                                                            <?php }}?>
+                                                                while ($row = $results1->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ResExamName']; ?>">
+                                                                        <?php echo $row['ResExamName']; ?></option>
+                                                                    <!-- <?php
+                                                                            $test = $row['ResExamName'];
+                                                                            ?>
+                                                                <input type="checkbox"name="search_Exam[]" value="<?php echo $test; ?>">
+                                                                <?php echo $test; ?> -->
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>

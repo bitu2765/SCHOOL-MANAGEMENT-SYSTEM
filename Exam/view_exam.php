@@ -1,28 +1,28 @@
 <?php
-     include 'connection.php';
- 
+include 'connection.php';
+
 ?>
 <!doctype html>
 <html lang="en">
 
 <head>
     <script>
-    function my_fun(str) {
+        function my_fun(str) {
 
-        if (window.XMLHttpRequest) {
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById('poll').innerHTML = this.responseText;
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             }
+
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById('poll').innerHTML = this.responseText;
+                }
+            }
+            xmlhttp.open("GET", "helper.php?value=" + str, true);
+            xmlhttp.send();
         }
-        xmlhttp.open("GET", "helper.php?value=" + str, true);
-        xmlhttp.send();
-    }
     </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -40,7 +40,7 @@
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+                    <img src="../logo.png" alt="logo" srcset="" height="100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -68,6 +68,10 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary Certificate</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
+                    </li>
+
+                    <li class="sidebar-header">
+
                     </li>
 
                     <li class="sidebar-header">
@@ -114,57 +118,63 @@
                         </ul>
                     </li>
 
-                <li class="sidebar-header">
-                    Academic
-                </li>
+                    <li class="sidebar-header">
 
-                <li class="sidebar-item ">
-                    <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
-                    </a>
-                    <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
-                    </a>
-                    <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
-                    </a>
-                    <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result
-                                Entry</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate
-                                MarkSheet</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
-                                Result</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Time Table</span>
-                    </a>
-                    <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
-                                Table</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
-                                Table</a></li>
-                    </ul>
-                </li>
+                    </li>
+
+                    <li class="sidebar-header">
+                        Academic
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
+                        </a>
+                        <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
+                        </a>
+                        <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
+                        </a>
+                        <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result
+                                    Entry</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate
+                                    MarkSheet</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
+                                    Result</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Time Table</span>
+                        </a>
+                        <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
+                                    Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
+                                    Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -177,7 +187,7 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
 
                     </ul>
                 </div>
@@ -204,49 +214,48 @@
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Academic Year</div>
                                                     <div class="col-7">
-                                                        <select name="eview_year" id="Selstd" required=""
-                                                            class="form-control">
+                                                        <select name="eview_year" id="Selstd" required="" class="form-control">
                                                             <option value="">--Select Academic Year --</option>
-                                                            <?php  $s2="SELECT DISTINCT ExamAcademicYear FROM `exammaster`ORDER BY ExamAcademicYear ASC";
-                                                                $results2 = $conn->query($s2);
-                                                                if ($results2->num_rows > 0) {
-                                                                    while($row = $results2->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['ExamAcademicYear'];?>">
-                                                                <?php echo $row['ExamAcademicYear'];?></option>
-                                                            <?php }}?>
+                                                            <?php $s2 = "SELECT DISTINCT ExamAcademicYear FROM `exammaster`ORDER BY ExamAcademicYear ASC";
+                                                            $results2 = $conn->query($s2);
+                                                            if ($results2->num_rows > 0) {
+                                                                while ($row = $results2->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ExamAcademicYear']; ?>">
+                                                                        <?php echo $row['ExamAcademicYear']; ?></option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Standard</div>
                                                     <div class="col-7">
-                                                        <select name="eview_std" id="Selstd" required=""
-                                                            class="form-control" onchange="my_fun(this.value)">
+                                                        <select name="eview_std" id="Selstd" required="" class="form-control" onchange="my_fun(this.value)">
                                                             <option value="">--Select Standard--</option>
-                                                            <?php  $s1="SELECT DISTINCT ExamStandard FROM `exammaster` ORDER BY ExamStandard ASC";
-                                                                $results1 = $conn->query($s1);
-                                                                if ($results1->num_rows > 0) {
-                                                                    while($row = $results1->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['ExamStandard'];?>">
-                                                                <?php echo $row['ExamStandard'];?></option>
-                                                            <?php }}?>
+                                                            <?php $s1 = "SELECT DISTINCT ExamStandard FROM `exammaster` ORDER BY ExamStandard ASC";
+                                                            $results1 = $conn->query($s1);
+                                                            if ($results1->num_rows > 0) {
+                                                                while ($row = $results1->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ExamStandard']; ?>">
+                                                                        <?php echo $row['ExamStandard']; ?></option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
 
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Exam Name</div>
-                                                    <div class="col-7"> <select name="eview_type" id="Examtype"
-                                                            required="" class="form-control">
+                                                    <div class="col-7"> <select name="eview_type" id="Examtype" required="" class="form-control">
                                                             <option value="">--Select Exam Name--</option>
-                                                            <?php  $c5="SELECT  DISTINCT ExamName FROM exammaster ORDER BY ExamName ASC";
+                                                            <?php $c5 = "SELECT  DISTINCT ExamName FROM exammaster ORDER BY ExamName ASC";
                                                             $result5 = $conn->query($c5);
-                                                                if ($result5->num_rows > 0) {
-                                                                    while($row = $result5->fetch_assoc())
-                                                            { ?>
-                                                            <option value="<?php echo $row['ExamName'];?>">
-                                                                <?php echo $row['ExamName'];?></option>
-                                                            <?php } } ?>
+                                                            if ($result5->num_rows > 0) {
+                                                                while ($row = $result5->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ExamName']; ?>">
+                                                                        <?php echo $row['ExamName']; ?></option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -256,8 +265,7 @@
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-2"></div>
                                                     <div class="col-4">
-                                                        <input type="submit" name="Search" class="btn btn-success"
-                                                            value="SEARCH">
+                                                        <input type="submit" name="Search" class="btn btn-success" value="SEARCH">
                                                     </div>
                                                     <div class="col-4">
                                                         <input type="reset" class="btn btn-outline-dark" value="CLEAR">
@@ -284,48 +292,48 @@
                     <th scope="col">Total Marks</th>
                     <th scope="col">Passing Marks</th>
                     <th scope="col"></th>
-                    
+
 
                 </tr>
             </thead>
             <?php
-    if(isset($_POST{'Search'}))
-    {
-            $ExamAcademicYear = $_POST['eview_year'];
-            $ExamStandard = $_POST['eview_std'];
-            $ExamName = $_POST['eview_type'];  
+            if (isset($_POST{
+                'Search'})) {
+                $ExamAcademicYear = $_POST['eview_year'];
+                $ExamStandard = $_POST['eview_std'];
+                $ExamName = $_POST['eview_type'];
 
-        $sql = "SELECT `ExamId`, `ExamAcademicYear`, `ExamStandard`, `ExamSubjectName`, `ExamName`, `ExamTotalMarks`, `ExamPassingMarks` FROM `exammaster`
+                $sql = "SELECT `ExamId`, `ExamAcademicYear`, `ExamStandard`, `ExamSubjectName`, `ExamName`, `ExamTotalMarks`, `ExamPassingMarks` FROM `exammaster`
                 Where  `ExamAcademicYear`='$ExamAcademicYear' AND ExamStandard='$ExamStandard ' AND ExamName='$ExamName'";
-        $result = $conn->query($sql); 
-        if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()){ ?>
-            <tbody>
-                <tr>
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) { ?>
+                        <tbody>
+                            <tr>
 
-                    <td><?php echo $row['ExamAcademicYear']?></td>
-                    <td><?php echo $row['ExamStandard']?></td>
-                    <td><?php echo $row['ExamSubjectName']?></td>
-                    <td><?php echo $row['ExamName']?></td>
-                    <td><?php echo $row['ExamTotalMarks']?></td>
-                    <td><?php echo $row['ExamPassingMarks']?></td>
-                    <td> <a class="btn btn-success" 
-                            href="_update_Exam.php?id=<?php echo $row['ExamId']; ?>" role="button">Edit</a>
-                    <a class="btn btn-danger" onclick='return checkdelete()'
-                            href="delete_exam.php?id=<?php echo $row['ExamId']; ?>" role="button">Delete</a></td>
-                </tr>
-                <?php }}
-                                    else{
-                                        echo '<br><div class="alert alert-danger" role="alert">
+                                <td><?php echo $row['ExamAcademicYear'] ?></td>
+                                <td><?php echo $row['ExamStandard'] ?></td>
+                                <td><?php echo $row['ExamSubjectName'] ?></td>
+                                <td><?php echo $row['ExamName'] ?></td>
+                                <td><?php echo $row['ExamTotalMarks'] ?></td>
+                                <td><?php echo $row['ExamPassingMarks'] ?></td>
+                                <td> <a class="btn btn-success" href="_update_Exam.php?id=<?php echo $row['ExamId']; ?>" role="button">Edit</a>
+                                    <a class="btn btn-danger" onclick='return checkdelete()' href="delete_exam.php?id=<?php echo $row['ExamId']; ?>" role="button">Delete</a>
+                                </td>
+                            </tr>
+                <?php }
+                } else {
+                    echo '<br><div class="alert alert-danger" role="alert">
                                         Exam Does Not Exist.
                                         </div>';
-                                    }} ?>
-                <script>
-                function checkdelete() {
-                    return confirm('Are you sure you want to delete this record! Exam Record From Result will be also deleted');
                 }
+            } ?>
+                <script>
+                    function checkdelete() {
+                        return confirm('Are you sure you want to delete this record! Exam Record From Result will be also deleted');
+                    }
                 </script>
-            </tbody>
+                        </tbody>
         </table>
         </main>
         <footer class="footer">

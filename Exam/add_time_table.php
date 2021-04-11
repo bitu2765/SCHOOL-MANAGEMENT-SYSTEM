@@ -1,6 +1,6 @@
-<?php  
- include 'connection.php';       
- ?>
+<?php
+include 'connection.php';
+?>
 
 <!doctype html>
 <html lang="en">
@@ -23,7 +23,7 @@
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+                    <img src="../logo.png" alt="logo" srcset="" height="100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -97,57 +97,63 @@
                         </ul>
                     </li>
 
-                <li class="sidebar-header">
-                    Academic
-                </li>
+                    <li class="sidebar-header">
 
-                <li class="sidebar-item ">
-                    <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
-                    </a>
-                    <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
-                    </a>
-                    <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
-                    </a>
-                    <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result
-                                Entry</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate
-                                MarkSheet</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
-                                Result</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Time Table</span>
-                    </a>
-                    <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
-                                Table</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
-                                Table</a></li>
-                    </ul>
-                </li>
+                    </li>
+
+                    <li class="sidebar-header">
+                        Academic
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
+                        </a>
+                        <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
+                        </a>
+                        <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
+                        </a>
+                        <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result
+                                    Entry</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate
+                                    MarkSheet</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
+                                    Result</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Time Table</span>
+                        </a>
+                        <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
+                                    Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
+                                    Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -161,7 +167,7 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
 
                     </ul>
                 </div>
@@ -181,88 +187,85 @@
                             <div class="col-sm-5 text-center">
                                 <div class="card">
                                     <div class="card-body">
-                                 <?php
-                                        if(isset($_POST{'tt_submit'}))
-                                            {
-                                                    $TtAcademicYear=$_POST['Tt_year'];
-                                                    $TtStandard = $_POST['Tt_std'];
-                                                    $TtDiv=$_POST['Tt_div'];     
-                                                    $statusMsg = '';
+                                        <?php
+                                        if (isset($_POST{
+                                            'tt_submit'})) {
+                                            $TtAcademicYear = $_POST['Tt_year'];
+                                            $TtStandard = $_POST['Tt_std'];
+                                            $TtDiv = $_POST['Tt_div'];
+                                            $statusMsg = '';
 
-                                                        // File upload path
-                                                        $fileName = basename($_FILES["file"]["name"]);
-                                                        $fileType = pathinfo($fileName,PATHINFO_EXTENSION);
+                                            // File upload path
+                                            $fileName = basename($_FILES["file"]["name"]);
+                                            $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
 
 
-                                                                // Allow certain file formats
-                                                                $allowTypes = array('jpg','png','PDF');
-                                                                if(in_array($fileType, $allowTypes)){
-                                                                    
-                                                                    $image = $_FILES['file']['tmp_name']; 
-                                                                    $imgContent = addslashes(file_get_contents($image));
+                                            // Allow certain file formats
+                                            $allowTypes = array('jpg', 'png', 'PDF');
+                                            if (in_array($fileType, $allowTypes)) {
 
-                                                    
-                                                        // Upload file to server
-                                                    
-                                                            // Insert image file name into database
-                                                            $insert="INSERT INTO timetable(`TtAcademicYear`, `TtStandard`, `TtDiv`, `TtUpload`)
+                                                $image = $_FILES['file']['tmp_name'];
+                                                $imgContent = addslashes(file_get_contents($image));
+
+
+                                                // Upload file to server
+
+                                                // Insert image file name into database
+                                                $insert = "INSERT INTO timetable(`TtAcademicYear`, `TtStandard`, `TtDiv`, `TtUpload`)
                                                             VALUES ( '$TtAcademicYear', '$TtStandard ', '$TtDiv','$imgContent')";
-                                                            $result=mysqli_query($conn,$insert);
+                                                $result = mysqli_query($conn, $insert);
 
-                                                            if($result){
-                                                                $statusMsg =  '<div class="alert alert-success" role="alert">  The file '.$fileName.' has been uploaded successfully.</div>';
-                                                            }else{
-                                                                $statusMsg =  ' <div class=" col alert alert-danger" role="alert">File upload failed, please  Use Image Less Than 1 MB. </div>   ';  
-                                                            } 
-                                                        }else{
-                                                            $statusMsg = '<div class=" col alert alert-danger" role="alert">  Sorry, only JPG, PNG files are allowed to upload.  </div>  ';  
-                                                        }
-                                                        
+                                                if ($result) {
+                                                    $statusMsg =  '<div class="alert alert-success" role="alert">  The file ' . $fileName . ' has been uploaded successfully.</div>';
+                                                } else {
+                                                    $statusMsg =  ' <div class=" col alert alert-danger" role="alert">File upload failed, please  Use Image Less Than 1 MB. </div>   ';
                                                 }
-                                                else{
-                                                    $statusMsg = '';  
-                                                }
-                                                            
-                                                // Display status message
-                                                echo $statusMsg;
-                        ?>
+                                            } else {
+                                                $statusMsg = '<div class=" col alert alert-danger" role="alert">  Sorry, only JPG, PNG files are allowed to upload.  </div>  ';
+                                            }
+                                        } else {
+                                            $statusMsg = '';
+                                        }
 
-                                        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post"
-                                            enctype="multipart/form-data">
+                                        // Display status message
+                                        echo $statusMsg;
+                                        ?>
+
+                                        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
                                             <div class="container text-left" style="margin-left: 30px;">
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Academic Year</div>
                                                     <div class="col-7">
-                                                        <select name="Tt_year" required="" id="Selstd" required=""
-                                                            class="form-control">
+                                                        <select name="Tt_year" required="" id="Selstd" required="" class="form-control">
                                                             <option value="">--Select Academic Year--</option>
                                                             <!-- Fetching From Listmaster -->
-                                                            <?php  $a1="SELECT `Value` FROM listmaster WHERE Parameter IN  ('AcadmicYear');";
-                                                                            $res1 = $conn->query($a1);
-                                                                        if ($res1->num_rows > 0) {
-                                                                            while($row = $res1->fetch_assoc()){ ?>
-                                                                            <option value="<?php echo $row['Value'];?>">
-                                                                                <?php echo $row['Value'];?>
-                                                                            </option>
-                                                            <?php }}?>
+                                                            <?php $a1 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('AcadmicYear');";
+                                                            $res1 = $conn->query($a1);
+                                                            if ($res1->num_rows > 0) {
+                                                                while ($row = $res1->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['Value']; ?>">
+                                                                        <?php echo $row['Value']; ?>
+                                                                    </option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Standard</div>
                                                     <div class="col-7">
-                                                        <select name="Tt_std" required="" id="selStd"
-                                                            class="form-control">
+                                                        <select name="Tt_std" required="" id="selStd" class="form-control">
                                                             <option value="">--Select Standard--</option>
                                                             <!-- Fetching From Listmaster -->
-                                                            <?php  $c2="SELECT `Value` FROM listmaster WHERE Parameter IN  ('Standard');";
+                                                            <?php $c2 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('Standard');";
                                                             $results1 = $conn->query($c2);
                                                             if ($results1->num_rows > 0) {
-                                                            while($row = $results1->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['Value'];?>">
-                                                                <?php echo $row['Value'];?>
-                                                            </option>
-                                                            <?php }}?>
+                                                                while ($row = $results1->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['Value']; ?>">
+                                                                        <?php echo $row['Value']; ?>
+                                                                    </option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -270,33 +273,31 @@
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Division</div>
                                                     <div class="col-7">
-                                                        <select name="Tt_div" required="" id="selDiv"
-                                                            class="form-control">
+                                                        <select name="Tt_div" required="" id="selDiv" class="form-control">
                                                             <option value="">--Select Division--</option>
                                                             <!-- Fetching From Listmaster -->
-                                                            <?php  $m4="SELECT `Value` FROM listmaster WHERE Parameter IN  ('Division')";
-                                                                $result3 = $conn->query($m4);
-                                                                if ($result3->num_rows > 0) {
-                                                                    while($row = $result3->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['Value'];?>">
-                                                                <?php echo $row['Value'];?>
-                                                            </option>
-                                                            <?php }}?>
+                                                            <?php $m4 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('Division')";
+                                                            $result3 = $conn->query($m4);
+                                                            if ($result3->num_rows > 0) {
+                                                                while ($row = $result3->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['Value']; ?>">
+                                                                        <?php echo $row['Value']; ?>
+                                                                    </option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Upload</div>
                                                     <div class="col-7">
-                                                        <input class="form-control" required="" type="file"
-                                                            id="formFile" name="file">
-                                                            <label for="formfill">*only JPG,PNG</label>
+                                                        <input class="form-control" required="" type="file" id="formFile" name="file">
+                                                        <label for="formfill">*only JPG,PNG</label>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 mt-2">
-                                                        <input type="submit" name="tt_submit" id="sbt"
-                                                            class="btn btn-success" value="SUBMIT">
+                                                        <input type="submit" name="tt_submit" id="sbt" class="btn btn-success" value="SUBMIT">
                                                     </div>
                                                 </div>
                                         </form>
@@ -306,26 +307,25 @@
                         </div>
                     </div>
                 </div>
-        </div>
-        </main>
+            </main>
 
-        <footer class="footer">
+            <footer class="footer">
 
-            <div class="container-fluid">
-                <div class="row text-muted">
+                <div class="container-fluid">
+                    <div class="row text-muted">
 
-                    <div class="col-6 text-left">
-                        <p class="mb-0">
+                        <div class="col-6 text-left">
+                            <p class="mb-0">
 
-                            <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High
-                                    School</strong></a> &copy;
-                        </p>
+                                <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High
+                                        School</strong></a> &copy;
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
 
-    </div>
+        </div>
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
 

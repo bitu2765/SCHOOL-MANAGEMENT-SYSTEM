@@ -1,6 +1,6 @@
 <?php
-     include 'connection.php';
- 
+include 'connection.php';
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -23,7 +23,7 @@
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="90px">
+                    <img src="../logo.png" alt="logo" srcset="" height="100px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -51,6 +51,10 @@
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary Certificate</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
                         </ul>
+                    </li>
+
+                    <li class="sidebar-header">
+
                     </li>
 
                     <li class="sidebar-header">
@@ -97,57 +101,63 @@
                         </ul>
                     </li>
 
-                <li class="sidebar-header">
-                    Academic
-                </li>
+                    <li class="sidebar-header">
 
-                <li class="sidebar-item ">
-                    <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
-                    </a>
-                    <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
-                    </a>
-                    <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
-                    </a>
-                    <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result
-                                Entry</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate
-                                MarkSheet</a>
-                        </li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
-                                Result</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-item ">
-                    <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="align-middle"></i> <span class="align-middle">Time Table</span>
-                    </a>
-                    <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
-                                Table</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
-                                Table</a></li>
-                    </ul>
-                </li>
+                    </li>
+
+                    <li class="sidebar-header">
+                        Academic
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
+                        </a>
+                        <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
+                        </a>
+                        <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
+                        </a>
+                        <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result
+                                    Entry</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate
+                                    MarkSheet</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
+                                    Result</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Time Table</span>
+                        </a>
+                        <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
+                                    Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
+                                    Table</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -161,7 +171,7 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
 
                     </ul>
                 </div>
@@ -186,34 +196,34 @@
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Academic Year</div>
                                                     <div class="col-7">
-                                                        <select name="mark_year" required="" id="Eyear"
-                                                            class="form-control">
+                                                        <select name="mark_year" required="" id="Eyear" class="form-control">
                                                             <option value="">--Select Academic Year--</option>
-                                                            <?php  $m1="SELECT DISTINCT`ResAcademicYear` FROM `resultmaster`";
+                                                            <?php $m1 = "SELECT DISTINCT`ResAcademicYear` FROM `resultmaster`";
                                                             $results2 = $conn->query($m1);
                                                             if ($results2->num_rows > 0) {
-                                                                while($row = $results2->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['ResAcademicYear'];?>">
-                                                                <?php echo $row['ResAcademicYear'];?>
-                                                            </option>
-                                                            <?php }}?>
+                                                                while ($row = $results2->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ResAcademicYear']; ?>">
+                                                                        <?php echo $row['ResAcademicYear']; ?>
+                                                                    </option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Exam Name</div>
                                                     <div class="col-7">
-                                                        <select name="mark_Exam" id="Eexam" required=""
-                                                            class="form-control">
+                                                        <select name="mark_Exam" id="Eexam" required="" class="form-control">
                                                             <option value="">--Select Exam--</option>
-                                                            <?php  $m2="SELECT DISTINCT `ResExamName` FROM `resultmaster`";
+                                                            <?php $m2 = "SELECT DISTINCT `ResExamName` FROM `resultmaster`";
                                                             $results1 = $conn->query($m2);
                                                             if ($results1->num_rows > 0) {
-                                                                while($row = $results1->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['ResExamName'];?>">
-                                                                <?php echo $row['ResExamName'];?>
-                                                            </option>
-                                                            <?php }}?>
+                                                                while ($row = $results1->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ResExamName']; ?>">
+                                                                        <?php echo $row['ResExamName']; ?>
+                                                                    </option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                         <!-- <script>
                                                         $(document).ready(function() {
@@ -229,17 +239,17 @@
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Standard</div>
                                                     <div class="col-7">
-                                                        <select name="mark_std" id="Estd" required=""
-                                                            class="form-control">
+                                                        <select name="mark_std" id="Estd" required="" class="form-control">
                                                             <option value="">--Select Standard--</option>
-                                                            <?php  $m3="SELECT DISTINCT`ResStandard` FROM `resultmaster`ORDER BY ResStandard ASC";
+                                                            <?php $m3 = "SELECT DISTINCT`ResStandard` FROM `resultmaster`ORDER BY ResStandard ASC";
                                                             $results1 = $conn->query($m3);
                                                             if ($results1->num_rows > 0) {
-                                                                while($row = $results1->fetch_assoc()){ ?>
-                                                            <option value="<?php echo $row['ResStandard'];?>">
-                                                                <?php echo $row['ResStandard'];?>
-                                                            </option>
-                                                            <?php }}?>
+                                                                while ($row = $results1->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ResStandard']; ?>">
+                                                                        <?php echo $row['ResStandard']; ?>
+                                                                    </option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -247,16 +257,16 @@
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Division</div>
                                                     <div class="col-7">
-                                                        <select name="mark_Div" required="" id="Ediv"
-                                                            class="form-control">
+                                                        <select name="mark_Div" required="" id="Ediv" class="form-control">
                                                             <option value="">--Select Division--</option>
-                                                            <?php  $m4="SELECT DISTINCT`ResDivision` FROM `resultmaster`";
-                                                                $result3 = $conn->query($m4);
-                                                                if ($result3->num_rows > 0) {
-                                                                    while($row = $result3->fetch_assoc()){ ?>
-                                                                 <option value="<?php echo $row['ResDivision'];?>">
-                                                                <?php echo $row['ResDivision'];?></option>
-                                                            <?php }}?>
+                                                            <?php $m4 = "SELECT DISTINCT`ResDivision` FROM `resultmaster`";
+                                                            $result3 = $conn->query($m4);
+                                                            if ($result3->num_rows > 0) {
+                                                                while ($row = $result3->fetch_assoc()) { ?>
+                                                                    <option value="<?php echo $row['ResDivision']; ?>">
+                                                                        <?php echo $row['ResDivision']; ?></option>
+                                                            <?php }
+                                                            } ?>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -264,12 +274,10 @@
                                                 <div class="row" style="margin-bottom: 10px;">
 
                                                     <div class="col-4">
-                                                        <input type="submit" name="res_xls" class="btn btn-success"
-                                                            role="button" value="Export To Excel">
+                                                        <input type="submit" name="res_xls" class="btn btn-success" role="button" value="Export To Excel">
                                                     </div>
                                                     <div class="col-4">
-                                                        <input type="BUTTON" name="res_Search" class="btn btn-success"
-                                                            value="SEARCH" onclick="get_res()">
+                                                        <input type="BUTTON" name="res_Search" class="btn btn-success" value="SEARCH" onclick="get_res()">
                                                     </div>
 
                                                     <div class="col-4">
@@ -299,38 +307,38 @@
                     <th scope="col">Passing Marks</th>
                     <th scope="col">Marks Obtained</th>
                     <th scope="col">Status</th>
-                     <th scope="col"></th>
+                    <th scope="col"></th>
 
                 </tr>
             </thead>
             <tbody id="poll4">
-            <!-- Fetching data from Result master using ajex code on helper4.php -->
+                <!-- Fetching data from Result master using ajex code on helper4.php -->
                 <script>
-                function get_res() {
-                    var year = document.getElementById("Eyear").value;
-                    var std = document.getElementById('Estd').value;
-                    var type = document.getElementById('Eexam').value;
-                    var div = document.getElementById('Ediv').value;
+                    function get_res() {
+                        var year = document.getElementById("Eyear").value;
+                        var std = document.getElementById('Estd').value;
+                        var type = document.getElementById('Eexam').value;
+                        var div = document.getElementById('Ediv').value;
 
 
-                    if (window.XMLHttpRequest) {
-                        xmlhttp = new XMLHttpRequest();
-                    } else {
-                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                    }
-
-                    xmlhttp.onreadystatechange = function() {
-                        if (this.readyState == 4 && this.status == 200) {
-                            document.getElementById('poll4').innerHTML = this
-                                .responseText;
+                        if (window.XMLHttpRequest) {
+                            xmlhttp = new XMLHttpRequest();
+                        } else {
+                            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                         }
+
+                        xmlhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                document.getElementById('poll4').innerHTML = this
+                                    .responseText;
+                            }
+                        }
+                        xmlhttp.open("GET", "helper4.php?Year=" + year + "&Std=" +
+                            std +
+                            "&Type=" + type + "&Div=" + div,
+                            true);
+                        xmlhttp.send();
                     }
-                    xmlhttp.open("GET", "helper4.php?Year=" + year + "&Std=" +
-                        std +
-                        "&Type=" + type + "&Div=" + div,
-                        true);
-                    xmlhttp.send();
-                }
                 </script>
             </tbody>
         </table>
