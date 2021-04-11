@@ -122,4 +122,5 @@ document.getElementById("udfe").onclick = function() {
     xmlhttp.send(querystr);
 
     // alert("Function End!");
+    xmlhttp.onload = stutab();
 };
