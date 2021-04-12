@@ -13,32 +13,62 @@ $tem = '<link rel="stylesheet" href="./css/app.css">
 <link href="./css/gapi.css" rel="stylesheet">
 <link rel="stylesheet" href="./css/ui_d.css">
 <table>
+<tbody>
+    <tr>
+        <td>
+            <img src="./Exam/images/logo1.png" style="height: 120px;">
+        </td>
+        <td style="width: 50px;"></td>
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div style="font-size: 10pt;text-align: center;">ઘી કેમ્બે એજ્યુકેશન સોસાયટી સંચાલિત​</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="font-size: 30pt;">શ્રી એસ.ઝેડ. વાઘેલા હાઇસ્કૂલ</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="font-size: 10pt;">બેઠક રોડ , ખંભાત-૩૮૮૬૨૦ , (જિ.આણંદ)</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</tbody>
+</table>
+<table>
+<tbody>
+    <tr>
+        <td style="width: 450px;">
+            વિદ્યાર્થીનું નામ :- Sudani Bhautik Dhanjibhai
+        </td>
+        <td style="width: 100px;">
+            રોલ નંબર :-
+        </td>
+    </tr>
+</tbody>
+</table>
+<table>
         <tbody>
             <tr>
-                <td>
-                    <img style="height: 100px;" src="./Exam/images/logo1.png">
+                <td style="width: 130px;">
+                    જ.ર નંબર :-
                 </td>
-                <td style="width: 50px;" ></td>
-                <td>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div style="font-size: 14pt;margin-left:10px;">ઘી કેમ્બે એજ્યુકેશન સોસાયટી સંચાલિત​</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="font-size: 30pt;">શ્રી એસ.ઝેડ. વાઘેલા હાઇસ્કૂલ</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="font-size: 14pt;">બેઠક રોડ , ખંભાત-૩૮૮૬૨૦ , (જિ.આણંદ)</div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <td style="width: 130px;">
+                    ધોરણ :-
+                </td>
+                <td style="width: 130px;">
+                    વગૅ :-
+                </td>
+                <td style="width: 130px;">
+                    પરીક્ષા વર્ષ :-
                 </td>
             </tr>
         </tbody>
@@ -59,7 +89,7 @@ $stres->WriteHTML($tem);
 
 // $slip->SetFont('Arial', '', 8);
 // $slip->WriteHTML($cpdf);
-// $stres->Output();
+$stres->Output();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +101,7 @@ $stres->WriteHTML($tem);
     <link href="./css/gapi.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/ui_d.css">
 
-    <title>Dashboard</title>
+    <title>DA001</title>
 </head>
 
 <body>
@@ -99,13 +129,13 @@ $stres->WriteHTML($tem);
                 <td>
                     <img src="./Exam/images/logo1.png" style="height: 100px;">
                 </td>
-                <td></td>
+                <td style="width: 300px;"></td>
                 <td>
                     <table>
                         <tbody>
                             <tr>
                                 <td>
-                                    <div style="font-size: 10pt;margin-left:10px;">ઘી કેમ્બે એજ્યુકેશન સોસાયટી સંચાલિત​</div>
+                                    <div style="text-align: center;">ઘી કેમ્બે એજ્યુકેશન સોસાયટી સંચાલિત​</div>
                                 </td>
                             </tr>
                             <tr>
@@ -139,17 +169,17 @@ $stres->WriteHTML($tem);
     <table>
         <tbody>
             <tr>
-                <td style="width: 100px;">
-                    જ.ર નંબર
+                <td style="width: 130px;">
+                    જ.ર નંબર :-
                 </td>
-                <td style="width: 100px;">
-                    ધોરણ
+                <td style="width: 130px;">
+                    ધોરણ :-
                 </td>
-                <td style="width: 100px;">
-                    વગૅ
+                <td style="width: 130px;">
+                    વગૅ :-
                 </td>
-                <td style="width: 100px;">
-                    પરીક્ષા વર્ષ
+                <td style="width: 130px;">
+                    પરીક્ષા વર્ષ :-
                 </td>
             </tr>
         </tbody>

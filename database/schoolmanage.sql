@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2021 at 10:28 AM
+-- Generation Time: Apr 12, 2021 at 11:01 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -274,9 +274,7 @@ CREATE TABLE `studentmaster` (
 --
 
 INSERT INTO `studentmaster` (`date`, `StuUIDNo`, `StuGRNo`, `StuRollNo`, `Stuprefix`, `StuStudentName`, `Stumiddle`, `StuLastname`, `StuAcdemicyear`, `StuStandard`, `StuDiv`, `StuGender`, `StuDOB`, `StuDateOfAdmission`, `StuParentMobileNumber1`, `StuParentMobileNumber2`, `StuHouseNo`, `StuStreetName`, `StuLocation`, `StuCity`, `StuDist`, `StuBirthPlace`, `StuAadharNo`, `StuCategory`, `StuCaste`, `StuLastschoolname`, `StuBankname`, `StuBankACno`, `StuBankIFSCcode`, `StuStatus`, `StuStatusChangedDate`, `file`, `filename`, `uploadfile`, `uploadfilename`) VALUES
-('2021-04-10 13:34:57', '11', '100', 1, 'MR.', 'NAKARANI', 'D', 'JANVI', '2021-22', 9, 'A', 'MALE', '2021-04-24', '2021-04-09', '9873476546', '9873476546', '102', '703 - YOGINATH ROW H', 'SURAT', 'ANAND', 'ANAND', 'SASAN', '123456780912', 'GENERAL', 'HINDU', 'AKS', 'SBI', '1233456', 'bnvy7657', 'LEFT', '2021-04-12', 'about_02.jpg', 'about_02.jpg', 'about_02.jpg', 'about_02.jpg'),
-('2021-04-09 17:50:53', '1000', '10000', 1, 'MR.', 'JASANI', 'D', 'DHRUTI', '2021-22', 9, 'A', 'MALE', '2021-04-04', '2021-04-07', '9278463928', '9873476546', '102', '28- MARIN FLATES , V', 'SURAT', 'NADIAD', 'ANAND', 'SASAN', '999999999999', 'GENERAL', 'HINDU', 'AKS', 'SBI', '121233', 'sbiav200', 'ACTIVE', '2021-04-15', 'about_02.jpg', 'about_02.jpg', 'about_02.jpg', 'about_02.jpg'),
-('2021-04-09 18:06:16', '10000', '3432', 1, 'MR.', 'NAKARANI', 'D', 'JANVI', '2021-22', 9, 'A', 'MALE', '2021-04-23', '2021-04-08', '9873476546', '9873476546', '102', '703 - YOGINATH ROW H', 'SURAT', 'ANAND', 'ANAND', 'SASAN', '1212333232', 'GENERAL', 'HINDU', 'AKS', 'SBI', '1231232', 'sbiav200', 'ACTIVE', '2021-04-17', 'about_02.jpg', 'about_02.jpg', 'about_02.jpg', 'about_02.jpg');
+('2021-04-10 13:34:57', '11', '100', 1, 'MR.', 'NAKARANI', 'D', 'JANVI', '2021-22', 9, 'A', 'MALE', '2021-04-24', '2021-04-09', '9873476546', '9873476546', '102', '703 - YOGINATH ROW H', 'SURAT', 'ANAND', 'ANAND', 'SASAN', '123456780912', 'GENERAL', 'HINDU', 'AKS', 'SBI', '1233456', 'bnvy7657', 'LEFT', '2021-04-12', 'about_02.jpg', 'about_02.jpg', 'about_02.jpg', 'about_02.jpg');
 
 -- --------------------------------------------------------
 
@@ -442,7 +440,8 @@ ALTER TABLE `standardmaster`
 -- Indexes for table `studentmaster`
 --
 ALTER TABLE `studentmaster`
-  ADD PRIMARY KEY (`StuGRNo`);
+  ADD PRIMARY KEY (`StuGRNo`),
+  ADD UNIQUE KEY `StuRollNo` (`StuRollNo`,`StuAcdemicyear`,`StuStandard`,`StuDiv`);
 
 --
 -- Indexes for table `submaster`
