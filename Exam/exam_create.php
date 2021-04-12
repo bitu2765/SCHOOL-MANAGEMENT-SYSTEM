@@ -1,17 +1,18 @@
 <?php
 include 'connection.php';
 ?>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/app.css">
-    <link href="../css/gapi.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/ui_d.css">
 
-    <title>Dashboard</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/_custom.css">
+
+    <title>Create Exam</title>
 </head>
 
 <body>
@@ -20,9 +21,8 @@ include 'connection.php';
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="100px">
+                    <img src="../logo.png" alt="logo" srcset="" height="90px">
                 </a>
-
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">
                         Employee
@@ -50,7 +50,6 @@ include 'connection.php';
                         </ul>
                     </li>
                     <li class="sidebar-header">
-
                     </li>
                     <li class="sidebar-header">
                         Student
@@ -96,7 +95,6 @@ include 'connection.php';
                         </ul>
                     </li>
                     <li class="sidebar-header">
-
                     </li>
                     <li class="sidebar-header">
                         Academic
@@ -171,8 +169,6 @@ include 'connection.php';
                     </ul>
                 </div>
             </nav>
-
-
             <main class="content">
                 <div class="container-fluid p-0">
                     <div class="row mb-2 mb-xl-3">
@@ -188,19 +184,19 @@ include 'connection.php';
                                 <div class="card">
                                     <div class="card-body">
                                         <?php
-                                        if (isset($_POST{
-                                            'create'})) {
+                                        if (isset($_POST['create'])) {
                                             $ExamAcademicYear = $_POST['year'];
                                             $ExamStandard = $_POST['std'];
-                                            $ExamSubjectName = $_POST['sub'];
+                                            // $ExamSubjectName = $_POST['sub'];
                                             $ExamName = $_POST['type'];
                                             $ExamTotalMarks = $_POST['totalmarks'];
                                             $ExamPassingMarks = $_POST['passingmarks'];
 
-                                            $query = "INSERT INTO `exammaster` (`ExamAcademicYear`, `ExamStandard`, `ExamSubjectName`, `ExamName`, `ExamTotalMarks`, `ExamPassingMarks`)
+                                            foreach ($_POST['sub'] as $ExamSubjectName) {
+                                                $query = "INSERT INTO `exammaster` (`ExamAcademicYear`, `ExamStandard`, `ExamSubjectName`, `ExamName`, `ExamTotalMarks`, `ExamPassingMarks`)
                                             VALUES ('$ExamAcademicYear', '$ExamStandard', '$ExamSubjectName', '$ExamName', '$ExamTotalMarks', '$ExamPassingMarks');";
-                                            $sql = mysqli_query($conn, $query);
-
+                                                $sql = mysqli_query($conn, $query);
+                                            }
 
                                             if ($sql) {
                                                 echo '<div class="alert alert-success" role="alert">
@@ -253,12 +249,13 @@ include 'connection.php';
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Subject Name</div>
                                                     <div class="col-7">
-                                                        <select name="sub" class="form-control" id="poll" required>
+                                                        <select name="sub[]" class="form-control" multiple id="poll" required>
                                                             <!-- code on helper.php -->
                                                             <option value="">Select Subject</option>
                                                         </select>
                                                     </div>
                                                 </div>
+
                                                 <!-- Fetching From subject using Std code on helper.php -->
                                                 <script>
                                                     function my_fun(str) {
@@ -314,32 +311,38 @@ include 'connection.php';
                         </div>
                     </div>
                 </div>
+        </div>
+        </main>
 
-            </main>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row text-muted">
 
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row text-muted">
-
-                        <div class="col-6 text-left">
-                            <p class="mb-0">
-                                <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High
-                                        School</strong></a> &copy;
-                            </p>
-                        </div>
+                    <div class="col-6 text-left">
+                        <p class="mb-0">
+                            <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High
+                                    School</strong></a> &copy;
+                        </p>
                     </div>
                 </div>
-            </footer>
-        </div>
+            </div>
+        </footer>
+    </div>
     </div>
 
+    <!-- Optional JavaScript; choose one of the two! -->
 
+    <!-- Option 1: Bootstrap Bundle with Popper -->
 
     <script src="../js/app.js"></script>
     <script src="../js/indapp.js"></script>
     <script src="../logg.js"></script>
 
-
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
 </body>
 
 </html>
