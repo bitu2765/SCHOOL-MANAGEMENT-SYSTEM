@@ -101,7 +101,9 @@ $stres->Output();
     <link href="./css/gapi.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/ui_d.css">
 
-    <title>DA001</title>
+    <title>DA001
+    
+    </title>
 </head>
 
 <body>
