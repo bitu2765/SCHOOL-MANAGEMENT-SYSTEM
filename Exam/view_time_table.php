@@ -8,8 +8,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/_custom.css">
-
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 
 </head>
@@ -153,8 +153,6 @@
                                     Table</a></li>
                             <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
                                     Table</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
-
                         </ul>
                     </li>
                 </ul>

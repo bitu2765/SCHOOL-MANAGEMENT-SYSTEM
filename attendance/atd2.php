@@ -183,7 +183,6 @@ if (isset($_POST['submit_atd'])) {
                                     Table</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
                                     Table</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
 
                         </ul>
                     </li>

@@ -10,6 +10,8 @@ include 'connection.php';
     <link rel="stylesheet" href="../css/app.css">
     <link href="../css/gapi.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/ui_d.css">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <title>Dashboard</title>
 </head>
@@ -151,8 +153,6 @@ include 'connection.php';
                                     Table</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
                                     Table</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
-
                         </ul>
                     </li>
                 </ul>

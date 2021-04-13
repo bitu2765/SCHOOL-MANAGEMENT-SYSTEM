@@ -47,6 +47,8 @@ include 'connection.php';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/app.css">
     <link href="css/gapi.css" rel="stylesheet">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <title></title>
 </head>
@@ -188,7 +190,7 @@ include 'connection.php';
                                     Table</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
                                     Table</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
+                           
 
                         </ul>
                     </li>
