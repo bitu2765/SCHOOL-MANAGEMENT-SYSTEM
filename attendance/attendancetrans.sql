@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2021 at 05:54 AM
+-- Generation Time: Apr 12, 2021 at 04:02 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sgp4`
+-- Database: `schoolmanage`
 --
 
 -- --------------------------------------------------------
@@ -35,12 +35,14 @@ CREATE TABLE `attendancetrans` (
   `AttDiv` varchar(10) NOT NULL,
   `AttDate` date NOT NULL,
   `AttSendSMS` varchar(5) NOT NULL DEFAULT 'No',
-  `AttPresentAbsent` varchar(15) NOT NULL DEFAULT 'Present'
+  `AttPresentAbsent` varchar(15) NOT NULL DEFAULT 'Present',
+  `AcadmicYear` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `attendancetrans`
 --
+
 
 --
 -- Indexes for dumped tables
@@ -60,7 +62,7 @@ ALTER TABLE `attendancetrans`
 -- AUTO_INCREMENT for table `attendancetrans`
 --
 ALTER TABLE `attendancetrans`
-  MODIFY `Sysid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `Sysid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

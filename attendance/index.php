@@ -165,8 +165,6 @@ include("db_con_inc.php");
                 </ul>
             </div>
         </nav>
-
-
         <div class="main">
             <nav class="navbar navbar-expand navbar-light navbar-bg">
                 <a class="sidebar-toggle d-flex">
@@ -185,16 +183,32 @@ include("db_con_inc.php");
                     <div class="container">
                         <form method="POST" action="atd2.php">
                             <div class="row">
-                                <div class="col-lg-4 form-group">
+                                <div class="col-lg-6 form-group">
                                     <b>DATE</b>
                                     <input type="date" name="atd_date" required class="form-control" id="atd_date1">
                                 </div>
+                                <div class="col-lg-6 form-group">
+                                    <b>ACADAMIC YEAR</b>
+                                    <select name="atd_acd_year" class="form-control">
+                                        <?php
+                                        $sqlStandard = "SELECT Value FROM listmaster WHERE Parameter = 'AcadmicYear' ORDER BY Value desc";
+                                        $res = mysqli_query($con, $sqlStandard);
+                                        while ($row = mysqli_fetch_assoc($res)) {
+                                            $std = $row['Value'];
+                                            echo "<option value='$std'>$std</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
                                 <!-- Fetching standard from list master -->
-                                <div class="col-lg-4 form-group">
+                                <div class="col-lg-6 form-group">
                                     <b>STANDARD</b>
                                     <select name="atd_standard" class="form-control">
                                         <?php
-                                        $sqlStandard = "SELECT Value FROM listmaster WHERE Parameter = 'Standard' ORDER BY Value";
+                                        $sqlStandard = "SELECT Value FROM listmaster WHERE Parameter = 'Standard'";
                                         $res = mysqli_query($con, $sqlStandard);
                                         while ($row = mysqli_fetch_assoc($res)) {
                                             $std = $row['Value'];
@@ -204,7 +218,7 @@ include("db_con_inc.php");
                                     </select>
                                 </div>
                                 <!-- Fetching division from list master -->
-                                <div class="col-lg-4 form-group">
+                                <div class="col-lg-6 form-group">
                                     <b>DIVISION</b>
                                     <select name="cls_section" class="form-control">
                                         <?php
@@ -218,6 +232,7 @@ include("db_con_inc.php");
                                     </select>
                                 </div>
                             </div>
+                          
                             <div class="row">
                                 <div class="col-lg-4 form-group">
                                     <input type="submit" class="btn btn-success" name="submit_atd" value="SUBMIT">

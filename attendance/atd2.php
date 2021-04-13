@@ -5,13 +5,14 @@ if (isset($_POST['submit_atd'])) {
     $date = date("d-m-Y", strtotime($dString));
     $stuStandard = mysqli_real_escape_string($con, trim($_POST['atd_standard']));
     $stuDiv = mysqli_real_escape_string($con, trim($_POST['cls_section']));
-
+    $atd_acd_year = mysqli_real_escape_string($con, trim($_POST['atd_acd_year']));
+    
     //checking attendance already taken or not for this date, standard and div
-    $sql = "SELECT * FROM attendancetrans WHERE AttStandard = '$stuStandard' AND AttDiv = '$stuDiv' AND AttDate = '$dString'";
+    $sql = "SELECT * FROM attendancetrans WHERE AttStandard = '$stuStandard' AND AttDiv = '$stuDiv' AND AttDate = '$dString' AND AcadmicYear = '$atd_acd_year'";
     $res = mysqli_query($con, $sql);
     $records = mysqli_num_rows($res);
 
-    if ($records > 1) {
+    if ($records > 0) {
         echo "<script>
         document.write('Attendance Already taken');
         setInterval(() => {
@@ -20,8 +21,7 @@ if (isset($_POST['submit_atd'])) {
         </script>";
         die();
     }
-
-    $sql = "SELECT * FROM studentmaster WHERE StuStandard ='$stuStandard' AND StuDiv='$stuDiv'";
+    $sql = "SELECT * FROM studentmaster WHERE StuStandard ='$stuStandard' AND StuDiv='$stuDiv' AND StuAcdemicyear = '$atd_acd_year'";
     $res = mysqli_query($con, $sql);
 } else {
     header('location:index.php');
@@ -247,6 +247,7 @@ if (isset($_POST['submit_atd'])) {
                             </table>
                             <br>
                             <input type="hidden" name="hdDate" value="<?php echo $date; ?>">
+                            <input type="hidden" name="hdacd" value="<?php echo $atd_acd_year; ?>">
                             <input type="hidden" name="hdCls" value="<?php echo $stuStandard; ?>">
                             <input type="hidden" name="hdSec" value="<?php echo $stuDiv; ?>">
                             <input type="hidden" name="absentArrays[]" value="" id="absentArray">

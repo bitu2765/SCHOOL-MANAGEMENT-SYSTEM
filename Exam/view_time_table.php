@@ -144,14 +144,14 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="sidebar-item ">
+                    <li class="sidebar-item active">
                         <a href="#timetable" data-toggle="collapse" class="sidebar-link collapsed">
                             <i class="align-middle"></i> <span class="align-middle">Time Table</span>
                         </a>
                         <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
                                     Table</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
+                            <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
                                     Table</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/delete_time_table.php">Delete Time Table</a></li>
 

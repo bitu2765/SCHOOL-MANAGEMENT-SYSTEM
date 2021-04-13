@@ -5,16 +5,17 @@ if (isset($_POST['UploadAttendance']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $date = date("Y-m-d", strtotime($dString));
     $class = mysqli_real_escape_string($con, trim($_POST['hdCls']));
     $section = mysqli_real_escape_string($con, trim($_POST['hdSec']));
+    $acadamicYear = mysqli_real_escape_string($con, trim($_POST['hdacd']));
     $json = $_POST['absentArrays'];
     $absentArray = json_decode($json[0]);
     $sendSms = $_POST['sendSMS'];
     
     //checking attendance already taken or not for this date, standard and div
-    $sql = "SELECT * FROM attendancetrans WHERE AttStandard = '$class' AND AttDiv = '$section' AND AttDate = '$date'";
+    $sql = "SELECT * FROM attendancetrans WHERE AttStandard = '$class' AND AttDiv = '$section' AND AttDate = '$date' AND AcadmicYear= '$acadamicYear'";
     $res = mysqli_query($con, $sql);
     $records = mysqli_num_rows($res);
 
-    if ($records > 1) {
+    if ($records > 0) {
         echo "<script>
         document.write('Attendance Already taken');
         setInterval(() => {
@@ -29,9 +30,9 @@ if (isset($_POST['UploadAttendance']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
         foreach ($absentArray as $num) {
             if ($sendSms == "Y") { //sms = yes for absent student
                 $sql = "INSERT INTO attendancetrans(AttStudentName,AttStudentRollNo,AttStandard,AttDiv,
-                    AttDate,AttSendSMS,AttPresentAbsent) 
+                    AttDate,AttSendSMS,AttPresentAbsent,AcadmicYear) 
                     VALUES((SELECT StuStudentName FROM studentmaster WHERE StuRollNo = '$num' AND StuStandard = '$class' AND StuDiv = '$section'),
-                            '$num','$class','$section','$date','Yes','Absent')";
+                            '$num','$class','$section','$date','Yes','Absent','$acadamicYear')";
                 if (!mysqli_query($con, $sql)) {
                     die("unable to upload absent student!!,M=Y");
                 }
@@ -45,8 +46,8 @@ if (isset($_POST['UploadAttendance']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
             }
             if ($sendSms == "N") {
                 $sql = "INSERT INTO attendancetrans(AttStudentName,AttStudentRollNo,AttStandard,AttDiv,
-                AttDate,AttPresentAbsent) VALUES((SELECT StuStudentName FROM studentmaster WHERE StuRollNo = '$num' AND StuStandard = '$class' AND StuDiv = '$section'),
-                '$num','$class','$section','$date','Absent')";
+                AttDate,AttPresentAbsent,AcadmicYear) VALUES((SELECT StuStudentName FROM studentmaster WHERE StuRollNo = '$num' AND StuStandard = '$class' AND StuDiv = '$section'),
+                '$num','$class','$section','$date','Absent','$acadamicYear')";
                 if (!mysqli_query($con, $sql)) {
                     die("unable to upload absent student,M=No!!");
                 }
@@ -57,9 +58,9 @@ if (isset($_POST['UploadAttendance']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     // present students
     if (isset($_POST['attend']) && is_array($_POST['attend'])) {
         foreach ($_POST['attend'] as $att) {
-            $sql = "INSERT INTO attendancetrans(AttStudentName,AttStudentRollNo,AttStandard,AttDiv,AttDate) 
+            $sql = "INSERT INTO attendancetrans(AttStudentName,AttStudentRollNo,AttStandard,AttDiv,AttDate,AcadmicYear) 
             VALUES((SELECT StuStudentName FROM StudentMaster WHERE StuRollNo = '$att' AND StuStandard = '$class' AND StuDiv = '$section'),
-            '$att','$class','$section','$date')";
+            '$att','$class','$section','$date','$acadamicYear')";
 
             if (!mysqli_query($con, $sql)) {
                 die("unable to upload present student!!");

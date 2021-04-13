@@ -100,12 +100,12 @@
                     Academic
                 </li>
 
-                <li class="sidebar-item ">
+                <li class="sidebar-item active">
                     <a href="#addsubject" data-toggle="collapse" class="sidebar-link collapsed">
                         <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
                     </a>
                     <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
+                        <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
                     </ul>
                 </li>
                 <li class="sidebar-item ">

@@ -107,14 +107,14 @@ include 'connection.php';
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
                         </ul>
                     </li>
-                    <li class="sidebar-item ">
+                    <li class="sidebar-item active">
                         <a href="#exammaster" data-toggle="collapse" class="sidebar-link collapsed">
                             <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
                         </a>
                         <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a>
                             </li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
                         </ul>
                     </li>
                     <li class="sidebar-item ">

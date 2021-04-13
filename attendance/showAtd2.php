@@ -4,9 +4,10 @@ if (isset($_POST['submit_atd'])) {
     $date = mysqli_real_escape_string($con, trim($_POST['atd_date']));
     $dateStr = date("d-m-Y", strtotime($date));
     $class = mysqli_real_escape_string($con, trim($_POST['atd_standard']));
-    $section = mysqli_real_escape_string($con, trim($_POST['cls_section']));
+    $section = mysqli_real_escape_string($con, trim($_POST['cls_section'])); 
+    $atd_acd_year = mysqli_real_escape_string($con, trim($_POST['atd_acd_year']));
     $sql = "SELECT * FROM attendancetrans
-            WHERE AttStandard = '$class' AND AttDiv = '$section' AND AttDate = '$date';";
+     WHERE AttStandard = '$class' AND AttDiv = '$section' AND AttDate = '$date' AND AcadmicYear = '$atd_acd_year';";
     $res = mysqli_query($con, $sql);
 } else {
     header('location:showAtd.php');
@@ -314,5 +315,4 @@ if (isset($_POST['submit_atd'])) {
 <script src="../js/app.js"></script>
 <script src="../js/indapp.js"></script>
 <script src="../logg.js"></script>
-
 </html>

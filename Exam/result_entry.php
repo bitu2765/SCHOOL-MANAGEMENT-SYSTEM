@@ -129,12 +129,12 @@ include 'connection.php';
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
                         </ul>
                     </li>
-                    <li class="sidebar-item ">
+                    <li class="sidebar-item active">
                         <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
                             <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
                         </a>
                         <ul id="resultmaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_entry.php">Result
+                            <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/result_entry.php">Result
                                     Entry</a>
                             </li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>

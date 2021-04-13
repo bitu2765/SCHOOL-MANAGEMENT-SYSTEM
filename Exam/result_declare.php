@@ -125,7 +125,7 @@ include 'connection.php';
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
                         </ul>
                     </li>
-                    <li class="sidebar-item ">
+                    <li class="sidebar-item active">
                         <a href="#resultmaster" data-toggle="collapse" class="sidebar-link collapsed">
                             <i class="align-middle"></i> <span class="align-middle">Result Managment</span>
                         </a>
@@ -136,7 +136,7 @@ include 'connection.php';
                             </li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate MarkSheet</a>
                             </li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
                             </li>
                         </ul>
                     </li>
