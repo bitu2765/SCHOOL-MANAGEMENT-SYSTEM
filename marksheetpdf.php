@@ -9,118 +9,6 @@ if (!$conn) {
 }
 require("./fpdf/fpdf.php");
 require_once __DIR__ . "/vendor/autoload.php";
-$tem = '<link rel="stylesheet" href="./css/app.css">
-<link href="./css/gapi.css" rel="stylesheet">
-<link rel="stylesheet" href="./css/ui_d.css">
-<table>
-<tbody>
-    <tr>
-        <td>
-            <img src="./Exam/images/logo1.png" style="height: 200px;">
-        </td>
-        <td style="width: 50px;"></td>
-        <td>
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div style="font-size: 23pt;text-align: center;">ઘી કેમ્બે એજ્યુકેશન સોસાયટી સંચાલિત​</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div style="font-size: 43pt;">શ્રી એસ.ઝેડ. વાઘેલા હાઇસ્કૂલ</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div style="font-size: 15pt;">બેઠક રોડ , ખંભાત-૩૮૮૬૨૦ , (જિ.આણંદ)</div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-</tbody>
-</table>
-<br>
-<table>
-<tbody>
-    <tr>
-        <td style="width: 650px;">
-            વિદ્યાર્થીનું નામ :-  Sudani Bhautik Dhanjibhai
-        </td>
-        <td style="width: 100px;">
-            રોલ નંબર :-
-        </td>
-    </tr>
-</tbody>
-</table>
-<table>
-        <tbody>
-            <tr>
-                <td style="width: 220px;">
-                    જ.ર નંબર :-
-                </td>
-                <td style="width: 220px;">
-                    ધોરણ :-
-                </td>
-                <td style="width: 220px;">
-                    વગૅ :-
-                </td>
-                <td style="width: 220px;">
-                    પરીક્ષા વર્ષ :-
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table>
-    <tbody>
-            <tr style="border:0.1mm solid black" >
-                <td scope="col" style="font-size: 13pt;border:0.1mm solid black" >પરીક્ષા</td>
-                <td scope colspan="2" style="font-size: 15pt;border:0.1mm solid black" >First</td>
-                <td scope colspan="2" style="font-size: 15pt;border:0.1mm solid black" >First</td>
-                <td scope colspan="2" style="font-size: 15pt;border:0.1mm solid black" >First</td>
-            </tr>
-            <tr style="border:0.1mm solid black">
-                <td scope="col" style="width: 250px;border:0.1mm solid black" >વિષય</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" > કુલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" >મેળવેલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" > કુલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" >મેળવેલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" > કુલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" >મેળવેલ ગુણ</td>
-            </tr>
-            <tr style="border:0.1mm solid black">
-                <td scope="col" style="width: 250px;border:0.1mm solid black" >વિષય</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" > કુલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" >મેળવેલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" > કુલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" >મેળવેલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" > કુલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" >મેળવેલ ગુણ</td>
-            </tr>
-            <tr style="border:0.1mm solid black">
-                <td scope="col" style="width: 250px;border:0.1mm solid black" >વિષય</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" > કુલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" >મેળવેલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" > કુલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" >મેળવેલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" > કુલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" >મેળવેલ ગુણ</td>
-            </tr>
-            <tr style="border:0.1mm solid black">
-                <td scope="col" style="width: 250px;border:0.1mm solid black" >વિષય</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" > કુલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" >મેળવેલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" > કુલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" >મેળવેલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" > કુલ ગુણ</td>
-                <td scope="col" style="width: 120px;border:0.1mm solid black" >મેળવેલ ગુણ</td>
-            </tr>
-            </tbody>
-       
-        </table>';
 
 
 $stres = new \Mpdf\Mpdf([
@@ -189,6 +77,16 @@ WHERE ResAcademicYear='$year' And ResStandard='$standard' And ResExamName='$exam
         $stuDiv = $row11['ResDivision'];
         $examYear = $row11['ResAcademicYear'];
         $examName = $row11['ResExamName'];
+        $stustatus = $row11['ResStatus'];
+
+        if($stustatus =="FAIL")
+        {
+            $resultStatus = false;
+            $Rank ="FAIL";
+        }
+        else{
+            $Rank ="PASS";
+        }
 
         $resultpage = '<link rel="stylesheet" href="./css/app.css">
         <link href="./css/gapi.css" rel="stylesheet">
@@ -278,7 +176,8 @@ WHERE ResAcademicYear='$year' And ResStandard='$standard' And ResExamName='$exam
             $subName = $row111['ResSubName'];
             $subTotal = $row111['ResTotalMarks'];
             $subObtain = $row111['ResMarksObtained'];
-            $stustatus = $row111['ResStatus'];
+           
+            
             // for ($iii = 0; $iii < 6; $iii++) {
             $resultpage .= '<tr style="border:0.1mm solid black" >';
             $resultpage .= '<td scope="col"  style="width: 350px;font-size: 11pt;border:0.1mm solid black" >' . $subName . '</td>';
@@ -296,7 +195,7 @@ WHERE ResAcademicYear='$year' And ResStandard='$standard' And ResExamName='$exam
 
         $resultpage .= '<tr style="border:0.1mm solid black" >';
         $resultpage .= '<td scope="col"  style="width: 350px;font-size: 11pt;border:0.1mm solid black" >Result And Rank</td>';
-        $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;border:0.1mm solid black" >' . $stustatus . '</td>';
+        $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;border:0.1mm solid black" >' .  $Rank . '</td>';
         $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;border:0.1mm solid black" ></td>';
         $resultpage .= '</tr>';
 
@@ -317,8 +216,7 @@ WHERE ResAcademicYear='$year' And ResStandard='$standard' And ResExamName='$exam
         $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;" ></td>';
         $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;" ></td>';
         $resultpage .= '</tr>';
-        $resultpage .= '</tbody>
-        </table>';
+        $resultpage .= '</tbody></table>';
         $stres->AddPage('L', 'A4');
         $stres->WriteHTML($resultpage);
         $stres->Line(7, 10, 7, 200);
