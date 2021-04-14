@@ -45,25 +45,37 @@ if (isset($_POST{
 	$StuStatus = strtoupper($_POST['StuStatus']);
 	$StuStatusChangedDate = $_POST['StuStatusChangedDate'];
 
-	$file = $_FILES["file"]["name"];
-	$tmp_name = $_FILES['file']['tmp_name'];
-	$folder = "upload/";
-	move_uploaded_file($tmp_name, $folder . $file);
+	$info = pathinfo($_FILES['file']['name']);
+	$ext = $info['extension']; // get the extension of the file
+	$newname = "$StuGRNo." . $ext;
+	$name = "1_." . $newname;
 
-	$filename = $_FILES["filename"]["name"];
-	$tmp_name = $_FILES['filename']['tmp_name'];
-	$folder = "upload/";
-	move_uploaded_file($tmp_name, $folder . $filename);
+	$target = "upload/" . $name;
+	move_uploaded_file($_FILES['file']['tmp_name'], $target);
 
-	$uploadfile = $_FILES["uploadfile"]["name"];
-	$tmp_name = $_FILES['uploadfile']['tmp_name'];
-	$folder = "upload/";
-	move_uploaded_file($tmp_name, $folder . $uploadfile);
+	$info = pathinfo($_FILES['filename']['name']);
+	$ext = $info['extension']; // get the extension of the file
+	$newname = "$StuGRNo." . $ext;
+	$name = "2_." . $newname;
 
-	$uploadfilename = $_FILES["uploadfilename"]["name"];
-	$tmp_name = $_FILES['uploadfilename']['tmp_name'];
-	$folder = "upload/";
-	move_uploaded_file($tmp_name, $folder . $uploadfilename);
+	$target = "upload/" . $name;
+	move_uploaded_file($_FILES['filename']['tmp_name'], $target);
+
+	$info = pathinfo($_FILES['uploadfile']['name']);
+	$ext = $info['extension']; // get the extension of the file
+	$newname = "$StuGRNo." . $ext;
+	$name = "3_." . $newname;
+
+	$target = "upload/" . $name;
+	move_uploaded_file($_FILES['uploadfile']['tmp_name'], $target);
+
+	$info = pathinfo($_FILES['uploadfilename']['name']);
+	$ext = $info['extension']; // get the extension of the file
+	$newname = "$StuGRNo." . $ext;
+	$name = "4_." . $newname;
+
+	$target = "upload/" . $name;
+	move_uploaded_file($_FILES['uploadfilename']['tmp_name'], $target);
 
 
 
