@@ -95,7 +95,7 @@ WHERE ResAcademicYear='$year' And ResStandard='$standard' And ResExamName='$exam
         <tbody>
             <tr>
                 <td>
-                    <img src="./Exam/images/logo1.png" style="height: 200px;">
+                    <img src="./Exam/images/logo1.png" style="height: 150px;">
                 </td>
                 <td style="width: 50px;"></td>
                 <td>
