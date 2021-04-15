@@ -18,8 +18,9 @@ include("db_con_inc.php");
     <link rel="stylesheet" href="../css/app.css">
     <link href="../css/gapi.css" rel="stylesheet">
 
-
-
+    <title>Attendance</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .container {
             background-color: white;
@@ -230,7 +231,7 @@ include("db_con_inc.php");
                                     </select>
                                 </div>
                             </div>
-                          
+
                             <div class="row">
                                 <div class="col-lg-4 form-group">
                                     <input type="submit" class="btn btn-success" name="submit_atd" value="SUBMIT">

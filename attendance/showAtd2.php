@@ -4,7 +4,7 @@ if (isset($_POST['submit_atd'])) {
     $date = mysqli_real_escape_string($con, trim($_POST['atd_date']));
     $dateStr = date("d-m-Y", strtotime($date));
     $class = mysqli_real_escape_string($con, trim($_POST['atd_standard']));
-    $section = mysqli_real_escape_string($con, trim($_POST['cls_section'])); 
+    $section = mysqli_real_escape_string($con, trim($_POST['cls_section']));
     $atd_acd_year = mysqli_real_escape_string($con, trim($_POST['atd_acd_year']));
     $sql = "SELECT * FROM attendancetrans
      WHERE AttStandard = '$class' AND AttDiv = '$section' AND AttDate = '$date' AND AcadmicYear = '$atd_acd_year';";
@@ -28,11 +28,12 @@ if (isset($_POST['submit_atd'])) {
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.23/af-2.3.5/b-1.6.5/b-colvis-1.6.5/b-flash-1.6.5/b-html5-1.6.5/b-print-1.6.5/cr-1.5.3/fc-3.3.2/fh-3.1.8/kt-2.6.1/r-2.2.7/rg-1.1.2/rr-1.2.7/sc-2.0.3/sb-1.0.1/sp-1.2.2/sl-1.3.1/datatables.js">
     </script>
 
+    <title>Attendance</title>
 
     <link rel="stylesheet" href="../css/app.css">
     <link href="../css/gapi.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="app.css">
-    <link rel="stylesheet" href="gapi.css"> -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .container {
             background-color: white;
@@ -314,4 +315,5 @@ if (isset($_POST['submit_atd'])) {
 <script src="../js/app.js"></script>
 <script src="../js/indapp.js"></script>
 <script src="../logg.js"></script>
+
 </html>

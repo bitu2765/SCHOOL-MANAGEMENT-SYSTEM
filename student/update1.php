@@ -4,40 +4,39 @@ include("connectdb.php");
 
 
 
- $StuGRNo=$_GET['StuGRNo'];
-    $result=mysqli_query($conn,"SELECT * FROM studentmaster WHERE StuGRNo=$StuGRNo");
-    while ($res=mysqli_fetch_array($result))
-     {
-    $Stuprefix=$res['Stuprefix'];
-	$StuStudentName=strtoupper($res['StuStudentName']);
-	$Stumiddle=strtoupper($res['Stumiddle']);
-	$StuLastname=strtoupper($res['StuLastname']);
-	$StuAcdemicyear=$res['StuAcdemicyear'];
-	$StuStandard=$res['StuStandard'];
-	$StuDiv=$res['StuDiv'];
-	
-	
-	$StuDOB=$res['StuDOB'];
-	$StuDateOfAdmission=$res['StuDateOfAdmission'];
-	$StuParentMobileNumber1=$res['StuParentMobileNumber1'];
-	$StuParentMobileNumber2=$res['StuParentMobileNumber2'];
-	$StuHouseNo=$res['StuHouseNo'];
-	$StuStreetName=strtoupper($res['StuStreetName']);
-	$StuLocation=strtoupper($res['StuLocation']);
-	$StuCity=strtoupper($res['StuCity']);
-	$StuDist=strtoupper($res['StuDist']);
-	$StuBirthPlace=strtoupper($res['StuBirthPlace']);
-	$StuAadharNo=$res['StuAadharNo']??"";
-	$StuCategory=$res['StuCategory'];
-	$StuCaste=strtoupper($res['StuCaste']);
-	$StuLastschoolname=strtoupper($res['StuLastschoolname']);
-	$StuBankname=strtoupper($res['StuBankname']);
-	$StuBankACno=$res['StuBankACno']??"";
-	$StuBankIFSCcode=$res['StuBankIFSCcode'];
-	$StuStatus=$res['StuStatus'];
-	$StuStatusChangedDate=$res['StuStatusChangedDate'];
-    }
-   
+$StuGRNo = $_GET['StuGRNo'];
+$result = mysqli_query($conn, "SELECT * FROM studentmaster WHERE StuGRNo=$StuGRNo");
+while ($res = mysqli_fetch_array($result)) {
+	$Stuprefix = $res['Stuprefix'];
+	$StuStudentName = strtoupper($res['StuStudentName']);
+	$Stumiddle = strtoupper($res['Stumiddle']);
+	$StuLastname = strtoupper($res['StuLastname']);
+	$StuAcdemicyear = $res['StuAcdemicyear'];
+	$StuStandard = $res['StuStandard'];
+	$StuDiv = $res['StuDiv'];
+
+
+	$StuDOB = $res['StuDOB'];
+	$StuDateOfAdmission = $res['StuDateOfAdmission'];
+	$StuParentMobileNumber1 = $res['StuParentMobileNumber1'];
+	$StuParentMobileNumber2 = $res['StuParentMobileNumber2'];
+	$StuHouseNo = $res['StuHouseNo'];
+	$StuStreetName = strtoupper($res['StuStreetName']);
+	$StuLocation = strtoupper($res['StuLocation']);
+	$StuCity = strtoupper($res['StuCity']);
+	$StuDist = strtoupper($res['StuDist']);
+	$StuBirthPlace = strtoupper($res['StuBirthPlace']);
+	$StuAadharNo = $res['StuAadharNo'] ?? "";
+	$StuCategory = $res['StuCategory'];
+	$StuCaste = strtoupper($res['StuCaste']);
+	$StuLastschoolname = strtoupper($res['StuLastschoolname']);
+	$StuBankname = strtoupper($res['StuBankname']);
+	$StuBankACno = $res['StuBankACno'] ?? "";
+	$StuBankIFSCcode = $res['StuBankIFSCcode'];
+	$StuStatus = $res['StuStatus'];
+	$StuStatusChangedDate = $res['StuStatusChangedDate'];
+}
+
 
 
 ?>
@@ -55,8 +54,9 @@ include("connectdb.php");
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
-	<title>Form Layouts | Admin Demo</title>
-	<script src="../logg.js"></script>
+	<title>Update Student</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 	<link href="../payroll/css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -98,8 +98,8 @@ include("connectdb.php");
 						</ul>
 					</li>
 					<li class="sidebar-header">
-                        
-						</li>
+
+					</li>
 					<li class="sidebar-header">
 						Student
 					</li>
@@ -144,8 +144,8 @@ include("connectdb.php");
 						</ul>
 					</li>
 					<li class="sidebar-header">
-                        
-						</li>
+
+					</li>
 					<li class="sidebar-header">
 						Academic
 					</li>
@@ -198,17 +198,17 @@ include("connectdb.php");
 		</nav>
 
 		<div class="main">
-            <nav class="navbar navbar-expand navbar-light navbar-bg">
-                <a class="sidebar-toggle d-flex">
-                    <i class="hamburger align-self-center"></i>
-                </a>
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle d-flex">
+					<i class="hamburger align-self-center"></i>
+				</a>
 
-                <div class="navbar-collapse collapse">
-                    <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
-                    </ul>
-                </div>
-            </nav>
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+					</ul>
+				</div>
+			</nav>
 
 			<main class="content">
 				<div class="container-fluid p-0">
@@ -228,76 +228,68 @@ include("connectdb.php");
 
 
 								<div class="mb-3 row">
-											
-											<div class="col-sm-3">
-												<input type="hidden" class="form-control" name="StuGRNo" placeholder="" value="<?php echo $_GET['StuGRNo'];?>" required>
-											</div>
-										</div>
-										
-										<div class="mb-3 row">
-											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Name</label>
-											<div class="col-sm-1">
-												<select class="form-control" value="<?php echo $Stuprefix?>" name="Stuprefix">
-													<option value="MRS." <?php
-													if($Stuprefix=='MRS.')
-													{
-														echo "selected";
-													}
-													?>>MRS.</option>
-													<option <?php
-													if($Stuprefix=='MR.')
-													{
+
+									<div class="col-sm-3">
+										<input type="hidden" class="form-control" name="StuGRNo" placeholder="" value="<?php echo $_GET['StuGRNo']; ?>" required>
+									</div>
+								</div>
+
+								<div class="mb-3 row">
+									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Name</label>
+									<div class="col-sm-1">
+										<select class="form-control" value="<?php echo $Stuprefix ?>" name="Stuprefix">
+											<option value="MRS." <?php
+																	if ($Stuprefix == 'MRS.') {
+																		echo "selected";
+																	}
+																	?>>MRS.</option>
+											<option <?php
+													if ($Stuprefix == 'MR.') {
 														echo "selected";
 													}
 													?>>MR.</option>
-													<option <?php
-													if($Stuprefix=='MISS.')
-													{
+											<option <?php
+													if ($Stuprefix == 'MISS.') {
 														echo "selected";
 													}
 													?>>MISS.</option>
-													<option <?php
-													if($Stuprefix=='MS.')
-													{
+											<option <?php
+													if ($Stuprefix == 'MS.') {
 														echo "selected";
 													}
 													?>>MS.</option>
-												</select>
-											</div>
-											<div class="col-sm-2">
-												<input type="text" class="form-control"
-												name="StuStudentName" value="<?php echo $StuStudentName?>" placeholder="FirstName"  required>
-											</div>
-											<div class="col-sm-2">
-												<input type="text" class="form-control"
-												name="Stumiddle" value="<?php echo $Stumiddle?>"  placeholder="MiddelName" required>
-											</div>
-											<div class="col-sm-2">
-												<input type="text" class="form-control"
-												name="StuLastname" value="<?php echo $StuLastname?>" placeholder="LastName" required>
-											</div>
-											</div>
-<div class="mb-3 row">
-											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Year</label>
-											
-											<div class="col-sm-2">
-                                            <select name="StuAcdemicyear" class="form-control" value="<?php echo "$StuAcdemicyear"?>">
-                                                <option value="">--Select Academic Year--</option>
-                                                      <option value="2020-21"
-                                                       <?php
-                                                       if ($StuAcdemicyear=='2020-21') {
-                                                       echo "selected";
-                                                       }
-                                                      ?>>2020-21</option>
-                                                       <option 
-                                                       <?php
-                                                       if ($StuAcdemicyear=='2021-22') {
-                                                       	echo "selected";
-                                                       }
-                                                       ?>>2021-22</option>
-                                               
-                                                </option>       </select>
-                                     </div>
+										</select>
+									</div>
+									<div class="col-sm-2">
+										<input type="text" class="form-control" name="StuStudentName" value="<?php echo $StuStudentName ?>" placeholder="FirstName" required>
+									</div>
+									<div class="col-sm-2">
+										<input type="text" class="form-control" name="Stumiddle" value="<?php echo $Stumiddle ?>" placeholder="MiddelName" required>
+									</div>
+									<div class="col-sm-2">
+										<input type="text" class="form-control" name="StuLastname" value="<?php echo $StuLastname ?>" placeholder="LastName" required>
+									</div>
+								</div>
+								<div class="mb-3 row">
+									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Year</label>
+
+									<div class="col-sm-2">
+										<select name="StuAcdemicyear" class="form-control" value="<?php echo "$StuAcdemicyear" ?>">
+											<option value="">--Select Academic Year--</option>
+											<option value="2020-21" <?php
+																	if ($StuAcdemicyear == '2020-21') {
+																		echo "selected";
+																	}
+																	?>>2020-21</option>
+											<option <?php
+													if ($StuAcdemicyear == '2021-22') {
+														echo "selected";
+													}
+													?>>2021-22</option>
+
+											</option>
+										</select>
+									</div>
 								</div>
 
 								<div class="mb-3 row">
@@ -388,17 +380,16 @@ include("connectdb.php");
 								</div>
 
 								<div class="mb-3 row">
-											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Mobile No</label>
-											<div class="col-sm-4">
-												<input type="number" class="form-control" name="StuParentMobileNumber1" value="<?php echo"$StuParentMobileNumber1"?>" placeholder="primary No" 
-												id="mobile1" autocomplete="off">
-												<span id="mobile" class="text-danger font-weight-bold"></span>
-											</div>
-											<div class="col-sm-4">
-												<input type="number" class="form-control" name="StuParentMobileNumber2"  value="<?php echo "$StuParentMobileNumber2"?>" id="mobile2" placeholder="Secondary No">
-												<span id="mo" class="text-danger font-weight-bold"></span>
-											</div>
-										</div>
+									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Mobile No</label>
+									<div class="col-sm-4">
+										<input type="number" class="form-control" name="StuParentMobileNumber1" value="<?php echo "$StuParentMobileNumber1" ?>" placeholder="primary No" id="mobile1" autocomplete="off">
+										<span id="mobile" class="text-danger font-weight-bold"></span>
+									</div>
+									<div class="col-sm-4">
+										<input type="number" class="form-control" name="StuParentMobileNumber2" value="<?php echo "$StuParentMobileNumber2" ?>" id="mobile2" placeholder="Secondary No">
+										<span id="mo" class="text-danger font-weight-bold"></span>
+									</div>
+								</div>
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Address</label>
 									<div class="col-sm-4">
@@ -429,12 +420,12 @@ include("connectdb.php");
 									</div>
 								</div>
 								<div class="mb-3 row">
-											<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">AadharNo</label>
-											<div class="col-sm-4">
-												<input type="number" class="form-control" name="StuAadharNo" placeholder="" value="<?php echo "$StuAadharNo"?>" id="aadharNo" >
-												<span id="Aadhar" class="text-danger font-weight-bold"></span>
-											</div>
-										</div>
+									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">AadharNo</label>
+									<div class="col-sm-4">
+										<input type="number" class="form-control" name="StuAadharNo" placeholder="" value="<?php echo "$StuAadharNo" ?>" id="aadharNo">
+										<span id="Aadhar" class="text-danger font-weight-bold"></span>
+									</div>
+								</div>
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Category</label>
 									<div class="col-sm-4">
@@ -536,100 +527,78 @@ include("connectdb.php");
 
 
 				<footer class="footer">
-                <div class="container-fluid">
-                    <div class="row text-muted">
-                        <div class="col-6 text-left">
-                            <p class="mb-0">
-                                <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High School</strong></a> &copy;
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+					<div class="container-fluid">
+						<div class="row text-muted">
+							<div class="col-6 text-left">
+								<p class="mb-0">
+									<a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High School</strong></a> &copy;
+								</p>
+							</div>
+						</div>
+					</div>
+				</footer>
 		</div>
 	</div>
 
 	<script src="../logg.js"></script>
 	<script src="../payroll/js/app.js"></script>
-        <script type="text/javascript">
-		
-		function validation()
-		{
+	<script type="text/javascript">
+		function validation() {
 			var mobile1 = document.getElementById('mobile1').value;
 			var mobile2 = document.getElementById('mobile2').value;
 			var aadharNo = document.getElementById('aadharNo').value;
 
-			if (mobile1 == "") 
-			{
-                    document.getElementById('mobile').innerHTML="**please fill the mobile no";
-                    return false;
+			if (mobile1 == "") {
+				document.getElementById('mobile').innerHTML = "**please fill the mobile no";
+				return false;
 			}
-			if (mobile1.length<10)
-			 {
-			 	document.getElementById('mobile').innerHTML="**number must be 10 digit";
-                    return false;
-			 }
-			 if (mobile1.length>10)
-			 {
-			 	document.getElementById('mobile').innerHTML="**number must be 10 digit";
-                    return false;
-			 }
-			 if((mobile1.charAt()!=9) && (mobile1.charAt()!=8) && (mobile1.charAt()!=6) )
-			 {
-                  document.getElementById('mobile').innerHTML="**number start must be 9,8 and 6";
-                    return false;
-			 }
-
-             //return true;
-			 if (mobile2 == "") 
-			{
-                    document.getElementById('mo').innerHTML="**please fill the mobile no";
-                    return false;
+			if (mobile1.length < 10) {
+				document.getElementById('mobile').innerHTML = "**number must be 10 digit";
+				return false;
 			}
-			if (mobile2.length<10)
-			 {
-			 	document.getElementById('mo').innerHTML="**number must be 10 digit";
-                    return false;
-			 }
-			 if (mobile2.length>10)
-			 {
-			 	document.getElementById('mo').innerHTML="**number must be 10 digit";
-                    return false;
-			 }
-			 if((mobile2.charAt()!=9) && (mobile2.charAt()!=8) && (mobile2.charAt()!=6) )
-			 {
-                  document.getElementById('mo').innerHTML="**number start must be 9,8 and 6";
-                    return false;
-			 }
-			
-             //return true;
-			 if (aadharNo == "") 
-			{
-                    document.getElementById('Aadhar').innerHTML="**please fill the Aadhar no";
-                    return false;
+			if (mobile1.length > 10) {
+				document.getElementById('mobile').innerHTML = "**number must be 10 digit";
+				return false;
 			}
-			if (aadharNo.length<12)
-			 {
-			 	document.getElementById('Aadhar').innerHTML="**number must be 12 digit";
-                    return false;
-			 }
-			 if (aadharNo.length>12)
-			 {
-			 	document.getElementById('Aadhar').innerHTML="**number must be 12 digit";
-                    return false;
-			 }
-
-			 return true;
+			if ((mobile1.charAt() != 9) && (mobile1.charAt() != 8) && (mobile1.charAt() != 6)) {
+				document.getElementById('mobile').innerHTML = "**number start must be 9,8 and 6";
+				return false;
 			}
 
-		
-	
+			//return true;
+			if (mobile2 == "") {
+				document.getElementById('mo').innerHTML = "**please fill the mobile no";
+				return false;
+			}
+			if (mobile2.length < 10) {
+				document.getElementById('mo').innerHTML = "**number must be 10 digit";
+				return false;
+			}
+			if (mobile2.length > 10) {
+				document.getElementById('mo').innerHTML = "**number must be 10 digit";
+				return false;
+			}
+			if ((mobile2.charAt() != 9) && (mobile2.charAt() != 8) && (mobile2.charAt() != 6)) {
+				document.getElementById('mo').innerHTML = "**number start must be 9,8 and 6";
+				return false;
+			}
 
-									
-			
-			
-			
+			//return true;
+			if (aadharNo == "") {
+				document.getElementById('Aadhar').innerHTML = "**please fill the Aadhar no";
+				return false;
+			}
+			if (aadharNo.length < 12) {
+				document.getElementById('Aadhar').innerHTML = "**number must be 12 digit";
+				return false;
+			}
+			if (aadharNo.length > 12) {
+				document.getElementById('Aadhar').innerHTML = "**number must be 12 digit";
+				return false;
+			}
 
+			return true;
+		}
 	</script>
 
 </body>
@@ -637,48 +606,44 @@ include("connectdb.php");
 </html>
 <?php
 $conn = mysqli_connect("localhost", "root", "", "schoolmanage");
- if(isset($_POST['test_update']))
-    {
-    $StuGRNo=$_POST['StuGRNo'];
-    $Stuprefix=$_POST['Stuprefix'];
-	$StuStudentName=strtoupper($_POST['StuStudentName']);
-	$Stumiddle=strtoupper($_POST['Stumiddle']);
-	$StuLastname=strtoupper($_POST['StuLastname']);
-	$StuAcdemicyear=$_POST['StuAcdemicyear'];
-	$StuStandard=$_POST['StuStandard'];
-	$StuDiv=$_POST['StuDiv'];
-	$StuDOB=$_POST['StuDOB'];
-	$StuDateOfAdmission=$_POST['StuDateOfAdmission'];
-	$StuParentMobileNumber1=$_POST['StuParentMobileNumber1'];
-	$StuParentMobileNumber2=$_POST['StuParentMobileNumber2'];
-	$StuHouseNo=$_POST['StuHouseNo'];
-	$StuStreetName=strtoupper($_POST['StuStreetName']);
-	$StuLocation=strtoupper($_POST['StuLocation']);
-	$StuCity=strtoupper($_POST['StuCity']);
-	$StuDist=strtoupper($_POST['StuDist']);
-	$StuBirthPlace=strtoupper($_POST['StuBirthPlace']);
-	$StuAadharNo=$_POST['StuAadharNo']??"";
-	$StuCategory=$_POST['StuCategory'];
-	$StuCaste=strtoupper($_POST['StuCaste']);
-	$StuLastschoolname=strtoupper($_POST['StuLastschoolname']);
-	$StuBankname=strtoupper($_POST['StuBankname']);
-	$StuBankACno=$_POST['StuBankACno']??"";
-	$StuBankIFSCcode=$_POST['StuBankIFSCcode'];
-	$StuStatus=$_POST['StuStatus'];
-	$StuStatusChangedDate=$_POST['StuStatusChangedDate'];
+if (isset($_POST['test_update'])) {
+	$StuGRNo = $_POST['StuGRNo'];
+	$Stuprefix = $_POST['Stuprefix'];
+	$StuStudentName = strtoupper($_POST['StuStudentName']);
+	$Stumiddle = strtoupper($_POST['Stumiddle']);
+	$StuLastname = strtoupper($_POST['StuLastname']);
+	$StuAcdemicyear = $_POST['StuAcdemicyear'];
+	$StuStandard = $_POST['StuStandard'];
+	$StuDiv = $_POST['StuDiv'];
+	$StuDOB = $_POST['StuDOB'];
+	$StuDateOfAdmission = $_POST['StuDateOfAdmission'];
+	$StuParentMobileNumber1 = $_POST['StuParentMobileNumber1'];
+	$StuParentMobileNumber2 = $_POST['StuParentMobileNumber2'];
+	$StuHouseNo = $_POST['StuHouseNo'];
+	$StuStreetName = strtoupper($_POST['StuStreetName']);
+	$StuLocation = strtoupper($_POST['StuLocation']);
+	$StuCity = strtoupper($_POST['StuCity']);
+	$StuDist = strtoupper($_POST['StuDist']);
+	$StuBirthPlace = strtoupper($_POST['StuBirthPlace']);
+	$StuAadharNo = $_POST['StuAadharNo'] ?? "";
+	$StuCategory = $_POST['StuCategory'];
+	$StuCaste = strtoupper($_POST['StuCaste']);
+	$StuLastschoolname = strtoupper($_POST['StuLastschoolname']);
+	$StuBankname = strtoupper($_POST['StuBankname']);
+	$StuBankACno = $_POST['StuBankACno'] ?? "";
+	$StuBankIFSCcode = $_POST['StuBankIFSCcode'];
+	$StuStatus = $_POST['StuStatus'];
+	$StuStatusChangedDate = $_POST['StuStatusChangedDate'];
 
 
-	$result=mysqli_query($conn,"UPDATE studentmaster SET Stuprefix='$Stuprefix',StuStudentName='$StuStudentName',Stumiddle='$Stumiddle',StuLastname='$StuLastname',StuAcdemicyear='$StuAcdemicyear',StuStandard='$StuStandard',StuDiv='$StuDiv',StuDOB='$StuDOB',StuDateOfAdmission='$StuDateOfAdmission',StuParentMobileNumber1='$StuParentMobileNumber1',StuParentMobileNumber2='$StuParentMobileNumber2',StuHouseNo='$StuHouseNo',StuStreetName='$StuStreetName',StuLocation='$StuLocation',StuCity='$StuCity',StuDist='$StuDist',StuBirthPlace='$StuBirthPlace',StuAadharNo='$StuAadharNo',StuCategory='$StuCategory',StuCaste='$StuCaste',StuLastschoolname='$StuLastschoolname',StuBankname='$StuBankname',StuBankACno='$StuBankACno',StuBankIFSCcode='$StuBankIFSCcode',StuStatus='$StuStatus',StuStatusChangedDate='$StuStatusChangedDate' WHERE StuGRNo=$StuGRNo");
-	if($result)
-	{
+	$result = mysqli_query($conn, "UPDATE studentmaster SET Stuprefix='$Stuprefix',StuStudentName='$StuStudentName',Stumiddle='$Stumiddle',StuLastname='$StuLastname',StuAcdemicyear='$StuAcdemicyear',StuStandard='$StuStandard',StuDiv='$StuDiv',StuDOB='$StuDOB',StuDateOfAdmission='$StuDateOfAdmission',StuParentMobileNumber1='$StuParentMobileNumber1',StuParentMobileNumber2='$StuParentMobileNumber2',StuHouseNo='$StuHouseNo',StuStreetName='$StuStreetName',StuLocation='$StuLocation',StuCity='$StuCity',StuDist='$StuDist',StuBirthPlace='$StuBirthPlace',StuAadharNo='$StuAadharNo',StuCategory='$StuCategory',StuCaste='$StuCaste',StuLastschoolname='$StuLastschoolname',StuBankname='$StuBankname',StuBankACno='$StuBankACno',StuBankIFSCcode='$StuBankIFSCcode',StuStatus='$StuStatus',StuStatusChangedDate='$StuStatusChangedDate' WHERE StuGRNo=$StuGRNo");
+	if ($result) {
 		echo "Updated";
-		?>
+?>
 		<META HTTP-EQUIV="Refresh" CONTENT="0; URL= ./student-view.php">
-	<?php
+<?php
 
-	}  
-	else
-	{
+	} else {
 		echo "failed";
 	}
 }

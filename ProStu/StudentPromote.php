@@ -17,16 +17,17 @@ include("../connection_to_db.php");
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
-    <title>Form Layouts | AdminKit Demo</title>
+    <title>Promote Student</title>
 
     <link href="../css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
     <div class="wrapper">
-    <nav id="sidebar" class="sidebar">
+        <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
@@ -60,8 +61,8 @@ include("../connection_to_db.php");
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Student
                     </li>
@@ -106,8 +107,8 @@ include("../connection_to_db.php");
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Academic
                     </li>
@@ -274,7 +275,7 @@ include("../connection_to_db.php");
     <script src="../js/app.js"></script>
     <script src="../js/indapp.js"></script>
     <script src="./stupro.js"></script>
-	<script src="../logg.js"></script>
+    <script src="../logg.js"></script>
 
 </body>
 

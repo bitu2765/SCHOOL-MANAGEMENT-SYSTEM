@@ -12,12 +12,15 @@ include("./connectdb.php");
     <link href="../css/gapi.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/ui_d.css">
 
-    <title>Dashboard</title>
+    <title>Fee Setup</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
     <div class="wrapper">
-    <nav id="sidebar" class="sidebar">
+        <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
@@ -51,8 +54,8 @@ include("./connectdb.php");
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Student
                     </li>
@@ -97,8 +100,8 @@ include("./connectdb.php");
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Academic
                     </li>
@@ -159,7 +162,7 @@ include("./connectdb.php");
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
                     </ul>
                 </div>
             </nav>
@@ -182,7 +185,7 @@ include("./connectdb.php");
                         </div> -->
                     </div>
                 </div>
-                <span id="settag" ></span>
+                <span id="settag"></span>
                 <div class="row">
                     <div class="w-100">
                         <div class="row">
@@ -214,7 +217,7 @@ include("./connectdb.php");
                                                     </select>
                                                 </div>
                                             </div>
-                                            <span id="sufe" ></span>
+                                            <span id="sufe"></span>
                                             <!-- <div class="row" style="margin-bottom: 10px;">
                                                 <div class="col-3 font-weight-bold">Annual Fees</div>
                                                 <div class="col-4">

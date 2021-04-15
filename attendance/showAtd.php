@@ -17,7 +17,9 @@ include("db_con_inc.php");
     <link rel="stylesheet" href="../css/app.css">
     <link href="../css/gapi.css" rel="stylesheet">
 
-
+    <title>Attendance</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .container {
             background-color: white;
@@ -184,7 +186,7 @@ include("db_con_inc.php");
                                     <input type="date" name="atd_date" class="form-control" id="atd_date" required>
                                 </div>
                                 <div class="col-lg-6 form-group">
-                                <b>ACADAMIC YEAR</b>
+                                    <b>ACADAMIC YEAR</b>
                                     <select name="atd_acd_year" class="form-control">
                                         <?php
                                         $sqlStandard = "SELECT Value FROM listmaster WHERE Parameter = 'AcadmicYear' ORDER BY Value desc";

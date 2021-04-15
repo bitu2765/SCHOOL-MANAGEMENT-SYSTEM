@@ -16,7 +16,7 @@ include 'connection.php';
      <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <title>RESULT entry</title>
+    <title>Result Entry</title>
 
 </head>
 

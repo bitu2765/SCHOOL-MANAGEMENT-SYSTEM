@@ -10,8 +10,9 @@ include("connectdb.php");
     <link rel="stylesheet" href="../css/app.css">
     <link href="../css/gapi.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/ui_d.css">
-
-    <title>Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Add Payroll</title>
 </head>
 
 <body>

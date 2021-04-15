@@ -74,9 +74,7 @@ document.getElementById("pstd").onchange = function() {
         document.getElementById("nsem").value = "PASSOUT";
     } else if (std == "10") {
         document.getElementById("nsem").value = "PASSOUT";
-    } else if (std == "9") {
-        document.getElementById("nsem").value = "10";
-    } else if (std == "11") {
-        document.getElementById("nsem").value = "12";
+    } else {
+        document.getElementById("nsem").value = Number(std) + 1;
     }
 }

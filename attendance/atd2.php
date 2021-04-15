@@ -6,7 +6,7 @@ if (isset($_POST['submit_atd'])) {
     $stuStandard = mysqli_real_escape_string($con, trim($_POST['atd_standard']));
     $stuDiv = mysqli_real_escape_string($con, trim($_POST['cls_section']));
     $atd_acd_year = mysqli_real_escape_string($con, trim($_POST['atd_acd_year']));
-    
+
     //checking attendance already taken or not for this date, standard and div
     $sql = "SELECT * FROM attendancetrans WHERE AttStandard = '$stuStandard' AND AttDiv = '$stuDiv' AND AttDate = '$dString' AND AcadmicYear = '$atd_acd_year'";
     $res = mysqli_query($con, $sql);
@@ -40,6 +40,9 @@ if (isset($_POST['submit_atd'])) {
     <link rel="stylesheet" href="../css/app.css">
     <link rel="stylesheet" href="../css/gapi.css">
 
+    <title>Attendance</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         input[type="checkbox"] {
             width: 30px;

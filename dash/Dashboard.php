@@ -11,6 +11,10 @@ include("../connection_to_db.php");
     <link href="../css/gapi.css" rel="stylesheet">
 
     <title>Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 
 <body>

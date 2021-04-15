@@ -70,7 +70,10 @@ while ($eid = mysqli_fetch_array($empidresult)) {
     <link href="../css/gapi.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/ui_d.css">
 
-    <title>Dashboard</title>
+    <title>Update Payroll</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -109,22 +112,22 @@ while ($eid = mysqli_fetch_array($empidresult)) {
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
-                    <li class="sidebar-header">
-						Student
-					</li>
 
-					<li class="sidebar-item ">
-						<a href="#addstu" data-toggle="collapse" class="sidebar-link collapsed">
-							<i class="align-middle"></i> <span class="align-middle">Student</span>
-						</a>
-						<ul id="addstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-							<li class="sidebar-item"><a class="sidebar-link" href="../student/Student.php">Add</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a></li>
-						</ul>
-					</li>
-                    
+                    </li>
+                    <li class="sidebar-header">
+                        Student
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="#addstu" data-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle"></i> <span class="align-middle">Student</span>
+                        </a>
+                        <ul id="addstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="../student/Student.php">Add</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a></li>
+                        </ul>
+                    </li>
+
                     <li class="sidebar-item ">
                         <a href="#attend" data-toggle="collapse" class="sidebar-link collapsed">
                             <i class="align-middle"></i> <span class="align-middle">Attendance</span>
@@ -155,8 +158,8 @@ while ($eid = mysqli_fetch_array($empidresult)) {
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Academic
                     </li>
@@ -218,7 +221,7 @@ while ($eid = mysqli_fetch_array($empidresult)) {
 
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
-                    <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
+                        <button type="button" class="btn btn-sm btn-danger" id="logout">Logout</button>
                     </ul>
                 </div>
             </nav>

@@ -79,13 +79,11 @@ WHERE ResAcademicYear='$year' And ResStandard='$standard' And ResExamName='$exam
         $examName = $row11['ResExamName'];
         $stustatus = $row11['ResStatus'];
 
-        if($stustatus =="FAIL")
-        {
+        if ($stustatus == "FAIL") {
             $resultStatus = false;
-            $Rank ="FAIL";
-        }
-        else{
-            $Rank ="PASS";
+            $Rank = "FAIL";
+        } else {
+            $Rank = "PASS";
         }
 
         $resultpage = '<link rel="stylesheet" href="./css/app.css">
@@ -95,7 +93,7 @@ WHERE ResAcademicYear='$year' And ResStandard='$standard' And ResExamName='$exam
         <tbody>
             <tr>
                 <td>
-                    <img src="./Exam/images/logo1.png" style="height: 200px;">
+                    <img src="./Exam/images/logo1.png" style="height: 150px;">
                 </td>
                 <td style="width: 50px;"></td>
                 <td>
@@ -103,17 +101,17 @@ WHERE ResAcademicYear='$year' And ResStandard='$standard' And ResExamName='$exam
                         <tbody>
                             <tr>
                                 <td>
-                                    <div style="font-size: 23pt;text-align: center;">ઘી કેમ્બે એજ્યુકેશન સોસાયટી સંચાલિત​</div>
+                                    <div style="font-size: 20pt;text-align: center;">ઘી કેમ્બે એજ્યુકેશન સોસાયટી સંચાલિત​</div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <div style="font-size: 43pt;">શ્રી એસ.ઝેડ. વાઘેલા હાઇસ્કૂલ</div>
+                                    <div style="font-size: 40pt;">શ્રી એસ.ઝેડ. વાઘેલા હાઇસ્કૂલ</div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <div style="font-size: 15pt;">બેઠક રોડ , ખંભાત-૩૮૮૬૨૦ , (જિ.આણંદ)</div>
+                                    <div style="font-size: 13pt;">બેઠક રોડ , ખંભાત-૩૮૮૬૨૦ , (જિ.આણંદ)</div>
                                 </td>
                             </tr>
                         </tbody>
@@ -176,8 +174,8 @@ WHERE ResAcademicYear='$year' And ResStandard='$standard' And ResExamName='$exam
             $subName = $row111['ResSubName'];
             $subTotal = $row111['ResTotalMarks'];
             $subObtain = $row111['ResMarksObtained'];
-           
-            
+
+
             // for ($iii = 0; $iii < 6; $iii++) {
             $resultpage .= '<tr style="border:0.1mm solid black" >';
             $resultpage .= '<td scope="col"  style="width: 350px;font-size: 11pt;border:0.1mm solid black" >' . $subName . '</td>';
@@ -227,7 +225,97 @@ WHERE ResAcademicYear='$year' And ResStandard='$standard' And ResExamName='$exam
 }
 
 
+// $tem = '<link rel="stylesheet" href="./css/app.css">
+// <link href="./css/gapi.css" rel="stylesheet">
+// <link rel="stylesheet" href="./css/ui_d.css">
+// <table>
+// <tbody>
+//     <tr>
+//         <td>
+//             <img src="./Exam/images/logo1.png" style="height: 150px;">
+//         </td>
+//         <td style="width: 50px;"></td>
+//         <td>
+//             <table>
+//                 <tbody>
+//                     <tr>
+//                         <td>
+//                             <div style="font-size: 20pt;text-align: center;">ઘી કેમ્બે એજ્યુકેશન સોસાયટી સંચાલિત​</div>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <div style="font-size: 30pt;">શ્રી એસ.ઝેડ. વાઘેલા હાઇસ્કૂલ</div>
+//                         </td>
+//                     </tr>
+//                     <tr>
+//                         <td>
+//                             <div style="font-size: 13pt;">બેઠક રોડ , ખંભાત-૩૮૮૬૨૦ , (જિ.આણંદ)</div>
+//                         </td>
+//                     </tr>
+//                 </tbody>
+//             </table>
+//         </td>
+//     </tr>
+// </tbody>
+// </table>
+// <table>
+//         <tbody>
+//             <tr>
+//                 <td style="width: 650px;">
+//                     વિદ્યાર્થીનું નામ :-  
+//                 </td>
+//                 <td style="width: 100px;">
+//                     રોલ નંબર :- 
+//                 </td>
+//             </tr>
+//         </tbody>
+//         </table>
+//         <table>
+//         <tbody>
+//             <tr>
+//                 <td style="width: 220px;">
+//                     જ.ર નંબર :- 
+//                 </td>
+//                 <td style="width: 220px;">
+//                     ધોરણ :- 
+//                 </td>
+//                 <td style="width: 220px;">
+//                     વગૅ :- 
+//                 </td>
+//                 <td style="width: 220px;">
+//                     પરીક્ષા વર્ષ :- 
+//                 </td>
+//             </tr>
+//         </tbody>
+//     </table>
+//     <table>
+//     <tbody>
+//             <tr style="border:0.1mm solid black" >
+//                 <td scope="col" style="font-size: 12pt;border:0.1mm solid black" >પરીક્ષા</td>
+//                 <td scope colspan="2" style="font-size: 12pt;border:0.1mm solid black" ></td>
+//             </tr>
+//             <tr style="border:0.1mm solid black">
+//                 <td scope="col" style="font-size: 11pt;width: 350px;border:0.1mm solid black" >વિષય</td>
+//                 <td scope="col" style="font-size: 11pt;width: 250px;border:0.1mm solid black" > કુલ ગુણ</td>
+//                 <td scope="col" style="font-size: 11pt;width: 250px;border:0.1mm solid black" >મેળવેલ ગુણ</td>
+//             </tr>';
+//             $kk=20;
+// while ($kk--) {
+//     $tem .= '<tr style="border:0.1mm solid black" >
+//             <td scope="col"  style="width: 350px;font-size: 11pt;border:0.1mm solid black" >Total Marks</td>
+//         <td scope="col"  style="width: 250px;font-size: 11pt;border:0.1mm solid black" ></td>
+//        <td scope="col"  style="width: 250px;font-size: 11pt;border:0.1mm solid black" ></td>
+//         </tr>';
+// }
 
+// $tem .= '</tbody></table>';
+// // $stres->AddPage('L', 'A4');
+// $stres->WriteHTML($tem);
+// $stres->Line(7, 10, 7, 200);
+// $stres->Line(290, 10, 290, 200);
+// $stres->Line(7, 10, 290, 10);
+// $stres->Line(7, 200, 290, 200);
 // $slip->SetFont('Arial', '', 8);
 // $slip->WriteHTML($cpdf);
 $stres->Output();

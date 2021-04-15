@@ -11,22 +11,22 @@ include("../connection_to_db.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
-    <meta name="author" content="AdminKit">
-    <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
-    <title>Form Layouts | AdminKit Demo</title>
+    <title>Add Academic</title>
 
     <link href="../css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 </head>
 
 <body>
     <div class="wrapper">
-    <nav id="sidebar" class="sidebar">
+        <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
@@ -60,8 +60,8 @@ include("../connection_to_db.php");
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Student
                     </li>
@@ -106,8 +106,8 @@ include("../connection_to_db.php");
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
                     <li class="sidebar-header">
                         Academic
                     </li>
@@ -188,10 +188,10 @@ include("../connection_to_db.php");
                                     <div class="row">
                                         <div class="col-md-1"></div>
                                         <div class="col-md-2 font-weight-bold">
-                                                Academic Year :
+                                            Academic Year :
                                         </div>
                                         <div class="col-md-3">
-                                            <input class="form-control" type="text" name="nsem" id="nsem" placeholder="Next Standard" >
+                                            <input class="form-control" type="text" name="nsem" id="nsem" placeholder="Next Standard">
                                         </div>
                                     </div>
                                     <br>
@@ -228,7 +228,7 @@ include("../connection_to_db.php");
     <script src="../js/app.js"></script>
     <script src="../js/indapp.js"></script>
     <script src="./adday.js"></script>
-	<script src="../logg.js"></script>
+    <script src="../logg.js"></script>
 
 </body>
 
