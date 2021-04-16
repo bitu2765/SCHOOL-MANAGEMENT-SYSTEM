@@ -591,6 +591,7 @@ if (isset($_POST{
 
 	<script src="../logg.js"></script>
 	<script src="../js/app.js"></script>
+	<script src="../js/indapp.js"></script>
 	<script type="text/javascript">
 		function validation() {
 			var mobile1 = document.getElementById('mobile1').value;

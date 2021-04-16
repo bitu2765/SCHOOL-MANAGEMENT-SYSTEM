@@ -305,7 +305,7 @@ include("connectdb.php");
                     <div class="row text-muted">
                         <div class="col-6 text-left">
                             <p class="mb-0">
-                                <a href="index.html" class="text-muted"><strong>Shree SZ Vaghela High School</strong></a> &copy;
+                                <a class="text-muted"><strong>Shree SZ Vaghela High School</strong></a> &copy;
                             </p>
                         </div>
                     </div>

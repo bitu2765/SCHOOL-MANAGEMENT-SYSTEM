@@ -542,6 +542,7 @@ while ($res = mysqli_fetch_array($result)) {
 
 	<script src="../logg.js"></script>
 	<script src="../payroll/js/app.js"></script>
+	<script src="../js/indapp.js"></script>
 	<script type="text/javascript">
 		function validation() {
 			var mobile1 = document.getElementById('mobile1').value;

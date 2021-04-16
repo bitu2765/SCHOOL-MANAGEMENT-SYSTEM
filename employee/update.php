@@ -494,7 +494,7 @@ $EmpBankIFSC = $_GET['EmpBankIFSC'];
 						<div class="row text-muted">
 							<div class="col-6 text-left">
 								<p class="mb-0">
-									<a href="index.html" class="text-muted"><strong>Demo</strong></a> &copy;
+									<a class="text-muted"><strong>Demo</strong></a> &copy;
 								</p>
 							</div>
 							<div class="col-6 text-right">
