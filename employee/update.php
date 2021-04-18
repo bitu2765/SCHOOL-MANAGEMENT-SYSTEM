@@ -362,7 +362,7 @@ $EmpBankIFSC = $_GET['EmpBankIFSC'];
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Email</label>
 									<div class="col-sm-5">
-										<input type="email" class="form-control" name="EmpEmailID" id="emailID" placeholder="" value="EmpEmailID" autocomplete="off" required>
+										<input type="email" class="form-control" name="EmpEmailID" id="emailID" placeholder="" value="<?php echo $EmpEmailID ?>" autocomplete="off" required>
 										<span id="EmailID1" class="text-danger font-weight-bold"></span>
 									</div>
 								</div>
@@ -422,7 +422,7 @@ $EmpBankIFSC = $_GET['EmpBankIFSC'];
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Pan Card No</label>
 									<div class="col-sm-5">
-										<input type="number" name="EmpPan" class="form-control" placeholder="" id="pan" value="<?php echo "$EmpPan" ?>" autocomplete="off" required>
+										<input type="text" name="EmpPan" class="form-control" placeholder="" id="pan" value="<?php echo "$EmpPan" ?>" autocomplete="off" required>
 										<span id="panno" class="text-danger font-weight-bold"></span>
 									</div>
 								</div>

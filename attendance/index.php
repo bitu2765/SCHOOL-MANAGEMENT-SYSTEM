@@ -19,8 +19,7 @@ include("db_con_inc.php");
     <link href="../css/gapi.css" rel="stylesheet">
 
     <title>Attendance</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style>
         .container {
             background-color: white;

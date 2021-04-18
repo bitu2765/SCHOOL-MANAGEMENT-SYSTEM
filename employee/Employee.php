@@ -390,7 +390,7 @@ if (isset($_POST{
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Pan Card No</label>
 									<div class="col-sm-5">
-										<input type="number" name="EmpPan" class="form-control" placeholder="" id="pan" autocomplete="off" required>
+										<input type="text" name="EmpPan" class="form-control" placeholder="" id="pan" autocomplete="off" required>
 										<span id="panno" class="text-danger font-weight-bold"></span>
 									</div>
 								</div>

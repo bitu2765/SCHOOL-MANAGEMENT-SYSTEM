@@ -1,8 +1,8 @@
-document.getElementById("cad").onclick = function(){
+document.getElementById("cad").onclick = function() {
     window.history.back();
 };
 
-document.getElementById("upd").onclick = function () {
+document.getElementById("upd").onclick = function() {
     var eid = document.getElementById("esid").value;
     var emo = document.getElementById("esmo").value;
     var etd = document.getElementById("estd").value;
@@ -30,48 +30,91 @@ document.getElementById("upd").onclick = function () {
 
 
     if (eid == "") {
-      alert("Employee not selected");
-    }
-    else if (emo == "") {
-      alert("Month Not Selected");
-    }
-    else if((etd < 0)|| (epd < 0)|| (eld < 0)|| (elwp < 0))
-    {
+        alert("Employee not selected");
+    } else if (emo == "") {
+        alert("Month Not Selected");
+    } else if ((etd < 0) || (epd < 0) || (eld < 0) || (elwp < 0)) {
         alert("Day Cannnot Be Negative");
-    }
-    else if (Number(etd) != Number(epd) + Number(eld) + Number(elwp)) {
-      alert("Total Days Is Not Equal To Addition Of Present Days, Leaving Days And LWP");
-    }
-    else if ((Number(etd) != Number(epd) + Number(eld) + Number(elwp)) || (etd == 0)) {
-      alert("total days is not equal to addition of present day and leaving day and lwp");
-    }
-    else if(Number(ete)!= Number(eba) +Number(epf) +Number(espp) +Number(edgp) +Number(esa1) +Number(esa2) +Number(ca) +Number(eda) +Number(eta) +Number(eha) +Number(eot) +Number(ema))
-    {
-      alert("total Earning Is Wrong!");
-    }
-    else if(Number(etde) !=Number(eit) +Number(ept))
-    {
-      alert("total Deduction Is Wrong!");
+    } else if (Number(etd) != Number(epd) + Number(eld) + Number(elwp)) {
+        alert("Total Days Is Not Equal To Addition Of Present Days, Leaving Days And LWP");
+    } else if ((Number(etd) != Number(epd) + Number(eld) + Number(elwp)) || (etd == 0)) {
+        alert("total days is not equal to addition of present day and leaving day and lwp");
+    } else if (Number(ete) != Number(eba) + Number(espp) + Number(edgp) + Number(esa1) + Number(esa2) + Number(ca) + Number(eda) + Number(eta) + Number(eha) + Number(ema)) {
+        alert("total Earning Is Wrong!");
+    } else if (Number(etde) != Number(eit) + Number(ept) + Number(epf) + Number(eot)) {
+        alert("total Deduction Is Wrong!");
 
-    }
-    else if(Number(enp) !=Number(ete) - Number(etde))
-    {
-      alert("Net Payable Is Wrong!");
+    } else if (Number(enp) != Number(ete) - Number(etde)) {
+        alert("Net Payable Is Wrong!");
 
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("SucAdd").innerHTML = this.responseText;
+            }
+        };
+        var querystr = "e1=" + eid + "&e6=" + emo + "&e7=" + etd + "&e8=" + epd + "&e9=" + eld + "&e10=" + elwp;
+        querystr += "&e11=" + eba + "&e12=" + epf + "&e13=" + eda + "&e14=" + ept + "&e15=" + eta + "&e16=" + eit + "&e17=" + eha + "&e18=" + eot + "&e19=" + ema + "&e20=" + ete;
+        querystr += "&e21=" + etde + "&e22=" + enp + "&e23=" + espp + "&e24=" + edgp + "&e25=" + esa1 + "&e26=" + esa2 + "&e27=" + ca + "&e28=" + esye;
+        xmlhttp.open("POST", "updatepayslip.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send(querystr);
+        window.history.back();
     }
-    else {
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("SucAdd").innerHTML = this.responseText;
-        }
-      };
-      var querystr = "e1=" + eid + "&e6=" + emo + "&e7=" + etd + "&e8=" + epd + "&e9=" + eld + "&e10=" + elwp;
-      querystr += "&e11=" + eba + "&e12=" + epf + "&e13=" + eda + "&e14=" + ept + "&e15=" + eta + "&e16=" + eit + "&e17=" + eha + "&e18=" + eot + "&e19=" + ema + "&e20=" + ete;
-      querystr += "&e21=" + etde + "&e22=" + enp + "&e23=" + espp + "&e24=" + edgp + "&e25=" + esa1 + "&e26=" + esa2 + "&e27=" + ca + "&e28=" + esye;
-      xmlhttp.open("POST", "updatepayslip.php", true);
-      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xmlhttp.send(querystr);
-      window.history.back();
-    }
-  };
+};
+
+
+
+
+document.getElementById("esba").onchange = function() { updatete() };
+document.getElementById("esha").onchange = function() { updatete() };
+document.getElementById("essp").onchange = function() { updatete() };
+document.getElementById("esdg").onchange = function() { updatete() };
+document.getElementById("essa1").onchange = function() { updatete() };
+document.getElementById("essa2").onchange = function() { updatete() };
+document.getElementById("escla").onchange = function() { updatete() };
+document.getElementById("esda").onchange = function() { updatete() };
+document.getElementById("esta").onchange = function() { updatete() };
+document.getElementById("esma").onchange = function() { updatete() };
+
+function updatete() {
+    var eba = document.getElementById("esba").value;
+    var epf = document.getElementById("espf").value;
+    var espp = document.getElementById("essp").value;
+    var edgp = document.getElementById("esdg").value;
+    var esa1 = document.getElementById("essa1").value;
+    var esa2 = document.getElementById("essa2").value;
+    var ca = document.getElementById("escla").value;
+    var eda = document.getElementById("esda").value;
+    var ept = document.getElementById("espt").value;
+    var eta = document.getElementById("esta").value;
+    var eit = document.getElementById("esit").value;
+    var eha = document.getElementById("esha").value;
+    var eot = document.getElementById("esot").value;
+    var ema = document.getElementById("esma").value;
+    var ete = document.getElementById("este");
+    var etde = document.getElementById("estde").value;
+    var enp = document.getElementById("esnp");
+    ete.value = Number(eba) + Number(espp) + Number(edgp) + Number(esa1) + Number(esa2) + Number(ca) + Number(eda) + Number(eta) + Number(eha) + Number(ema);
+    enp.value = Number(ete.value) - Number(etde);
+}
+
+
+document.getElementById("espf").onchange = function() { updatetde() };
+document.getElementById("espt").onchange = function() { updatetde() };
+document.getElementById("esit").onchange = function() { updatetde() };
+document.getElementById("esot").onchange = function() { updatetde() };
+
+function updatetde() {
+
+    var epf = document.getElementById("espf").value;
+    var ept = document.getElementById("espt").value;
+    var eit = document.getElementById("esit").value;
+    var eot = document.getElementById("esot").value;
+    var ete = document.getElementById("este").value;
+    var etde = document.getElementById("estde");
+    var enp = document.getElementById("esnp");
+    etde.value = Number(epf) + Number(ept) + Number(eit) + Number(eot);
+    enp.value = Number(ete) - Number(etde.value);
+}

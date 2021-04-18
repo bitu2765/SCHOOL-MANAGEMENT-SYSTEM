@@ -210,7 +210,7 @@ include("connectdb.php");
                                         <div class="col-md-2 text-left">
                                             <label for="eid" class="font-weight-bold">A. Year :</label>
                                         </div>
-                                        <div class="col-md-1 text-center">
+                                        <div class="col-md-2 text-center">
                                             <input class="form-control" type="number" value="<?php echo date("Y") ?>" name="acye" id="esay">
                                         </div>
                                     </div>

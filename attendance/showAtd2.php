@@ -32,8 +32,7 @@ if (isset($_POST['submit_atd'])) {
 
     <link rel="stylesheet" href="../css/app.css">
     <link href="../css/gapi.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ 
     <style>
         .container {
             background-color: white;

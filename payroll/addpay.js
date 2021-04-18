@@ -60,9 +60,9 @@ document.getElementById("subd").onclick = function() {
         alert("Day Cannnot Be Negative");
     } else if ((Number(etd) != Number(epd) + Number(eld) + Number(elwp)) || (etd == 0)) {
         alert("total days is not equal to addition of present day and leaving day and lwp");
-    } else if (Number(ete) != Number(eba) + Number(epf) + Number(espp) + Number(edgp) + Number(esa1) + Number(esa2) + Number(ca) + Number(eda) + Number(eta) + Number(eha) + Number(eot) + Number(ema)) {
+    } else if (Number(ete) != Number(eba) + Number(espp) + Number(edgp) + Number(esa1) + Number(esa2) + Number(ca) + Number(eda) + Number(eta) + Number(eha) + Number(ema)) {
         alert("total Earning Is Wrong!");
-    } else if (Number(etde) != Number(eit) + Number(ept)) {
+    } else if (Number(etde) != Number(eit) + Number(ept) + Number(epf) + Number(eot)) {
         alert("total Deduction Is Wrong!");
 
     } else if (Number(enp) != Number(ete) - Number(etde)) {

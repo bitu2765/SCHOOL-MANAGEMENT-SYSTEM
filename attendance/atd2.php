@@ -41,8 +41,7 @@ if (isset($_POST['submit_atd'])) {
     <link rel="stylesheet" href="../css/gapi.css">
 
     <title>Attendance</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style>
         input[type="checkbox"] {
             width: 30px;

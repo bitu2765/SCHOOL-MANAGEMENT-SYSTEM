@@ -90,7 +90,7 @@ if (isset($_POST{
 	if ($res) {
 		echo "<script>alert('Data Inserted successfully...!!');</script>";
 		$query2 = "INSERT INTO `tbfeesmaster`(`FeesStudentName`, `FeesStudentRollNo`, `FeesStudentGRNo`, `FeesStuDateOfAdmission`, `FeesStuParentMoNo`, `FeesAcademicYear`, `FeesStandard`, `FeesDivison`, `FeesJanuary`, `FeesFebruary`, `FeesMarch`, `FeesApril`, `FeesMay`, `FeesJune`, `FeesJuly`, `FeesAugust`, `FeesSeptember`, `FeesOctomber`, `FeesNovember`, `FeesDecember`, `FeesAnnual`, `FeesPaid`, `FeesDue`)";
-		$query2 .= " SELECT x.StuStudentName,x.StuRollNo,x.StuGRNo,x.StuDateOfAdmission,x.StuParentMobileNumber1,x.StuAcdemicyear,x.StuStandard,x.StuDiv,'0','0','0','0','0','0','0','0','0','0','0','0',y.AnnualFees,y.AnnualFees,'0'  FROM studentmaster x INNER JOIN tbfeessetmaster y ON X.StuGRNo = '" . $StuGRNo . "' AND y.AcademicYear ='" . $StuAcdemicyear . "' AND y.standard = '" . $StuStandard . "'"; // AND x.StuAcdemicYear = '" . $_POST["cay"] . "' AND x.StuStandard = '" . $_POST["cstd"] . "' AND x.StuStatus = 'ACTIVE'; ";
+		$query2 .= " SELECT x.StuStudentName,x.StuRollNo,x.StuGRNo,x.StuDateOfAdmission,x.StuParentMobileNumber1,x.StuAcdemicyear,x.StuStandard,x.StuDiv,'0','0','0','0','0','0','0','0','0','0','0','0',y.AnnualFees,'0',y.AnnualFees  FROM studentmaster x INNER JOIN tbfeessetmaster y ON X.StuGRNo = '" . $StuGRNo . "' AND y.AcademicYear ='" . $StuAcdemicyear . "' AND y.standard = '" . $StuStandard . "'"; // AND x.StuAcdemicYear = '" . $_POST["cay"] . "' AND x.StuStandard = '" . $_POST["cstd"] . "' AND x.StuStatus = 'ACTIVE'; ";
 		if ($conn->query($query2)) {
 		}
 	} else {
