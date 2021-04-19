@@ -48,33 +48,33 @@ if (isset($_POST{
 	$info = pathinfo($_FILES['file']['name']);
 	$ext = $info['extension']; // get the extension of the file
 	$newname = "$StuGRNo." . $ext;
-	$name = "1_." . $newname;
+	$name1 = "1_." . $newname;
 
-	$target = "upload/" . $name;
+	$target = "upload/" . $name1;
 	move_uploaded_file($_FILES['file']['tmp_name'], $target);
 
 	$info = pathinfo($_FILES['filename']['name']);
 	$ext = $info['extension']; // get the extension of the file
 	$newname = "$StuGRNo." . $ext;
-	$name = "2_." . $newname;
+	$name2 = "2_." . $newname;
 
-	$target = "upload/" . $name;
+	$target = "upload/" . $name2;
 	move_uploaded_file($_FILES['filename']['tmp_name'], $target);
 
 	$info = pathinfo($_FILES['uploadfile']['name']);
 	$ext = $info['extension']; // get the extension of the file
 	$newname = "$StuGRNo." . $ext;
-	$name = "3_." . $newname;
+	$name3 = "3_." . $newname;
 
-	$target = "upload/" . $name;
+	$target = "upload/" . $name3;
 	move_uploaded_file($_FILES['uploadfile']['tmp_name'], $target);
 
 	$info = pathinfo($_FILES['uploadfilename']['name']);
 	$ext = $info['extension']; // get the extension of the file
 	$newname = "$StuGRNo." . $ext;
-	$name = "4_." . $newname;
+	$name4 = "4_." . $newname;
 
-	$target = "upload/" . $name;
+	$target = "upload/" . $name4;
 	move_uploaded_file($_FILES['uploadfilename']['tmp_name'], $target);
 
 
@@ -84,7 +84,7 @@ if (isset($_POST{
 	$sql = "INSERT INTO `studentmaster` values(NOW(),'$StuUIDNo','$StuGRNo','$StuRollNo','$Stuprefix','$StuStudentName','$Stumiddle','$StuLastname','$StuAcdemicyear',
 	'$StuStandard','$StuDiv','$StuGender','$StuDOB','$StuDateOfAdmission','$StuParentMobileNumber1',
 	'$StuParentMobileNumber2','$StuHouseNo','$StuStreetName','$StuLocation','$StuCity','$StuDist','$StuBirthPlace','$StuAadharNo','$StuCategory','$StuCaste',
-    '$StuLastschoolname','$StuBankname','$StuBankACno','$StuBankIFSCcode','$StuStatus','$StuStatusChangedDate','$file','$filename','$uploadfile','$uploadfilename')";
+    '$StuLastschoolname','$StuBankname','$StuBankACno','$StuBankIFSCcode','$StuStatus','$StuStatusChangedDate','$name1','$name2','$name3','$name4')";
 
 	$res = mysqli_query($conn, $sql);
 	if ($res) {
