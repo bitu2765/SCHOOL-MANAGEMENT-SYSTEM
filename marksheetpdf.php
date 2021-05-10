@@ -42,8 +42,8 @@ if (!$statu) {
 <h4 class="alert-heading">Result Is Not Declared Yet!</h4>
 <p></p>
 <p class="mt-12"></p>
-
 </div>');
+header("Location:./Exam/result_serch.php?Message=".$Message);
 } else {
 
 

@@ -42,7 +42,7 @@ include("../connection_to_db.php");
                     </li>
 
                     <li class="sidebar-item">
-                        <a href="#payr" data-toggle="collapse" class="sidebar-link collapsed">
+                        <a href="#payr" data-toggle="collapse" class="sidebar-link collapsed" >
                             <i class="align-middle"></i> <span class="align-middle">Payroll</span>
                         </a>
                         <ul id="payr" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">

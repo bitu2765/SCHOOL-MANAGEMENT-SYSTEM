@@ -19,10 +19,9 @@ $sql ="DELETE FROM `exammaster` WHERE `Examid`= '".$_GET["id"]."'";
 $res = $conn->query($sql) ;
 // do not remove white space 
 $sql3 ="DELETE FROM `resultmaster` WHERE ResAcademicYear='$ExamAcademicYear'AND ResStandard='$ExamStandard'
- AND ResExamName='$ExamName' ";
+ AND ResExamName='$ExamName'AND ResSubName='  $ExamSubName' ";
 $res3= $conn->query($sql3) ;
 
   header("Location:view_exam.php");
 
 ?>
-<!-- AND ResSubName='  $ExamSubName' -->

@@ -8,8 +8,8 @@ if (isset($_GET['eid'])) {
     while ($row = mysqli_fetch_array($result)) {
         $empname = $row["EmpNamePrefix"];
         $empname .= " ".$row["EmpFirstName"];
-        $empname .= " ".$row["EmpMidName"];
-        $empname .= " ".$row["EmpLastName"];
+        // $empname .= " ".$row["EmpMidName"];
+        // $empname .= " ".$row["EmpLastName"];
         $employeepan = $row['EmpPan'] ;
         $employeepfno = $row['EmpPFno'] ;
         $employeedesg = $row['EmpDesignation'] ;
@@ -37,7 +37,7 @@ if (isset($_GET['eid'])) {
     <div class="col-md-2 text-left">
     </div>
     <div class="col-md-2 text-left">
-    <label for="edesg">Employee Designation : </label>
+    <label for="edesg">Employee Desig. :</label>
     </div>
     <div class="col-md-2 text-left">
         <input class="form-control" type="text" value="<?php echo $employeedesg; ?>" name="Emde" id="esdesg" readonly>
