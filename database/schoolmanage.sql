@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2021 at 08:19 AM
+-- Generation Time: Jun 26, 2021 at 03:26 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -20,24 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `schoolmanage`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `attendancetrans`
---
-
-CREATE TABLE `attendancetrans` (
-  `Sysid` int(50) NOT NULL,
-  `AttStudentName` varchar(150) NOT NULL,
-  `AttStudentRollNo` varchar(30) NOT NULL,
-  `AttStandard` bigint(10) NOT NULL,
-  `AttDiv` varchar(10) NOT NULL,
-  `AttDate` date NOT NULL,
-  `AttSendSMS` varchar(5) NOT NULL DEFAULT 'No',
-  `AttPresentAbsent` varchar(15) NOT NULL DEFAULT 'Present',
-  `AcadmicYear` varchar(150) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -118,7 +100,6 @@ INSERT INTO `listmaster` (`Sysid`, `CreateDate`, `SyStatus`, `Parameter`, `Value
 (3, '2021-02-26', 'D', 'EmpStatus', 'Retired', '', ''),
 (4, '2021-02-26', '', 'Category', 'Open', '', ''),
 (5, '2021-02-26', '', 'Category', 'OBC', '', ''),
-(6, '2021-02-26', '', 'Category', 'SC', '', ''),
 (7, '2021-02-26', '', 'Category', 'SC', '', ''),
 (8, '2021-02-26', '', 'Category', 'ST', '', ''),
 (9, '2021-02-26', '', 'Gender', 'Male', '', ''),
@@ -140,8 +121,8 @@ INSERT INTO `listmaster` (`Sysid`, `CreateDate`, `SyStatus`, `Parameter`, `Value
 (29, '2021-02-26', '', 'SubjectName', 'Gujrati', '', ''),
 (31, '0000-00-00', '', 'SubjectName', 'Science', '', ''),
 (33, '0000-00-00', '', 'SubjectName', 'Social Science', '', ''),
-(34, '0000-00-00', '', 'AcdemicYear', '2021-22,2022-23', '', ''),
-(36, '0000-00-00', '', 'ShowResult', '0', '', '');
+(36, '0000-00-00', '', 'ShowResult', '0', '', ''),
+(38, '2021-06-26', '', 'AcadmicYear', '2019-20', '', '');
 
 -- --------------------------------------------------------
 
@@ -272,19 +253,6 @@ CREATE TABLE `tbfeesmaster` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbfeessetmaster`
---
-
-CREATE TABLE `tbfeessetmaster` (
-  `AcademicYear` varchar(8) NOT NULL,
-  `standard` int(11) NOT NULL,
-  `AnnualFees` int(10) NOT NULL,
-  `date` date NOT NULL DEFAULT curdate()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `timetable`
 --
 
@@ -341,12 +309,6 @@ CREATE TABLE `ttbsalarymaster` (
 --
 
 --
--- Indexes for table `attendancetrans`
---
-ALTER TABLE `attendancetrans`
-  ADD PRIMARY KEY (`Sysid`);
-
---
 -- Indexes for table `employeemaster`
 --
 ALTER TABLE `employeemaster`
@@ -363,7 +325,8 @@ ALTER TABLE `exammaster`
 -- Indexes for table `listmaster`
 --
 ALTER TABLE `listmaster`
-  ADD PRIMARY KEY (`Sysid`);
+  ADD PRIMARY KEY (`Sysid`),
+  ADD UNIQUE KEY `acadmicyear` (`Value`);
 
 --
 -- Indexes for table `resultmaster`
@@ -399,12 +362,6 @@ ALTER TABLE `tbfeesmaster`
   ADD PRIMARY KEY (`FeesStudentRollNo`,`FeesStudentGRNo`,`FeesAcademicYear`,`FeesStandard`,`FeesDivison`);
 
 --
--- Indexes for table `tbfeessetmaster`
---
-ALTER TABLE `tbfeessetmaster`
-  ADD PRIMARY KEY (`AcademicYear`,`standard`);
-
---
 -- Indexes for table `timetable`
 --
 ALTER TABLE `timetable`
@@ -421,12 +378,6 @@ ALTER TABLE `ttbsalarymaster`
 --
 
 --
--- AUTO_INCREMENT for table `attendancetrans`
---
-ALTER TABLE `attendancetrans`
-  MODIFY `Sysid` int(50) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `exammaster`
 --
 ALTER TABLE `exammaster`
@@ -436,7 +387,7 @@ ALTER TABLE `exammaster`
 -- AUTO_INCREMENT for table `listmaster`
 --
 ALTER TABLE `listmaster`
-  MODIFY `Sysid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `Sysid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `resultmaster`
