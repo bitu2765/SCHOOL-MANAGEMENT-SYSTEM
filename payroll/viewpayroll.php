@@ -210,7 +210,7 @@ try {
                                             <label for="ye" class="font-weight-bold">Year :</label>
                                         </div>
                                         <div class="col-md-3 text-left">
-                                            <select class="form-control" name="eye" id="esye">
+                                            <select class="form-control" name="eye" id="esye" >
                                                 <?php
                                                 include("acadyear.php");
                                                 ?>

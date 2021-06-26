@@ -85,7 +85,7 @@
                            		</tr>";
                 }
             } else {
-                echo "No records found";
+                echo "<h3 style='color:red;'>No records found</h3>";
             }
             ?>
 

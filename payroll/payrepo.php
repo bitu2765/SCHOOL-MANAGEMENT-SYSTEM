@@ -212,7 +212,7 @@ try {
                                             <input type="number" class="form-control" name="eye" placeholder="Enter Year" id="esye">
                                         </div> -->
                                             <div class="col-md-3 text-left">
-                                                <select class="form-control" name="eye" placeholder="Enter Year" id="esye">
+                                                <select class="form-control" name="eye" placeholder="Enter Year" id="esye" required >
                                                     <?php
                                                     include("acadyear.php");
                                                     ?>

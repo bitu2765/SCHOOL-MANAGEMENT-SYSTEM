@@ -35,16 +35,22 @@ if (isset($_POST{
 	$EmpBankName = strtoupper($_POST['EmpBankName']);
 	$EmpBankAccount = $_POST['EmpBankAccount'];
 	$EmpBankIFSC = $_POST['EmpBankIFSC'];
-
-	$sql = " INSERT INTO `employeemaster` values('$EmpNo','$EmpNamePrefix','$EmpFirstName','$EmpMidName','$EmpLastName', '$EmpDesignation','$EmpGender','$EmpDOB','$EmpAddress1', 
+	$finalmessage = "";
+	if (strlen($EmpContactNo) != 10) {
+		$finalmessage = "";
+	} else if (strlen($EmpAadharNo) != 12) {
+		$finalmessage = "";
+	} else {
+		$sql = " INSERT INTO `employeemaster` values('$EmpNo','$EmpNamePrefix','$EmpFirstName','$EmpMidName','$EmpLastName', '$EmpDesignation','$EmpGender','$EmpDOB','$EmpAddress1', 
           '$EmpAddress2', '$EmpState', '$EmpCity',$EmpPinCode,$EmpContactNo, '$EmpEmailID','$EmpDateofjoining',  '$EmpDateofLeaving', '$EmpCategory','$EmpAadharNo', '$EmpPan', '$EmpPFno', '$EmpStatus', '$EmpLastStatusChangeDate', '$EmpBankName', '$EmpBankAccount', '$EmpBankIFSC')";
 
-	$res = mysqli_query($conn, $sql);
-	if ($res) {
-		echo "<script>alert('Data Inserted successfully...!!');</script>";
-	} else {
-		echo "<script>alert('something went wrong!!...!!');</script>";
+		$res = mysqli_query($conn, $sql);
 	}
+	// if ($res) {
+	// 	echo "<script>alert('Data Inserted successfully...!!');</script>";
+	// } else {
+	// 	echo "<script>alert('something went wrong!!...!!');</script>";
+	// }
 }
 ?>
 
@@ -332,14 +338,14 @@ if (isset($_POST{
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Pin Code</label>
 									<div class="col-sm-5">
-										<input type="number" class="form-control" name="EmpPinCode" placeholder="" id="pin" autocomplete="off" required>
+										<input type="number" class="form-control" name="EmpPinCode" placeholder="" max="999999" id="pin" autocomplete="off">
 										<span id="pincode" class="text-danger font-weight-bold"></span>
 									</div>
 								</div>
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Contact No</label>
 									<div class="col-sm-5">
-										<input type="number" class="form-control" name="EmpContactNo" id="mobile1" placeholder="" autocomplete="off" required>
+										<input type="number" class="form-control" name="EmpContactNo" id="mobile1" placeholder="" max="9999999999" autocomplete="off" required>
 
 										<span id="mobile" class="text-danger font-weight-bold"></span>
 									</div>
@@ -383,14 +389,14 @@ if (isset($_POST{
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Aadhar Card No</label>
 									<div class="col-sm-5">
-										<input type="text" name="EmpAadharNo" class="form-control" id="aadhar" autocomplete="off" placeholder="">
+										<input type="text" name="EmpAadharNo" class="form-control" id="aadhar" max="999999999999" autocomplete="off" placeholder="">
 										<span id="AadharNo" class="text-danger font-weight-bold"></span>
 									</div>
 								</div>
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Pan Card No</label>
 									<div class="col-sm-5">
-										<input type="text" name="EmpPan" class="form-control" placeholder="" id="pan" autocomplete="off" required>
+										<input type="text" name="EmpPan" class="form-control" placeholder="" id="pan" maxlength="10" autocomplete="off" required>
 										<span id="panno" class="text-danger font-weight-bold"></span>
 									</div>
 								</div>
@@ -426,7 +432,7 @@ if (isset($_POST{
 										<input type="number" name="EmpBankAccount" class="form-control" placeholder="A/c No">
 									</div>
 									<div class="col-sm-3">
-										<input type="text" name="EmpBankIFSC" class="form-control  " placeholder="IFSC Code" required>
+										<input type="text" name="EmpBankIFSC" class="form-control  " placeholder="IFSC Code" maxlength="11" required>
 									</div>
 								</div>
 
@@ -454,7 +460,7 @@ if (isset($_POST{
 					<div class="row text-muted">
 						<div class="col-6 text-left">
 							<p class="mb-0">
-								<a  class="text-muted"><strong>SZ Vaghela High School</strong></a> &copy;
+								<a class="text-muted"><strong>SZ Vaghela High School</strong></a> &copy;
 							</p>
 						</div>
 					</div>
@@ -471,86 +477,29 @@ if (isset($_POST{
 
 			var pin = document.getElementById('pin').value;
 			var mobile1 = document.getElementById('mobile1').value;
-			var EmailID = document.getElementById('EmailID').value;
 			var aadhar = document.getElementById('aadhar').value;
 			var pan = document.getElementById('pan').value;
 
+			var answer = true;
 
-
-
-
-
-			if (pin == "") {
-				document.getElementById('pincode').innerHTML = "**please fill the pincode";
-				return false;
-			}
-			if (pin.length < 6) {
+			if (pin.length != 6) {
 				document.getElementById('pincode').innerHTML = "**number must be 6 digit";
-				return false;
+				answer = false;
 			}
-			if (pin.length > 6) {
-				document.getElementById('pincode').innerHTML = "**number must be 6 digit";
-				return false;
-			}
-
-
-			if (mobile1 == "") {
-				document.getElementById('mobile').innerHTML = "**please fill the mobile no";
-				return false;
-			}
-			if (mobile1.length < 10) {
+			if (mobile1.length != 10) {
 				document.getElementById('mobile').innerHTML = "**number must be 10 digit";
-				return false;
+				answer = false;
 			}
-			if (mobile1.length > 10) {
-				document.getElementById('mobile').innerHTML = "**number must be 10 digit";
-				return false;
-			}
-			if ((mobile1.charAt() != 9) && (mobile1.charAt() != 8) && (mobile1.charAt() != 6)) {
-				document.getElementById('mobile').innerHTML = "**number start must be 9,8 and 6";
-				return false;
-			}
-			if (emailID == "") {
-				document.getElementById('EmailID1').innerHTML = "**please fill the EmailID";
-				return false;
-			}
-			if (emailID.indexof('@') <= 0) {
-				document.getElementById('EmailID1').innerHTML = "**please fill the email id proper format @";
-				return false;
-			}
-			if ((emailID.charAt(emailID.length - 4) != '.') && (emailID.charAt(emailID.length - 3) != '.')) {
-				document.getElementById('EmailID1').innerHTML = "please fill the email id proper format .";
-				return false;
-			}
-			if (aadhar == "") {
-				document.getElementById('AadharNo').innerHTML = "**please fill the Aadhar no";
-				return false;
-			}
-			if (aadhar.length < 12) {
+			if (aadhar.length != 12) {
 				document.getElementById('AadharNo').innerHTML = "**number must be 12 digit";
-				return false;
+				answer = false;
 			}
-			if (aadhar.length > 12) {
-				document.getElementById('AadharNo').innerHTML = "**number must be 12 digit";
-				return false;
-			}
-			if (pan == "") {
-				document.getElementById('panno').innerHTML = "**please file the filed";
-				return false;
-			}
-			if (pan.length > 10) {
-				document.getElementById('panno').innerHTML = "**number must be 10 digit";
-				return false;
-			}
-			if (pan.length < 10) {
-				document.getElementById('panno').innerHTML = "****number must be 10 digit";
-				return false;
+			if (pan.length != 10) {
+				document.getElementById('panno').innerHTML = "**number must be 10 character";
+				answer = false;
 			}
 
-
-
-
-
+			return answer;
 		}
 	</script>
 </body>

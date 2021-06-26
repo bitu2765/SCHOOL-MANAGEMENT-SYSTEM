@@ -28,6 +28,71 @@ $EmpLastStatusChangeDate = $_GET['EmpLastStatusChangeDate'];
 $EmpBankName = strtoupper($_GET['EmpBankName']);
 $EmpBankAccount = $_GET['EmpBankAccount'];
 $EmpBankIFSC = $_GET['EmpBankIFSC'];
+
+$message = "";
+
+
+//submited form
+
+
+error_reporting(0);
+if ($_GET['test_update'] ?? "") {
+
+	$EmpNo = $_GET['EmpNo'];
+	$EmpNamePrefix = $_GET['EmpNamePrefix'];
+	$EmpFirstName = strtoupper($_GET['EmpFirstName']);
+	$EmpMidName = strtoupper($_GET['EmpMidName']);
+	$EmpLastName = strtoupper($_GET['EmpLastName']);
+	$EmpDesignation = strtoupper($_GET['EmpDesignation']);
+
+	$EmpDOB = $_GET['EmpDOB'];
+	$EmpAddress1 = strtoupper($_GET['EmpAddress1']);
+	$EmpAddress2 = strtoupper($_GET['EmpAddress2']);
+	$EmpState = strtoupper($_GET['EmpState']);
+	$EmpCity = strtoupper($_GET['EmpCity']);
+	$EmpPinCode = $_GET['EmpPinCode'];
+	$EmpContactNo = $_GET['EmpContactNo'];
+	$EmpEmailID = $_GET['EmpEmailID'];
+	$EmpDateofjoining = $_GET['EmpDateofjoining'];
+	$EmpDateofLeaving = $_GET['EmpDateofLeaving'];
+	$EmpCategory = strtoupper($_GET['EmpCategory']);
+	$EmpAadharNo = $_GET['EmpAadharNo'];
+	$EmpPan = $_GET['EmpPan'];
+	$EmpPFno = $_GET['EmpPFno'];
+	$EmpStatus = strtoupper($_GET['EmpStatus']);
+	$EmpLastStatusChangeDate = $_GET['EmpLastStatusChangeDate'];
+	$EmpBankName = strtoupper($_GET['EmpBankName']);
+	$EmpBankAccount = $_GET['EmpBankAccount'];
+	$EmpBankIFSC = $_GET['EmpBankIFSC'];
+
+
+	if (strlen($EmpContactNo) != 10) {
+		$message =	 "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Mobile no Wrong</strong> ,Update Failed!</div></div>";
+	} else if (strlen($EmpPan) != 10) {
+		$message =	 "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Pan no Wrong</strong> ,Update Failed!</div></div>";
+	} else if (strlen($EmpAadharNo) != 12) {
+		$message =	 "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Aadhar no Wrong</strong> ,Update Failed!</div></div>";
+	} else {
+		$query = "UPDATE employeemaster SET EmpNo='$EmpNo',EmpNamePrefix='$EmpNamePrefix',
+EmpFirstName= '$EmpFirstName',EmpMidName= '$EmpMidName',EmpLastName= '$EmpLastName',
+EmpDesignation='$EmpDesignation',EmpDOB='$EmpDOB',EmpAddress1 ='$EmpAddress1',
+EmpAddress2 ='$EmpAddress2',EmpState ='$EmpState',EmpCity ='$EmpCity', EmpPinCode ='$EmpPinCode',
+EmpContactNo ='$EmpContactNo',EmpEmailID ='$EmpEmailID',EmpDateofjoining='$EmpDateofjoining',EmpDateofLeaving ='$EmpDateofLeaving',
+EmpCategory ='$EmpCategory',EmpAadharNo ='$EmpAadharNo',EmpPan ='$EmpPan',EmpPFno ='$EmpPFno',
+EmpStatus ='$EmpStatus', EmpLastStatusChangeDate ='$EmpLastStatusChangeDate',
+EmpBankName ='$EmpBankName',EmpBankAccount ='$EmpBankAccount',EmpBankIFSC ='$EmpBankIFSC' where EmpNo='$EmpNo'";
+		$data = mysqli_query($conn, $query);
+		if ($data) {
+
+			// <META HTTP-EQUIV="Refresh" CONTENT="0; URL= ./employee-view.php">
+
+			$message =  "<div class='alert alert-success alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Employee Details </strong> Updated Successfully!</div></div>";
+		} else {
+			$message =	 "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Server Side Error!,</strong> Update Failed!</div></div>";
+		}
+	}
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -203,6 +268,9 @@ $EmpBankIFSC = $_GET['EmpBankIFSC'];
 			</nav>
 
 			<main class="content">
+				<?php
+				echo $message;
+				?>
 				<div class="container-fluid p-0">
 
 					<h1 class="h3 mb-3" style="font-weight: bold;">Update Employee</h1>
@@ -215,7 +283,7 @@ $EmpBankIFSC = $_GET['EmpBankIFSC'];
 							<!-- now try  -->
 						</div>
 						<div class="card-body">
-							<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET">
+							<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET" onsubmit="return validation()">
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Employee No</label>
 									<div class="col-sm-5">
@@ -523,59 +591,38 @@ $EmpBankIFSC = $_GET['EmpBankIFSC'];
 	<script src="../js/indapp.js"></script>
 	<script src="../logg.js"></script>
 </body>
+<script type="text/javascript">
 
-</html>
+	function validation() {
 
-</html>
-<?php
-error_reporting(0);
-if ($_GET['test_update'] ?? "") {
+		var pin = document.getElementById('pin').value;
+		var mobile1 = document.getElementById('mobile1').value;
+		var aadhar = document.getElementById('aadhar').value;
+		var pan = document.getElementById('pan').value;
 
-	$EmpNo = $_GET['EmpNo'];
-	$EmpNamePrefix = $_GET['EmpNamePrefix'];
-	$EmpFirstName = strtoupper($_GET['EmpFirstName']);
-	$EmpMidName = strtoupper($_GET['EmpMidName']);
-	$EmpLastName = strtoupper($_GET['EmpLastName']);
-	$EmpDesignation = strtoupper($_GET['EmpDesignation']);
+		var answer = true;
 
-	$EmpDOB = $_GET['EmpDOB'];
-	$EmpAddress1 = strtoupper($_GET['EmpAddress1']);
-	$EmpAddress2 = strtoupper($_GET['EmpAddress2']);
-	$EmpState = strtoupper($_GET['EmpState']);
-	$EmpCity = strtoupper($_GET['EmpCity']);
-	$EmpPinCode = $_GET['EmpPinCode'];
-	$EmpContactNo = $_GET['EmpContactNo'];
-	$EmpEmailID = $_GET['EmpEmailID'];
-	$EmpDateofjoining = $_GET['EmpDateofjoining'];
-	$EmpDateofLeaving = $_GET['EmpDateofLeaving'];
-	$EmpCategory = strtoupper($_GET['EmpCategory']);
-	$EmpAadharNo = $_GET['EmpAadharNo'];
-	$EmpPan = $_GET['EmpPan'];
-	$EmpPFno = $_GET['EmpPFno'];
-	$EmpStatus = strtoupper($_GET['EmpStatus']);
-	$EmpLastStatusChangeDate = $_GET['EmpLastStatusChangeDate'];
-	$EmpBankName = strtoupper($_GET['EmpBankName']);
-	$EmpBankAccount = $_GET['EmpBankAccount'];
-	$EmpBankIFSC = $_GET['EmpBankIFSC'];
+		if (pin.length != 6) {
+			document.getElementById('pincode').innerHTML = "**number must be 6 digit";
+			answer = false;
+		}
+		if (mobile1.length != 10) {
+			document.getElementById('mobile').innerHTML = "**number must be 10 digit";
+			answer = false;
+		}
+		if (aadhar.length != 12) {
+			document.getElementById('AadharNo').innerHTML = "**number must be 12 digit";
+			answer = false;
+		}
+		if (pan.length != 10) {
+			document.getElementById('panno').innerHTML = "**number must be 10 character";
+			answer = false;
+		}
 
-
-	$query = "UPDATE employeemaster SET EmpNo='$EmpNo',EmpNamePrefix='$EmpNamePrefix',
-      EmpFirstName= '$EmpFirstName',EmpMidName= '$EmpMidName',EmpLastName= '$EmpLastName',
-        EmpDesignation='$EmpDesignation',EmpDOB='$EmpDOB',EmpAddress1 ='$EmpAddress1',
-        EmpAddress2 ='$EmpAddress2',EmpState ='$EmpState',EmpCity ='$EmpCity', EmpPinCode ='$EmpPinCode',
-        EmpContactNo ='$EmpContactNo',EmpEmailID ='$EmpEmailID',EmpDateofjoining='$EmpDateofjoining',EmpDateofLeaving ='$EmpDateofLeaving',
-        EmpCategory ='$EmpCategory',EmpAadharNo ='$EmpAadharNo',EmpPan ='$EmpPan',EmpPFno ='$EmpPFno',
-        EmpStatus ='$EmpStatus', EmpLastStatusChangeDate ='$EmpLastStatusChangeDate',
-        EmpBankName ='$EmpBankName',EmpBankAccount ='$EmpBankAccount',EmpBankIFSC ='$EmpBankIFSC' where EmpNo='$EmpNo'";
-	$data = mysqli_query($conn, $query);
-	if ($data) {
-		echo "<scrpit>alert('Record update from database')</scrpit>";
-?>
-		<META HTTP-EQUIV="Refresh" CONTENT="0; URL= ./employee-view.php">
-<?php
-	} else {
-		echo "failed update";
+		return answer;
 	}
-}
+</script>
 
-?>
+</html>
+
+</html>

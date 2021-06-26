@@ -598,56 +598,26 @@ if (isset($_POST{
 			var mobile2 = document.getElementById('mobile2').value;
 			var AadharNo = document.getElementById('aadharNo').value;
 
-			if (mobile1 == "") {
-				document.getElementById('mobile').innerHTML = "**please fill the mobile no";
-				return false;
-			}
-			if (mobile1.length < 10) {
+			var answer = true;
+
+			if (mobile1.length != 10) {
 				document.getElementById('mobile').innerHTML = "**number must be 10 digit";
-				return false;
-			}
-			if (mobile1.length > 10) {
-				document.getElementById('mobile').innerHTML = "**number must be 10 digit";
-				return false;
-			}
-			if ((mobile1.charAt() != 9) && (mobile1.charAt() != 8) && (mobile1.charAt() != 6)) {
-				document.getElementById('mobile').innerHTML = "**number start must be 9,8 and 6";
-				return false;
+				answer =  false;
 			}
 
 			//return true;
-			if (mobile2 == "") {
-				document.getElementById('mo').innerHTML = "**please fill the mobile no";
-				return false;
-			}
-			if (mobile2.length < 10) {
+			if (mobile2.length != 10) {
 				document.getElementById('mo').innerHTML = "**number must be 10 digit";
-				return false;
-			}
-			if (mobile2.length > 10) {
-				document.getElementById('mo').innerHTML = "**number must be 10 digit";
-				return false;
-			}
-			if ((mobile2.charAt() != 9) && (mobile2.charAt() != 8) && (mobile2.charAt() != 6)) {
-				document.getElementById('mo').innerHTML = "**number start must be 9,8 and 6";
-				return false;
+				answer = false;
 			}
 
 			//return true;
-			if (aadharNo == "") {
-				document.getElementById('Aadhar').innerHTML = "**please fill the Aadhar no";
-				return false;
-			}
-			if (aadharNo.length < 12) {
-				document.getElementById('Aadhar').innerHTML = "**number must be 12 digit";
-				return false;
-			}
-			if (aadharNo.length > 12) {
+			if (aadharNo.length != 12) {
 				document.getElementById('Aadhar').innerHTML = "**number must be 12 digit";
 				return false;
 			}
 
-			return true;
+			return answer;
 		}
 	</script>
 </body>

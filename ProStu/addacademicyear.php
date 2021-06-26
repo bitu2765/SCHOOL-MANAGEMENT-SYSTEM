@@ -202,7 +202,7 @@ include("../connection_to_db.php");
                                             <button type="button" id="aay" class="btn btn-success">Add</button>
                                         </div>
                                     </div>
-                                    <span id="Addde"></span>
+                                    <!-- <span id="Addde"></span> -->
                                 </div>
                             </div>
                         </div>
