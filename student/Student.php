@@ -419,11 +419,11 @@ if (isset($_POST{
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Mobile No</label>
 									<div class="col-sm-4">
-										<input type="number" class="form-control" name="StuParentMobileNumber1" placeholder="primary No" id="mobile1" autocomplete="off">
+										<input type="number" class="form-control" name="StuParentMobileNumber1" placeholder="primary No" id="mobile1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" autocomplete="off">
 										<span id="mobile" class="text-danger font-weight-bold"></span>
 									</div>
 									<div class="col-sm-4">
-										<input type="number" class="form-control" name="StuParentMobileNumber2" id="mobile2" placeholder="Secondary No" autocomplete="off">
+										<input type="number" class="form-control" name="StuParentMobileNumber2" id="mobile2" placeholder="Secondary No" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" autocomplete="off">
 										<span id="mo" class="text-danger font-weight-bold"></span>
 									</div>
 								</div>
@@ -459,7 +459,7 @@ if (isset($_POST{
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Aadhar No</label>
 									<div class="col-sm-4">
-										<input type="number" class="form-control" name="StuAadharNo" placeholder="" id="aadharNo" required>
+										<input type="number" class="form-control" name="StuAadharNo" placeholder="" id="aadharNo" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="12"  required>
 										<span id="Aadhar" class="text-danger font-weight-bold"></span>
 									</div>
 								</div>
@@ -495,7 +495,7 @@ if (isset($_POST{
 										<input type="number" class="form-control" name="StuBankACno" placeholder="A/c No">
 									</div>
 									<div class="col-sm-3">
-										<input type="text" class="form-control" name="StuBankIFSCcode" placeholder="IFSC Code">
+										<input type="text" class="form-control" name="StuBankIFSCcode" maxlength="11" placeholder="IFSC Code">
 									</div>
 								</div>
 								<div class="mb-3 row">
@@ -523,7 +523,7 @@ if (isset($_POST{
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Upload Document (Last Standard Marksheet)</label>
 									<div class="col-sm-5">
-										<input type="file" name="file" class="form-control" required>
+										<input type="file" name="file" class="form-control">
 
 
 									</div>
@@ -544,7 +544,7 @@ if (isset($_POST{
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Upload Document (Aadhar Card)</label>
 									<div class="col-sm-5">
-										<input type="file" name="uploadfile" class="form-control" required>
+										<input type="file" name="uploadfile" class="form-control">
 
 
 									</div>
@@ -552,7 +552,7 @@ if (isset($_POST{
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Upload Document (Bank PassBook)</label>
 									<div class="col-sm-5">
-										<input type="file" name="uploadfilename" class="form-control" required>
+										<input type="file" name="uploadfilename" class="form-control">
 
 
 									</div>
@@ -596,13 +596,13 @@ if (isset($_POST{
 		function validation() {
 			var mobile1 = document.getElementById('mobile1').value;
 			var mobile2 = document.getElementById('mobile2').value;
-			var AadharNo = document.getElementById('aadharNo').value;
+			var aadharNo = document.getElementById('aadharNo').value;
 
 			var answer = true;
 
 			if (mobile1.length != 10) {
 				document.getElementById('mobile').innerHTML = "**number must be 10 digit";
-				answer =  false;
+				answer = false;
 			}
 
 			//return true;

@@ -192,9 +192,10 @@ if (isset($_POST{
 							</li>
 							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
 							</li>
-							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate MarkSheet</a>
-							</li>
+							
 							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
+							</li>
+							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate MarkSheet</a>
 							</li>
 						</ul>
 					</li>
