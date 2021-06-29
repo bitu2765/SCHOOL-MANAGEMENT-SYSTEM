@@ -237,7 +237,7 @@ if (isset($_POST{
 							</li>
 							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
 							</li>
-							
+
 							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
 							</li>
 							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate MarkSheet</a>
@@ -310,9 +310,7 @@ if (isset($_POST{
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Name</label>
 									<div class="col-sm-1">
 										<select class="form-control" name="Stuprefix">
-											<option>MRS.</option>
 											<option>MR.</option>
-											<option>MISS.</option>
 											<option>MS.</option>
 										</select>
 									</div>
@@ -405,7 +403,7 @@ if (isset($_POST{
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Date Of Birth</label>
 									<div class="col-sm-4">
 
-										<input type="date" class="form-control" name="StuDOB" required style="font-weight: bold;">
+										<input type="date" class="form-control" name="StuDOB" required style="font-weight: bold;" require >
 
 									</div>
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Admission Date</label>
@@ -460,7 +458,7 @@ if (isset($_POST{
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Aadhar No</label>
 									<div class="col-sm-4">
-										<input type="number" class="form-control" name="StuAadharNo" placeholder="" id="aadharNo" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="12"  required>
+										<input type="number" class="form-control" name="StuAadharNo" placeholder="" id="aadharNo" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="12" required>
 										<span id="Aadhar" class="text-danger font-weight-bold"></span>
 									</div>
 								</div>

@@ -239,21 +239,12 @@ while ($res = mysqli_fetch_array($result)) {
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Name</label>
 									<div class="col-sm-1">
 										<select class="form-control" value="<?php echo $Stuprefix ?>" name="Stuprefix">
-											<option value="MRS." <?php
-																	if ($Stuprefix == 'MRS.') {
-																		echo "selected";
-																	}
-																	?>>MRS.</option>
+											
 											<option <?php
 													if ($Stuprefix == 'MR.') {
 														echo "selected";
 													}
 													?>>MR.</option>
-											<option <?php
-													if ($Stuprefix == 'MISS.') {
-														echo "selected";
-													}
-													?>>MISS.</option>
 											<option <?php
 													if ($Stuprefix == 'MS.') {
 														echo "selected";
@@ -369,7 +360,7 @@ while ($res = mysqli_fetch_array($result)) {
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Date Of Birth</label>
 									<div class="col-sm-4">
 
-										<input type="date" class="form-control" name="StuDOB" value="<?php echo "$StuDOB" ?>">
+										<input type="date" class="form-control" name="StuDOB" value="<?php echo "$StuDOB" ?>" >
 
 									</div>
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Admission Date</label>
@@ -383,11 +374,11 @@ while ($res = mysqli_fetch_array($result)) {
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Mobile No</label>
 									<div class="col-sm-4">
-										<input type="number" class="form-control" name="StuParentMobileNumber1" value="<?php echo "$StuParentMobileNumber1" ?>" placeholder="primary No" id="mobile1" autocomplete="off">
+										<input type="number" class="form-control" name="StuParentMobileNumber1" value="<?php echo "$StuParentMobileNumber1" ?>" placeholder="primary No" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10"  id="mobile1" autocomplete="off">
 										<span id="mobile" class="text-danger font-weight-bold"></span>
 									</div>
 									<div class="col-sm-4">
-										<input type="number" class="form-control" name="StuParentMobileNumber2" value="<?php echo "$StuParentMobileNumber2" ?>" id="mobile2" placeholder="Secondary No">
+										<input type="number" class="form-control" name="StuParentMobileNumber2" value="<?php echo "$StuParentMobileNumber2" ?>" id="mobile2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10"  placeholder="Secondary No">
 										<span id="mo" class="text-danger font-weight-bold"></span>
 									</div>
 								</div>
@@ -423,7 +414,7 @@ while ($res = mysqli_fetch_array($result)) {
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">AadharNo</label>
 									<div class="col-sm-4">
-										<input type="number" class="form-control" name="StuAadharNo" placeholder="" value="<?php echo "$StuAadharNo" ?>" id="aadharNo">
+										<input type="number" class="form-control" name="StuAadharNo" placeholder="" value="<?php echo "$StuAadharNo" ?>" id="aadharNo" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="12"  >
 										<span id="Aadhar" class="text-danger font-weight-bold"></span>
 									</div>
 								</div>
@@ -466,7 +457,7 @@ while ($res = mysqli_fetch_array($result)) {
 										<input type="number" class="form-control" name="StuBankACno" placeholder="A/c No" value="<?php echo "$StuBankACno" ?>">
 									</div>
 									<div class="col-sm-3">
-										<input type="text" class="form-control" name="StuBankIFSCcode" placeholder="IFSC Code" value="<?php echo "$StuBankIFSCcode" ?>">
+										<input type="text" class="form-control" name="StuBankIFSCcode" placeholder="IFSC Code" value="<?php echo "$StuBankIFSCcode" ?>" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="11" >
 									</div>
 								</div>
 								<div class="mb-3 row">
@@ -501,7 +492,7 @@ while ($res = mysqli_fetch_array($result)) {
 									<div class="col-sm-4">
 
 
-										<input type="date" class="form-control" name="StuStatusChangedDate" value="<?php echo "$StuStatusChangedDate" ?>">
+										<input type="date" class="form-control" name="StuStatusChangedDate" value="<?php echo "$StuStatusChangedDate" ?>" require >
 
 
 									</div>
@@ -548,7 +539,7 @@ while ($res = mysqli_fetch_array($result)) {
 		function validation() {
 			var mobile1 = document.getElementById('mobile1').value;
 			var mobile2 = document.getElementById('mobile2').value;
-			var AadharNo = document.getElementById('aadharNo').value;
+			var aadharNo = document.getElementById('aadharNo').value;
 
 			var answer = true;
 
