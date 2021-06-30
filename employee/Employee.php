@@ -84,7 +84,7 @@ if (isset($_POST{
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" style="text-align: center;">
 					<span width="30px">&nbsp;</span>
-					<img src="../logo.png" alt="logo" s srcset="" height="100px">
+					<img src="../logo.png" alt="logo" s srcset="" height="213px">
 				</a>
 
 				<ul class="sidebar-nav">
@@ -339,14 +339,14 @@ if (isset($_POST{
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Pin Code</label>
 									<div class="col-sm-5">
-										<input type="number" class="form-control" name="EmpPinCode" placeholder="" max="999999" id="pin" autocomplete="off">
+										<input type="number" class="form-control" name="EmpPinCode" placeholder="" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6" id="pin" autocomplete="off">
 										<span id="pincode" class="text-danger font-weight-bold"></span>
 									</div>
 								</div>
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Contact No</label>
 									<div class="col-sm-5">
-										<input type="number" class="form-control" name="EmpContactNo" id="mobile1" placeholder="" max="9999999999" autocomplete="off" required>
+										<input type="number" class="form-control" name="EmpContactNo" id="mobile1" placeholder="" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" autocomplete="off" required>
 
 										<span id="mobile" class="text-danger font-weight-bold"></span>
 									</div>
@@ -390,7 +390,7 @@ if (isset($_POST{
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Aadhar Card No</label>
 									<div class="col-sm-5">
-										<input type="text" name="EmpAadharNo" class="form-control" id="aadhar" max="999999999999" autocomplete="off" placeholder="">
+										<input type="text" name="EmpAadharNo" class="form-control" id="aadhar" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="12" autocomplete="off" placeholder="">
 										<span id="AadharNo" class="text-danger font-weight-bold"></span>
 									</div>
 								</div>
@@ -441,7 +441,7 @@ if (isset($_POST{
 								<div class="mb-3 row">
 									<div class="col-sm-10 ml-sm-auto">
 
-										<input type="submit" class="btn btn-success" name="test_save" id="submitbtn" value="Save">
+										<input type="submit" class="btn-sm btn-success" name="test_save" id="submitbtn" value="Save">
 
 
 

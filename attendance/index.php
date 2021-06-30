@@ -35,7 +35,7 @@ include("db_con_inc.php");
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand" style="text-align: center;">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" s srcset="" height="100px">
+                    <img src="../logo.png" alt="logo" s srcset="" height="213px">
                 </a>
 
                 <ul class="sidebar-nav">

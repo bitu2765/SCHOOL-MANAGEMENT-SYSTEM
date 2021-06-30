@@ -286,7 +286,7 @@ include("connectdb.php");
                                             <div class="col-md-4 text-center">
                                             </div>
                                             <div class="col-md-4 text-center">
-                                                <button type="submit" class="btn btn-lg btn-success">SAVE</button>
+                                                <button type="submit" class="btn btn-success">SAVE</button>
                                             </div>
                                             <!-- <div class="col-md-4 text-center">
                                             <button type="button" class="btn btn-lg btn-pill btn-success" id="bd">GET</button>

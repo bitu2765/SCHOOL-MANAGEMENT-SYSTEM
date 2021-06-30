@@ -59,7 +59,7 @@ include("./connectdb.php");
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand">
 					<span width="30px">&nbsp;</span>
-					<img src="../logo.png" alt="logo" srcset="" height="100px">
+					<img src="../logo.png" alt="logo" srcset="" height="213px">
 				</a>
 
 				<ul class="sidebar-nav">
@@ -168,7 +168,7 @@ include("./connectdb.php");
 							</li>
 							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
 							</li>
-							
+
 							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
 							</li>
 							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate MarkSheet</a>
@@ -273,6 +273,8 @@ include("./connectdb.php");
 								<thead class="table table-dark">
 
 									<tr>
+										<th>Edit</th>
+										<th>Delete</th>
 										<th>IDNo</th>
 										<th>EmployeeFullName</th>
 										<th>Designation</th>
@@ -310,6 +312,9 @@ include("./connectdb.php");
 										while ($result = mysqli_fetch_assoc($data)) {
 											echo "
                            		<tr>
+								   <td><a href='update.php?EmpNo=$result[EmpNo]&EmpNamePrefix=$result[EmpNamePrefix]&EmpFirstName=$result[EmpFirstName]&EmpMidName=$result[EmpMidName]&EmpLastName=$result[EmpLastName]&EmpDesignation=$result[EmpDesignation]&EmpDOB=$result[EmpDOB]&EmpAddress1=$result[EmpAddress1]&EmpAddress2=$result[EmpAddress2]&EmpState=$result[EmpState]&EmpCity=$result[EmpCity]&EmpPinCode=$result[EmpPinCode]&EmpContactNo=$result[EmpContactNo]&EmpEmailID=$result[EmpEmailID]&EmpDateofjoining=$result[EmpDateofjoining]&EmpDateofLeaving=$result[EmpDateofLeaving]&EmpCategory=$result[EmpCategory]&EmpAadharNo=$result[EmpAadharNo]&EmpPan=$result[EmpPan]&EmpPFno=$result[EmpPFno]&EmpStatus=$result[EmpStatus]&EmpLastStatusChangeDate=$result[EmpLastStatusChangeDate]&EmpBankName=$result[EmpBankName]&EmpBankAccount=$result[EmpBankAccount]&EmpBankIFSC=$result[EmpBankIFSC]'><input type='submit' onclick='return checkupdate()' value='Edit' id='updatebtn' class='btn btn-success btn-sm'></a></td>
+								   <td><a href='delete.php?EmpNo=$result[EmpNo]' onclick='return checkdelete()'><input type='submit' value='delete' id='deletebtn' class=' btn btn-danger btn-sm'></a></td>
+   
                            		<td>" . $result['EmpNo'] . "</td>
                            		<td>" . $result['EmpNamePrefix'] . " " . $result['EmpFirstName'] . " " . $result['EmpMidName'] . " " . $result['EmpLastName'] . "</td>
                            		<td>" . $result['EmpDesignation'] . "</td>
@@ -335,8 +340,6 @@ include("./connectdb.php");
                                 <td> " . $result["EmpBankIFSC"] . "</td>
                                 
                            		
-                           		<th><a href='update.php?EmpNo=$result[EmpNo]&EmpNamePrefix=$result[EmpNamePrefix]&EmpFirstName=$result[EmpFirstName]&EmpMidName=$result[EmpMidName]&EmpLastName=$result[EmpLastName]&EmpDesignation=$result[EmpDesignation]&EmpDOB=$result[EmpDOB]&EmpAddress1=$result[EmpAddress1]&EmpAddress2=$result[EmpAddress2]&EmpState=$result[EmpState]&EmpCity=$result[EmpCity]&EmpPinCode=$result[EmpPinCode]&EmpContactNo=$result[EmpContactNo]&EmpEmailID=$result[EmpEmailID]&EmpDateofjoining=$result[EmpDateofjoining]&EmpDateofLeaving=$result[EmpDateofLeaving]&EmpCategory=$result[EmpCategory]&EmpAadharNo=$result[EmpAadharNo]&EmpPan=$result[EmpPan]&EmpPFno=$result[EmpPFno]&EmpStatus=$result[EmpStatus]&EmpLastStatusChangeDate=$result[EmpLastStatusChangeDate]&EmpBankName=$result[EmpBankName]&EmpBankAccount=$result[EmpBankAccount]&EmpBankIFSC=$result[EmpBankIFSC]'><input type='submit' onclick='return checkupdate()' value='Edit' id='updatebtn' class='btn btn-success btn-lg'></a></th>
-<th><a href='delete.php?EmpNo=$result[EmpNo]' onclick='return checkdelete()'><input type='submit' value='delete' id='deletebtn' class=' btn btn-danger btn-lg'></a></th>
                            		</tr>";
 										}
 									} else {

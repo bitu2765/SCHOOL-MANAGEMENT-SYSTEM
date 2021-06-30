@@ -423,7 +423,7 @@ include("connectdb.php");
                                         <div class="col-md-4 text-center">
                                         </div>
                                         <div class="col-md-4 text-center">
-                                            <button type="button" class="btn btn-lg  btn-success" id="subd">Save</button>
+                                            <button type="button" class="btn btn-success" id="subd">Save</button>
                                         </div>
                                     </div>
                                 </div>

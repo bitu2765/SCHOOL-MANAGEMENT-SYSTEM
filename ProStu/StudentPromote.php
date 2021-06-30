@@ -31,7 +31,7 @@ include("../connection_to_db.php");
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="100px">
+                    <img src="../logo.png" alt="logo" srcset="" height="213px">
                 </a>
 
                 <ul class="sidebar-nav">

@@ -104,7 +104,7 @@
                 <input class="input-field form-control" autocomplete="off" type="password" placeholder="Password" name="admin_pass" id="userpass">
             </div>
             <div class="col-md-2">
-                <button type="button" class="btn btn-success" id="login_admin">Login</button>
+                <button type="button" class="btn-sm btn-success" id="login_admin">Login</button>
             </div>
             <!-- </form> -->
         </div>
