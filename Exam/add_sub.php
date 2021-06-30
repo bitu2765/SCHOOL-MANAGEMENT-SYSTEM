@@ -10,8 +10,8 @@ include 'connection.php';
     <link rel="stylesheet" href="../css/app.css">
     <link href="../css/gapi.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/ui_d.css">
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <title>Subject</title>
 </head>
@@ -53,8 +53,8 @@ include 'connection.php';
                     </li>
 
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
 
                     <li class="sidebar-header">
                         Student
@@ -101,8 +101,8 @@ include 'connection.php';
                     </li>
 
                     <li class="sidebar-header">
-                        
-                        </li>
+
+                    </li>
 
                     <li class="sidebar-header">
                         Academic
@@ -136,7 +136,7 @@ include 'connection.php';
                             </li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
                             </li>
-                            
+
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
                                     Result</a>
                             </li>
@@ -287,8 +287,10 @@ include 'connection.php';
                         </div>
                     </div>
                 </div>
-                <table class="table caption-top table-hover">
+                <h5>
                     <caption>List of Subject</caption>
+                </h5>
+                <table class="table caption-top table-hover">
                     <thead class="thead-dark">
                         <tr>
 
@@ -304,6 +306,9 @@ include 'connection.php';
                 </table>
             </main>
             <!-- Fetching From Subject master using ajex -->
+
+
+
             <script>
                 function fetchExam() {
                     var year = document.getElementById('year').value;
@@ -326,6 +331,11 @@ include 'connection.php';
                         std,
                         true);
                     xmlhttp.send();
+
+                }
+
+                function checkdelete() {
+                    return confirm('Are you sure you want to delete this record!');
                 }
             </script>
 

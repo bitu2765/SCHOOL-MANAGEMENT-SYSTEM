@@ -67,35 +67,25 @@
         .bg-light {
             background: #4c5a7d !important;
         }
+
+        .logocenter{
+            text-align: center;
+            height: 250px;
+            padding-top: 30px;
+        }
     </style>
 </head>
 
 <body>
     <header class="top-navbar ">
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.php">
-                    <img src="logo.png" alt="SZ WAGHELA HIGH SCHOOL" />
-                </a>
-                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbars-host">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">LOGIN
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                                <a class="dropdown-item" href="login.php">Login </a>
-                                <a class="dropdown-item" href="signup.php">signup </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div> -->
+        <nav class=" navbar-expand-lg bg-light">
+            <div class=" logocenter" >
+                <!-- <a class="navbar-brand" href="index.php"> -->
+                <!-- <span style="width: 10px;" ></span> -->
+                <div>
+                    <img src="logo1.png" alt="SZ WAGHELA HIGH SCHOOL"  />
+                </div>
+                <!-- </a> -->
             </div>
         </nav>
     </header>

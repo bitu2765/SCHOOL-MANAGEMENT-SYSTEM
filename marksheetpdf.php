@@ -43,13 +43,13 @@ if (!$statu) {
 <p></p>
 <p class="mt-12"></p>
 </div>');
-header("Location:./Exam/result_serch.php?Message=".$Message);
+    header("Location:./Exam/result_serch.php?Message=" . $Message);
 } else {
 
 
 
 
-    $resultStatus = true;
+
     $totalSum = "";
     $obtainSum = "";
     $Rank = "";
@@ -77,18 +77,12 @@ WHERE ResAcademicYear='$year' And ResStandard='$standard' And ResExamName='$exam
         $stuDiv = $row11['ResDivision'];
         $examYear = $row11['ResAcademicYear'];
         $examName = $row11['ResExamName'];
-        $stustatus = $row11['ResStatus'];
 
-        if ($stustatus == "FAIL") {
-            $resultStatus = false;
-            $Rank = "FAIL";
-        } else {
-            $Rank = "PASS";
-        }
 
         $resultpage = '<link rel="stylesheet" href="./css/app.css">
         <link href="./css/gapi.css" rel="stylesheet">
         <link rel="stylesheet" href="./css/ui_d.css">
+        <div style="padding-left:70px;" >
         <table>
         <tbody>
             <tr>
@@ -124,45 +118,50 @@ WHERE ResAcademicYear='$year' And ResStandard='$standard' And ResExamName='$exam
         $resultpage .= '<table>
         <tbody>
             <tr>
-                <td style="width: 650px;">
-                    વિદ્યાર્થીનું નામ :-  ' . $stuName . '
+                <td style="width: 675px;">
+                    Student Name :-  ' . $stuName . '
                 </td>
-                <td style="width: 100px;">
-                    રોલ નંબર :- ' . $stuRollNo . '
+                <td style="width: 225px;">
+                    Roll No :- ' . $stuRollNo . '
                 </td>
             </tr>
         </tbody>
         </table>';
 
-        $resultpage .= '<table>
+        $resultpage .= '<table style="margin-bottom:5px;" >
         <tbody>
             <tr>
-                <td style="width: 220px;">
-                    જ.ર નંબર :- ' . $stuGRNo . '
+                <td style="width: 225px;">
+                    GR No :- ' . $stuGRNo . '
                 </td>
-                <td style="width: 220px;">
-                    ધોરણ :- ' . $stuStd . '
+                <td style="width: 225px;">
+                    Standard :- ' . $stuStd . '
                 </td>
-                <td style="width: 220px;">
-                    વગૅ :- ' . $stuDiv . '
+                <td style="width: 225px;">
+                    Class :- ' . $stuDiv . '
                 </td>
-                <td style="width: 220px;">
-                    પરીક્ષા વર્ષ :- ' . $examYear . '
+                <td style="width: 225px;">
+                    Exam Year :- ' . $examYear . '
                 </td>
             </tr>
         </tbody>
     </table>';
+        $rowwidthdynamic = intval(460 / (count($in) + 7));
+
         $resultpage .= '<table>
     <tbody>
             <tr style="border:0.1mm solid black" >
-                <td scope="col" style="font-size: 12pt;border:0.1mm solid black" >પરીક્ષા</td>
-                <td scope colspan="2" style="font-size: 12pt;border:0.1mm solid black" >' . $examName . '</td>
+                <td scope="col" style="font-size: 12pt;padding-left:10px;height: ' . $rowwidthdynamic . 'px;border:0.1mm solid black" >પરીક્ષા</td>
+                <td scope colspan="2" style="font-size: 12pt;padding-left:10px;height: ' . $rowwidthdynamic . 'px;border:0.1mm solid black" >' . $examName . '</td>
             </tr>
             <tr style="border:0.1mm solid black">
-                <td scope="col" style="font-size: 11pt;width: 350px;border:0.1mm solid black" >વિષય</td>
-                <td scope="col" style="font-size: 11pt;width: 250px;border:0.1mm solid black" > કુલ ગુણ</td>
-                <td scope="col" style="font-size: 11pt;width: 250px;border:0.1mm solid black" >મેળવેલ ગુણ</td>
+                <td scope="col" style="font-size: 11pt;padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 350px;border:0.1mm solid black" >વિષય</td>
+                <td scope="col" style="font-size: 11pt;padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 250px;border:0.1mm solid black" > કુલ ગુણ</td>
+                <td scope="col" style="font-size: 11pt;padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 250px;border:0.1mm solid black" >મેળવેલ ગુણ</td>
             </tr>';
+
+        $resultStatus = true;
+
         for ($z = 0; $z < count($in); $z++) {
             $q = $in[$z];
             $str = " SELECT * FROM `resultmaster` WHERE ResId='$q'";
@@ -174,53 +173,64 @@ WHERE ResAcademicYear='$year' And ResStandard='$standard' And ResExamName='$exam
             $subName = $row111['ResSubName'];
             $subTotal = $row111['ResTotalMarks'];
             $subObtain = $row111['ResMarksObtained'];
+            $stustatus = $row111['ResStatus'];
+
+            if ($stustatus == "FAIL") {
+                $resultStatus = false;
+            }
 
 
             // for ($iii = 0; $iii < 6; $iii++) {
-            $resultpage .= '<tr style="border:0.1mm solid black" >';
-            $resultpage .= '<td scope="col"  style="width: 350px;font-size: 11pt;border:0.1mm solid black" >' . $subName . '</td>';
-            $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;border:0.1mm solid black" >' . $subTotal . '</td>';
-            $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;border:0.1mm solid black" >' . $subObtain . '</td>';
-            $resultpage .= '</tr>';
+                $resultpage .= '<tr style="border:0.1mm solid black" >';
+                $resultpage .= '<td scope="col"  style="height: ' . $rowwidthdynamic . 'px;padding-left:10px;width: 350px;font-size: 11pt;border:0.1mm solid black" >' . $subName . '</td>';
+                $resultpage .= '<td scope="col"  style="height: ' . $rowwidthdynamic . 'px;padding-left:10px;width: 250px;font-size: 11pt;border:0.1mm solid black" >' . $subTotal . '</td>';
+                $resultpage .= '<td scope="col"  style="height: ' . $rowwidthdynamic . 'px;padding-left:10px;width: 250px;font-size: 11pt;border:0.1mm solid black" >' . $subObtain . '</td>';
+                $resultpage .= '</tr>';
             // }
         }
 
+        if (!$resultStatus) {
+            $Rank = "FAIL";
+        } else {
+            $Rank = "PASS";
+        }
+
         $resultpage .= '<tr style="border:0.1mm solid black" >';
-        $resultpage .= '<td scope="col"  style="width: 350px;font-size: 11pt;border:0.1mm solid black" >Total Marks</td>';
-        $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;border:0.1mm solid black" >' . $total . '</td>';
-        $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;border:0.1mm solid black" >' . $obtain . '</td>';
+        $resultpage .= '<td scope="col"  style="padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 350px;font-size: 11pt;border:0.1mm solid black" >Total Marks</td>';
+        $resultpage .= '<td scope="col"  style="padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 250px;font-size: 11pt;border:0.1mm solid black" >' . $total . '</td>';
+        $resultpage .= '<td scope="col"  style="padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 250px;font-size: 11pt;border:0.1mm solid black" >' . $obtain . '</td>';
         $resultpage .= '</tr>';
 
         $resultpage .= '<tr style="border:0.1mm solid black" >';
-        $resultpage .= '<td scope="col"  style="width: 350px;font-size: 11pt;border:0.1mm solid black" >Result And Rank</td>';
-        $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;border:0.1mm solid black" >' .  $Rank . '</td>';
-        $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;border:0.1mm solid black" ></td>';
+        $resultpage .= '<td scope="col"  style="padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 350px;font-size: 11pt;border:0.1mm solid black" >Result And Rank</td>';
+        $resultpage .= '<td scope="col"  style="padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 250px;font-size: 11pt;border:0.1mm solid black" >' .  $Rank . '</td>';
+        $resultpage .= '<td scope="col"  style="padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 250px;font-size: 11pt;border:0.1mm solid black" ></td>';
         $resultpage .= '</tr>';
 
         $resultpage .= '<tr style="border:0.1mm solid black" >';
-        $resultpage .= '<td scope="col"  style="width: 350px;font-size: 11pt;border:0.1mm solid black" >Signature of class Teacher</td>';
-        $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;" ></td>';
-        $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;" ></td>';
+        $resultpage .= '<td scope="col"  style="padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 350px;font-size: 11pt;border:0.1mm solid black" >Signature of class Teacher</td>';
+        $resultpage .= '<td scope="col"  style="padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 250px;font-size: 11pt;" ></td>';
+        $resultpage .= '<td scope="col"  style="padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 250px;font-size: 11pt;" ></td>';
         $resultpage .= '</tr>';
 
         $resultpage .= '<tr style="border:0.1mm solid black" >';
-        $resultpage .= '<td scope="col"  style="width: 350px;font-size: 11pt;border:0.1mm solid black" >Signature of Principal</td>';
-        $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;" ></td>';
-        $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;" ></td>';
+        $resultpage .= '<td scope="col"  style="padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 350px;font-size: 11pt;border:0.1mm solid black" >Signature of Principal</td>';
+        $resultpage .= '<td scope="col"  style="padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 250px;font-size: 11pt;" ></td>';
+        $resultpage .= '<td scope="col"  style="padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 250px;font-size: 11pt;" ></td>';
         $resultpage .= '</tr>';
 
         $resultpage .= '<tr style="border:0.1mm solid black" >';
-        $resultpage .= '<td scope="col"  style="width: 350px;font-size: 11pt;border:0.1mm solid black" >Signature of Parents</td>';
-        $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;" ></td>';
-        $resultpage .= '<td scope="col"  style="width: 250px;font-size: 11pt;" ></td>';
+        $resultpage .= '<td scope="col"  style="padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 350px;font-size: 11pt;border:0.1mm solid black" >Signature of Parents</td>';
+        $resultpage .= '<td scope="col"  style="padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 250px;font-size: 11pt;" ></td>';
+        $resultpage .= '<td scope="col"  style="padding-left:10px;height: ' . $rowwidthdynamic . 'px;width: 250px;font-size: 11pt;" ></td>';
         $resultpage .= '</tr>';
-        $resultpage .= '</tbody></table>';
+        $resultpage .= '</tbody></table></div>';
         $stres->AddPage('L', 'A4');
         $stres->WriteHTML($resultpage);
-        $stres->Line(7, 10, 7, 200);
-        $stres->Line(290, 10, 290, 200);
-        $stres->Line(7, 10, 290, 10);
-        $stres->Line(7, 200, 290, 200);
+        $stres->Line(7, 5, 7, 205);
+        $stres->Line(290, 5, 290, 205);
+        $stres->Line(7, 5, 290, 5);
+        $stres->Line(7, 205, 290, 205);
     }
 }
 

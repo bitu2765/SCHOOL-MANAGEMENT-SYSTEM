@@ -82,7 +82,7 @@ while ($eid = mysqli_fetch_array($empidresult)) {
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="100px">
+                    <img src="../logo.png" alt="logo" srcset="" height="213px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -330,25 +330,25 @@ while ($eid = mysqli_fetch_array($empidresult)) {
                                             <label for="mon" class="font-weight-bold">Total Day:</label>
                                         </div>
                                         <div class="col-md-1 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e7; ?> name="pano" id="estd">
+                                            <input class="form-control" type="number" value=<?php echo $e7; ?> name="pano" id="estd" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                         <div class="col-md-1 text-left">
                                             <label for="mon" class="font-weight-bold">Present :</label>
                                         </div>
                                         <div class="col-md-1 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e8; ?> name="pano" id="espd">
+                                            <input class="form-control" type="number" value=<?php echo $e8; ?> name="pano" id="espd" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                         <div class="col-md-1 text-left">
                                             <label for="mon" class="font-weight-bold">Leave :</label>
                                         </div>
                                         <div class="col-md-1 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e9; ?> name="pano" id="esld">
+                                            <input class="form-control" type="number" value=<?php echo $e9; ?> name="pano" id="esld" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                         <div class="col-md-1 text-left">
                                             <label for="mon" class="font-weight-bold">LWP:</label>
                                         </div>
                                         <div class="col-md-1 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e10; ?> name="pano" id="eslwp">
+                                            <input class="form-control" type="number" value=<?php echo $e10; ?> name="pano" id="eslwp" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -359,13 +359,13 @@ while ($eid = mysqli_fetch_array($empidresult)) {
                                             <label for="mon" class="font-weight-bold">Basic :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e11; ?> name="Emba" id="esba">
+                                            <input class="form-control" type="number" value=<?php echo $e11; ?> name="Emba" id="esba" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">P.F :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e22; ?> name="Empf" id="espf">
+                                            <input class="form-control" type="number" value=<?php echo $e22; ?> name="Empf" id="espf" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -376,13 +376,13 @@ while ($eid = mysqli_fetch_array($empidresult)) {
                                             <label for="mon" class="font-weight-bold">SPPay :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e16; ?> name="Emsp" id="essp">
+                                            <input class="form-control" type="number" value=<?php echo $e16; ?> name="Emsp" id="essp" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">DGPay :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e17; ?> name="Emdg" id="esdg">
+                                            <input class="form-control" type="number" value=<?php echo $e17; ?> name="Emdg" id="esdg" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -393,13 +393,13 @@ while ($eid = mysqli_fetch_array($empidresult)) {
                                             <label for="mon" class="font-weight-bold">Sal Arreas1 :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e19; ?> name="Emsa1" id="essa1">
+                                            <input class="form-control" type="number" value=<?php echo $e19; ?> name="Emsa1" id="essa1" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">Sal Arreas2 :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e20; ?> name="Emsa2" id="essa2">
+                                            <input class="form-control" type="number" value=<?php echo $e20; ?> name="Emsa2" id="essa2" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -411,13 +411,13 @@ while ($eid = mysqli_fetch_array($empidresult)) {
                                             <label for="mon" class="font-weight-bold">D.A :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e12; ?> name="Emda" id="esda">
+                                            <input class="form-control" type="number" value=<?php echo $e12; ?> name="Emda" id="esda"  oninput="validity.valid||(value='');" min="0" >
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">P.T :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e21; ?> name="Empt" id="espt">
+                                            <input class="form-control" type="number" value=<?php echo $e21; ?> name="Empt" id="espt"  oninput="validity.valid||(value='');" min="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -428,13 +428,13 @@ while ($eid = mysqli_fetch_array($empidresult)) {
                                             <label for="mon" class="font-weight-bold">T.A :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e15; ?> name="Emta" id="esta">
+                                            <input class="form-control" type="number" value=<?php echo $e15; ?> name="Emta" id="esta" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">I.T :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e23; ?> name="Emit" id="esit">
+                                            <input class="form-control" type="number" value=<?php echo $e23; ?> name="Emit" id="esit" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -445,13 +445,13 @@ while ($eid = mysqli_fetch_array($empidresult)) {
                                             <label for="mon" class="font-weight-bold">H.A :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e14; ?> name="Emha" id="esha">
+                                            <input class="form-control" type="number" value=<?php echo $e14; ?> name="Emha" id="esha" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                         <div class='col-md-2 text-left'>
                                             <label for='mon' class="font-weight-bold">CLA :</label>
                                         </div>
                                         <div class='col-md-2 text-center'>
-                                            <input class='form-control' type='number' value=<?php echo $e13; ?> name='Emcla' id='escla'>
+                                            <input class='form-control' type='number' value=<?php echo $e13; ?> name='Emcla' id='escla' oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -462,13 +462,13 @@ while ($eid = mysqli_fetch_array($empidresult)) {
                                             <label for="mon" class="font-weight-bold">M.A :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e18; ?> name="Emma" id="esma">
+                                            <input class="form-control" type="number" value=<?php echo $e18; ?> name="Emma" id="esma" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">Other :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" value=<?php echo $e24; ?> name="Emot" id="esot">
+                                            <input class="form-control" type="number" value=<?php echo $e24; ?> name="Emot" id="esot" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -479,13 +479,13 @@ while ($eid = mysqli_fetch_array($empidresult)) {
                                             <label for="mon" class="font-weight-bold">Total Earning :</label>
                                         </div>
                                         <div class="col-md-2 text-left">
-                                            <input class="form-control" type="number" value=<?php echo $e25; ?> name="Emte" id="este">
+                                            <input class="form-control" type="number" value=<?php echo $e25; ?> name="Emte" id="este" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">Total Deduction :</label>
                                         </div>
                                         <div class="col-md-2 text-left">
-                                            <input class="form-control" type="number" value=<?php echo $e26; ?> name="Emtde" id="estde">
+                                            <input class="form-control" type="number" value=<?php echo $e26; ?> name="Emtde" id="estde" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                     </div>
                                     <br>
@@ -496,7 +496,7 @@ while ($eid = mysqli_fetch_array($empidresult)) {
                                             <label for="mon" class="font-weight-bold">Net Payable :</label>
                                         </div>
                                         <div class="col-md-2 text-left">
-                                            <input class="form-control" type="number" value=<?php echo $e27; ?> name="Emnp" id="esnp">
+                                            <input class="form-control" type="number" value=<?php echo $e27; ?> name="Emnp" id="esnp" oninput="validity.valid||(value='');"  min="0" >
                                         </div>
                                     </div>
                                     <br>

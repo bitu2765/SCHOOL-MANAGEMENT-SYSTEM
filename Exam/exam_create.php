@@ -10,8 +10,8 @@ include 'connection.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/app.css">
-     <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <title>Create Exam</title>
 </head>
@@ -34,8 +34,10 @@ include 'connection.php';
                             <i class="align-middle"></i> <span class="align-middle">Employee</span>
                         </a>
                         <ul id="emp" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../employee/Employee.php">Add</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../employee/employee-view.php">View</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../employee/Employee.php">Add</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link"
+                                    href="../employee/employee-view.php">View</a></li>
                         </ul>
                     </li>
 
@@ -44,10 +46,14 @@ include 'connection.php';
                             <i class="align-middle"></i> <span class="align-middle">Payroll</span>
                         </a>
                         <ul id="payr" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/addpayroll.php">Add Pay</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/viewpayroll.php">View Pay</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary Certificate</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/addpayroll.php">Add
+                                    Pay</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/viewpayroll.php">View
+                                    Pay</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary
+                                    Certificate</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month
+                                    Report</a></li>
                         </ul>
                     </li>
                     <li class="sidebar-header">
@@ -62,7 +68,8 @@ include 'connection.php';
                         </a>
                         <ul id="addstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
                             <li class="sidebar-item"><a class="sidebar-link" href="../student/Student.php">Add</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -72,7 +79,8 @@ include 'connection.php';
                         </a>
                         <ul id="attend" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
                             <li class="sidebar-item"><a class="sidebar-link" href="../attendance/index.php">Add</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/showAtd.php">View</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/showAtd.php">View</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -81,7 +89,8 @@ include 'connection.php';
                             <i class="align-middle"></i> <span class="align-middle">Fees</span>
                         </a>
                         <ul id="fee" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/feesset.php">Fees Setup</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/feesset.php">Fees Setup</a>
+                            </li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../fee/payment.php">Fees Pay</a></li>
                         </ul>
                     </li>
@@ -91,8 +100,10 @@ include 'connection.php';
                             <i class="align-middle"></i> <span class="align-middle">Promote Student </span>
                         </a>
                         <ul id="pstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add Academic</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add
+                                    Academic</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote
+                                    Student</a></li>
                         </ul>
                     </li>
                     <li class="sidebar-header">
@@ -115,7 +126,8 @@ include 'connection.php';
                             <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
                         </a>
                         <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/exam_create.php">Create
+                            <li class="sidebar-item active"><a class="sidebar-link"
+                                    href="../Exam/exam_create.php">Create
                                     Exam</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a>
                             </li>
@@ -131,7 +143,7 @@ include 'connection.php';
                             </li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
                             </li>
-                            
+
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
                                     Result</a>
                             </li>
@@ -147,9 +159,10 @@ include 'connection.php';
                         <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
                                     Table</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View
+                                    Time
                                     Table</a></li>
-                         
+
 
                         </ul>
                     </li>
@@ -212,20 +225,22 @@ include 'connection.php';
                                             }
                                         }
                                         ?>
-                                        <form name="examForm" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+                                        <form name="examForm" action="<?php $_SERVER['PHP_SELF']; ?>" method="post"
+                                            onsubmit="return validateData()">
                                             <div class="container text-left" style="margin-left: 30px;">
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Academic Year</div>
                                                     <div class="col-7">
-                                                        <select name="year" id="Selstd" required="" class="form-control">
+                                                        <select name="year" id="Selstd" required=""
+                                                            class="form-control">
                                                             <option value="">--Select Academic Year --</option>
                                                             <!-- Fetching From Listmaster -->
                                                             <?php $s2 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('AcadmicYear');";
                                                             $results2 = $conn->query($s2);
                                                             if ($results2->num_rows > 0) {
                                                                 while ($row = $results2->fetch_assoc()) { ?>
-                                                                    <option value="<?php echo $row['Value']; ?>">
-                                                                        <?php echo $row['Value']; ?></option>
+                                                            <option value="<?php echo $row['Value']; ?>">
+                                                                <?php echo $row['Value']; ?></option>
                                                             <?php }
                                                             } ?>
                                                         </select>
@@ -234,15 +249,16 @@ include 'connection.php';
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Standard</div>
                                                     <div class="col-7">
-                                                        <select name="std" id="Selstd" required="" class="form-control" onchange="my_fun(this.value)">
+                                                        <select name="std" id="Selstd" required="" class="form-control"
+                                                            onchange="my_fun(this.value)">
                                                             <!-- Fetching From Listmaster -->
                                                             <option value="">--Select Standard--</option>
                                                             <?php $s1 = "SELECT `Value` FROM listmaster WHERE Parameter IN  ('Standard');";
                                                             $results1 = $conn->query($s1);
                                                             if ($results1->num_rows > 0) {
                                                                 while ($row = $results1->fetch_assoc()) { ?>
-                                                                    <option value="<?php echo $row['Value']; ?>">
-                                                                        <?php echo $row['Value']; ?></option>
+                                                            <option value="<?php echo $row['Value']; ?>">
+                                                                <?php echo $row['Value']; ?></option>
                                                             <?php }
                                                             } ?>
                                                         </select>
@@ -251,7 +267,8 @@ include 'connection.php';
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Subject Name</div>
                                                     <div class="col-7">
-                                                        <select name="sub[]" class="form-control" multiple id="poll" required>
+                                                        <select name="sub[]" class="form-control" multiple id="poll"
+                                                            required>
                                                             <!-- code on helper.php -->
                                                             <option value="">Select Subject</option>
                                                         </select>
@@ -260,39 +277,45 @@ include 'connection.php';
 
                                                 <!-- Fetching From subject using Std code on helper.php -->
                                                 <script>
-                                                    function my_fun(str) {
+                                                function my_fun(str) {
 
-                                                        if (window.XMLHttpRequest) {
-                                                            xmlhttp = new XMLHttpRequest();
-                                                        } else {
-                                                            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                                                        }
-
-                                                        xmlhttp.onreadystatechange = function() {
-                                                            if (this.readyState == 4 && this.status == 200) {
-                                                                document.getElementById('poll').innerHTML = this.responseText;
-                                                            }
-                                                        }
-                                                        xmlhttp.open("GET", "helper.php?value=" + str, true);
-                                                        xmlhttp.send();
+                                                    if (window.XMLHttpRequest) {
+                                                        xmlhttp = new XMLHttpRequest();
+                                                    } else {
+                                                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                                                     }
+
+                                                    xmlhttp.onreadystatechange = function() {
+                                                        if (this.readyState == 4 && this.status == 200) {
+                                                            document.getElementById('poll').innerHTML = this
+                                                                .responseText;
+                                                        }
+                                                    }
+                                                    xmlhttp.open("GET", "helper.php?value=" + str, true);
+                                                    xmlhttp.send();
+                                                }
                                                 </script>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Exam Name</div>
                                                     <div class="col-7">
-                                                        <input type="text" required="" name="type" placeholder="Enter Exam Name" class="form-control">
+                                                        <input type="text" required="" name="type"
+                                                            placeholder="Enter Exam Name" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Total Marks</div>
                                                     <div class="col-7">
-                                                        <input type="number" name="totalmarks" required="" class="form-control" id="totalmarks" placeholder="total marks" min="0" max="100">
+                                                        <input type="number" name="totalmarks" required=""
+                                                            class="form-control" id="Totalmarks"
+                                                            placeholder="total marks" min="0" max="101">
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Passing Marks</div>
                                                     <div class="col-7">
-                                                        <input type="number" name="passingmarks" required="" class="form-control" id="passingmarks" placeholder="Passing marks" min="0" max="100">
+                                                        <input type="number" name="passingmarks" required=""
+                                                            class="form-control" id="Passingmarks"
+                                                            placeholder="Passing marks" min="0" max="100">
                                                     </div>
                                                 </div>
 
@@ -300,7 +323,8 @@ include 'connection.php';
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-2"></div>
                                                     <div class="col-4">
-                                                        <input type="submit" name="create" class="btn btn-success" value="CREATE">
+                                                        <input type="submit" name="create" class="btn btn-success"
+                                                            value="CREATE">
                                                     </div>
                                                     <div class="col-4">
                                                         <input type="reset" class="btn btn-outline-dark" value="CLEAR">
@@ -308,8 +332,32 @@ include 'connection.php';
                                                 </div>
                                         </form>
                                     </div>
+
                                 </div>
                             </div>
+                            <script>
+                            function validateData() {
+
+                                var totalMarks = document.getElementById("Totalmarks").value;
+                                var passingMarks = document.getElementById("Passingmarks").value;
+
+                                console.log(Number(totalMarks));
+                                console.log(Number(passingMarks));
+                               
+                                if ((Number(passingMarks)) > (Number(totalMarks))) {
+                                    console.log("yesss");
+
+                                    alert("passing marks must be less than or equal to Total marks");
+                                    return false;
+    
+                                }
+                                else{
+                                    console.log("NOOOO");
+
+                                    return true;
+                                }
+                            }
+                            </script>
                         </div>
                     </div>
                 </div>

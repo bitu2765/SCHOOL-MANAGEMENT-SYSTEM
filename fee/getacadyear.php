@@ -1,5 +1,5 @@
 <?php
-include("connectdb.php");
+// include("connectdb.php");
 
 $empidquery = "SELECT DISTINCT FeesAcademicYear FROM tbfeesmaster;";
 $empidresult = mysqli_query($con, $empidquery);

@@ -244,7 +244,7 @@
                                                            $results2 = $conn->query($m1);
                                                             if ($results2->num_rows > 0) {
                                                              while($row = $results2->fetch_assoc()){ ?>
-                                                        <input type="text" name="mark_year" required="" id=""
+                                                        <input readonly type="text" name="mark_year" required="" id=""
                                                             class="form-control"
                                                             value="<?php echo $row['ResAcademicYear'];?>">
                                                         <?php }}?>
@@ -257,7 +257,7 @@
                                                             $results1 = $conn->query($m2);
                                                             if ($results1->num_rows > 0) {
                                                                 while($row = $results1->fetch_assoc()){ ?>
-                                                        <input type="text" name="mark_Exam" id="" required=""
+                                                        <input readonly type="text" name="mark_Exam" id="" required=""
                                                             class="form-control"
                                                             value="<?php echo $row['ResExamName'];?>">
                                                         <?php }}?>
@@ -270,7 +270,7 @@
                                                         $results1 = $conn->query($m3);
                                                         if ($results1->num_rows > 0) {
                                                             while($row = $results1->fetch_assoc()){ ?>
-                                                        <input type="text" name="mark_std" id="" required=""
+                                                        <input readonly type="text" name="mark_std" id="" required=""
                                                             class="form-control"
                                                             value="<?php echo $row['ResStandard'];?>">
                                                         <?php }}?>
@@ -284,7 +284,7 @@
                                                                 $result3 = $conn->query($m4);
                                                                 if ($result3->num_rows > 0) {
                                                                     while($row = $result3->fetch_assoc()){ ?>
-                                                        <input type="text" id="mark_Div" class="form-control"
+                                                        <input readonly type="text" id="mark_Div" class="form-control"
                                                             name="mark_div" value="<?php echo $row['ResDivision'];?>">
                                                         <?php }}?>
 
@@ -297,7 +297,7 @@
                                                                 $result3 = $conn->query($m4);
                                                                 if ($result3->num_rows > 0) {
                                                                     while($row = $result3->fetch_assoc()){ ?>
-                                                        <input type="text" id="" class="form-control" name="mark_rollno"
+                                                        <input readonly type="text" id="" class="form-control" name="mark_rollno"
                                                             value="<?php echo $row['ResRollNo'];?>">
                                                         <?php }}?>
 
@@ -310,7 +310,7 @@
                                                                 $result3 = $conn->query($m4);
                                                                 if ($result3->num_rows > 0) {
                                                                     while($row = $result3->fetch_assoc()){ ?>
-                                                        <input type="text" id="" class="form-control" name="mark_GR"
+                                                        <input readonly type="text" id="" class="form-control" name="mark_GR"
                                                             value="<?php echo $row['ResGRNO'];?>">
                                                         <?php }}?>
 
@@ -323,7 +323,7 @@
                                                                 $result3 = $conn->query($m4);
                                                                 if ($result3->num_rows > 0) {
                                                                     while($row = $result3->fetch_assoc()){ ?>
-                                                        <input type="text" id="" class="form-control" name="mark_sub"
+                                                        <input readonly type="text" id="" class="form-control" name="mark_sub"
                                                             value="<?php echo $row ['ResSubName'];?>">
                                                         <?php }}?>
 
@@ -336,7 +336,7 @@
                                                                 $result3 = $conn->query($m4);
                                                                 if ($result3->num_rows > 0) {
                                                                     while($row = $result3->fetch_assoc()){ ?>
-                                                        <input type="text" id="" class="form-control" name="mark_stu"
+                                                        <input readonly type="text" id="" class="form-control" name="mark_stu"
                                                             value="<?php echo $row['ResStudentName'];?>">
                                                         <?php }}?>
 
@@ -349,7 +349,7 @@
                                                                 $result3 = $conn->query($m4);
                                                                 if ($result3->num_rows > 0) {
                                                                     while($row = $result3->fetch_assoc()){ ?>
-                                                        <input type="text" id="" class="form-control" name="mark_tm"
+                                                        <input readonly type="text" id="" class="form-control" name="mark_tm"
                                                             value="<?php echo $row['ResTotalMarks'];?>">
                                                         <?php }}?>
 
@@ -362,7 +362,7 @@
                                                                 $result3 = $conn->query($m4);
                                                                 if ($result3->num_rows > 0) {
                                                                     while($row = $result3->fetch_assoc()){ ?>
-                                                        <input type="text" id="" class="form-control" name="mark_pm"
+                                                        <input readonly type="text" id="" class="form-control" name="mark_pm"
                                                             value="<?php echo $row['ResPassingMarks'];?>">
                                                         <?php }}?>
 
@@ -371,14 +371,14 @@
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Obtained Marks</div>
                                                     <div class="col-7">
-                                                        <?php  $m4="SELECT DISTINCT`ResMarksObtained` FROM `resultmaster` WHERE `Resid`= '".$_GET["rid"]."'";
+                                                        <?php  $m4="SELECT DISTINCT`ResMarksObtained`,ResTotalMarks FROM `resultmaster` WHERE `Resid`= '".$_GET["rid"]."'";
                                                                 $result3 = $conn->query($m4);
                                                                 if ($result3->num_rows > 0) {
                                                                     while($row = $result3->fetch_assoc()){ ?>
-                                                        <input type="text" class="form-control" name="mark_om"
-                                                            value="<?php echo $row['ResMarksObtained'];?>">
+                                                        <input type="number" required=""  class="form-control" name="mark_om"
+                                                            value="<?php echo $row['ResMarksObtained'];?>" min="0" max="<?php echo $row['ResTotalMarks'];?>">
                                                         <?php }}?>
-
+                                                       
                                                     </div>
                                                 </div>
                                                 <br>

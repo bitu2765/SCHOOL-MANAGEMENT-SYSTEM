@@ -175,11 +175,12 @@ include("../connection_to_db.php");
             </nav>
 
 
-            <span id="res"></span>
             <main class="content">
+                <span id="res"></span>
+
                 <div class="container-fluid p-0">
 
-                    <h1 class="h3 mb-3" style="font-weight: bold;">Add Employee</h1>
+                    <h1 class="h3 mb-3" style="font-weight: bold;">Promote Student</h1>
 
 
                 </div>

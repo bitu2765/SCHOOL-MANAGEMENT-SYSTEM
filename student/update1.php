@@ -4,40 +4,145 @@ include("connectdb.php");
 
 
 
-$StuGRNo = $_GET['StuGRNo'];
-$result = mysqli_query($conn, "SELECT * FROM studentmaster WHERE StuGRNo=$StuGRNo");
-while ($res = mysqli_fetch_array($result)) {
-	$Stuprefix = $res['Stuprefix'];
-	$StuStudentName = strtoupper($res['StuStudentName']);
-	$Stumiddle = strtoupper($res['Stumiddle']);
-	$StuLastname = strtoupper($res['StuLastname']);
-	$StuAcdemicyear = $res['StuAcdemicyear'];
-	$StuStandard = $res['StuStandard'];
-	$StuDiv = $res['StuDiv'];
+
+if (isset($_GET['StuGRNo'])) {
+	$StuGRNo = $_GET['StuGRNo'];
+
+	$result = mysqli_query($conn, "SELECT * FROM studentmaster WHERE StuGRNo=$StuGRNo");
+	while ($res = mysqli_fetch_array($result)) {
+		$Stuprefix = $res['Stuprefix'];
+		$StuStudentName = strtoupper($res['StuStudentName']);
+		$Stumiddle = strtoupper($res['Stumiddle']);
+		$StuLastname = strtoupper($res['StuLastname']);
+		$StuAcdemicyear = $res['StuAcdemicyear'];
+		$StuStandard = $res['StuStandard'];
+		$StuDiv = $res['StuDiv'];
 
 
-	$StuDOB = $res['StuDOB'];
-	$StuDateOfAdmission = $res['StuDateOfAdmission'];
-	$StuParentMobileNumber1 = $res['StuParentMobileNumber1'];
-	$StuParentMobileNumber2 = $res['StuParentMobileNumber2'];
-	$StuHouseNo = $res['StuHouseNo'];
-	$StuStreetName = strtoupper($res['StuStreetName']);
-	$StuLocation = strtoupper($res['StuLocation']);
-	$StuCity = strtoupper($res['StuCity']);
-	$StuDist = strtoupper($res['StuDist']);
-	$StuBirthPlace = strtoupper($res['StuBirthPlace']);
-	$StuAadharNo = $res['StuAadharNo'] ?? "";
-	$StuCategory = $res['StuCategory'];
-	$StuCaste = strtoupper($res['StuCaste']);
-	$StuLastschoolname = strtoupper($res['StuLastschoolname']);
-	$StuBankname = strtoupper($res['StuBankname']);
-	$StuBankACno = $res['StuBankACno'] ?? "";
-	$StuBankIFSCcode = $res['StuBankIFSCcode'];
-	$StuStatus = $res['StuStatus'];
-	$StuStatusChangedDate = $res['StuStatusChangedDate'];
+		$StuDOB = $res['StuDOB'];
+		$StuDateOfAdmission = $res['StuDateOfAdmission'];
+		$StuParentMobileNumber1 = $res['StuParentMobileNumber1'];
+		$StuParentMobileNumber2 = $res['StuParentMobileNumber2'];
+		$StuHouseNo = $res['StuHouseNo'];
+		$StuStreetName = strtoupper($res['StuStreetName']);
+		$StuLocation = strtoupper($res['StuLocation']);
+		$StuCity = strtoupper($res['StuCity']);
+		$StuDist = strtoupper($res['StuDist']);
+		$StuBirthPlace = strtoupper($res['StuBirthPlace']);
+		$StuAadharNo = $res['StuAadharNo'] ?? "";
+		$StuCategory = $res['StuCategory'];
+		$StuCaste = strtoupper($res['StuCaste']);
+		$StuLastschoolname = strtoupper($res['StuLastschoolname']);
+		$StuBankname = strtoupper($res['StuBankname']);
+		$StuBankACno = $res['StuBankACno'] ?? "";
+		$StuBankIFSCcode = $res['StuBankIFSCcode'];
+		$StuStatus = $res['StuStatus'];
+		$StuStatusChangedDate = $res['StuStatusChangedDate'];
+	}
+} else if (isset($_POST['test_update'])) {
+	$StuGRNo = $_POST['StuGRNo'];
+	$Stuprefix = $_POST['Stuprefix'];
+	$StuStudentName = strtoupper($_POST['StuStudentName']);
+	$Stumiddle = strtoupper($_POST['Stumiddle']);
+	$StuLastname = strtoupper($_POST['StuLastname']);
+	$StuAcdemicyear = $_POST['StuAcdemicyear'];
+	$StuStandard = $_POST['StuStandard'];
+	$StuDiv = $_POST['StuDiv'];
+	$StuDOB = $_POST['StuDOB'];
+	$StuDateOfAdmission = $_POST['StuDateOfAdmission'];
+	$StuParentMobileNumber1 = $_POST['StuParentMobileNumber1'];
+	$StuParentMobileNumber2 = $_POST['StuParentMobileNumber2'];
+	$StuHouseNo = $_POST['StuHouseNo'];
+	$StuStreetName = strtoupper($_POST['StuStreetName']);
+	$StuLocation = strtoupper($_POST['StuLocation']);
+	$StuCity = strtoupper($_POST['StuCity']);
+	$StuDist = strtoupper($_POST['StuDist']);
+	$StuBirthPlace = strtoupper($_POST['StuBirthPlace']);
+	$StuAadharNo = $_POST['StuAadharNo'];
+	$StuCategory = $_POST['StuCategory'];
+	$StuCaste = strtoupper($_POST['StuCaste']);
+	$StuLastschoolname = strtoupper($_POST['StuLastschoolname']);
+	$StuBankname = strtoupper($_POST['StuBankname']);
+	$StuBankACno = $_POST['StuBankACno'] ?? "";
+	$StuBankIFSCcode = $_POST['StuBankIFSCcode'];
+	$StuStatus = $_POST['StuStatus'];
+	$StuStatusChangedDate = $_POST['StuStatusChangedDate'];
+	$upfile1 = true;
+	$upfile2 = true;
+	$upfile3 = true;
+	$upfile4 = true;
+
+	if (!isset($_FILES['file']) || $_FILES['file']['error'] == UPLOAD_ERR_NO_FILE) {
+		$upfile1 = false;
+	}
+	if (!isset($_FILES['filename']) || $_FILES['filename']['error'] == UPLOAD_ERR_NO_FILE) {
+		$upfile2 = false;
+	}
+	if (!isset($_FILES['uploadfile']) || $_FILES['uploadfile']['error'] == UPLOAD_ERR_NO_FILE) {
+		$upfile3 = false;
+	}
+	if (!isset($_FILES['uploadfilename']) || $_FILES['uploadfilename']['error'] == UPLOAD_ERR_NO_FILE) {
+		$upfile4 = false;
+	}
+
+
+	$info = pathinfo($_FILES['file']['name']);
+	$ext = $info['extension']; // get the extension of the file
+	$newname = "$StuGRNo." . $ext;
+	$name1 = "1_." . $newname;
+
+	$target = "upload/" . $name1;
+	move_uploaded_file($_FILES['file']['tmp_name'], $target);
+
+	$info = pathinfo($_FILES['filename']['name']);
+	$ext = $info['extension']; // get the extension of the file
+	$newname = "$StuGRNo." . $ext;
+	$name2 = "2_." . $newname;
+
+	$target = "upload/" . $name2;
+	move_uploaded_file($_FILES['filename']['tmp_name'], $target);
+
+	$info = pathinfo($_FILES['uploadfile']['name']);
+	$ext = $info['extension']; // get the extension of the file
+	$newname = "$StuGRNo." . $ext;
+	$name3 = "3_." . $newname;
+
+	$target = "upload/" . $name3;
+	move_uploaded_file($_FILES['uploadfile']['tmp_name'], $target);
+
+	$info = pathinfo($_FILES['uploadfilename']['name']);
+	$ext = $info['extension']; // get the extension of the file
+	$newname = "$StuGRNo." . $ext;
+	$name4 = "4_." . $newname;
+
+	$target = "upload/" . $name4;
+	move_uploaded_file($_FILES['uploadfilename']['tmp_name'], $target);
+
+
+
+	$message = "";
+
+	$queryupdate = "UPDATE studentmaster SET Stuprefix='$Stuprefix',StuStudentName='$StuStudentName',Stumiddle='$Stumiddle',StuLastname='$StuLastname',StuAcdemicyear='$StuAcdemicyear',StuStandard='$StuStandard',StuDiv='$StuDiv',StuDOB='$StuDOB',StuDateOfAdmission='$StuDateOfAdmission',StuParentMobileNumber1='$StuParentMobileNumber1',StuParentMobileNumber2='$StuParentMobileNumber2',StuHouseNo='$StuHouseNo',StuStreetName='$StuStreetName',StuLocation='$StuLocation',StuCity='$StuCity',StuDist='$StuDist',StuBirthPlace='$StuBirthPlace',StuAadharNo='$StuAadharNo',StuCategory='$StuCategory',StuCaste='$StuCaste',StuLastschoolname='$StuLastschoolname',StuBankname='$StuBankname',StuBankACno='$StuBankACno',StuBankIFSCcode='$StuBankIFSCcode',StuStatus='$StuStatus',StuStatusChangedDate='$StuStatusChangedDate'";
+	if ($upfile1) {
+		$queryupdate .= ",file='$name1'";
+	}
+	if ($upfile2) {
+		$queryupdate .= ",filename='$name2'";
+	}
+	if ($upfile3) {
+		$queryupdate .= ",uploadfile='$name3'";
+	}
+	if ($upfile4) {
+		$queryupdate .= ",uploadfilename='$name4'";
+	}
+	$queryupdate .= "WHERE StuGRNo=$StuGRNo";
+
+	if ($conn->query($queryupdate)) {
+		$message =  "<div class='alert alert-success alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Student</strong>  Added Successfully!</div></div>";
+	} else {
+		$message = "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Student</strong> Not Added Successfully!</div></div>";
+	}
 }
-
-
 
 ?>
 <!DOCTYPE html>
@@ -176,7 +281,7 @@ while ($res = mysqli_fetch_array($result)) {
 							</li>
 							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
 							</li>
-							
+
 							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
 							</li>
 							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate MarkSheet</a>
@@ -212,6 +317,10 @@ while ($res = mysqli_fetch_array($result)) {
 			</nav>
 
 			<main class="content">
+
+				<?php
+				echo $message;
+				?>
 				<div class="container-fluid p-0">
 
 					<h1 class="h3 mb-3" style="font-weight: bold;">Update Student</h1>
@@ -225,13 +334,14 @@ while ($res = mysqli_fetch_array($result)) {
 
 						</div>
 						<div class="card-body">
-							<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET" enctype="multipart/form-data" onsubmit="return validation()">
+							<form action="./update1.php" method="POST" enctype="multipart/form-data" onsubmit="return validation()">
 
 
 								<div class="mb-3 row">
+									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">GR No</label>
 
 									<div class="col-sm-3">
-										<input type="hidden" class="form-control" name="StuGRNo" placeholder="" value="<?php echo $_GET['StuGRNo']; ?>" required>
+										<input type="number" class="form-control" name="StuGRNo" placeholder="" value="<?php echo $StuGRNo; ?>" required readonly>
 									</div>
 								</div>
 
@@ -239,7 +349,7 @@ while ($res = mysqli_fetch_array($result)) {
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Name</label>
 									<div class="col-sm-1">
 										<select class="form-control" value="<?php echo $Stuprefix ?>" name="Stuprefix">
-											
+
 											<option <?php
 													if ($Stuprefix == 'MR.') {
 														echo "selected";
@@ -268,18 +378,17 @@ while ($res = mysqli_fetch_array($result)) {
 									<div class="col-sm-2">
 										<select name="StuAcdemicyear" class="form-control" value="<?php echo "$StuAcdemicyear" ?>">
 											<option value="">--Select Academic Year--</option>
-											<option value="2020-21" <?php
-																	if ($StuAcdemicyear == '2020-21') {
-																		echo "selected";
-																	}
-																	?>>2020-21</option>
-											<option <?php
-													if ($StuAcdemicyear == '2021-22') {
-														echo "selected";
-													}
-													?>>2021-22</option>
-
-											</option>
+											<?php
+											$empidquery = "SELECT DISTINCT Value FROM listmaster WHERE Parameter='AcadmicYear';";
+											$empidresult = mysqli_query($conn, $empidquery);
+											while ($eid = mysqli_fetch_array($empidresult)) {
+												if ($eid["Value"] == $StuAcdemicyear) {
+													echo "<option selected value=" . $eid["Value"] . "> " . $eid["Value"] . "</option>";
+												} else {
+													echo "<option value=" . $eid["Value"] . "> " . $eid["Value"] . "</option>";
+												}
+											}
+											?>
 										</select>
 									</div>
 								</div>
@@ -290,27 +399,19 @@ while ($res = mysqli_fetch_array($result)) {
 
 										<select class="form-control" name="StuStandard" value="<?php echo "$StuStandard" ?>">
 
+											<option value="">-- Select Standard --</option>
 
-											<option value="9" <?php
-																if ($StuStandard == '9') {
-																	echo "selected";
-																}
-																?>>9</option>
-											<option <?php
-													if ($StuStandard == '10') {
-														echo "selected";
-													}
-													?>>10</option>
-											<option <?php
-													if ($StuStandard == '11') {
-														echo "selected";
-													}
-													?>>11</option>
-											<option <?php
-													if ($StuStandard == '12') {
-														echo "selected";
-													}
-													?>>12</option>
+											<?php
+											$empidquery = "SELECT DISTINCT Value FROM listmaster WHERE Parameter='Standard';";
+											$empidresult = mysqli_query($conn, $empidquery);
+											while ($eid = mysqli_fetch_array($empidresult)) {
+												if ($eid["Value"] == $StuStandard) {
+													echo "<option selected value=" . $eid["Value"] . "> " . $eid["Value"] . "</option>";
+												} else {
+													echo "<option value=" . $eid["Value"] . "> " . $eid["Value"] . "</option>";
+												}
+											}
+											?>
 
 										</select>
 
@@ -360,7 +461,7 @@ while ($res = mysqli_fetch_array($result)) {
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Date Of Birth</label>
 									<div class="col-sm-4">
 
-										<input type="date" class="form-control" name="StuDOB" value="<?php echo "$StuDOB" ?>" >
+										<input type="date" class="form-control" name="StuDOB" value="<?php echo "$StuDOB" ?>">
 
 									</div>
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Admission Date</label>
@@ -374,11 +475,11 @@ while ($res = mysqli_fetch_array($result)) {
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Mobile No</label>
 									<div class="col-sm-4">
-										<input type="number" class="form-control" name="StuParentMobileNumber1" value="<?php echo "$StuParentMobileNumber1" ?>" placeholder="primary No" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10"  id="mobile1" autocomplete="off">
+										<input type="number" class="form-control" name="StuParentMobileNumber1" value="<?php echo "$StuParentMobileNumber1" ?>" placeholder="primary No" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" id="mobile1" autocomplete="off">
 										<span id="mobile" class="text-danger font-weight-bold"></span>
 									</div>
 									<div class="col-sm-4">
-										<input type="number" class="form-control" name="StuParentMobileNumber2" value="<?php echo "$StuParentMobileNumber2" ?>" id="mobile2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10"  placeholder="Secondary No">
+										<input type="number" class="form-control" name="StuParentMobileNumber2" value="<?php echo "$StuParentMobileNumber2" ?>" id="mobile2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" placeholder="Secondary No">
 										<span id="mo" class="text-danger font-weight-bold"></span>
 									</div>
 								</div>
@@ -414,7 +515,7 @@ while ($res = mysqli_fetch_array($result)) {
 								<div class="mb-3 row">
 									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">AadharNo</label>
 									<div class="col-sm-4">
-										<input type="number" class="form-control" name="StuAadharNo" placeholder="" value="<?php echo "$StuAadharNo" ?>" id="aadharNo" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="12"  >
+										<input type="number" class="form-control" name="StuAadharNo" placeholder="" value="<?php echo "$StuAadharNo" ?>" id="aadharNo" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="12">
 										<span id="Aadhar" class="text-danger font-weight-bold"></span>
 									</div>
 								</div>
@@ -457,7 +558,7 @@ while ($res = mysqli_fetch_array($result)) {
 										<input type="number" class="form-control" name="StuBankACno" placeholder="A/c No" value="<?php echo "$StuBankACno" ?>">
 									</div>
 									<div class="col-sm-3">
-										<input type="text" class="form-control" name="StuBankIFSCcode" placeholder="IFSC Code" value="<?php echo "$StuBankIFSCcode" ?>" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="11" >
+										<input type="text" class="form-control" name="StuBankIFSCcode" placeholder="IFSC Code" value="<?php echo "$StuBankIFSCcode" ?>" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="11">
 									</div>
 								</div>
 								<div class="mb-3 row">
@@ -492,7 +593,44 @@ while ($res = mysqli_fetch_array($result)) {
 									<div class="col-sm-4">
 
 
-										<input type="date" class="form-control" name="StuStatusChangedDate" value="<?php echo "$StuStatusChangedDate" ?>" require >
+										<input type="date" class="form-control" name="StuStatusChangedDate" value="<?php echo "$StuStatusChangedDate" ?>" require>
+
+
+									</div>
+								</div>
+								<div class="mb-3 row">
+									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Upload Document (Last Standard Marksheet)</label>
+									<div class="col-sm-5">
+										<input type="file" name="file" class="form-control">
+
+
+									</div>
+
+
+								</div>
+
+								<div class="mb-3 row">
+									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Upload Document (LC)</label>
+									<div class="col-sm-5">
+										<input type="file" name="filename" class="form-control">
+
+
+									</div>
+
+								</div>
+
+								<div class="mb-3 row">
+									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Upload Document (Aadhar Card)</label>
+									<div class="col-sm-5">
+										<input type="file" name="uploadfile" class="form-control">
+
+
+									</div>
+								</div>
+								<div class="mb-3 row">
+									<label class="col-form-label col-sm-2 text-sm-right" style="font-weight: bold;">Upload Document (Bank PassBook)</label>
+									<div class="col-sm-5">
+										<input type="file" name="uploadfilename" class="form-control">
 
 
 									</div>
@@ -545,7 +683,7 @@ while ($res = mysqli_fetch_array($result)) {
 
 			if (mobile1.length != 10) {
 				document.getElementById('mobile').innerHTML = "**number must be 10 digit";
-				answer =  false;
+				answer = false;
 			}
 
 			//return true;
@@ -567,48 +705,3 @@ while ($res = mysqli_fetch_array($result)) {
 </body>
 
 </html>
-<?php
-$conn = mysqli_connect("localhost", "root", "", "schoolmanage");
-if (isset($_POST['test_update'])) {
-	$StuGRNo = $_POST['StuGRNo'];
-	$Stuprefix = $_POST['Stuprefix'];
-	$StuStudentName = strtoupper($_POST['StuStudentName']);
-	$Stumiddle = strtoupper($_POST['Stumiddle']);
-	$StuLastname = strtoupper($_POST['StuLastname']);
-	$StuAcdemicyear = $_POST['StuAcdemicyear'];
-	$StuStandard = $_POST['StuStandard'];
-	$StuDiv = $_POST['StuDiv'];
-	$StuDOB = $_POST['StuDOB'];
-	$StuDateOfAdmission = $_POST['StuDateOfAdmission'];
-	$StuParentMobileNumber1 = $_POST['StuParentMobileNumber1'];
-	$StuParentMobileNumber2 = $_POST['StuParentMobileNumber2'];
-	$StuHouseNo = $_POST['StuHouseNo'];
-	$StuStreetName = strtoupper($_POST['StuStreetName']);
-	$StuLocation = strtoupper($_POST['StuLocation']);
-	$StuCity = strtoupper($_POST['StuCity']);
-	$StuDist = strtoupper($_POST['StuDist']);
-	$StuBirthPlace = strtoupper($_POST['StuBirthPlace']);
-	$StuAadharNo = $_POST['StuAadharNo'] ?? "";
-	$StuCategory = $_POST['StuCategory'];
-	$StuCaste = strtoupper($_POST['StuCaste']);
-	$StuLastschoolname = strtoupper($_POST['StuLastschoolname']);
-	$StuBankname = strtoupper($_POST['StuBankname']);
-	$StuBankACno = $_POST['StuBankACno'] ?? "";
-	$StuBankIFSCcode = $_POST['StuBankIFSCcode'];
-	$StuStatus = $_POST['StuStatus'];
-	$StuStatusChangedDate = $_POST['StuStatusChangedDate'];
-
-
-	$result = mysqli_query($conn, "UPDATE studentmaster SET Stuprefix='$Stuprefix',StuStudentName='$StuStudentName',Stumiddle='$Stumiddle',StuLastname='$StuLastname',StuAcdemicyear='$StuAcdemicyear',StuStandard='$StuStandard',StuDiv='$StuDiv',StuDOB='$StuDOB',StuDateOfAdmission='$StuDateOfAdmission',StuParentMobileNumber1='$StuParentMobileNumber1',StuParentMobileNumber2='$StuParentMobileNumber2',StuHouseNo='$StuHouseNo',StuStreetName='$StuStreetName',StuLocation='$StuLocation',StuCity='$StuCity',StuDist='$StuDist',StuBirthPlace='$StuBirthPlace',StuAadharNo='$StuAadharNo',StuCategory='$StuCategory',StuCaste='$StuCaste',StuLastschoolname='$StuLastschoolname',StuBankname='$StuBankname',StuBankACno='$StuBankACno',StuBankIFSCcode='$StuBankIFSCcode',StuStatus='$StuStatus',StuStatusChangedDate='$StuStatusChangedDate' WHERE StuGRNo=$StuGRNo");
-	if ($result) {
-		echo "Updated";
-?>
-		<META HTTP-EQUIV="Refresh" CONTENT="0; URL= ./student-view.php">
-<?php
-
-	} else {
-		echo "failed";
-	}
-}
-
-?>

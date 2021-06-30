@@ -237,7 +237,7 @@
                                                         $results1 = $conn->query($m3);
                                                         if ($results1->num_rows > 0) {
                                                             while($row = $results1->fetch_assoc()){ ?>
-                                                        <input type="text" name="sub_std" id="" required=""
+                                                        <input type="number" name="sub_std" id="" required=""
                                                             class="form-control"
                                                             value="<?php echo $row['SubStandard'];?>">
                                                         <?php }}?>
@@ -252,7 +252,7 @@
                                                                 if ($result3->num_rows > 0) {
                                                                     while($row = $result3->fetch_assoc()){ ?>
                                                         <input type="text" id="" class="form-control"
-                                                            name="sub_type" value="<?php echo $row['SubType'];?>">
+                                                            name="sub_type" required=""value="<?php echo $row['SubType'];?>">
                                                         <?php }}?>
 
                                                     </div>
@@ -264,7 +264,7 @@
                                                                 $result3 = $conn->query($m4);
                                                                 if ($result3->num_rows > 0) {
                                                                     while($row = $result3->fetch_assoc()){ ?>
-                                                        <input type="text" id="" class="form-control" name="sub_sub"
+                                                        <input type="text" id=""required="" class="form-control" name="sub_sub"
                                                             value="<?php echo $row ['SubName'];?>">
                                                         <?php }}?>
 

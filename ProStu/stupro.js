@@ -26,13 +26,13 @@
 //     // }
 // };
 
-document.getElementById("mose").onchange = function() {
+document.getElementById("mose").onchange = function () {
     var ay = document.getElementById("mose").value;
     if (ay == 0) {
         alert("Please Select Any Academic Year");
     } else {
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
+        xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("pstd").innerHTML = this.responseText;
             }
@@ -42,7 +42,7 @@ document.getElementById("mose").onchange = function() {
         xmlhttp.send("ay=" + ay);
     }
 }
-document.getElementById("pds").onclick = function() {
+document.getElementById("pds").onclick = function () {
     var cay = document.getElementById("mose").value;
     var st = document.getElementById("pstd").value;
     var nay = document.getElementById("nay").value;
@@ -56,7 +56,7 @@ document.getElementById("pds").onclick = function() {
         alert("Select Next Academic Year");
     } else {
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
+        xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("res").innerHTML = this.responseText;
             }
@@ -67,7 +67,7 @@ document.getElementById("pds").onclick = function() {
     }
 }
 
-document.getElementById("pstd").onchange = function() {
+document.getElementById("pstd").onchange = function () {
 
     var std = document.getElementById("pstd").value;
     if (std == "12") {
@@ -78,3 +78,4 @@ document.getElementById("pstd").onchange = function() {
         document.getElementById("nsem").value = Number(std) + 1;
     }
 }
+

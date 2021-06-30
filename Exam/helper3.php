@@ -16,9 +16,7 @@ while($row = $result->fetch_assoc()){ ?>
                                             <td> <a class="btn btn-success" 
                                                             href="_update_Sub.php?sid=<?php echo $row['Subid'];?>"
                                                             role="button">Edit</a>
-                                             <a class="btn btn-danger"  onclick='return checkdelete()'
-                                                            href="delete_sub.php?sid=<?php echo $row['Subid'];?>"
-                                                            role="button">Delete</a></td>
+                                             <a class="btn btn-danger"  href="delete_Sub.php?sid=<?php echo $row['Subid'];?>" onclick="return checkdelete();" role="button">Delete</a></td>
                                                 
                                            
                                         </tr>
@@ -29,8 +27,4 @@ while($row = $result->fetch_assoc()){ ?>
                                             </div>';
                                         }
                                                  ?> 
-                                                  <script>
-                                                 function checkdelete() {
-                                                     return confirm('Are you sure you want to delete this record!');
-                                                 }
-                                                 </script>
+                                                

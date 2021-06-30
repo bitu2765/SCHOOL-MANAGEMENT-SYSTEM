@@ -191,7 +191,7 @@ include("../connection_to_db.php");
                                             Academic Year :
                                         </div>
                                         <div class="col-md-3">
-                                            <input class="form-control" type="text" name="nsem" id="nsem" placeholder="Next Standard">
+                                            <input class="form-control" type="text" name="nsem" id="nsem" placeholder="Next Academic Year">
                                         </div>
                                     </div>
                                     <br>

@@ -94,7 +94,7 @@
                 <td><input type="hidden" name="name[]" value="<?php echo $name ?>">
                     <?php echo $name ?>
                 </td>
-                <td> <input type="number" name="marks[]" oninput="changeColor(this.id,<?php echo $passing ?>)" id="<?php echo $rollno ?>" /> </td>
+                <td> <input type="number" name="marks[]" min="0" max="<?php echo  $total;?>" oninput="changeColor(this.id,<?php echo $passing ?>)" id="<?php echo $rollno ?>" /> </td>
             </tr>
             <?php
             }

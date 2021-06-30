@@ -10,9 +10,9 @@ include 'connection.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/app.css">
-    
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 
 </head>
@@ -36,8 +36,10 @@ include 'connection.php';
                             <i class="align-middle"></i> <span class="align-middle">Employee</span>
                         </a>
                         <ul id="emp" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../employee/Employee.php">Add</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../employee/employee-view.php">View</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../employee/Employee.php">Add</a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link"
+                                    href="../employee/employee-view.php">View</a></li>
                         </ul>
                     </li>
 
@@ -46,10 +48,14 @@ include 'connection.php';
                             <i class="align-middle"></i> <span class="align-middle">Payroll</span>
                         </a>
                         <ul id="payr" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/addpayroll.php">Add Pay</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/viewpayroll.php">View Pay</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary Certificate</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month Report</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/addpayroll.php">Add
+                                    Pay</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/viewpayroll.php">View
+                                    Pay</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/Salarycert.php">Salary
+                                    Certificate</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../payroll/payrepo.php">Month
+                                    Report</a></li>
                         </ul>
                     </li>
 
@@ -63,7 +69,8 @@ include 'connection.php';
                         </a>
                         <ul id="addstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
                             <li class="sidebar-item"><a class="sidebar-link" href="../student/Student.php">Add</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../student/student-view.php">View</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -73,7 +80,8 @@ include 'connection.php';
                         </a>
                         <ul id="attend" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
                             <li class="sidebar-item"><a class="sidebar-link" href="../attendance/index.php">Add</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/showAtd.php">View</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../attendance/showAtd.php">View</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -82,7 +90,8 @@ include 'connection.php';
                             <i class="align-middle"></i> <span class="align-middle">Fees</span>
                         </a>
                         <ul id="fee" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/feesset.php">Fees Setup</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../fee/feesset.php">Fees Setup</a>
+                            </li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../fee/payment.php">Fees Pay</a></li>
                         </ul>
                     </li>
@@ -92,8 +101,10 @@ include 'connection.php';
                             <i class="align-middle"></i> <span class="align-middle">Promote Student </span>
                         </a>
                         <ul id="pstu" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add Academic</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote Student</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/addacademicyear.php">Add
+                                    Academic</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../ProStu/StudentPromote.php">Promote
+                                    Student</a></li>
                         </ul>
                     </li>
 
@@ -106,7 +117,8 @@ include 'connection.php';
                             <i class="align-middle"></i> <span class="align-middle">Subject Managment</span>
                         </a>
                         <ul id="addsubject" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_sub.php">Add Subject</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="sidebar-item active">
@@ -114,9 +126,11 @@ include 'connection.php';
                             <i class="align-middle"></i> <span class="align-middle">Exam Managment</span>
                         </a>
                         <ul id="exammaster" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create Exam</a>
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/exam_create.php">Create
+                                    Exam</a>
                             </li>
-                            <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/view_exam.php">View Exam</a></li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="../Exam/view_exam.php">View
+                                    Exam</a></li>
                         </ul>
                     </li>
                     <li class="sidebar-item ">
@@ -129,7 +143,7 @@ include 'connection.php';
                             </li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
                             </li>
-                            
+
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
                                     Result</a>
                             </li>
@@ -145,7 +159,8 @@ include 'connection.php';
                         <ul id="timetable" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/add_time_table.php"> Add Time
                                     Table</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View Time
+                            <li class="sidebar-item"><a class="sidebar-link" href="../Exam/view_time_table.php">View
+                                    Time
                                     Table</a></li>
                         </ul>
                     </li>
@@ -218,7 +233,7 @@ include 'connection.php';
                                             }
                                         }
                                         ?>
-                                        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+                                      <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return uvalidateData()">>
                                             <div class="container text-left" style="margin-left: 30px;">
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Academic Year</div>
@@ -239,7 +254,7 @@ include 'connection.php';
                                                         $results1 = $conn->query($m3);
                                                         if ($results1->num_rows > 0) {
                                                             while ($row = $results1->fetch_assoc()) { ?>
-                                                                <input type="text" name="exam_std" id="" required="" class="form-control" value="<?php echo $row['ExamStandard']; ?>">
+                                                                <input type="number" name="exam_std" id="" required="" class="form-control" value="<?php echo $row['ExamStandard']; ?>">
                                                         <?php }
                                                         } ?>
                                                     </div>
@@ -251,7 +266,7 @@ include 'connection.php';
                                                         $result3 = $conn->query($m4);
                                                         if ($result3->num_rows > 0) {
                                                             while ($row = $result3->fetch_assoc()) { ?>
-                                                                <input type="text" id="" class="form-control" name="exam_name" value="<?php echo $row['ExamName']; ?>">
+                                                                <input type="text" id="" class="form-control"required="" name="exam_name" value="<?php echo $row['ExamName']; ?>">
                                                         <?php }
                                                         } ?>
 
@@ -264,7 +279,7 @@ include 'connection.php';
                                                         $result3 = $conn->query($m4);
                                                         if ($result3->num_rows > 0) {
                                                             while ($row = $result3->fetch_assoc()) { ?>
-                                                                <input type="text" id="" class="form-control" name="exam_sub" value="<?php echo $row['ExamSubjectName']; ?>">
+                                                                <input type="text" id="" class="form-control"required="" name="exam_sub" value="<?php echo $row['ExamSubjectName']; ?>">
                                                         <?php }
                                                         } ?>
 
@@ -277,7 +292,7 @@ include 'connection.php';
                                                         $result3 = $conn->query($m4);
                                                         if ($result3->num_rows > 0) {
                                                             while ($row = $result3->fetch_assoc()) { ?>
-                                                                <input type="text" id="" class="form-control" name="exam_tm" value="<?php echo $row['ExamTotalMarks']; ?>">
+                                                                <input type="number" id="utotalmarks" class="form-control"required="" name="exam_tm" value="<?php echo $row['ExamTotalMarks']; ?>">
                                                         <?php }
                                                         } ?>
 
@@ -290,7 +305,7 @@ include 'connection.php';
                                                         $result3 = $conn->query($m4);
                                                         if ($result3->num_rows > 0) {
                                                             while ($row = $result3->fetch_assoc()) { ?>
-                                                                <input type="text" id="" class="form-control" name="exam_pm" value="<?php echo $row['ExamPassingMarks']; ?>">
+                                                                <input type="number" id="upassingmarks" class="form-control" required=""name="exam_pm" value="<?php echo $row['ExamPassingMarks']; ?>">
                                                         <?php }
                                                         } ?>
 
@@ -305,6 +320,21 @@ include 'connection.php';
                                         </form>
                                     </div>
                                 </div>
+                                <script>
+                            function uvalidateData() {
+
+                                var utotalMarks = document.getElementById("utotalmarks").value;
+                                var upassingMarks = document.getElementById("upassingmarks").value;
+
+                                if (upassingMarks > utotalMarks) {
+                                    
+                                    alert("passing marks must be less than or equal to Total marks");
+                                    return false;
+                                }
+                                return true;
+
+                            }
+                            </script>
                             </div>
                         </div>
                     </div>

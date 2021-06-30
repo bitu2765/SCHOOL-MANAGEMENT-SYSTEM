@@ -22,7 +22,7 @@ include("connectdb.php");
         <nav id="sidebar" class="sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand" style="text-align: center;">
-                    <img src="../logo.png" alt="logo" srcset="" height="100px">
+                    <img src="../logo.png" alt="logo" srcset="" height="213px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -249,25 +249,25 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">Total Day:</label>
                                         </div>
                                         <div class="col-md-1 text-center">
-                                            <input class="form-control" type="number" name="pano" id="estd" placeholder="0">
+                                            <input class="form-control" type="number" oninput="validity.valid||(value='');" name="pano" id="estd" placeholder="0">
                                         </div>
                                         <div class="col-md-1 text-left">
                                             <label for="mon" class="font-weight-bold">Present :</label>
                                         </div>
                                         <div class="col-md-1 text-center">
-                                            <input class="form-control" type="number" name="pano" id="espd" placeholder="0">
+                                            <input class="form-control" type="number" min="0" oninput="validity.valid||(value='');" name="pano" id="espd" placeholder="0">
                                         </div>
                                         <div class="col-md-1 text-left">
                                             <label for="mon" class="font-weight-bold">Leave :</label>
                                         </div>
                                         <div class="col-md-1 text-center">
-                                            <input class="form-control" type="number" name="pano" id="esld" placeholder="0">
+                                            <input class="form-control" type="number" min="0" oninput="validity.valid||(value='');" name="pano" id="esld" placeholder="0">
                                         </div>
                                         <div class="col-md-1 text-left">
                                             <label for="mon" class="font-weight-bold">LWP:</label>
                                         </div>
                                         <div class="col-md-1 text-center">
-                                            <input class="form-control" type="number" name="pano" id="eslwp" placeholder="0">
+                                            <input class="form-control" type="number" min="0" oninput="validity.valid||(value='');"  name="pano" id="eslwp" placeholder="0">
                                         </div>
                                     </div>
                                     <br>
@@ -278,13 +278,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">Basic :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" name="Emba" id="esba" placeholder="0">
+                                            <input class="form-control" type="number" min="0" oninput="validity.valid||(value='');"   name="Emba" id="esba" placeholder="0">
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">P.F :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" name="Empf" id="espf" placeholder="0">
+                                            <input class="form-control" type="number" min="0" oninput="validity.valid||(value='');"   name="Empf" id="espf" placeholder="0">
                                         </div>
                                     </div>
                                     <br>
@@ -295,13 +295,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">SPPay :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" name="Emsp" id="essp" placeholder="0">
+                                            <input class="form-control" type="number" min="0"  oninput="validity.valid||(value='');"  name="Emsp" id="essp" placeholder="0">
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">DGPay :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" name="Emdg" id="esdg" placeholder="0">
+                                            <input class="form-control" type="number" min="0"  oninput="validity.valid||(value='');"  name="Emdg" id="esdg" placeholder="0">
                                         </div>
                                     </div>
                                     <br>
@@ -312,13 +312,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">Sal Arreas1 :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" name="Emsa1" id="essa1" placeholder="0">
+                                            <input class="form-control" type="number" min="0"  oninput="validity.valid||(value='');"  name="Emsa1" id="essa1" placeholder="0">
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">Sal Arreas2 :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" name="Emsa2" id="essa2" placeholder="0">
+                                            <input class="form-control" type="number" min="0" oninput="validity.valid||(value='');"   name="Emsa2" id="essa2" placeholder="0">
                                         </div>
                                     </div>
                                     <br>
@@ -330,13 +330,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">D.A :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" name="Emda" id="esda" placeholder="0">
+                                            <input class="form-control" type="number" min="0" oninput="validity.valid||(value='');"   name="Emda" id="esda" placeholder="0">
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">P.T :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" name="Empt" id="espt" placeholder="0">
+                                            <input class="form-control" type="number" min="0" oninput="validity.valid||(value='');"   name="Empt" id="espt" placeholder="0">
                                         </div>
                                     </div>
                                     <br>
@@ -347,13 +347,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">T.A :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" name="Emta" id="esta" placeholder="0">
+                                            <input class="form-control" type="number" min="0"  oninput="validity.valid||(value='');"  name="Emta" id="esta" placeholder="0">
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">I.T :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" name="Emit" id="esit" placeholder="0">
+                                            <input class="form-control" type="number" min="0"  oninput="validity.valid||(value='');"  name="Emit" id="esit" placeholder="0">
                                         </div>
                                     </div>
                                     <br>
@@ -364,13 +364,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">H.A :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" name="Emha" id="esha" placeholder="0">
+                                            <input class="form-control" type="number" min="0"  oninput="validity.valid||(value='');"  name="Emha" id="esha" placeholder="0">
                                         </div>
                                         <div class='col-md-2 text-left'>
                                             <label for='mon' class="font-weight-bold">CLA :</label>
                                         </div>
                                         <div class='col-md-2 text-center'>
-                                            <input class='form-control' type='number' name='Emcla' id='escla' placeholder="0">
+                                            <input class='form-control' type='number' min="0"  oninput="validity.valid||(value='');"  name='Emcla' id='escla' placeholder="0">
                                         </div>
                                     </div>
                                     <br>
@@ -381,13 +381,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">M.A :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" name="Emma" id="esma" placeholder="0">
+                                            <input class="form-control" type="number" min="0" oninput="validity.valid||(value='');"   name="Emma" id="esma" placeholder="0">
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">Other :</label>
                                         </div>
                                         <div class="col-md-2 text-center">
-                                            <input class="form-control" type="number" name="Emot" id="esot" placeholder="0">
+                                            <input class="form-control" type="number" min="0"  oninput="validity.valid||(value='');"  name="Emot" id="esot" placeholder="0">
                                         </div>
                                     </div>
                                     <br>
@@ -398,13 +398,13 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">Total Earning :</label>
                                         </div>
                                         <div class="col-md-2 text-left">
-                                            <input class="form-control" type="number" name="Emte" id="este" placeholder="0" readonly>
+                                            <input class="form-control" type="number" min="0"  oninput="validity.valid||(value='');"  name="Emte" id="este" placeholder="0" readonly>
                                         </div>
                                         <div class="col-md-2 text-left">
                                             <label for="mon" class="font-weight-bold">Total Deduction :</label>
                                         </div>
                                         <div class="col-md-2 text-left">
-                                            <input class="form-control" type="number" name="Emtde" id="estde" placeholder="0" readonly>
+                                            <input class="form-control" type="number" min="0"  oninput="validity.valid||(value='');"  name="Emtde" id="estde" placeholder="0" readonly>
                                         </div>
                                     </div>
                                     <br>
@@ -415,7 +415,7 @@ include("connectdb.php");
                                             <label for="mon" class="font-weight-bold">Net Payable :</label>
                                         </div>
                                         <div class="col-md-2 text-left">
-                                            <input class="form-control" type="number" name="Emnp" id="esnp" placeholder="0" readonly>
+                                            <input class="form-control" type="number" min="0"  oninput="validity.valid||(value='');"  name="Emnp" id="esnp" placeholder="0" readonly>
                                         </div>
                                     </div>
                                     <br>

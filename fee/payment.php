@@ -31,7 +31,7 @@ include("connectdb.php");
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="100px">
+                    <img src="../logo.png" alt="logo" srcset="" height="213px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -262,7 +262,7 @@ include("connectdb.php");
                     <div class="row text-muted">
                         <div class="col-6 text-left">
                             <p class="mb-0">
-                                <a class="text-muted"><strong>AdminKit Demo</strong></a> &copy;
+                                <a class="text-muted"><strong>Shree SZ Vaghela High School</strong></a> &copy;
                             </p>
                         </div>
                     </div>
