@@ -2,6 +2,8 @@
 error_reporting(0);
 include("./connectdb.php");
 $error = "";
+$message = "";
+$message2 = "";
 if (isset($_POST{
 	'test_save'})) {
 	$StuUIDNo = $_POST['StuUIDNo'];
@@ -95,7 +97,11 @@ if (isset($_POST{
 		$query2 = "INSERT INTO `tbfeesmaster`(`FeesStudentName`, `FeesStudentRollNo`, `FeesStudentGRNo`, `FeesStuDateOfAdmission`, `FeesStuParentMoNo`, `FeesAcademicYear`, `FeesStandard`, `FeesDivison`, `FeesJanuary`, `FeesFebruary`, `FeesMarch`, `FeesApril`, `FeesMay`, `FeesJune`, `FeesJuly`, `FeesAugust`, `FeesSeptember`, `FeesOctomber`, `FeesNovember`, `FeesDecember`, `FeesAnnual`, `FeesPaid`, `FeesDue`)";
 		$query2 .= " SELECT x.StuStudentName,x.StuRollNo,x.StuGRNo,x.StuDateOfAdmission,x.StuParentMobileNumber1,x.StuAcdemicyear,x.StuStandard,x.StuDiv,'0','0','0','0','0','0','0','0','0','0','0','0',y.AnnualFees,'0',y.AnnualFees  FROM studentmaster x INNER JOIN tbfeessetmaster y ON X.StuGRNo = '" . $StuGRNo . "' AND y.AcademicYear ='" . $StuAcdemicyear . "' AND y.standard = '" . $StuStandard . "'"; // AND x.StuAcdemicYear = '" . $_POST["cay"] . "' AND x.StuStandard = '" . $_POST["cstd"] . "' AND x.StuStatus = 'ACTIVE'; ";
 		if ($conn->query($query2)) {
+		}
+		else
+		{
 			$message2 = "you did not set fees for the this academic year and standard.<strong> delete this student record!.</strong> 1st of all set fees details for academic year and standard after that add students to that acdemic year and standard.";
+
 		}
 	} else {
 		$message = "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Student</strong> Not Added Successfully!</div></div>";

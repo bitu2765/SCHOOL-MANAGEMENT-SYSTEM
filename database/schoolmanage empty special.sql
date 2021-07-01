@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2021 at 03:26 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.1
+-- Generation Time: Jun 30, 2021 at 06:54 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -20,6 +21,24 @@ SET time_zone = "+00:00";
 --
 -- Database: `schoolmanage`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attendancetrans`
+--
+
+CREATE TABLE `attendancetrans` (
+  `Sysid` int(50) NOT NULL,
+  `AttStudentName` varchar(150) NOT NULL,
+  `AttStudentRollNo` varchar(30) NOT NULL,
+  `AttStandard` bigint(10) NOT NULL,
+  `AttDiv` varchar(10) NOT NULL,
+  `AttDate` date NOT NULL,
+  `AttSendSMS` varchar(5) NOT NULL DEFAULT 'No',
+  `AttPresentAbsent` varchar(15) NOT NULL DEFAULT 'Present',
+  `AcadmicYear` varchar(150) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -82,7 +101,7 @@ CREATE TABLE `exammaster` (
 
 CREATE TABLE `listmaster` (
   `Sysid` int(5) NOT NULL,
-  `CreateDate` date NOT NULL DEFAULT current_timestamp(),
+  `CreateDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `SyStatus` varchar(5) NOT NULL,
   `Parameter` varchar(100) NOT NULL,
   `Value` varchar(100) NOT NULL,
@@ -95,34 +114,36 @@ CREATE TABLE `listmaster` (
 --
 
 INSERT INTO `listmaster` (`Sysid`, `CreateDate`, `SyStatus`, `Parameter`, `Value`, `infomation`, `Description`) VALUES
-(1, '2021-02-26', 'A', 'EmpStatus', 'Active', '', ''),
-(2, '2021-02-26', 'D', 'EmpStatus', 'Resingned', '', ''),
-(3, '2021-02-26', 'D', 'EmpStatus', 'Retired', '', ''),
-(4, '2021-02-26', '', 'Category', 'Open', '', ''),
-(5, '2021-02-26', '', 'Category', 'OBC', '', ''),
-(7, '2021-02-26', '', 'Category', 'SC', '', ''),
-(8, '2021-02-26', '', 'Category', 'ST', '', ''),
-(9, '2021-02-26', '', 'Gender', 'Male', '', ''),
-(10, '2021-02-26', '', 'Gender', 'Female', '', ''),
-(11, '2021-02-26', '', 'Gender', 'Other', '', ''),
-(12, '2021-02-26', '', 'AcadmicYear', '2020-21', '', ''),
-(13, '2021-02-26', '', 'AcadmicYear', '2021-22', '', ''),
-(14, '2021-02-26', '', 'AcadmicYear', '2022-23', '', ''),
-(15, '2021-02-26', '', 'Division', 'A', '', ''),
-(16, '2021-02-26', '', 'Division', 'B', '', ''),
-(17, '2021-02-26', '', 'Division', 'C', '', ''),
-(18, '2021-02-26', '', 'Division', 'D', '', ''),
-(19, '2021-02-26', '', 'Division', 'E', '', ''),
-(20, '2021-02-26', '', 'Standard', '8', '', ''),
-(21, '2021-02-26', '', 'Standard', '9', '', ''),
-(22, '2021-02-26', '', 'Standard', '10', '', ''),
-(27, '2021-02-26', '', 'SubjectName', 'Maths', '', ''),
-(28, '2021-02-26', '', 'SubjectName', 'English', '', ''),
-(29, '2021-02-26', '', 'SubjectName', 'Gujrati', '', ''),
-(31, '0000-00-00', '', 'SubjectName', 'Science', '', ''),
-(33, '0000-00-00', '', 'SubjectName', 'Social Science', '', ''),
-(36, '0000-00-00', '', 'ShowResult', '0', '', ''),
-(38, '2021-06-26', '', 'AcadmicYear', '2019-20', '', '');
+(1, '2021-02-26 00:00:00', 'A', 'EmpStatus', 'Active', '', ''),
+(2, '2021-02-26 00:00:00', 'D', 'EmpStatus', 'Resingned', '', ''),
+(3, '2021-02-26 00:00:00', 'D', 'EmpStatus', 'Retired', '', ''),
+(4, '2021-02-26 00:00:00', '', 'Category', 'Open', '', ''),
+(5, '2021-02-26 00:00:00', '', 'Category', 'OBC', '', ''),
+(7, '2021-02-26 00:00:00', '', 'Category', 'SC', '', ''),
+(8, '2021-02-26 00:00:00', '', 'Category', 'ST', '', ''),
+(9, '2021-02-26 00:00:00', '', 'Gender', 'Male', '', ''),
+(10, '2021-02-26 00:00:00', '', 'Gender', 'Female', '', ''),
+(11, '2021-02-26 00:00:00', '', 'Gender', 'Other', '', ''),
+(12, '2021-02-26 00:00:00', '', 'AcadmicYear', '2020-21', '', ''),
+(13, '2021-02-26 00:00:00', '', 'AcadmicYear', '2021-22', '', ''),
+(14, '2021-02-26 00:00:00', '', 'AcadmicYear', '2022-23', '', ''),
+(15, '2021-02-26 00:00:00', '', 'Division', 'A', '', ''),
+(16, '2021-02-26 00:00:00', '', 'Division', 'B', '', ''),
+(17, '2021-02-26 00:00:00', '', 'Division', 'C', '', ''),
+(18, '2021-02-26 00:00:00', '', 'Division', 'D', '', ''),
+(19, '2021-02-26 00:00:00', '', 'Division', 'E', '', ''),
+(20, '2021-02-26 00:00:00', '', 'Standard', '8', '', ''),
+(21, '2021-02-26 00:00:00', '', 'Standard', '9', '', ''),
+(22, '2021-02-26 00:00:00', '', 'Standard', '10', '', ''),
+(27, '2021-02-26 00:00:00', '', 'SubjectName', 'Maths', '', ''),
+(28, '2021-02-26 00:00:00', '', 'SubjectName', 'English', '', ''),
+(29, '2021-02-26 00:00:00', '', 'SubjectName', 'Gujrati', '', ''),
+(31, '0000-00-00 00:00:00', '', 'SubjectName', 'Science', '', ''),
+(33, '0000-00-00 00:00:00', '', 'SubjectName', 'Social Science', '', ''),
+(36, '0000-00-00 00:00:00', '', 'ShowResult', '0', '', ''),
+(38, '2021-06-26 00:00:00', '', 'AcadmicYear', '2019-20', '', ''),
+(50, '2021-06-30 22:23:45', '', 'Standard', '11', '', ''),
+(51, '2021-06-30 22:23:45', '', 'Standard', '12', '', '');
 
 -- --------------------------------------------------------
 
@@ -196,10 +217,10 @@ CREATE TABLE `studentmaster` (
   `StuBankIFSCcode` varchar(20) NOT NULL,
   `StuStatus` varchar(15) NOT NULL,
   `StuStatusChangedDate` date NOT NULL,
-  `file` varchar(255) NOT NULL,
-  `filename` varchar(255) NOT NULL,
-  `uploadfile` varchar(255) NOT NULL,
-  `uploadfilename` varchar(255) NOT NULL
+  `file` varchar(255) DEFAULT NULL,
+  `filename` varchar(255) DEFAULT NULL,
+  `uploadfile` varchar(255) DEFAULT NULL,
+  `uploadfilename` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -223,7 +244,7 @@ CREATE TABLE `submaster` (
 --
 
 CREATE TABLE `tbfeesmaster` (
-  `cdate` datetime NOT NULL DEFAULT current_timestamp(),
+  `cdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `Systatus` varchar(10) NOT NULL DEFAULT 'ACTIVE',
   `FeesStudentName` varchar(150) NOT NULL,
   `FeesStudentRollNo` varchar(30) NOT NULL,
@@ -233,21 +254,34 @@ CREATE TABLE `tbfeesmaster` (
   `FeesAcademicYear` varchar(8) NOT NULL,
   `FeesStandard` varchar(3) NOT NULL,
   `FeesDivison` varchar(3) NOT NULL,
-  `FeesJanuary` tinyint(1) DEFAULT 0,
-  `FeesFebruary` tinyint(1) DEFAULT 0,
-  `FeesMarch` tinyint(1) DEFAULT 0,
-  `FeesApril` tinyint(1) DEFAULT 0,
-  `FeesMay` tinyint(1) DEFAULT 0,
-  `FeesJune` tinyint(1) DEFAULT 0,
-  `FeesJuly` tinyint(1) DEFAULT 0,
-  `FeesAugust` tinyint(1) DEFAULT 0,
-  `FeesSeptember` tinyint(1) DEFAULT 0,
-  `FeesOctomber` tinyint(1) DEFAULT 0,
-  `FeesNovember` tinyint(1) DEFAULT 0,
-  `FeesDecember` tinyint(1) DEFAULT 0,
+  `FeesJanuary` tinyint(1) DEFAULT '0',
+  `FeesFebruary` tinyint(1) DEFAULT '0',
+  `FeesMarch` tinyint(1) DEFAULT '0',
+  `FeesApril` tinyint(1) DEFAULT '0',
+  `FeesMay` tinyint(1) DEFAULT '0',
+  `FeesJune` tinyint(1) DEFAULT '0',
+  `FeesJuly` tinyint(1) DEFAULT '0',
+  `FeesAugust` tinyint(1) DEFAULT '0',
+  `FeesSeptember` tinyint(1) DEFAULT '0',
+  `FeesOctomber` tinyint(1) DEFAULT '0',
+  `FeesNovember` tinyint(1) DEFAULT '0',
+  `FeesDecember` tinyint(1) DEFAULT '0',
   `FeesAnnual` bigint(10) NOT NULL,
-  `FeesPaid` bigint(10) DEFAULT 0,
+  `FeesPaid` bigint(10) DEFAULT '0',
   `FeesDue` bigint(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbfeessetmaster`
+--
+
+CREATE TABLE `tbfeessetmaster` (
+  `AcademicYear` varchar(8) NOT NULL,
+  `standard` int(11) NOT NULL,
+  `AnnualFees` int(10) NOT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -271,7 +305,7 @@ CREATE TABLE `timetable` (
 --
 
 CREATE TABLE `ttbsalarymaster` (
-  `year` year(4) NOT NULL DEFAULT current_timestamp(),
+  `year` year(4) NOT NULL,
   `SalEmpNo` varchar(15) NOT NULL,
   `SalFullName` varchar(50) NOT NULL,
   `SalDesignation` varchar(25) NOT NULL,
@@ -300,13 +334,19 @@ CREATE TABLE `ttbsalarymaster` (
   `SalTotalEarning` bigint(10) NOT NULL,
   `SalTotalDeduction` bigint(10) NOT NULL,
   `SalNetPayable` bigint(10) NOT NULL,
-  `CreateDate` datetime NOT NULL DEFAULT current_timestamp(),
+  `CreateDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `SalEmpName` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `attendancetrans`
+--
+ALTER TABLE `attendancetrans`
+  ADD PRIMARY KEY (`Sysid`);
 
 --
 -- Indexes for table `employeemaster`
@@ -362,6 +402,12 @@ ALTER TABLE `tbfeesmaster`
   ADD PRIMARY KEY (`FeesStudentRollNo`,`FeesStudentGRNo`,`FeesAcademicYear`,`FeesStandard`,`FeesDivison`);
 
 --
+-- Indexes for table `tbfeessetmaster`
+--
+ALTER TABLE `tbfeessetmaster`
+  ADD PRIMARY KEY (`AcademicYear`,`standard`);
+
+--
 -- Indexes for table `timetable`
 --
 ALTER TABLE `timetable`
@@ -378,6 +424,12 @@ ALTER TABLE `ttbsalarymaster`
 --
 
 --
+-- AUTO_INCREMENT for table `attendancetrans`
+--
+ALTER TABLE `attendancetrans`
+  MODIFY `Sysid` int(50) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `exammaster`
 --
 ALTER TABLE `exammaster`
@@ -387,7 +439,7 @@ ALTER TABLE `exammaster`
 -- AUTO_INCREMENT for table `listmaster`
 --
 ALTER TABLE `listmaster`
-  MODIFY `Sysid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `Sysid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `resultmaster`

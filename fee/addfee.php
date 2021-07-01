@@ -4,7 +4,7 @@ include("connectdb.php");
 $query = "";
 if($_POST["tag"]=="Inserted")
 {
-    $query .="INSERT INTO `tbfeessetmaster`(`AcademicYear`, `standard`, `AnnualFees`) VALUES ('".$_POST["ay"]."','".$_POST["std"]."','".$_POST["fee"]."')";
+    $query .="INSERT INTO `tbfeessetmaster`(`AcademicYear`, `standard`, `AnnualFees`,date) VALUES ('".$_POST["ay"]."','".$_POST["std"]."','".$_POST["fee"]."','".date("y-m-d")."')";
 }
 else if($_POST["tag"]=="Updated")
 {

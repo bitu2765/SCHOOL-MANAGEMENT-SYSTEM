@@ -23,7 +23,7 @@ include 'connection.php';
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand">
                     <span width="30px">&nbsp;</span>
-                    <img src="../logo.png" alt="logo" srcset="" height="213px">
+                    <img src="../logo.png" alt="logo" srcset="" height="90px">
                 </a>
 
                 <ul class="sidebar-nav">
@@ -233,7 +233,8 @@ include 'connection.php';
                                             }
                                         }
                                         ?>
-                                      <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return uvalidateData()">>
+                                        <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post"
+                                            onsubmit="return uvalidateData()">>
                                             <div class="container text-left" style="margin-left: 30px;">
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4 font-weight-bold mt-1">Academic Year</div>
@@ -242,7 +243,9 @@ include 'connection.php';
                                                         $results2 = $conn->query($m1);
                                                         if ($results2->num_rows > 0) {
                                                             while ($row = $results2->fetch_assoc()) { ?>
-                                                                <input type="text" name="exam_year" required="" id="" class="form-control" value="<?php echo $row['ExamAcademicYear']; ?>">
+                                                        <input type="text" name="exam_year" required="" id=""
+                                                            class="form-control"
+                                                            value="<?php echo $row['ExamAcademicYear']; ?>">
                                                         <?php }
                                                         } ?>
                                                     </div>
@@ -254,7 +257,9 @@ include 'connection.php';
                                                         $results1 = $conn->query($m3);
                                                         if ($results1->num_rows > 0) {
                                                             while ($row = $results1->fetch_assoc()) { ?>
-                                                                <input type="number" name="exam_std" id="" required="" class="form-control" value="<?php echo $row['ExamStandard']; ?>">
+                                                        <input type="number" name="exam_std" id="" required=""
+                                                            class="form-control"
+                                                            value="<?php echo $row['ExamStandard']; ?>">
                                                         <?php }
                                                         } ?>
                                                     </div>
@@ -266,7 +271,8 @@ include 'connection.php';
                                                         $result3 = $conn->query($m4);
                                                         if ($result3->num_rows > 0) {
                                                             while ($row = $result3->fetch_assoc()) { ?>
-                                                                <input type="text" id="" class="form-control"required="" name="exam_name" value="<?php echo $row['ExamName']; ?>">
+                                                        <input type="text" id="" class="form-control" required=""
+                                                            name="exam_name" value="<?php echo $row['ExamName']; ?>">
                                                         <?php }
                                                         } ?>
 
@@ -279,7 +285,9 @@ include 'connection.php';
                                                         $result3 = $conn->query($m4);
                                                         if ($result3->num_rows > 0) {
                                                             while ($row = $result3->fetch_assoc()) { ?>
-                                                                <input type="text" id="" class="form-control"required="" name="exam_sub" value="<?php echo $row['ExamSubjectName']; ?>">
+                                                        <input type="text" id="" class="form-control" required=""
+                                                            name="exam_sub"
+                                                            value="<?php echo $row['ExamSubjectName']; ?>">
                                                         <?php }
                                                         } ?>
 
@@ -292,7 +300,9 @@ include 'connection.php';
                                                         $result3 = $conn->query($m4);
                                                         if ($result3->num_rows > 0) {
                                                             while ($row = $result3->fetch_assoc()) { ?>
-                                                                <input type="number" id="utotalmarks" class="form-control"required="" name="exam_tm" value="<?php echo $row['ExamTotalMarks']; ?>">
+                                                        <input type="number" id="utotalmarks" class="form-control"
+                                                            required="" name="exam_tm"
+                                                            value="<?php echo $row['ExamTotalMarks']; ?>">
                                                         <?php }
                                                         } ?>
 
@@ -305,7 +315,9 @@ include 'connection.php';
                                                         $result3 = $conn->query($m4);
                                                         if ($result3->num_rows > 0) {
                                                             while ($row = $result3->fetch_assoc()) { ?>
-                                                                <input type="number" id="upassingmarks" class="form-control" required=""name="exam_pm" value="<?php echo $row['ExamPassingMarks']; ?>">
+                                                        <input type="number" id="upassingmarks" class="form-control"
+                                                            required="" name="exam_pm"
+                                                            value="<?php echo $row['ExamPassingMarks']; ?>">
                                                         <?php }
                                                         } ?>
 
@@ -314,27 +326,35 @@ include 'connection.php';
                                                 <br>
                                                 <div class="row" style="margin-bottom: 10px;">
                                                     <div class="col-4">
-                                                        <input type="submit" name="Exam_update" class="btn btn-success" value="UPDATE">
+                                                        <input type="submit" name="Exam_update" class="btn btn-success"
+                                                            value="UPDATE">
                                                     </div>
                                                 </div>
                                         </form>
                                     </div>
                                 </div>
                                 <script>
-                            function uvalidateData() {
+                                function uvalidateData() {
+                                    utotalmarks
+                                    var utotalMarks = document.getElementById("utotalmarks").value;
+                                    var upassingMarks = document.getElementById("upassingmarks").value;
 
-                                var utotalMarks = document.getElementById("utotalmarks").value;
-                                var upassingMarks = document.getElementById("upassingmarks").value;
+                                    console.log(Number(utotalMarks));
+                                    console.log(Number(upassingMarks));
 
-                                if (upassingMarks > utotalMarks) {
-                                    
-                                    alert("passing marks must be less than or equal to Total marks");
-                                    return false;
+                                    if ((Number(upassingMarks)) > (Number(utotalMarks))) {
+                                        console.log("yesss");
+
+                                        alert("passing marks must be less than or equal to Total marks");
+                                        return false;
+
+                                    } else {
+                                        console.log("NOOOO");
+
+                                        return true;
+                                    }
                                 }
-                                return true;
-
-                            }
-                            </script>
+                                </script>
                             </div>
                         </div>
                     </div>

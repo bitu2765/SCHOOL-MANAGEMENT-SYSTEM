@@ -1,7 +1,7 @@
 <?php
 //error_reporting(0);
 include("./connectdb.php");
-
+$finalmessage = "";
 $error = "";
 if (isset($_POST{
 	'test_save'})) {
@@ -35,22 +35,21 @@ if (isset($_POST{
 	$EmpBankName = strtoupper($_POST['EmpBankName']);
 	$EmpBankAccount = $_POST['EmpBankAccount'];
 	$EmpBankIFSC = $_POST['EmpBankIFSC'];
-	$finalmessage = "";
 	if (strlen($EmpContactNo) != 10) {
-		$finalmessage = "";
+		$finalmessage =  "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Mobile Format Error </strong>,Employee Details Not Added Successfully!</div></div>";
 	} else if (strlen($EmpAadharNo) != 12) {
-		$finalmessage = "";
+		$finalmessage =  "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Aadhar Card No Format Error </strong>,Employee Details Not Added Successfully!</div></div>";
 	} else {
 		$sql = " INSERT INTO `employeemaster` values('$EmpNo','$EmpNamePrefix','$EmpFirstName','$EmpMidName','$EmpLastName', '$EmpDesignation','$EmpGender','$EmpDOB','$EmpAddress1', 
           '$EmpAddress2', '$EmpState', '$EmpCity',$EmpPinCode,$EmpContactNo, '$EmpEmailID','$EmpDateofjoining',  '$EmpDateofLeaving', '$EmpCategory','$EmpAadharNo', '$EmpPan', '$EmpPFno', '$EmpStatus', '$EmpLastStatusChangeDate', '$EmpBankName', '$EmpBankAccount', '$EmpBankIFSC')";
 
 		$res = mysqli_query($conn, $sql);
+		if ($res) {
+			$finalmessage =  "<div class='alert alert-success alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Employee Details </strong> Added Successfully!</div></div>";
+		} else {
+			$finalmessage =  "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Employee Details </strong> Not Added Successfully!,look's like server side error.</div></div>";
+		}
 	}
-	// if ($res) {
-	// 	echo "<script>alert('Data Inserted successfully...!!');</script>";
-	// } else {
-	// 	echo "<script>alert('something went wrong!!...!!');</script>";
-	// }
 }
 ?>
 
@@ -192,7 +191,7 @@ if (isset($_POST{
 							</li>
 							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
 							</li>
-							
+
 							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
 							</li>
 							<li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate MarkSheet</a>
@@ -230,6 +229,10 @@ if (isset($_POST{
 			</nav>
 
 			<main class="content">
+			<?php
+			echo $finalmessage;
+
+			?>
 				<div class="container-fluid p-0">
 
 					<h1 class="h3 mb-3" style="font-weight: bold;">Add Employee</h1>

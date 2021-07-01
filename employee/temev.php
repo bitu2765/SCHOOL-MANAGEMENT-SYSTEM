@@ -384,7 +384,7 @@ if (isset($_GET["EmpDateofjoining"])) {
             }
             //$this->Ln();
             // $this->SetLeftMargin(116);
-            if (isset($_GET["EmpName"]) || isset($_GET["EmpAddress"])) {
+            if (isset($_GET["EmpName"]) || (isset($_GET["EmpAddress1"])||isset($_GET["EmpAddress2"]))) {
                 $this->SetY($ny);
                 $this->SetX($nx);
             } else {

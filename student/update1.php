@@ -3,7 +3,7 @@ error_reporting(0);
 include("connectdb.php");
 
 
-
+$message = "";
 
 if (isset($_GET['StuGRNo'])) {
 	$StuGRNo = $_GET['StuGRNo'];
@@ -138,9 +138,9 @@ if (isset($_GET['StuGRNo'])) {
 	$queryupdate .= "WHERE StuGRNo=$StuGRNo";
 
 	if ($conn->query($queryupdate)) {
-		$message =  "<div class='alert alert-success alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Student</strong>  Added Successfully!</div></div>";
+		$message =  "<div class='alert alert-success alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Student</strong>  Updated Successfully!</div></div>";
 	} else {
-		$message = "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Student</strong> Not Added Successfully!</div></div>";
+		$message = "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Student</strong> Not Updated Successfully!</div></div>";
 	}
 }
 
