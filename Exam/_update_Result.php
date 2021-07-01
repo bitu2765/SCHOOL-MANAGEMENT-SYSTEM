@@ -218,7 +218,7 @@
                                       `ResAcademicYear`='$ResAcademicYear2',`ResStandard`='$ResStandard2',`ResDivision`='$ResDivision2',
                                       `ResRollNo`='$rollno2',`ResGRNO`='$grn2',`ResSubName`='$ResSubName2',`ResStudentName`='$name2',
                                       `ResExamName`='$ResExamName2',`ResTotalMarks`='$ResTotalMarks2',
-                                      `ResPassingMarks`='$ResPassingMarks2 ',`ResMarksObtained`='$marks2',ResStatus='$ResStatus2 ' WHERE `Resid`= '".$_GET["rid"]."'"; 
+                                      `ResPassingMarks`='$ResPassingMarks2 ',`ResMarksObtained`='$marks2',ResStatus='$ResStatus2' WHERE `Resid`= '".$_GET["rid"]."'"; 
                                       
                                       $res = $conn->query($sql);
                                       
