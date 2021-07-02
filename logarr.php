@@ -8,7 +8,9 @@
     //     //                   window.location.href = 'login.php';
     //     //         </script>";
     // }
-    if(md5("szvaghelaadmin")==md5($_POST["us"]) || md5("pass")==md5($_POST["ps"]))
+    if(isset($_POST["us"])&&isset($_POST["ps"]))
+    {
+        if(md5("szvaghelaadmin")==md5($_POST["us"]) || md5("pass")==md5($_POST["ps"]))
     {
         echo "success";
 
@@ -18,5 +20,6 @@
         // echo "<script>alert('Admin login successfull');
         //                   window.location.href = 'Dashboard.php';
         //         </script>";
+    }
     }
 ?>
