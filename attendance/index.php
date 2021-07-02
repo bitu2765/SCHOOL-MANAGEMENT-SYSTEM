@@ -19,6 +19,8 @@ include("db_con_inc.php");
     <link href="../css/gapi.css" rel="stylesheet">
 
     <title>Attendance</title>
+    <link rel="shortcut icon" href="../logo.png"  type="image/x-icon">
+
 
     <style>
         .container {

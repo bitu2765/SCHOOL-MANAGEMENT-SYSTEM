@@ -29,10 +29,11 @@ if (isset($_POST['submit_atd'])) {
     </script>
 
     <title>Attendance</title>
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon">
 
     <link rel="stylesheet" href="../css/app.css">
     <link href="../css/gapi.css" rel="stylesheet">
- 
+
     <style>
         .container {
             background-color: white;
@@ -161,7 +162,7 @@ if (isset($_POST['submit_atd'])) {
                             </li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
                             </li>
-                            
+
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare Result</a>
                             </li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_serch.php">Generate MarkSheet</a>

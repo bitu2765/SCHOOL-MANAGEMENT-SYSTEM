@@ -16,6 +16,7 @@ include 'connection.php';
 
 
     <title>Genrate Marksheet</title>
+    <link rel="shortcut icon" href="../logo.png"  type="image/x-icon">
 </head>
 
 <body>

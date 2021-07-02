@@ -33,6 +33,7 @@ include 'connection.php';
 
 
     <title>View Exam</title>
+    <link rel="shortcut icon" href="../logo.png"  type="image/x-icon">
 </head>
 
 <body>

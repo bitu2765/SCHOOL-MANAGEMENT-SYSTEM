@@ -78,12 +78,12 @@
 
 <body>
     <header class="top-navbar ">
-        <nav class=" navbar-expand-lg bg-light">
+        <nav class=" navbar-expand-lg">
             <div class=" logocenter" >
                 <!-- <a class="navbar-brand" href="index.php"> -->
                 <!-- <span style="width: 10px;" ></span> -->
                 <div>
-                    <img src="logo1.png" alt="SZ WAGHELA HIGH SCHOOL"  />
+                    <img src="logo.png" alt="SZ WAGHELA HIGH SCHOOL"  />
                 </div>
                 <!-- </a> -->
             </div>

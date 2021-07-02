@@ -18,6 +18,7 @@ include("../connection_to_db.php");
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
     <title>Promote Student</title>
+    <link rel="shortcut icon" href="../logo.png"  type="image/x-icon">
 
     <link href="../css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">

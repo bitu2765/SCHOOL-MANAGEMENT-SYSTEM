@@ -126,6 +126,8 @@ if (isset($_POST{
 
 	<title>Add Student</title>
 	<!-- Bootstrap CSS -->
+	<link rel="shortcut icon" href="../logo.png"  type="image/x-icon">
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 	<link href="../css/app.css" rel="stylesheet">

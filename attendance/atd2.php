@@ -41,6 +41,8 @@ if (isset($_POST['submit_atd'])) {
     <link rel="stylesheet" href="../css/gapi.css">
 
     <title>Attendance</title>
+    <link rel="shortcut icon" href="../logo.png"  type="image/x-icon">
+
 
     <style>
         input[type="checkbox"] {

@@ -13,7 +13,7 @@ include("./connectdb.php");
     <link rel="stylesheet" href="../css/ui_d.css">
 
     <title>Fee Setup</title>
-
+    <link rel="shortcut icon" href="../logo.png"  type="image/x-icon">
 
 </head>
 

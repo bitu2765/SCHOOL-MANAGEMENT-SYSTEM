@@ -109,6 +109,8 @@ EmpBankName ='$EmpBankName',EmpBankAccount ='$EmpBankAccount',EmpBankIFSC ='$Emp
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
 	<title>Employee</title>
+	<link rel="shortcut icon" href="../logo.png"  type="image/x-icon">
+
 
 	<link href="../css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">

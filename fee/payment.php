@@ -12,6 +12,8 @@ include("connectdb.php");
     <link href="../css/gapi.css" rel="stylesheet">
 
     <title>Fee Payment</title>
+    <link rel="shortcut icon" href="../logo.png"  type="image/x-icon">
+
     <style>
         .scr-mod {
             height: 75px;

@@ -71,6 +71,7 @@ while ($eid = mysqli_fetch_array($empidresult)) {
     <link rel="stylesheet" href="../css/ui_d.css">
 
     <title>Update Payroll</title>
+    <link rel="shortcut icon" href="../logo.png"  type="image/x-icon">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">

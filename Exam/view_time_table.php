@@ -8,11 +8,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/app.css">
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-      <title>View Timetable</title>
-
+    <title>View Timetable</title>
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -137,7 +137,7 @@
                             </li>
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/genrate.php">Result Data</a>
                             </li>
-                            
+
                             <li class="sidebar-item"><a class="sidebar-link" href="../Exam/result_declare.php">Declare
                                     Result</a>
                             </li>
@@ -325,7 +325,7 @@
                     <div class="col-6 text-left">
                         <p class="mb-0">
 
-                            <a  class="text-muted"><strong>Shree SZ Vaghela High
+                            <a class="text-muted"><strong>Shree SZ Vaghela High
                                     School</strong></a> &copy;
                         </p>
                     </div>

@@ -17,6 +17,8 @@ include("./connectdb.php");
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
 	<title>Employee</title>
+	<link rel="shortcut icon" href="../logo.png"  type="image/x-icon">
+
 
 	<link href="../css/app.css" rel="stylesheet">
 

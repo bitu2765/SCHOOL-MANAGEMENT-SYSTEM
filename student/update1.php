@@ -160,6 +160,8 @@ if (isset($_GET['StuGRNo'])) {
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
 	<title>Update Student</title>
+	<link rel="shortcut icon" href="../logo.png"  type="image/x-icon">
+
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
