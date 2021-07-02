@@ -87,9 +87,9 @@ if ($results = mysqli_query($con, $querys)) {
             $cpdf .=  "<td width='52' height='30'>PF</td>";
             $cpdf .=  "<td width='44' height='30'>IT</td>";
             $cpdf .=  "<td width='39' height='30'>Other</td>";
-            $cpdf .=  "<td width='70' height='30'>Total earn </td>";
-            $cpdf .=  "<td width='70' height='30'>Total deduct </td>";
-            $cpdf .=  "<td width='70' height='30'>Net Payable </td>";
+            $cpdf .=  "<td width='72' height='30'>Total earn </td>";
+            $cpdf .=  "<td width='72' height='30'>Total deduct </td>";
+            $cpdf .=  "<td width='66' height='30'>Net Payable </td>";
             $cpdf .= '</tr>';
             // $cpdf .= "<br>";
             // $cpdf .= "<br>";
@@ -113,9 +113,9 @@ if ($results = mysqli_query($con, $querys)) {
         $cpdf .=  "<td width='52' height='30'>" . $erow["SalPF"] . "</td>";
         $cpdf .=  "<td width='44' height='30'>" . $erow["SalIncomTax"] . "</td>";
         $cpdf .=  "<td width='39' height='30'>" . $erow["Salother"] . "</td>";
-        $cpdf .=  "<td width='70' height='30'>" . $erow["SalTotalEarning"] . " </td>";
-        $cpdf .=  "<td width='70' height='30'>" . $erow["SalTotalDeduction"] . " </td>";
-        $cpdf .=  "<td width='70' height='30'>" . $erow["SalNetPayable"] . "</td>";
+        $cpdf .=  "<td width='72' height='30'>" . $erow["SalTotalEarning"] . " </td>";
+        $cpdf .=  "<td width='72' height='30'>" . $erow["SalTotalDeduction"] . " </td>";
+        $cpdf .=  "<td width='66' height='30'>" . $erow["SalNetPayable"] . "</td>";
         $cpdf .= "</tr>";
         // $cpdf .= "<br>";
         $s1 += $erow["SalBasic"];
@@ -156,9 +156,9 @@ if ($results = mysqli_query($con, $querys)) {
         $cpdf .=  "<td width='52' height='30'>PF</td>";
         $cpdf .=  "<td width='44' height='30'>IT</td>";
         $cpdf .=  "<td width='39' height='30'>Other</td>";
-        $cpdf .=  "<td width='70' height='30'>Total earn </td>";
-        $cpdf .=  "<td width='70' height='30'>Total deduct </td>";
-        $cpdf .=  "<td width='70' height='30'>Net Payable </td>";
+        $cpdf .=  "<td width='72' height='30'>Total earn </td>";
+        $cpdf .=  "<td width='72' height='30'>Total deduct </td>";
+        $cpdf .=  "<td width='66' height='30'>Net Payable </td>";
         $cpdf .= '</tr>';
     }
     $cpdf .=  "<tr>";
@@ -179,9 +179,9 @@ if ($results = mysqli_query($con, $querys)) {
     $cpdf .=  "<td width='52' height='30'>" . $s15 . "</td>";
     $cpdf .=  "<td width='44' height='30'>" . $s16 . "</td>";
     $cpdf .=  "<td width='39' height='30'>" . $s17 . "</td>";
-    $cpdf .=  "<td width='70' height='30'>" . $s12 . " </td>";
-    $cpdf .=  "<td width='70' height='30'>" . $s13 . " </td>";
-    $cpdf .=  "<td width='70' height='30'>" . $s14 . "</td>";
+    $cpdf .=  "<td width='72' height='30'>" . $s12 . " </td>";
+    $cpdf .=  "<td width='72' height='30'>" . $s13 . " </td>";
+    $cpdf .=  "<td width='66' height='30'>" . $s14 . "</td>";
     $cpdf .= "</tr>";
     $cpdf .= "<br>";
 }
