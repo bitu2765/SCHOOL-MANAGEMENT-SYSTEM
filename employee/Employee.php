@@ -48,6 +48,10 @@ if (isset($_POST{
 			$finalmessage =  "<div class='alert alert-success alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Employee Details </strong> Added Successfully!</div></div>";
 		} else {
 			$finalmessage =  "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Employee Details </strong> Not Added Successfully!,look's like server side error.</div></div>";
+			$empidresult = mysqli_query($conn, "SELECT * FROM employeemaster WHERE EmpNo='$EmpNo'; ");
+			while ($eid = mysqli_fetch_array($empidresult)) {
+				$finalmessage =  "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'><strong>Employee No. Already Exists</strong>, Employee Details Not Added Successfully!.</div></div>";
+			}
 		}
 	}
 }

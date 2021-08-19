@@ -21,6 +21,7 @@ for ($i = 0; $i < count($stuar); $i++) {
     }
     $fedue = $fepmo - $fepa;
     $query = "UPDATE tbfeesmaster SET FeesJanuary='" . $stuar[$i][1] . "',FeesFebruary='" . $stuar[$i][2] . "',FeesMarch='" . $stuar[$i][3] . "',FeesApril='" . $stuar[$i][4] . "',FeesMay='" . $stuar[$i][5] . "',FeesJune='" . $stuar[$i][6] . "',FeesJuly='" . $stuar[$i][7] . "',FeesAugust='" . $stuar[$i][8] . "',FeesSeptember='" . $stuar[$i][9] . "',FeesOctomber='" . $stuar[$i][10] . "',FeesNovember='" . $stuar[$i][11] . "',FeesDecember='" . $stuar[$i][12] . "',FeesPaid='" . $fepa . "',FeesDue='" . $fedue . "' WHERE FeesAcademicYear='" . $sd->ay . "' AND FeesStandard='" . $sd->std . "' AND FeesDivison='" . $sd->div . "' AND FeesStudentRollNo='" . $stuar[$i][0] . "'; ";
+    echo $query;
     if ($con->query($query)) {
         $tt++;
     }
@@ -30,5 +31,4 @@ if (count($stuar) == $tt) {
 } else {
     echo "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='btn-close' data-dismiss='alert' aria-label='Close'></button><div class='alert-message'>Fees Details Not Updated Successfully!</div></div>";
 }
-
 
